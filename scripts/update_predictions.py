@@ -24,7 +24,8 @@ ALIASES = {
     "Manchester United": "Man United",
     "Manchester Utd": "Man United",
     "Newcastle United": "Newcastle",
-    "Nottingham Forest": "Nott'm Forest",
+    "Nottingham Forest": "Nottingham",
+    "Nott'm Forest": "Nottingham",
     "Tottenham Hotspur": "Tottenham",
     "Brighton & Hove Albion": "Brighton",
     "Brighton Hove Albion": "Brighton",
@@ -389,6 +390,120 @@ def build_standings(teams, matches):
         r["rank"]=i
     return rows
 
+def current_team_stats(team, date, hist, priors, current_finished_count):
+    """Current model inputs for one team, including fading Championship prior."""
+    overall = weighted_stats(hist.get(team, []), date)
+    home = weighted_stats(hist.get(team, []), date, "H")
+    away = weighted_stats(hist.get(team, []), date, "A")
+
+    def blended(base, keys):
+        out = {k: base.get(k, np.nan) for k in keys}
+        if team in priors:
+            n = current_finished_count.get(team, 0)
+            blend = max(0.0, min(1.0, (10.0-n)/10.0))
+            pr = priors[team]
+            for k in keys:
+                cur = out.get(k, np.nan)
+                if pd.isna(cur): cur = pr[k]
+                out[k] = (1-blend)*float(cur) + blend*float(pr[k])
+        return out
+
+    return {
+        "overall": blended(overall, ["ppg","gf","ga","shots","sot"]),
+        "home": blended(home, ["ppg","gf","ga"]),
+        "away": blended(away, ["ppg","gf","ga"]),
+    }
+
+
+def build_power_rankings(model, neutral, teams, hist, priors, current_finished_count, date, standings):
+    """
+    Relative team-strength index from the same match model.
+    Each team is evaluated vs a neutral league-level opponent once at home and once away.
+    The strongest team's neutral-opponent xPts is set to 100; other teams scale proportionally.
+    """
+    classes = list(model.classes_)
+    ci = {c:i for i,c in enumerate(classes)}
+    raw = []
+    stand_map = {r["team"]: r for r in standings}
+
+    for team in teams:
+        st = current_team_stats(team, date, hist, priors, current_finished_count)
+
+        vh = neutral.copy()
+        for k in ["ppg","gf","ga","shots","sot"]:
+            val = st["overall"].get(k, np.nan)
+            if pd.notna(val): vh["H_"+k] = val
+        for k in ["ppg","gf","ga"]:
+            val = st["home"].get(k, np.nan)
+            if pd.notna(val): vh["HH_"+k] = val
+        ph = tempered_probs(model, vh)[0]
+        home_xpts = 3*float(ph[ci["H"]]) + float(ph[ci["D"]])
+
+        va = neutral.copy()
+        for k in ["ppg","gf","ga","shots","sot"]:
+            val = st["overall"].get(k, np.nan)
+            if pd.notna(val): va["A_"+k] = val
+        for k in ["ppg","gf","ga"]:
+            val = st["away"].get(k, np.nan)
+            if pd.notna(val): va["AA_"+k] = val
+        pa = tempered_probs(model, va)[0]
+        away_xpts = 3*float(pa[ci["A"]]) + float(pa[ci["D"]])
+
+        avg = (home_xpts + away_xpts) / 2.0
+        raw.append({
+            "team": team,
+            "neutralXPPG": avg,
+            "homeNeutralXPPG": home_xpts,
+            "awayNeutralXPPG": away_xpts,
+            "currentEPLRank": stand_map.get(team, {}).get("rank"),
+        })
+
+    raw.sort(key=lambda x:x["neutralXPPG"], reverse=True)
+    max_raw = max((x["neutralXPPG"] for x in raw), default=1.0) or 1.0
+    for i,x in enumerate(raw,1):
+        x["rank"] = i
+        x["score"] = round(100.0 * x["neutralXPPG"] / max_raw, 1)
+        x["neutralXPPG"] = round(x["neutralXPPG"], 3)
+        x["homeNeutralXPPG"] = round(x["homeNeutralXPPG"], 3)
+        x["awayNeutralXPPG"] = round(x["awayNeutralXPPG"], 3)
+    return raw
+
+
+def build_team_profiles(teams, matches, hist, priors, current_finished_count, date, power_rankings):
+    power_map = {r["team"]: r for r in power_rankings}
+    profiles = {}
+    for team in teams:
+        st = current_team_stats(team, date, hist, priors, current_finished_count)
+        finished = []
+        for m in matches:
+            if m["status"] != "FINISHED" or m["hg"] is None or m["ag"] is None:
+                continue
+            if team not in {m["home"],m["away"]}:
+                continue
+            home = m["home"] == team
+            gf = int(m["hg"] if home else m["ag"])
+            ga = int(m["ag"] if home else m["hg"])
+            result = "W" if gf > ga else "D" if gf == ga else "L"
+            finished.append({"date":m["date_str"],"opponent":m["away"] if home else m["home"],"venue":"H" if home else "A","gf":gf,"ga":ga,"result":result})
+        finished.sort(key=lambda x:x["date"], reverse=True)
+        recent = finished[:5]
+        profiles[team] = {
+            "recentResults": recent,
+            "modelStats": {
+                "ppg": round(float(st["overall"].get("ppg", np.nan)), 2) if pd.notna(st["overall"].get("ppg", np.nan)) else None,
+                "gf": round(float(st["overall"].get("gf", np.nan)), 2) if pd.notna(st["overall"].get("gf", np.nan)) else None,
+                "ga": round(float(st["overall"].get("ga", np.nan)), 2) if pd.notna(st["overall"].get("ga", np.nan)) else None,
+                "shots": round(float(st["overall"].get("shots", np.nan)), 2) if pd.notna(st["overall"].get("shots", np.nan)) else None,
+                "sot": round(float(st["overall"].get("sot", np.nan)), 2) if pd.notna(st["overall"].get("sot", np.nan)) else None,
+                "homePPG": round(float(st["home"].get("ppg", np.nan)), 2) if pd.notna(st["home"].get("ppg", np.nan)) else None,
+                "awayPPG": round(float(st["away"].get("ppg", np.nan)), 2) if pd.notna(st["away"].get("ppg", np.nan)) else None,
+            },
+            "powerRank": power_map.get(team, {}).get("rank"),
+            "powerScore": power_map.get(team, {}).get("score"),
+        }
+    return profiles
+
+
 def generate(payload):
     epl, champ = load_historical()
     model, neutral = fit_match_model(epl)
@@ -409,6 +524,9 @@ def generate(payload):
     future = [m for m in future if m["hg"] is None or m["ag"] is None]
 
     standings = build_standings(teams, matches)
+    snapshot_date = max([m["date"] for m in matches if m["status"]=="FINISHED"], default=pd.Timestamp.utcnow().tz_localize(None))
+    power_rankings = build_power_rankings(model, neutral, teams, hist, priors, finished_count, snapshot_date, standings)
+    team_profiles = build_team_profiles(teams, matches, hist, priors, finished_count, snapshot_date, power_rankings)
     games = {t:[] for t in teams}
     classes = list(model.classes_)
     ci = {c:i for i,c in enumerate(classes)}
@@ -458,6 +576,8 @@ def generate(payload):
         "games":games,
         "rankings":rankings,
         "standings":standings,
+        "powerRankings":power_rankings,
+        "teamProfiles":team_profiles,
         "promotionPriors": {t:{
             "championshipPPG":round(p["championship"]["ppg"],3),
             "mappedEPLPPG":round(p["ppg"],3)
