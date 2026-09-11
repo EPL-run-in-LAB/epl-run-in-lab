@@ -9,172 +9,144 @@
   gtag('js', new Date());
   gtag('config', 'G-2MHM6WELBT');
 </script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="EPL 승·무·패 확률, 기대 승점, 일정 난이도, 파워 랭킹과 확률의 이유를 데이터로 분석합니다." />
 <title>EPL Run-in Lab</title>
-<meta name="description" content="EPL 향후 일정의 승무패 확률, 기대 승점, 일정 난이도와 그 이유를 설명합니다.">
 <style>
-:root{--bg:#0b1220;--panel:#111827;--panel2:#1f2937;--line:#334155;--text:#f8fafc;--muted:#94a3b8;--good:#22c55e;--bad:#f87171;--accent:#38bdf8;--warn:#fbbf24}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans KR",sans-serif;line-height:1.55}
-.wrap{max-width:1180px;margin:auto;padding:28px 18px 64px} h1{margin:0 0 6px;font-size:30px} h2{font-size:20px;margin:0 0 14px} h3{font-size:16px;margin:0 0 8px}
-.sub,.muted{color:var(--muted)} .controls{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
-select,button{min-height:44px;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:9px;padding:9px 12px;font-size:15px}
-button.active{border-color:var(--accent);color:var(--accent)}
-.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;align-items:start}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:16px}
-.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:12px 0 18px}.metric{background:var(--panel2);border-radius:10px;padding:12px}.metric b{display:block;font-size:22px;margin-top:4px}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:9px 7px;border-bottom:1px solid var(--line);text-align:left}th{color:var(--muted);font-weight:600}
-.factor{padding:14px 0;border-bottom:1px solid var(--line)}.factor:last-child{border-bottom:0}
-.tag{display:inline-block;font-size:12px;font-weight:700;padding:3px 8px;border-radius:999px;margin-bottom:7px}
-.tag.good{color:var(--good);background:rgba(34,197,94,.10)}.tag.bad{color:var(--bad);background:rgba(248,113,113,.10)}
-.impact{font-weight:700;margin-top:8px}.impact.good{color:var(--good)}.impact.bad{color:var(--bad)}
-.prior{margin-top:14px;padding:12px;border-radius:10px;background:rgba(251,191,36,.08);color:#fde68a;border:1px solid rgba(251,191,36,.22)}
-.legend{font-size:12px;color:var(--muted);margin-top:14px}.ranknum{color:var(--accent);font-weight:700}.status{font-size:12px;color:var(--muted);margin-top:5px}
-.error{padding:14px;background:#3f1d24;border:1px solid #7f1d1d;border-radius:10px;color:#fecaca}
-@media(max-width:1000px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:860px){.grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr}.tablewrap{overflow-x:auto}}
+:root{
+  --bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;
+  --accent:#111827;--good:#0f766e;--bad:#b91c1c;--warn:#a16207;--topbar:rgba(255,255,255,.92);
+  --sidebar:#fff;--notice-bg:#fff7ed;--notice-text:#9a3412;--error-bg:#fef2f2;--error-text:#991b1b;
+  --shadow:0 12px 30px rgba(17,24,39,.08)
+}
+body.dark{
+  --bg:#0b1220;--panel:#111827;--text:#f3f4f6;--muted:#9ca3af;--line:#263244;--soft:#182235;
+  --accent:#f9fafb;--good:#5eead4;--bad:#fca5a5;--warn:#fbbf24;--topbar:rgba(17,24,39,.93);
+  --sidebar:#111827;--notice-bg:#2a1d0f;--notice-text:#fdba74;--error-bg:#32151a;--error-text:#fecaca;
+  --shadow:0 12px 30px rgba(0,0,0,.28)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif;line-height:1.55}
+button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;background:var(--topbar);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 18px}.menu-btn{border:0;background:transparent;color:var(--text);font-size:24px;width:38px;height:38px;border-radius:10px;cursor:pointer}.menu-btn:hover{background:var(--soft)}.brand{font-weight:900;letter-spacing:-.035em;font-size:20px}.brand span{color:var(--muted)}.top-actions{margin-left:auto;display:flex;align-items:center;gap:5px}.notice-btn{border:0;background:transparent;color:var(--muted);font-size:13px;font-weight:800;height:32px;padding:0 9px;border-radius:9px;cursor:pointer}.notice-btn:hover{background:var(--soft);color:var(--text)}
+.theme-toggle{width:46px;height:26px;border:0;border-radius:999px;background:#111827;padding:3px;display:inline-flex;align-items:center;justify-content:flex-start;cursor:pointer;transition:.2s}.switch-knob{width:20px;height:20px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;transition:.2s}.moon{width:10px;height:10px;border-radius:50%;background:#111827;position:relative}.moon:after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#fff;left:4px;top:-2px}body.dark .theme-toggle{background:#e5e7eb;justify-content:flex-end}body.dark .switch-knob{background:#111827}body.dark .moon{background:#fbbf24}body.dark .moon:after{display:none}
+.sidebar{position:fixed;left:0;top:64px;bottom:0;width:250px;background:var(--sidebar);border-right:1px solid var(--line);transform:translateX(-100%);transition:.22s;z-index:35;padding:16px}.sidebar.open{transform:translateX(0)}.overlay{display:none;position:fixed;inset:64px 0 0;background:rgba(0,0,0,.42);z-index:30}.overlay.show{display:block}.nav-label{font-size:11px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin:10px 10px 8px}.nav-btn{width:100%;border:0;background:transparent;color:var(--text);text-align:left;padding:11px 13px;border-radius:11px;cursor:pointer;font-weight:750;margin-bottom:4px}.nav-btn:hover{background:var(--soft)}.nav-btn.active{background:var(--accent);color:var(--bg)}
+.main{width:100%;padding:26px 18px 60px}.container{max-width:1180px;margin:0 auto}.page{display:none}.page.active{display:block}.hero{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:22px}.hero h1{font-size:32px;line-height:1.08;margin:0 0 7px;letter-spacing:-.045em}.hero p{margin:0;color:var(--muted)}.kicker{font-size:11px;font-weight:900;color:#4f46e5;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}body.dark .kicker{color:#a5b4fc}.status{font-size:12px;color:var(--muted);margin-top:6px}.controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}select,.seg{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:10px}select{padding:9px 11px;min-height:42px}.seg{display:flex;overflow:hidden}.seg button{border:0;background:transparent;color:var(--muted);padding:9px 11px;cursor:pointer}.seg button.active{background:var(--accent);color:var(--bg)}
+.grid{display:grid;gap:15px}.grid-4{grid-template-columns:repeat(4,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:18px;box-shadow:0 1px 2px rgba(17,24,39,.02)}.metric-label{font-size:12px;color:var(--muted);font-weight:800}.metric-value{font-size:27px;font-weight:900;letter-spacing:-.04em;margin-top:5px}.metric-sub{font-size:12px;color:var(--muted);margin-top:4px}.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:27px 0 11px}.section-head h2{font-size:19px;margin:0;letter-spacing:-.025em}.link-btn{border:0;background:transparent;color:#4f46e5;font-weight:850;cursor:pointer}body.dark .link-btn{color:#a5b4fc}
+.match{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:center;padding:8px 0 5px}.team-side{text-align:center}.team-name{font-size:21px;font-weight:900}.venue{font-size:11px;color:var(--muted);margin-top:2px;font-weight:800}.vs{color:#9ca3af;font-weight:900}.probs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:13px}.prob{background:var(--soft);border-radius:11px;padding:10px;text-align:center}.prob strong{display:block;font-size:21px}.prob span{font-size:11px;color:var(--muted)}
+.primary{border:0;background:var(--accent);color:var(--bg);border-radius:11px;padding:10px 13px;font-weight:850;cursor:pointer}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px 9px;border-bottom:1px solid var(--line);white-space:nowrap;text-align:left}th{font-size:11px;color:var(--muted);font-weight:800}.ranknum{font-weight:900}.good{color:var(--good)}.bad{color:var(--bad)}
+.fixture-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.fx{border:1px solid var(--line);border-radius:12px;padding:11px;background:var(--panel)}.fx small{display:block;color:var(--muted);margin-bottom:5px}.fx strong{font-size:13px}.fx .chance{font-size:11px;font-weight:850;margin-top:5px}.easy{border-left:4px solid var(--good)}.medium{border-left:4px solid var(--warn)}.hard{border-left:4px solid var(--bad)}
+.factor{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}.factor:last-child{border-bottom:0}.factor-title{font-weight:850}.factor p{margin:4px 0 0;color:var(--muted);font-size:13px;line-height:1.55}.impact{font-weight:900;white-space:nowrap}.legend{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.6}.prior{margin-top:13px;background:var(--notice-bg);color:var(--notice-text);border-radius:11px;padding:12px;font-size:12px;line-height:1.55}
+.power-help{font-size:13px;color:var(--muted);line-height:1.7}.power-row{display:grid;grid-template-columns:46px 1fr 90px 115px;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.bar{height:7px;background:var(--soft);border-radius:999px;overflow:hidden;margin-top:5px}.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}.power-head{display:grid;grid-template-columns:46px 1fr 90px 115px;gap:12px;padding-bottom:9px;border-bottom:1px solid var(--line);font-size:11px;color:var(--muted);font-weight:850}
+.results{display:flex;gap:5px;flex-wrap:wrap}.result-pill{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;background:var(--soft)}.result-pill.W{color:var(--good)}.result-pill.L{color:var(--bad)}.result-pill.D{color:var(--warn)}
+.notice-banner{display:flex;gap:10px;align-items:flex-start;background:var(--notice-bg);color:var(--notice-text);border-radius:13px;padding:12px 14px;margin-top:14px;font-size:12px;line-height:1.55}.notice-banner strong{display:block;color:var(--text);margin-bottom:2px}.error{background:var(--error-bg);color:var(--error-text);padding:13px;border-radius:12px;margin-bottom:15px}.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.modal-backdrop.show{display:flex}.modal{width:min(570px,100%);background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:var(--shadow)}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;font-size:19px}.modal-close{border:0;background:transparent;color:var(--text);font-size:22px;cursor:pointer}.modal p{color:var(--muted);font-size:13px;line-height:1.7}.warning-line{background:var(--notice-bg);color:var(--notice-text);border-radius:11px;padding:11px;font-size:12px;line-height:1.6}.method-list{display:grid;gap:10px}.method-item{padding:13px;border:1px solid var(--line);border-radius:12px}.method-item b{display:block;margin-bottom:4px}.method-item span{font-size:12px;color:var(--muted)}
+@media(min-width:1100px){.sidebar.open~.main{margin-left:250px;width:calc(100% - 250px)}}
+@media(max-width:900px){.grid-4,.grid-3,.grid-2{grid-template-columns:1fr 1fr}.fixture-strip{grid-template-columns:1fr 1fr}.hero{align-items:flex-start;flex-direction:column}.power-row,.power-head{grid-template-columns:38px 1fr 70px 95px}}
+@media(max-width:620px){.main{padding:20px 12px 50px}.brand{font-size:18px}.grid-4,.grid-3,.grid-2{grid-template-columns:1fr}.match{grid-template-columns:1fr}.vs{display:none}.probs{gap:6px}.fixture-strip{grid-template-columns:1fr}.power-row,.power-head{grid-template-columns:34px 1fr 62px 82px;font-size:12px}.top-actions{gap:1px}.hero h1{font-size:28px}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>EPL Run-in Lab</h1>
-<div class="sub">향후 경기 승·무·패 확률, 기대 승점, 일정 난이도와 그 이유</div>
-<div id="status" class="status">데이터 불러오는 중…</div>
-
-<div class="controls">
-<select id="team" aria-label="팀 선택"></select>
-<button type="button" data-h="3">다음 3경기</button>
-<button type="button" data-h="5" class="active">다음 5경기</button>
-<button type="button" data-h="10">다음 10경기</button>
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
+  <div class="brand">EPL Run-in <span>Lab</span></div>
+  <div class="top-actions">
+    <button class="notice-btn" id="noticeBtn">주의사항</button>
+    <button class="theme-toggle" id="themeToggle" aria-label="다크모드로 전환" title="다크모드로 전환"><span class="switch-knob"><span class="moon"></span></span></button>
+  </div>
+</header>
+<div class="sidebar" id="sidebar">
+  <div class="nav-label">Menu</div>
+  <button class="nav-btn active" data-page="home">🏠 홈</button>
+  <button class="nav-btn" data-page="prediction">🎯 경기 예측</button>
+  <button class="nav-btn" data-page="schedule">📅 일정 난이도</button>
+  <button class="nav-btn" data-page="power">⚡ 파워 랭킹</button>
+  <button class="nav-btn" data-page="standings">🏆 EPL 순위</button>
+  <button class="nav-btn" data-page="team">🔍 팀 분석</button>
+  <div class="nav-label">About</div>
+  <button class="nav-btn" data-page="model">🧪 모델 소개</button>
 </div>
-
+<div class="overlay" id="overlay"></div>
+<main class="main"><div class="container">
 <div id="error"></div>
 
-<div class="grid">
-<div>
-<section class="card">
-<h2 id="teamTitle"></h2>
-<div class="metrics">
-<div class="metric"><span class="muted">현재 EPL 순위</span><b id="leagueRank">-</b></div>
-<div class="metric"><span class="muted">현재 승점</span><b id="leaguePts">-</b></div>
-<div class="metric"><span class="muted">기대 승점</span><b id="xp">-</b></div>
-<div class="metric"><span class="muted">경기당 기대 승점</span><b id="xppg">-</b></div>
-<div class="metric"><span class="muted">일정 쉬움 순위</span><b id="rank">-</b></div>
-</div>
-<div class="tablewrap"><table>
-<thead><tr><th>날짜</th><th>상대</th><th>H/A</th><th>승</th><th>무</th><th>패</th><th>xPts</th></tr></thead>
-<tbody id="games"></tbody>
-</table></div>
+<section class="page active" id="home">
+  <div class="hero"><div><div class="kicker">EPL Dashboard</div><h1>EPL의 현재와 앞으로를 한눈에</h1><p>승·무·패 확률, 기대 승점, 일정 난이도와 그 이유</p><div class="status" id="status">데이터 불러오는 중…</div></div><div class="controls"><select class="team-select"></select><div class="seg horizon"><button data-h="3">3경기</button><button class="active" data-h="5">5경기</button><button data-h="10">10경기</button></div></div></div>
+  <div class="grid grid-4">
+    <div class="card"><div class="metric-label">현재 EPL 순위</div><div class="metric-value" id="homeRank">-</div><div class="metric-sub" id="homePoints">-</div></div>
+    <div class="card"><div class="metric-label">향후 기대 승점</div><div class="metric-value" id="homeXPts">-</div><div class="metric-sub" id="homeXPPG">-</div></div>
+    <div class="card"><div class="metric-label">일정 난이도 순위</div><div class="metric-value" id="homeScheduleRank">-</div><div class="metric-sub">xPts가 높을수록 쉬운 편</div></div>
+    <div class="card"><div class="metric-label">최근 결과</div><div class="results" id="homeRecent">-</div><div class="metric-sub">현재 시즌 최근 경기</div></div>
+  </div>
+  <div class="section-head"><h2>다음 경기</h2><button class="link-btn" data-go="prediction">자세히 분석하기 →</button></div>
+  <div class="card" id="homeNextMatch"></div>
+  <div class="notice-banner"><div>⚠</div><div><strong>예측 해석 시 참고하세요</strong>확률은 통계 모델의 추정치입니다. 부상·로테이션·전술 변화처럼 실시간으로 완전히 반영되지 않는 변수가 있으며, 일부 현재 시즌 세부 지표는 무료 데이터의 한계로 최신 결과와 기존 확보 지표를 함께 사용합니다.</div></div>
+  <div class="section-head"><h2>향후 일정 미리보기</h2><button class="link-btn" data-go="schedule">전체 일정 난이도 →</button></div>
+  <div class="fixture-strip" id="homeFixtures"></div>
 </section>
 
-<section class="card">
-<h2 id="whyTitle">왜 이런 확률인가?</h2>
-<div id="matchSummary" class="muted" style="margin-bottom:10px"></div>
-<div id="factors"></div>
-<div id="prior"></div>
-<div class="legend">각 %p 수치는 해당 요인만 리그 중립 수준으로 바꿔 모델을 다시 계산했을 때 선택한 팀의 승리 확률이 얼마나 달라지는지를 뜻합니다. 여러 요인은 서로 영향을 주므로 단순 합산값과 최종 확률은 정확히 일치하지 않을 수 있습니다.</div>
+<section class="page" id="prediction">
+  <div class="hero"><div><div class="kicker">Match Prediction</div><h1>경기 예측</h1><p>확률뿐 아니라 왜 그런 확률이 나왔는지도 설명합니다.</p></div><div class="controls"><select class="team-select"></select></div></div>
+  <div id="predictionContent"></div>
 </section>
-</div>
 
-<aside class="card">
-<h2>일정 난이도 순위</h2>
-<div class="muted" style="margin-bottom:10px">기대 승점이 높을수록 현재 모델 기준으로 상대적으로 쉬운 일정입니다.</div>
-<table><thead><tr><th>#</th><th>팀</th><th>xPts</th><th>xPPG</th></tr></thead><tbody id="ranking"></tbody></table>
-</aside>
-</div>
-
-<section class="card">
-<h2>현재 EPL 순위</h2>
-<div class="muted" style="margin-bottom:10px">현재 시즌 실제 경기 결과를 기준으로 계산한 순위입니다.</div>
-<div class="tablewrap"><table>
-<thead><tr><th>#</th><th>팀</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실차</th><th>승점</th></tr></thead>
-<tbody id="leagueTable"></tbody>
-</table></div>
+<section class="page" id="schedule">
+  <div class="hero"><div><div class="kicker">Fixture Difficulty</div><h1>일정 난이도</h1><p>향후 일정에서 기대할 수 있는 승점을 기준으로 20개 팀을 비교합니다.</p></div><div class="controls"><select class="team-select"></select><div class="seg horizon"><button data-h="3">3경기</button><button class="active" data-h="5">5경기</button><button data-h="10">10경기</button></div></div></div>
+  <div class="grid grid-2"><div class="card"><h3 style="margin-top:0">일정 난이도 순위</h3><div class="tablewrap"><table><thead><tr><th>#</th><th>팀</th><th>xPts</th><th>xPPG</th></tr></thead><tbody id="scheduleTable"></tbody></table></div></div><div><div class="section-head" style="margin-top:0"><h2 id="scheduleTeamTitle">향후 일정</h2></div><div class="fixture-strip" id="scheduleFixtures" style="grid-template-columns:1fr"></div></div></div>
 </section>
-</div>
+
+<section class="page" id="power">
+  <div class="hero"><div><div class="kicker">Power Ranking</div><h1>파워 랭킹</h1><p>실제 순위가 아니라, 같은 조건에서 붙었을 때 모델이 어느 팀을 더 강하게 보는지 비교합니다.</p></div></div>
+  <div class="card" style="margin-bottom:15px"><div class="metric-label">Power Score는 어떻게 계산하나요?</div><div style="font-size:18px;font-weight:900;margin-top:6px">리그 평균 수준의 가상 상대와 홈·원정에서 각각 붙는다고 가정합니다.</div><div class="power-help">현재 예측 모델이 각 팀의 기대 승점(xPts)을 계산한 뒤 홈·원정 값을 평균냅니다. 그 시점에서 가장 높은 팀을 100으로 두고 다른 팀을 상대적으로 환산한 값이 Power Score입니다. 최근 승점, 득점·실점, 슈팅·유효슈팅, 홈·원정 경기력이 같은 예측 모델을 통해 반영됩니다. 따라서 실제 승점이나 <b>현재 EPL 순위</b>와는 다른 지표입니다.</div></div>
+  <div class="card"><div class="power-head"><span>파워</span><span>팀</span><span>점수</span><span>현재 EPL 순위</span></div><div id="powerRows"></div></div>
+</section>
+
+<section class="page" id="standings">
+  <div class="hero"><div><div class="kicker">League Table</div><h1>EPL 순위</h1><p>현재 시즌 실제 경기 결과 기준 순위입니다.</p></div></div>
+  <div class="card tablewrap"><table><thead><tr><th>#</th><th>팀</th><th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th></tr></thead><tbody id="standingsTable"></tbody></table></div>
+</section>
+
+<section class="page" id="team">
+  <div class="hero"><div><div class="kicker">Team Profile</div><h1 id="teamPageTitle">팀 분석</h1><p>현재 상태와 향후 일정을 한 페이지에서 봅니다.</p></div><div class="controls"><select class="team-select"></select></div></div>
+  <div class="grid grid-4"><div class="card"><div class="metric-label">현재 EPL 순위</div><div class="metric-value" id="teamRank">-</div></div><div class="card"><div class="metric-label">현재 승점</div><div class="metric-value" id="teamPts">-</div></div><div class="card"><div class="metric-label">Power Score</div><div class="metric-value" id="teamPower">-</div><div class="metric-sub" id="teamPowerRank">-</div></div><div class="card"><div class="metric-label">향후 5경기 xPts</div><div class="metric-value" id="teamFutureXPts">-</div></div></div>
+  <div class="section-head"><h2>모델이 보는 현재 경기력</h2></div><div class="grid grid-3" id="teamStats"></div>
+  <div class="section-head"><h2>최근 결과</h2></div><div class="card"><div class="results" id="teamRecent"></div><div id="recentDetail" class="metric-sub" style="margin-top:10px"></div></div>
+  <div class="section-head"><h2>향후 5경기</h2></div><div class="fixture-strip" id="teamFixtures"></div>
+</section>
+
+<section class="page" id="model">
+  <div class="hero"><div><div class="kicker">Methodology</div><h1>모델 소개</h1><p>예측이 어떤 데이터를 보고, 왜 이런 확률을 만드는지 설명합니다.</p></div></div>
+  <div class="grid grid-2"><div class="card"><h3>예측에 사용하는 정보</h3><div class="method-list"><div class="method-item"><b>최근 경기 흐름</b><span>승점, 득점, 실점을 최근 경기일수록 더 큰 비중으로 반영합니다.</span></div><div class="method-item"><b>공격 기회 창출</b><span>확보 가능한 슈팅과 유효슈팅 정보를 사용합니다.</span></div><div class="method-item"><b>홈·원정 경기력</b><span>전체 성적과 별도로 홈/원정 성적을 따로 계산합니다.</span></div></div></div><div class="card"><h3>확률의 이유는 어떻게 계산하나요?</h3><p class="power-help">각 요인을 리그 중립 수준으로 되돌린 뒤 모델을 다시 계산합니다. 이때 선택한 팀의 승리 확률이 얼마나 달라지는지를 %p로 보여줍니다. 요인 간 상호작용이 있으므로 각 효과를 단순히 더한 값이 최종 확률과 정확히 일치하지는 않습니다.</p><h3 style="margin-top:20px">승격팀은?</h3><p class="power-help">EPL 표본이 적은 초반에는 직전 Championship 시즌 기록을 과거 승격팀 사례로 보수적으로 변환한 초기 전력값을 함께 사용하고, EPL 경기가 쌓이면 첫 10경기 동안 점차 영향이 줄어듭니다.</p></div></div>
+</section>
+</div></main>
+
+<div class="modal-backdrop" id="noticeModal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h3>예측 데이터 주의사항</h3><button class="modal-close" id="noticeClose" aria-label="닫기">×</button></div><p>EPL Run-in Lab의 승·무·패 확률과 기대 승점은 과거 및 현재 경기 데이터를 이용한 통계 모델의 추정치입니다. 팀 전력, 부상, 퇴장, 로테이션, 전술 변화처럼 모델에 실시간으로 완전히 반영되지 않는 변수가 존재할 수 있습니다.</p><p>현재 시즌의 일부 세부 경기 지표는 무료 데이터 소스에서 즉시 제공되지 않을 수 있어 최신 결과 데이터와 기존에 확보된 지표가 함께 사용될 수 있습니다.</p><div class="warning-line">이 수치는 경기 결과를 보장하거나 베팅을 권유하기 위한 정보가 아니라 EPL 일정과 경기 흐름을 데이터 관점에서 비교하기 위한 참고 자료입니다.</div></div></div>
 
 <script>
-let D=null, H=5;
-const team=document.getElementById('team');
-const pct=x=>(x*100).toFixed(1)+'%';
-
-function render(){
-  if(!D) return;
-  const t=team.value;
-  const rs=D.rankings[String(H)] || [];
-  const me=rs.find(x=>x.team===t);
-  const gs=(D.games[t] || []).slice(0,H);
-  document.getElementById('teamTitle').textContent=t+' 향후 '+H+'경기';
-  const st=(D.standings || []).find(x=>x.team===t);
-  document.getElementById('leagueRank').textContent=st?st.rank+'위 / '+D.standings.length:'-';
-  document.getElementById('leaguePts').textContent=st?st.points+'점':'-';
-  document.getElementById('xp').textContent=me?me.xpts.toFixed(2)+' / '+(H*3):'-';
-  document.getElementById('xppg').textContent=me?me.xppg.toFixed(2):'-';
-  document.getElementById('rank').textContent=me?me.rank+'위 / '+rs.length:'-';
-
-  document.getElementById('games').innerHTML=gs.map(g=>`<tr>
-    <td>${g.date.slice(5)}</td><td>${g.opponent}</td><td>${g.venue}</td>
-    <td>${pct(g.win)}</td><td>${pct(g.draw)}</td><td>${pct(g.loss)}</td><td>${g.xpts.toFixed(2)}</td>
-  </tr>`).join('');
-
-  document.getElementById('ranking').innerHTML=rs.map(r=>`<tr>
-    <td class="ranknum">${r.rank}</td><td>${r.team}</td><td>${r.xpts.toFixed(2)}</td><td>${r.xppg.toFixed(2)}</td>
-  </tr>`).join('');
-
-  document.getElementById('leagueTable').innerHTML=(D.standings || []).map(r=>`<tr>
-    <td class="ranknum">${r.rank}</td><td>${r.team}</td><td>${r.played}</td><td>${r.won}</td><td>${r.drawn}</td><td>${r.lost}</td><td>${r.gd>0?'+':''}${r.gd}</td><td><b>${r.points}</b></td>
-  </tr>`).join('');
-
-  if(!gs.length){
-    document.getElementById('whyTitle').textContent='예정된 경기가 없습니다';
-    document.getElementById('matchSummary').textContent='';
-    document.getElementById('factors').innerHTML='';
-    document.getElementById('prior').innerHTML='';
-    return;
-  }
-
-  const g=gs[0];
-  document.getElementById('whyTitle').textContent='왜 '+t+'의 승리 확률이 '+pct(g.win)+'인가?';
-  const homeName=g.venue==='H'?t:g.opponent;
-  const awayName=g.venue==='H'?g.opponent:t;
-  document.getElementById('matchSummary').textContent=
-    `다음 경기: ${homeName} vs ${awayName} · ${g.date} · ${t} 기준 승 ${pct(g.win)} / 무 ${pct(g.draw)} / 패 ${pct(g.loss)}`;
-
-  document.getElementById('factors').innerHTML=(g.details || []).map((d,i)=>`
-    <div class="factor">
-      <span class="tag ${d.favorable?'good':'bad'}">${d.favorable?t+'에 유리':t+'에 불리'}</span>
-      <h3>${i+1}. ${d.title}</h3>
-      <div>${d.body}</div>
-      <div class="impact ${d.favorable?'good':'bad'}">→ ${t} 승리 확률 ${d.impact>=0?'+':''}${d.impact.toFixed(1)}%p</div>
-    </div>`).join('');
-
-  document.getElementById('prior').innerHTML=g.promotionNote?
-    `<div class="prior"><b>승격팀 전력 보정</b><br>${g.promotionNote}</div>`:'';
-}
-
-async function init(){
-  try{
-    const res=await fetch('./data/predictions.json?ts='+Date.now(), {cache:'no-store'});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    D=await res.json();
-    team.innerHTML='';
-    Object.keys(D.games).sort().forEach(t=>{
-      const o=document.createElement('option'); o.value=t; o.textContent=t; team.appendChild(o);
-    });
-    team.value=Object.prototype.hasOwnProperty.call(D.games,'Arsenal')?'Arsenal':Object.keys(D.games).sort()[0];
-    document.getElementById('status').textContent='데이터 기준: '+(D.asOf || '알 수 없음')+' · 자동 갱신';
-    document.getElementById('error').innerHTML='';
-    render();
-  }catch(e){
-    document.getElementById('status').textContent='데이터를 불러오지 못했습니다.';
-    document.getElementById('error').innerHTML='<div class="error">predictions.json을 불러올 수 없습니다. GitHub Pages에서 열었는지, 자동 업데이트 작업이 성공했는지 확인하세요.</div>';
-  }
-}
-
-document.querySelectorAll('button[data-h]').forEach(b=>b.addEventListener('click',()=>{
-  H=+b.dataset.h;
-  document.querySelectorAll('button[data-h]').forEach(x=>x.classList.toggle('active',x===b));
-  render();
-}));
-team.addEventListener('change',render);
+let D=null,H=5,selectedTeam='Arsenal';
+const pct=x=>Number.isFinite(x)?(x*100).toFixed(1)+'%':'-';
+const fmt=x=>Number.isFinite(x)?x.toFixed(2):'-';
+const $=id=>document.getElementById(id);
+function displayTeam(n){return n==="Nott'm Forest"||n==='Nottingham Forest'?'Nottingham':n}
+function page(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(innerWidth<1100)setSidebar(false);scrollTo({top:0,behavior:'smooth'});renderAll()}
+function setSidebar(v){$('sidebar').classList.toggle('open',v);$('overlay').classList.toggle('show',v&&innerWidth<1100)}
+$('menuBtn').onclick=()=>setSidebar(!$('sidebar').classList.contains('open'));$('overlay').onclick=()=>setSidebar(false);if(innerWidth>=1100)setSidebar(true);
+document.querySelectorAll('.nav-btn[data-page]').forEach(b=>b.onclick=()=>page(b.dataset.page));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>page(b.dataset.go));
+const themeToggle=$('themeToggle');if(localStorage.getItem('runin-theme')==='dark')document.body.classList.add('dark');function syncTheme(){const d=document.body.classList.contains('dark');themeToggle.title=d?'라이트모드로 전환':'다크모드로 전환';themeToggle.setAttribute('aria-label',themeToggle.title)}syncTheme();themeToggle.onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('runin-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()};
+function notice(v){$('noticeModal').classList.toggle('show',v);$('noticeModal').setAttribute('aria-hidden',v?'false':'true')}$('noticeBtn').onclick=()=>notice(true);$('noticeClose').onclick=()=>notice(false);$('noticeModal').onclick=e=>{if(e.target===$('noticeModal'))notice(false)};addEventListener('keydown',e=>{if(e.key==='Escape')notice(false)});
+function syncControls(){document.querySelectorAll('.team-select').forEach(s=>{s.value=selectedTeam});document.querySelectorAll('.horizon button').forEach(b=>b.classList.toggle('active',+b.dataset.h===H))}
+document.querySelectorAll('.horizon button').forEach(b=>b.onclick=()=>{H=+b.dataset.h;syncControls();renderAll()});document.querySelectorAll('.team-select').forEach(s=>s.onchange=()=>{selectedTeam=s.value;syncControls();renderAll()});
+function standing(t){return (D?.standings||[]).find(x=>x.team===t)}function ranking(t,h=H){return (D?.rankings?.[String(h)]||[]).find(x=>x.team===t)}function profile(t){return D?.teamProfiles?.[t]||{}}function power(t){return (D?.powerRankings||[]).find(x=>x.team===t)}
+function recentPills(arr){if(!arr?.length)return '<span class="metric-sub">현재 시즌 결과 없음</span>';return arr.map(r=>`<span class="result-pill ${r.result}" title="${r.date} ${displayTeam(r.opponent)} ${r.gf}-${r.ga}">${r.result}</span>`).join('')}
+function fixtureClass(win){return win>=.58?'easy':win<.40?'hard':'medium'}
+function fixtureCards(gs){if(!gs?.length)return '<div class="metric-sub">예정된 경기가 없습니다.</div>';return gs.map(g=>`<div class="fx ${fixtureClass(g.win)}"><small>${g.date.slice(5)} · ${g.venue}</small><strong>${displayTeam(g.opponent)}</strong><div class="chance">승 ${pct(g.win)} · xPts ${fmt(g.xpts)}</div></div>`).join('')}
+function matchCard(g,t){if(!g)return '<div class="metric-sub">예정된 경기가 없습니다.</div>';const home=g.venue==='H'?t:g.opponent,away=g.venue==='H'?g.opponent:t;return `<div class="match"><div class="team-side"><div class="team-name">${displayTeam(home)}</div><div class="venue">HOME</div></div><div class="vs">VS</div><div class="team-side"><div class="team-name">${displayTeam(away)}</div><div class="venue">AWAY</div></div></div><div class="probs"><div class="prob"><strong>${pct(g.win)}</strong><span>${displayTeam(t)} 승</span></div><div class="prob"><strong>${pct(g.draw)}</strong><span>무승부</span></div><div class="prob"><strong>${pct(g.loss)}</strong><span>${displayTeam(t)} 패</span></div></div>`}
+function renderHome(){const t=selectedTeam,st=standing(t),r=ranking(t),gs=(D.games?.[t]||[]).slice(0,H),p=profile(t);$('homeRank').textContent=st?st.rank+'위':'-';$('homePoints').textContent=st?`${st.played}경기 · 승점 ${st.points}`:'-';$('homeXPts').textContent=r?fmt(r.xpts):'-';$('homeXPPG').textContent=r?`경기당 ${fmt(r.xppg)}점`:'-';$('homeScheduleRank').textContent=r?`${r.rank}위 / ${(D.rankings?.[String(H)]||[]).length}`:'-';$('homeRecent').innerHTML=recentPills(p.recentResults);$('homeNextMatch').innerHTML=matchCard(gs[0],t);$('homeFixtures').innerHTML=fixtureCards(gs)}
+function renderPrediction(){const t=selectedTeam,g=(D.games?.[t]||[])[0];if(!g){$('predictionContent').innerHTML='<div class="card">예정된 경기가 없습니다.</div>';return}const home=g.venue==='H'?t:g.opponent,away=g.venue==='H'?g.opponent:t;const factors=(g.details||[]).map(d=>`<div class="factor"><div><div class="factor-title">${d.title}</div><p>${d.body}</p></div><div class="impact ${d.favorable?'good':'bad'}">${d.impact>=0?'+':''}${Number(d.impact).toFixed(1)}%p</div></div>`).join('');$('predictionContent').innerHTML=`<div class="grid grid-2"><div class="card">${matchCard(g,t)}</div><div class="card"><div class="metric-label">모델 해석</div><div style="font-size:24px;font-weight:900;margin-top:7px">${displayTeam(t)} 승 ${pct(g.win)}</div><p class="power-help">${displayTeam(home)} vs ${displayTeam(away)}에서 모델이 계산한 선택 팀 기준 확률입니다. 아래에서 어떤 요소가 이 확률을 올리고 내렸는지 확인할 수 있습니다.</p></div></div><div class="section-head"><h2>왜 ${displayTeam(t)}의 승리 확률이 ${pct(g.win)}인가?</h2></div><div class="card">${factors||'<div class="metric-sub">설명 데이터가 없습니다.</div>'}${g.promotionNote?`<div class="prior"><b>승격팀 전력 보정</b><br>${g.promotionNote}</div>`:''}<div class="legend">각 %p는 해당 요인만 리그 중립 수준으로 바꿔 다시 계산했을 때 선택한 팀의 승리 확률이 얼마나 달라지는지를 뜻합니다. 여러 요인은 서로 영향을 주므로 단순 합산값과 최종 확률은 정확히 일치하지 않을 수 있습니다.</div></div>`}
+function renderSchedule(){const rr=D.rankings?.[String(H)]||[];$('scheduleTable').innerHTML=rr.map(r=>`<tr><td class="ranknum">${r.rank}</td><td>${displayTeam(r.team)}</td><td>${fmt(r.xpts)}</td><td>${fmt(r.xppg)}</td></tr>`).join('');$('scheduleTeamTitle').textContent=`${displayTeam(selectedTeam)} 향후 ${H}경기`;$('scheduleFixtures').innerHTML=fixtureCards((D.games?.[selectedTeam]||[]).slice(0,H))}
+function renderPower(){const rows=D.powerRankings||[];$('powerRows').innerHTML=rows.length?rows.map(r=>`<div class="power-row"><b>${r.rank}</b><div><b>${displayTeam(r.team)}</b><div class="bar"><i style="width:${Math.max(0,Math.min(100,r.score))}%"></i></div><div class="metric-sub">중립 상대 xPts ${Number(r.neutralXPPG).toFixed(2)}</div></div><strong>${Number(r.score).toFixed(1)}</strong><span>${r.currentEPLRank?r.currentEPLRank+'위':'-'}</span></div>`).join(''):'<div class="metric-sub" style="padding:14px 0">새 update_predictions.py로 자동 업데이트를 한 번 실행하면 파워 랭킹이 생성됩니다.</div>'}
+function renderStandings(){$('standingsTable').innerHTML=(D.standings||[]).map(r=>`<tr><td class="ranknum">${r.rank}</td><td><b>${displayTeam(r.team)}</b></td><td>${r.played}</td><td>${r.won}</td><td>${r.drawn}</td><td>${r.lost}</td><td>${r.gd>0?'+':''}${r.gd}</td><td><b>${r.points}</b></td></tr>`).join('')}
+function renderTeam(){const t=selectedTeam,st=standing(t),pr=power(t),pf=profile(t),r5=ranking(t,5),ms=pf.modelStats||{};$('teamPageTitle').textContent=displayTeam(t);$('teamRank').textContent=st?st.rank+'위':'-';$('teamPts').textContent=st?st.points:'-';$('teamPower').textContent=pr?Number(pr.score).toFixed(1):'-';$('teamPowerRank').textContent=pr?`파워 랭킹 ${pr.rank}위`:'자동 업데이트 후 표시';$('teamFutureXPts').textContent=r5?fmt(r5.xpts):'-';const stats=[['최근 가중 PPG',ms.ppg],['최근 가중 득점',ms.gf],['최근 가중 실점',ms.ga],['슈팅',ms.shots],['유효슈팅',ms.sot],['홈 / 원정 PPG',ms.homePPG!=null&&ms.awayPPG!=null?`${ms.homePPG.toFixed(2)} / ${ms.awayPPG.toFixed(2)}`:null]];$('teamStats').innerHTML=stats.map(([a,b])=>`<div class="card"><div class="metric-label">${a}</div><div class="metric-value">${b==null?'-':typeof b==='number'?b.toFixed(2):b}</div></div>`).join('');$('teamRecent').innerHTML=recentPills(pf.recentResults);$('recentDetail').textContent=(pf.recentResults||[]).map(r=>`${r.date.slice(5)} ${r.venue} ${displayTeam(r.opponent)} ${r.gf}-${r.ga}`).join(' · ');$('teamFixtures').innerHTML=fixtureCards((D.games?.[t]||[]).slice(0,5))}
+function renderAll(){if(!D)return;syncControls();renderHome();renderPrediction();renderSchedule();renderPower();renderStandings();renderTeam()}
+async function init(){try{const res=await fetch('./data/predictions.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);D=await res.json();const teams=Object.keys(D.games||{}).sort((a,b)=>displayTeam(a).localeCompare(displayTeam(b),'en'));document.querySelectorAll('.team-select').forEach(s=>{s.innerHTML=teams.map(t=>`<option value="${t}">${displayTeam(t)}</option>`).join('')});selectedTeam=teams.includes('Arsenal')?'Arsenal':teams[0];$('status').textContent='데이터 기준: '+(D.asOf||'알 수 없음')+' · 자동 갱신';$('error').innerHTML='';renderAll()}catch(e){$('status').textContent='데이터를 불러오지 못했습니다.';$('error').innerHTML='<div class="error">predictions.json을 불러올 수 없습니다. GitHub Pages 배포와 Actions 실행 상태를 확인하세요.</div>'}}
 init();
 </script>
 </body>
