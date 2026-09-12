@@ -661,8 +661,26 @@ def fmtp(x):
 def fmt2(x):
     return f"{float(x):.2f}"
 
-def page_shell(title, description, canonical_path, body, active=""):
+def page_shell(title, description, canonical_path, body, active="", schema_name=None):
     canonical = SITE_URL + canonical_path
+    page_name = schema_name or title.split(" | ")[0]
+    breadcrumb_items = [
+        {"@type":"ListItem","position":1,"name":"EPL Run-in Lab","item":SITE_URL + "/"}
+    ]
+    if canonical_path != "/":
+        breadcrumb_items.append({"@type":"ListItem","position":2,"name":page_name,"item":canonical})
+    structured = {
+        "@context":"https://schema.org",
+        "@graph":[
+            {"@type":"WebSite","@id":SITE_URL+"/#website","url":SITE_URL+"/","name":"EPL Run-in Lab",
+             "description":"EPL 경기 예측, 일정 난이도, 기대 승점과 파워 랭킹을 데이터로 분석합니다.",
+             "inLanguage":["ko","en"]},
+            {"@type":"WebPage","@id":canonical+"#webpage","url":canonical,"name":page_name,
+             "description":description,"isPartOf":{"@id":SITE_URL+"/#website"},"inLanguage":"ko-KR"},
+            {"@type":"BreadcrumbList","itemListElement":breadcrumb_items}
+        ]
+    }
+    structured_json = json.dumps(structured, ensure_ascii=False).replace("</", "<\\/")
     nav = [
         ("홈","/"),("경기 예측","/predictions/"),("일정 난이도","/fixture-difficulty/"),
         ("파워 랭킹","/power-ranking/"),("EPL 순위","/standings/"),("팀 분석","/teams/"),
@@ -685,6 +703,7 @@ def page_shell(title, description, canonical_path, body, active=""):
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{canonical}">
 <meta name="twitter:card" content="summary">
+<script type="application/ld+json">{structured_json}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
 <style>
@@ -732,20 +751,20 @@ def generate_static_pages(result):
     body=f"""<h1>EPL 경기 승률 예측</h1><p class="lead">현재 데이터를 기준으로 각 팀의 다음 경기 승·무·패 확률과 기대 승점(xPts)을 비교합니다. 팀별 페이지에서는 확률이 왜 그렇게 계산됐는지도 확인할 수 있습니다.</p>
 <button class="share" onclick="sharePage('EPL 다음 경기 승률 예측')">예측 공유하기</button>
 <h2>팀별 다음 경기</h2><table><thead><tr><th>팀</th><th>날짜</th><th>상대</th><th>승</th><th>무</th><th>패</th><th>xPts</th></tr></thead><tbody>{''.join(rows)}</tbody></table>"""
-    write_page("predictions", page_shell("EPL 경기 승률 예측·기대 승점 | EPL Run-in Lab","EPL 다음 경기의 승·무·패 확률과 기대 승점을 데이터 모델로 분석합니다.","/predictions/",body,"/predictions/"))
+    write_page("predictions", page_shell("EPL 경기 예측·승률·기대 승점 | EPL Run-in Lab","프리미어리그(EPL) 다음 경기의 승·무·패 확률, 승률과 기대 승점(xPts)을 데이터 모델로 비교합니다.","/predictions/",body,"/predictions/"))
 
     # Fixture difficulty
     rr=rankings.get("5",[])
     rows="".join(f"<tr><td>{r['rank']}</td><td><a href='{SITE_URL}/teams/{slugify_team(r['team'])}/'>{esc(r['team'])}</a></td><td><b>{fmt2(r['xpts'])}</b></td><td>{fmt2(r['xppg'])}</td></tr>" for r in rr)
     body=f"""<h1>EPL 일정 난이도</h1><p class="lead">향후 5경기에서 모델이 예상하는 기대 승점이 높을수록 상대적으로 유리한 일정으로 평가합니다. 단순 상대 순위가 아니라 경기별 승·무·패 확률을 합산합니다.</p>
 <button class="share" onclick="sharePage('EPL 향후 5경기 일정 난이도')">순위 공유하기</button><h2>향후 5경기</h2><table><thead><tr><th>#</th><th>팀</th><th>xPts</th><th>xPPG</th></tr></thead><tbody>{rows}</tbody></table>"""
-    write_page("fixture-difficulty",page_shell("EPL 일정 난이도 순위 | 향후 5경기 | EPL Run-in Lab","EPL 20개 팀의 향후 5경기 일정 난이도를 모델 기대 승점으로 비교합니다.","/fixture-difficulty/",body,"/fixture-difficulty/"))
+    write_page("fixture-difficulty",page_shell("EPL 일정 난이도·남은 일정 | 향후 5경기 | EPL Run-in Lab","프리미어리그(EPL) 20개 팀의 향후 5경기 일정 난이도와 남은 일정을 기대 승점(xPts)으로 비교합니다.","/fixture-difficulty/",body,"/fixture-difficulty/"))
 
     # Power ranking
     rows="".join(f"<tr><td>{r['rank']}</td><td><a href='{SITE_URL}/teams/{slugify_team(r['team'])}/'>{esc(r['team'])}</a></td><td><b>{r['score']:.1f}</b></td><td>{r.get('currentEPLRank') or '-'}</td><td>{r['neutralXPPG']:.2f}</td></tr>" for r in powers)
     body=f"""<h1>EPL 파워 랭킹</h1><p class="lead">현재 리그 순위와 별개로, 같은 리그 평균 수준의 상대를 만난다고 가정했을 때 모델이 평가하는 팀 전력을 비교합니다. 홈·원정 중립 상대 기대 승점을 평균한 뒤 최고 팀을 100으로 정규화합니다.</p>
 <h2>모델 전력 순위</h2><table><thead><tr><th>#</th><th>팀</th><th>Power Score</th><th>현재 EPL 순위</th><th>중립 상대 xPts</th></tr></thead><tbody>{rows}</tbody></table>"""
-    write_page("power-ranking",page_shell("EPL 파워 랭킹 | 데이터 기반 팀 전력 | EPL Run-in Lab","현재 EPL 순위와 별개로 데이터 모델이 평가한 20개 팀의 상대 전력을 비교합니다.","/power-ranking/",body,"/power-ranking/"))
+    write_page("power-ranking",page_shell("EPL 파워랭킹·팀 전력 순위 | EPL Run-in Lab","현재 프리미어리그 순위와 별개로 데이터 모델이 평가한 EPL 20개 팀의 파워랭킹과 상대 전력을 비교합니다.","/power-ranking/",body,"/power-ranking/"))
 
     # Standings
     rows="".join(f"<tr><td>{r['rank']}</td><td><a href='{SITE_URL}/teams/{slugify_team(r['team'])}/'>{esc(r['team'])}</a></td><td>{r['played']}</td><td>{r['won']}</td><td>{r['drawn']}</td><td>{r['lost']}</td><td>{r['gd']:+d}</td><td><b>{r['points']}</b></td></tr>" for r in standings)
@@ -755,7 +774,7 @@ def generate_static_pages(result):
     # Team index
     links="".join(f"<a href='{SITE_URL}/teams/{slugify_team(t)}/'>{esc(t)}</a>" for t in teams)
     body=f"""<h1>EPL 팀 분석</h1><p class="lead">팀을 선택하면 현재 순위, 최근 경기 흐름, 파워 스코어, 향후 일정과 경기별 승률을 한 페이지에서 확인할 수 있습니다.</p><div class="teams">{links}</div>"""
-    write_page("teams",page_shell("EPL 팀별 경기 예측·일정 분석 | EPL Run-in Lab","EPL 20개 팀의 현재 전력, 향후 일정, 승률과 기대 승점을 팀별로 확인합니다.","/teams/",body,"/teams/"))
+    write_page("teams",page_shell("EPL 팀별 경기 예측·승률·일정 분석 | EPL Run-in Lab","아스날, 리버풀 등 EPL 20개 팀의 경기 예측, 승률, 향후 일정 난이도, 기대 승점과 파워랭킹을 팀별로 확인합니다.","/teams/",body,"/teams/"))
 
     standmap={r["team"]:r for r in standings}
     powmap={r["team"]:r for r in powers}
@@ -768,14 +787,19 @@ def generate_static_pages(result):
         prof=profiles.get(t,{})
         fx="".join(f"<tr><td>{esc(g['date'])}</td><td>{'홈' if g['venue']=='H' else '원정'}</td><td>{esc(g['opponent'])}</td><td><b>{fmtp(g['win'])}</b></td><td>{fmtp(g['draw'])}</td><td>{fmtp(g['loss'])}</td><td>{fmt2(g['xpts'])}</td></tr>" for g in gs)
         recent=" · ".join(f"{x['date'][5:]} {'홈' if x['venue']=='H' else '원정'} {x['opponent']} {x['gf']}-{x['ga']} {x['result']}" for x in prof.get("recentResults",[])) or "현재 시즌 완료 경기 없음"
-        body=f"""<h1>{esc(t)} 경기 예측·향후 일정</h1><p class="lead">{esc(t)}의 현재 EPL 순위, 모델 파워 스코어, 향후 5경기 승·무·패 확률과 기대 승점을 확인합니다.</p>
+        summary=(f"{esc(t)}은(는) 현재 EPL {st.get('rank','-')}위, 승점 {st.get('points','-')}점입니다. "
+                 f"EPL Run-in Lab의 Power Score는 {pw.get('score','-')}로 모델 파워랭킹 {pw.get('rank','-')}위이며, "
+                 f"향후 5경기 기대 승점은 {fmt2(r5['xpts']) if r5 else '-'}점으로 일정 난이도 순위 {r5.get('rank','-')}위입니다. "
+                 "아래 표에서 다음 경기들의 승·무·패 확률과 기대 승점을 확인할 수 있습니다.")
+        body=f"""<h1>{esc(t)} 경기 예측·승률·향후 일정</h1><p class="lead">{summary}</p>
 <button class="share" onclick="sharePage('{esc(t)} EPL 경기 예측과 향후 일정')">이 팀 분석 공유하기</button>
 <div class="grid"><div class="card"><div class="label">현재 EPL 순위</div><div class="big">{st.get('rank','-')}위</div><div class="muted">승점 {st.get('points','-')}</div></div>
 <div class="card"><div class="label">Power Score</div><div class="big">{pw.get('score','-')}</div><div class="muted">파워 랭킹 {pw.get('rank','-')}위</div></div>
 <div class="card"><div class="label">향후 5경기 xPts</div><div class="big">{fmt2(r5['xpts']) if r5 else '-'}</div><div class="muted">일정 난이도 {r5.get('rank','-')}위</div></div></div>
-<h2>최근 경기</h2><p>{esc(recent)}</p>
-<h2>향후 5경기 예측</h2><table><thead><tr><th>날짜</th><th>장소</th><th>상대</th><th>승</th><th>무</th><th>패</th><th>xPts</th></tr></thead><tbody>{fx}</tbody></table>"""
-        write_page(f"teams/{slugify_team(t)}",page_shell(f"{t} 경기 예측·향후 일정·승률 | EPL Run-in Lab",f"{t}의 다음 경기 승률, 향후 5경기 일정, 기대 승점, 현재 EPL 순위와 파워 랭킹을 데이터로 분석합니다.",f"/teams/{slugify_team(t)}/",body,"/teams/"))
+<h2>{esc(t)} 최근 경기 흐름</h2><p>{esc(recent)}</p>
+<h2>{esc(t)} 향후 5경기 예측</h2><table><thead><tr><th>날짜</th><th>장소</th><th>상대</th><th>승</th><th>무</th><th>패</th><th>xPts</th></tr></thead><tbody>{fx}</tbody></table>
+<h2>관련 EPL 분석</h2><div class="teams"><a href="{SITE_URL}/predictions/">EPL 경기 예측</a><a href="{SITE_URL}/fixture-difficulty/">EPL 일정 난이도</a><a href="{SITE_URL}/power-ranking/">EPL 파워랭킹</a><a href="{SITE_URL}/standings/">현재 EPL 순위</a></div>"""
+        write_page(f"teams/{slugify_team(t)}",page_shell(f"{t} 경기 예측·승률·향후 일정 | EPL Run-in Lab",f"{t}의 EPL 경기 예측, 다음 경기 승률, 향후 5경기 일정 난이도, 기대 승점, 현재 순위와 파워랭킹을 데이터로 분석합니다.",f"/teams/{slugify_team(t)}/",body,"/teams/",f"{t} 경기 예측·승률·향후 일정"))
 
     # Model page
     body="""<h1>예측 모델 소개</h1><p class="lead">EPL Run-in Lab은 AI가 임의로 경기 결과를 만들어내는 사이트가 아니라, 과거 EPL 경기 데이터로 학습한 통계 모델의 확률을 보여주는 사이트입니다.</p>
