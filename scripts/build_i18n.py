@@ -239,6 +239,54 @@ def build_interactive_english_home():
     s = s.replace('향후 5 matches', 'Next 5 Matches')
     s = s.replace('향후 5경기', 'Next 5 Matches')
 
+    # V11.2: exhaustive cleanup for mixed-language strings created by ordered replacements.
+    # Keep only the language-menu label '한국어' as intentional Korean text on /en/.
+    en_cleanup = {
+        'EPL Match Predictions, Fixture Difficulty, 기대 승점과 Power Ranking을 데이터로 분석합니다.':
+            'Data-driven EPL match predictions, fixture difficulty, expected points and power rankings.',
+        'EPL Match Predictions·Fixture Difficulty·Power Ranking':
+            'EPL Match Predictions, Fixture Difficulty & Power Rankings',
+        '"inLanguage":"ko-KR"': '"inLanguage":"en"',
+        '승·무·패 확률, 기대 승점, Fixture Difficulty와 그 이유':
+            'Win, draw and loss probabilities, expected points, fixture difficulty and why',
+        '현재 EPL Standings': 'Current EPL Position',
+        'Fixture Difficulty 순위': 'Fixture Difficulty Rank',
+        '전체 Fixture Difficulty →': 'Full Fixture Difficulty →',
+        '리그 평균 수준의 가상 상대와 Home·원정에서 각각 붙는다고 가정합니다.':
+            'Each team is evaluated against a league-average virtual opponent, once at home and once away.',
+        '현재 예측 모델이 각 팀의 기대 승점(xPts)을 계산한 뒤 Home·원정 값을 평균냅니다. 그 시점에서 가장 높은 팀을 100으로 두고 다른 팀을 상대적으로 환산한 값이 Power Score입니다. 최근 승점, 득점·실점, 슈팅·유효슈팅, Home·원정 경기력이 같은 예측 모델을 통해 반영됩니다. 따라서 실제 승점이나 <b>Current EPL Position</b>와는 다른 지표입니다.':
+            'The prediction model calculates each team’s expected points (xPts) at home and away and averages them. The highest-rated team is set to 100 and the others are scaled relative to it. Recent points, goals for and against, shots, shots on target, and home/away performance all feed through the same model. This is therefore different from actual league points or <b>Current EPL Position</b>.',
+        '<span>파워</span><span>팀</span><span>점수</span><span>Current EPL Position</span>':
+            '<span>Rank</span><span>Team</span><span>Score</span><span>Current EPL Position</span>',
+        'Home·원정 경기력': 'Home and away performance',
+        '전체 성적과 별도로 Home/원정 성적을 따로 계산합니다.':
+            'Home and away records are calculated separately from overall form.',
+        'EPL 표본이 적은 초반에는 직전 Championship 시즌 기록을 과거 승격팀 사례로 보수적으로 변환한 초기 전력값을 함께 사용하고, EPL 경기가 쌓이면 첫 10 matches 동안 점차 영향이 줄어듭니다.':
+            'Early in the season, when a promoted club has little EPL data, a conservative initial strength estimate derived from its previous Championship season is used. Its influence gradually fades over the first 10 EPL matches.',
+        "'<div class=\"card\">예정된 경기가 없습니다.</div>'":
+            "'<div class=\"card\">No upcoming fixtures.</div>'",
+        "'<div class=\"metric-sub\" style=\"padding:14px 0\">새 update_predictions.py로 자동 업데이트를 한 번 실행하면 Power Ranking이 생성됩니다.</div>'":
+            "'<div class=\"metric-sub\" style=\"padding:14px 0\">Run the automatic update once with the latest update_predictions.py to generate the power ranking.</div>'",
+        '`Power Ranking ${pr.rank}위`': '`Power rank #${pr.rank}`',
+        "'자동 업데이트 후 표시'": "'Shown after automatic update'",
+        "['Home / 원정 PPG'": "['Home / Away PPG'",
+    }
+    for old, new in en_cleanup.items():
+        s = s.replace(old, new)
+
+    # English pages should never silently fall back to Korean explanation strings.
+    s = s.replace('${d.titleEn||d.title}', "${d.titleEn||'Model factor'}")
+    s = s.replace('${d.bodyEn||d.body}', "${d.bodyEn||'English explanation unavailable.'}")
+    s = s.replace('${g.promotionNoteEn||g.promotionNote}', "${g.promotionNoteEn||'Promoted-team prior applied.'}")
+
+    # Fail the build if unintended Korean UI text survives in /en/.
+    # The language chooser intentionally contains the label '한국어'.
+    import re
+    audit_text = s.replace('한국어', '')
+    leftovers = sorted(set(re.findall(r'[가-힣][가-힣A-Za-z0-9·/ .,%+()_-]*', audit_text)))
+    if leftovers:
+        raise RuntimeError('Untranslated Korean remains in /en/: ' + ' | '.join(leftovers[:20]))
+
     # Ensure English homepage SEO URLs are self-referencing while Korean remains the alternate.
     s = s.replace('<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">','<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">')
     s = s.replace('<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">','<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">')
