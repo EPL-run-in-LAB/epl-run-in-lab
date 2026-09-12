@@ -77,14 +77,14 @@ button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;
 </header>
 <div class="sidebar" id="sidebar">
   <div class="nav-label">Menu</div>
-  <button class="nav-btn active" data-page="home">🏠 홈</button>
-  <button class="nav-btn" data-page="prediction">🎯 경기 예측</button>
-  <button class="nav-btn" data-page="schedule">📅 일정 난이도</button>
-  <button class="nav-btn" data-page="power">⚡ 파워 랭킹</button>
-  <button class="nav-btn" data-page="standings">🏆 EPL 순위</button>
-  <button class="nav-btn" data-page="team">🔍 팀 분석</button>
+  <button class="nav-btn active" data-page="home">홈</button>
+  <button class="nav-btn" data-page="prediction">경기 예측</button>
+  <button class="nav-btn" data-page="schedule">일정 난이도</button>
+  <button class="nav-btn" data-page="power">파워 랭킹</button>
+  <button class="nav-btn" data-page="standings">EPL 순위</button>
+  <button class="nav-btn" data-page="team">팀 분석</button>
   <div class="nav-label">About</div>
-  <button class="nav-btn" data-page="model">🧪 모델 소개</button>
+  <button class="nav-btn" data-page="model">모델 소개</button>
 </div>
 <div class="overlay" id="overlay"></div>
 <main class="main"><div class="container">
@@ -127,7 +127,7 @@ button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;
 </section>
 
 <section class="page" id="team">
-  <div class="hero"><div><div class="kicker">Team Profile</div><h1 id="teamPageTitle">팀 분석</h1><p>현재 상태와 향후 일정을 한 페이지에서 봅니다.</p></div><div class="controls"><select class="team-select"></select></div></div>
+  <div class="hero"><div><div class="kicker">Team Profile</div><h1 id="teamPageTitle">팀 분석</h1><p>현재 상태와 향후 일정을 한 페이지에서 봅니다.</p><a id="teamDetailLink" class="link-btn" href="./teams/arsenal/">상세 팀 페이지 →</a></div><div class="controls"><select class="team-select"></select></div></div>
   <div class="grid grid-4"><div class="card"><div class="metric-label">현재 EPL 순위</div><div class="metric-value" id="teamRank">-</div></div><div class="card"><div class="metric-label">현재 승점</div><div class="metric-value" id="teamPts">-</div></div><div class="card"><div class="metric-label">Power Score</div><div class="metric-value" id="teamPower">-</div><div class="metric-sub" id="teamPowerRank">-</div></div><div class="card"><div class="metric-label">향후 5경기 xPts</div><div class="metric-value" id="teamFutureXPts">-</div></div></div>
   <div class="section-head"><h2>모델이 보는 현재 경기력</h2></div><div class="grid grid-3" id="teamStats"></div>
   <div class="section-head"><h2>최근 결과</h2></div><div class="card"><div class="results" id="teamRecent"></div><div id="recentDetail" class="metric-sub" style="margin-top:10px"></div></div>
@@ -155,11 +155,12 @@ button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;
 <div class="modal-backdrop" id="noticeModal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h3>예측 데이터 주의사항</h3><button class="modal-close" id="noticeClose" aria-label="닫기">×</button></div><p>EPL Run-in Lab의 승·무·패 확률과 기대 승점은 과거 및 현재 경기 데이터를 이용한 통계 모델의 추정치입니다. 팀 전력, 부상, 퇴장, 로테이션, 전술 변화처럼 모델에 실시간으로 완전히 반영되지 않는 변수가 존재할 수 있습니다.</p><p>현재 시즌의 일부 세부 경기 지표는 무료 데이터 소스에서 즉시 제공되지 않을 수 있어 최신 결과 데이터와 기존에 확보된 지표가 함께 사용될 수 있습니다.</p><div class="warning-line">이 수치는 경기 결과를 보장하거나 베팅을 권유하기 위한 정보가 아니라 EPL 일정과 경기 흐름을 데이터 관점에서 비교하기 위한 참고 자료입니다.</div></div></div>
 
 <script>
-let D=null,H=5,selectedTeam='Arsenal';
+const qp=new URLSearchParams(location.search);let D=null,H=5,selectedTeam=qp.get('team')||'Arsenal';const initialPage=qp.get('page');
 const pct=x=>Number.isFinite(x)?(x*100).toFixed(1)+'%':'-';
 const fmt=x=>Number.isFinite(x)?x.toFixed(2):'-';
 const $=id=>document.getElementById(id);
 function displayTeam(n){return n==="Nott'm Forest"||n==='Nottingham Forest'?'Nottingham':n}
+function teamSlug(n){return String(n||'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function page(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(innerWidth<1100)setSidebar(false);scrollTo({top:0,behavior:'smooth'});renderAll()}
 function setSidebar(v){$('sidebar').classList.toggle('open',v);$('overlay').classList.toggle('show',v&&innerWidth<1100)}
 $('menuBtn').onclick=()=>setSidebar(!$('sidebar').classList.contains('open'));$('overlay').onclick=()=>setSidebar(false);if(innerWidth>=1100)setSidebar(true);
@@ -180,9 +181,9 @@ function renderPrediction(){const t=selectedTeam,g=(D.games?.[t]||[])[0];if(!g){
 function renderSchedule(){const rr=D.rankings?.[String(H)]||[];$('scheduleTable').innerHTML=rr.map(r=>`<tr><td class="ranknum">${r.rank}</td><td>${displayTeam(r.team)}</td><td>${fmt(r.xpts)}</td><td>${fmt(r.xppg)}</td></tr>`).join('');$('scheduleTeamTitle').textContent=`${displayTeam(selectedTeam)} 향후 ${H}경기`;$('scheduleFixtures').innerHTML=fixtureCards((D.games?.[selectedTeam]||[]).slice(0,H))}
 function renderPower(){const rows=D.powerRankings||[];$('powerRows').innerHTML=rows.length?rows.map(r=>`<div class="power-row"><b>${r.rank}</b><div><b>${displayTeam(r.team)}</b><div class="bar"><i style="width:${Math.max(0,Math.min(100,r.score))}%"></i></div><div class="metric-sub">중립 상대 xPts ${Number(r.neutralXPPG).toFixed(2)}</div></div><strong>${Number(r.score).toFixed(1)}</strong><span>${r.currentEPLRank?r.currentEPLRank+'위':'-'}</span></div>`).join(''):'<div class="metric-sub" style="padding:14px 0">새 update_predictions.py로 자동 업데이트를 한 번 실행하면 파워 랭킹이 생성됩니다.</div>'}
 function renderStandings(){$('standingsTable').innerHTML=(D.standings||[]).map(r=>`<tr><td class="ranknum">${r.rank}</td><td><b>${displayTeam(r.team)}</b></td><td>${r.played}</td><td>${r.won}</td><td>${r.drawn}</td><td>${r.lost}</td><td>${r.gd>0?'+':''}${r.gd}</td><td><b>${r.points}</b></td></tr>`).join('')}
-function renderTeam(){const t=selectedTeam,st=standing(t),pr=power(t),pf=profile(t),r5=ranking(t,5),ms=pf.modelStats||{};$('teamPageTitle').textContent=displayTeam(t);$('teamRank').textContent=st?st.rank+'위':'-';$('teamPts').textContent=st?st.points:'-';$('teamPower').textContent=pr?Number(pr.score).toFixed(1):'-';$('teamPowerRank').textContent=pr?`파워 랭킹 ${pr.rank}위`:'자동 업데이트 후 표시';$('teamFutureXPts').textContent=r5?fmt(r5.xpts):'-';const stats=[['최근 가중 PPG',ms.ppg],['최근 가중 득점',ms.gf],['최근 가중 실점',ms.ga],['슈팅',ms.shots],['유효슈팅',ms.sot],['홈 / 원정 PPG',ms.homePPG!=null&&ms.awayPPG!=null?`${ms.homePPG.toFixed(2)} / ${ms.awayPPG.toFixed(2)}`:null]];$('teamStats').innerHTML=stats.map(([a,b])=>`<div class="card"><div class="metric-label">${a}</div><div class="metric-value">${b==null?'-':typeof b==='number'?b.toFixed(2):b}</div></div>`).join('');$('teamRecent').innerHTML=recentPills(pf.recentResults);$('recentDetail').textContent=(pf.recentResults||[]).map(r=>`${r.date.slice(5)} ${r.venue} ${displayTeam(r.opponent)} ${r.gf}-${r.ga}`).join(' · ');$('teamFixtures').innerHTML=fixtureCards((D.games?.[t]||[]).slice(0,5))}
+function renderTeam(){const t=selectedTeam,st=standing(t),pr=power(t),pf=profile(t),r5=ranking(t,5),ms=pf.modelStats||{};const dl=$('teamDetailLink');if(dl)dl.href='./teams/'+teamSlug(t)+'/';$('teamPageTitle').textContent=displayTeam(t);$('teamRank').textContent=st?st.rank+'위':'-';$('teamPts').textContent=st?st.points:'-';$('teamPower').textContent=pr?Number(pr.score).toFixed(1):'-';$('teamPowerRank').textContent=pr?`파워 랭킹 ${pr.rank}위`:'자동 업데이트 후 표시';$('teamFutureXPts').textContent=r5?fmt(r5.xpts):'-';const stats=[['최근 가중 PPG',ms.ppg],['최근 가중 득점',ms.gf],['최근 가중 실점',ms.ga],['슈팅',ms.shots],['유효슈팅',ms.sot],['홈 / 원정 PPG',ms.homePPG!=null&&ms.awayPPG!=null?`${ms.homePPG.toFixed(2)} / ${ms.awayPPG.toFixed(2)}`:null]];$('teamStats').innerHTML=stats.map(([a,b])=>`<div class="card"><div class="metric-label">${a}</div><div class="metric-value">${b==null?'-':typeof b==='number'?b.toFixed(2):b}</div></div>`).join('');$('teamRecent').innerHTML=recentPills(pf.recentResults);$('recentDetail').textContent=(pf.recentResults||[]).map(r=>`${r.date.slice(5)} ${r.venue} ${displayTeam(r.opponent)} ${r.gf}-${r.ga}`).join(' · ');$('teamFixtures').innerHTML=fixtureCards((D.games?.[t]||[]).slice(0,5))}
 function renderAll(){if(!D)return;syncControls();renderHome();renderPrediction();renderSchedule();renderPower();renderStandings();renderTeam()}
-async function init(){try{const res=await fetch('./data/predictions.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);D=await res.json();const teams=Object.keys(D.games||{}).sort((a,b)=>displayTeam(a).localeCompare(displayTeam(b),'en'));document.querySelectorAll('.team-select').forEach(s=>{s.innerHTML=teams.map(t=>`<option value="${t}">${displayTeam(t)}</option>`).join('')});selectedTeam=teams.includes('Arsenal')?'Arsenal':teams[0];$('status').textContent='데이터 기준: '+(D.asOf||'알 수 없음')+' · 자동 갱신';$('error').innerHTML='';renderAll()}catch(e){$('status').textContent='데이터를 불러오지 못했습니다.';$('error').innerHTML='<div class="error">predictions.json을 불러올 수 없습니다. GitHub Pages 배포와 Actions 실행 상태를 확인하세요.</div>'}}
+async function init(){try{const res=await fetch('./data/predictions.json?ts='+Date.now(),{cache:'no-store'});if(!res.ok)throw new Error('HTTP '+res.status);D=await res.json();const teams=Object.keys(D.games||{}).sort((a,b)=>displayTeam(a).localeCompare(displayTeam(b),'en'));document.querySelectorAll('.team-select').forEach(s=>{s.innerHTML=teams.map(t=>`<option value="${t}">${displayTeam(t)}</option>`).join('')});selectedTeam=teams.includes(selectedTeam)?selectedTeam:(teams.includes('Arsenal')?'Arsenal':teams[0]);$('status').textContent='데이터 기준: '+(D.asOf||'알 수 없음')+' · 자동 갱신';$('error').innerHTML='';renderAll();if(['home','prediction','schedule','power','standings','team','model'].includes(initialPage))page(initialPage)}catch(e){$('status').textContent='데이터를 불러오지 못했습니다.';$('error').innerHTML='<div class="error">predictions.json을 불러올 수 없습니다. GitHub Pages 배포와 Actions 실행 상태를 확인하세요.</div>'}}
 init();
 </script>
 </body>
