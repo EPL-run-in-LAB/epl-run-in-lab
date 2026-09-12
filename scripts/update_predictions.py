@@ -340,8 +340,56 @@ def detail_copy(selected, opponent, venue, factor_name, selected_delta):
         title = f"{factor_name} — {selected}에게 {'유리' if favorable else '불리'}"
         body = "이 요인을 리그 중립 수준으로 바꿔 다시 계산했을 때 선택한 팀의 승리 확률이 변했습니다."
 
+    # English copy for the bilingual site. Keep the same model attribution; only presentation changes.
+    if "overall form" in factor_name:
+        if factor_team == selected:
+            title_en = f"{selected}'s recent form is {'a strength' if favorable else 'a concern'}"
+            body_en = (
+                f"The model looks beyond only the last few matches, while giving more weight to recent games. "
+                f"Combining points, goals scored and goals conceded, {selected}'s recent form is rated "
+                f"{'above' if favorable else 'below'} the league-neutral level, which {'raises' if favorable else 'reduces'} the win probability."
+            )
+        else:
+            title_en = f"{opponent}'s recent form is {'helpful for' if favorable else 'a concern for'} {selected}"
+            body_en = (
+                f"{opponent}'s recent results are also weighted more heavily than older matches. "
+                f"Based on points, goals scored and goals conceded, the opponent is rated "
+                f"{'below' if favorable else 'above'} the league-neutral level, which {'helps' if favorable else 'hurts'} {selected}'s win probability."
+            )
+    elif "chance creation" in factor_name:
+        if factor_team == selected:
+            title_en = f"{selected}'s chance creation is {'strong' if favorable else 'below average'}"
+            body_en = (
+                f"The model uses recent shots and shots on target as well as goals. {selected}'s ability to create threatening chances is rated "
+                f"{'above' if favorable else 'below'} the league-neutral level and is reflected in the win probability."
+            )
+        else:
+            title_en = f"{opponent}'s chance creation works {'in favour of' if favorable else 'against'} {selected}"
+            body_en = (
+                f"The model evaluates {opponent}'s recent shots and shots on target. Their chance creation is rated "
+                f"{'weaker' if favorable else 'stronger'} than the league-neutral level, which {'raises' if favorable else 'reduces'} {selected}'s win probability."
+            )
+    elif "venue form" in factor_name:
+        loc_en = "home" if factor_name.startswith("Home") else "away"
+        if factor_team == selected:
+            title_en = f"{selected}'s {loc_en} form is {'a strength' if favorable else 'a concern'}"
+            body_en = (
+                f"The model separately considers {selected}'s recent {loc_en} points and goal difference. "
+                f"That {loc_en} performance is rated {'above' if favorable else 'below'} the neutral level, which {'raises' if favorable else 'reduces'} the chance of winning this match."
+            )
+        else:
+            title_en = f"{opponent}'s {loc_en} form is {'less threatening' if favorable else 'a concern'} for {selected}"
+            body_en = (
+                f"The model separately considers {opponent}'s recent {loc_en} points and goal difference. "
+                f"The opponent's {loc_en} performance is rated {'below' if favorable else 'above'} the neutral level, which {'reduces the difficulty for' if favorable else 'makes the match tougher for'} {selected}."
+            )
+    else:
+        title_en = f"{factor_name} — {'favourable' if favorable else 'unfavourable'} for {selected}"
+        body_en = "The model recalculates the selected team's win probability after resetting this factor to a league-neutral level."
+
     return {
         "title": title, "body": body,
+        "titleEn": title_en, "bodyEn": body_en,
         "impact": round(float(selected_delta)*100,1),
         "favorable": bool(favorable)
     }
@@ -542,6 +590,7 @@ def generate(payload):
         ]:
             _, details = explain(model,neutral,v,selected,opponent,venue)
             note = ""
+            note_en = ""
             if selected in priors or opponent in priors:
                 involved = selected if selected in priors else opponent
                 note = (
@@ -549,10 +598,14 @@ def generate(payload):
                     f"슈팅, 유효슈팅을 과거 승격팀 사례를 통해 EPL 수준으로 변환한 초기 전력값을 함께 반영했습니다. "
                     f"이 보정은 EPL 경기가 쌓일수록 첫 10경기 동안 점차 줄어듭니다."
                 )
+                note_en = (
+                    f"Because {involved} has only a small EPL sample immediately after promotion, the model also uses a conservative initial strength estimate derived from the club's previous Championship season. "
+                    f"Points, goals, shots and shots on target are translated using historical promoted-team cases, and this adjustment gradually fades during the first 10 EPL matches."
+                )
             games[selected].append({
                 "date":m["date_str"],"opponent":opponent,"venue":venue,
                 "win":win,"draw":pd_,"loss":loss,"xpts":3*win+pd_,
-                "details":details,"promotionNote":note
+                "details":details,"promotionNote":note,"promotionNoteEn":note_en
             })
 
     for t in games:
