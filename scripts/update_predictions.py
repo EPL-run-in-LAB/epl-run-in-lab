@@ -785,21 +785,33 @@ def generate_static_pages(result):
         r5=r5map.get(t,{})
         gs=games.get(t,[])[:5]
         prof=profiles.get(t,{})
-        fx="".join(f"<tr><td>{esc(g['date'])}</td><td>{'홈' if g['venue']=='H' else '원정'}</td><td>{esc(g['opponent'])}</td><td><b>{fmtp(g['win'])}</b></td><td>{fmtp(g['draw'])}</td><td>{fmtp(g['loss'])}</td><td>{fmt2(g['xpts'])}</td></tr>" for g in gs)
+        stats=prof.get("modelStats",{})
+        fx="".join(f"<tr><td>{esc(g['date'])}</td><td>{'홈' if g['venue']=='H' else '원정'}</td><td><a href='{SITE_URL}/teams/{slugify_team(g['opponent'])}/'>{esc(g['opponent'])}</a></td><td><b>{fmtp(g['win'])}</b></td><td>{fmtp(g['draw'])}</td><td>{fmtp(g['loss'])}</td><td>{fmt2(g['xpts'])}</td></tr>" for g in gs)
         recent=" · ".join(f"{x['date'][5:]} {'홈' if x['venue']=='H' else '원정'} {x['opponent']} {x['gf']}-{x['ga']} {x['result']}" for x in prof.get("recentResults",[])) or "현재 시즌 완료 경기 없음"
+        nextg=gs[0] if gs else None
+        next_summary=(f"다음 경기는 {esc(nextg['date'])} {'홈에서' if nextg['venue']=='H' else '원정에서'} {esc(nextg['opponent'])}을(를) 상대합니다. "
+                      f"모델은 {esc(t)} 기준 승리 {fmtp(nextg['win'])}, 무승부 {fmtp(nextg['draw'])}, 패배 {fmtp(nextg['loss'])}, 기대 승점 {fmt2(nextg['xpts'])}점을 제시합니다.") if nextg else "현재 예정된 다음 경기 데이터가 없습니다."
+        form_bits=[]
+        if stats.get('ppg') is not None: form_bits.append(f"최근 경기 흐름에 반영되는 경기당 승점은 {stats['ppg']:.2f}점")
+        if stats.get('gf') is not None and stats.get('ga') is not None: form_bits.append(f"경기당 득점/실점은 {stats['gf']:.2f}/{stats['ga']:.2f}")
+        if stats.get('shots') is not None and stats.get('sot') is not None: form_bits.append(f"경기당 슈팅/유효슈팅은 {stats['shots']:.1f}/{stats['sot']:.1f}회")
+        if stats.get('homePPG') is not None and stats.get('awayPPG') is not None: form_bits.append(f"홈/원정 경기당 승점은 {stats['homePPG']:.2f}/{stats['awayPPG']:.2f}점")
+        form_summary=". ".join(form_bits)+("." if form_bits else "현재 표시할 모델 입력 통계가 충분하지 않습니다.")
         summary=(f"{esc(t)}은(는) 현재 EPL {st.get('rank','-')}위, 승점 {st.get('points','-')}점입니다. "
-                 f"EPL Run-in Lab의 Power Score는 {pw.get('score','-')}로 모델 파워랭킹 {pw.get('rank','-')}위이며, "
-                 f"향후 5경기 기대 승점은 {fmt2(r5['xpts']) if r5 else '-'}점으로 일정 난이도 순위 {r5.get('rank','-')}위입니다. "
-                 "아래 표에서 다음 경기들의 승·무·패 확률과 기대 승점을 확인할 수 있습니다.")
+                 f"Power Score는 {pw.get('score','-')}로 모델 파워랭킹 {pw.get('rank','-')}위이며, "
+                 f"향후 5경기 기대 승점은 {fmt2(r5['xpts']) if r5 else '-'}점, 일정 쉬움 순위는 {r5.get('rank','-')}위입니다.")
+        desc=(f"{t} EPL 경기 예측. 다음 상대 {nextg['opponent']}전 승률 {fmtp(nextg['win'])}, 향후 5경기 기대 승점 {fmt2(r5['xpts']) if r5 else '-'}, 현재 순위와 Power Score를 확인하세요." if nextg else f"{t}의 EPL 경기 예측, 향후 일정, 기대 승점, 현재 순위와 Power Score를 확인하세요.")
         body=f"""<h1>{esc(t)} 경기 예측·승률·향후 일정</h1><p class="lead">{summary}</p>
 <button class="share" onclick="sharePage('{esc(t)} EPL 경기 예측과 향후 일정')">이 팀 분석 공유하기</button>
 <div class="grid"><div class="card"><div class="label">현재 EPL 순위</div><div class="big">{st.get('rank','-')}위</div><div class="muted">승점 {st.get('points','-')}</div></div>
 <div class="card"><div class="label">Power Score</div><div class="big">{pw.get('score','-')}</div><div class="muted">파워 랭킹 {pw.get('rank','-')}위</div></div>
-<div class="card"><div class="label">향후 5경기 xPts</div><div class="big">{fmt2(r5['xpts']) if r5 else '-'}</div><div class="muted">일정 난이도 {r5.get('rank','-')}위</div></div></div>
-<h2>{esc(t)} 최근 경기 흐름</h2><p>{esc(recent)}</p>
+<div class="card"><div class="label">향후 5경기 xPts</div><div class="big">{fmt2(r5['xpts']) if r5 else '-'}</div><div class="muted">일정 쉬움 순위 {r5.get('rank','-')}위</div></div></div>
+<h2>{esc(t)} 다음 경기 예측</h2><p>{next_summary}</p>
+<h2>{esc(t)} 최근 경기 흐름</h2><p>{esc(recent)}</p><p class="muted">{form_summary}</p>
 <h2>{esc(t)} 향후 5경기 예측</h2><table><thead><tr><th>날짜</th><th>장소</th><th>상대</th><th>승</th><th>무</th><th>패</th><th>xPts</th></tr></thead><tbody>{fx}</tbody></table>
+<h2>이 수치를 어떻게 봐야 하나요?</h2><p class="muted">승·무·패 확률과 xPts는 최근 경기 흐름, 득점·실점, 슈팅·유효슈팅, 홈·원정 경기력 등을 모델에 반영한 결과입니다. Power Score는 리그 평균 수준의 가상 상대를 기준으로 팀 전력을 비교한 별도 지표이며 실제 EPL 순위와는 다릅니다.</p>
 <h2>관련 EPL 분석</h2><div class="teams"><a href="{SITE_URL}/predictions/">EPL 경기 예측</a><a href="{SITE_URL}/fixture-difficulty/">EPL 일정 난이도</a><a href="{SITE_URL}/power-ranking/">EPL 파워랭킹</a><a href="{SITE_URL}/standings/">현재 EPL 순위</a></div>"""
-        write_page(f"teams/{slugify_team(t)}",page_shell(f"{t} 경기 예측·승률·향후 일정 | EPL Run-in Lab",f"{t}의 EPL 경기 예측, 다음 경기 승률, 향후 5경기 일정 난이도, 기대 승점, 현재 순위와 파워랭킹을 데이터로 분석합니다.",f"/teams/{slugify_team(t)}/",body,"/teams/",f"{t} 경기 예측·승률·향후 일정"))
+        write_page(f"teams/{slugify_team(t)}",page_shell(f"{t} 경기 예측·승률·남은 일정 | EPL Run-in Lab",desc,f"/teams/{slugify_team(t)}/",body,"/teams/",f"{t} 경기 예측·승률·남은 일정"))
 
     # Model page
     body="""<h1>예측 모델 소개</h1><p class="lead">EPL Run-in Lab은 AI가 임의로 경기 결과를 만들어내는 사이트가 아니라, 과거 EPL 경기 데이터로 학습한 통계 모델의 확률을 보여주는 사이트입니다.</p>
