@@ -156,5 +156,90 @@ def build():
     (DOCS/'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',encoding='utf-8')
     (DOCS/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n',encoding='utf-8')
 
+
+
+def build_interactive_english_home():
+    """Create /en/ from the exact Korean interactive homepage structure, translating presentation text only."""
+    src = (DOCS / 'index.html').read_text(encoding='utf-8')
+    s = src
+
+    replacements = [
+        ('<html lang="ko">','<html lang="en">'),
+        ('<meta name="description" content="EPL 승·무·패 확률, 기대 승점, 일정 난이도, 파워 랭킹과 확률의 이유를 데이터로 분석합니다." />','<meta name="description" content="Data-driven EPL win, draw and loss probabilities, expected points, fixture difficulty, power rankings and model explanations." />'),
+        ('<title>EPL 경기 예측·일정 난이도·파워 랭킹 | EPL Run-in Lab</title>','<title>EPL Predictions, Fixture Difficulty & Power Rankings | EPL Run-in Lab</title>'),
+        ('<link rel="canonical" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">','<link rel="canonical" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">'),
+        ('<meta property="og:title" content="EPL 경기 예측·일정 난이도·파워 랭킹 | EPL Run-in Lab">','<meta property="og:title" content="EPL Predictions, Fixture Difficulty & Power Rankings | EPL Run-in Lab">'),
+        ('<meta property="og:description" content="EPL 승·무·패 확률, 기대 승점, 향후 일정 난이도와 파워 랭킹을 데이터 모델로 분석합니다.">','<meta property="og:description" content="Data-driven EPL probabilities, expected points, upcoming fixture difficulty and power rankings.">'),
+        ('<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/">','<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">'),
+        ('aria-label="메뉴 열기"','aria-label="Open menu"'),
+        ('aria-label="언어 선택"','aria-label="Choose language"'),
+        ('<a href="./" data-lang="ko"','<a href="../" data-lang="ko"'),
+        ('<a href="./en/" data-lang="en"','<a href="./" data-lang="en"'),
+        ('>주의사항</button>','>Notice</button>'),
+        ('aria-label="다크모드로 전환" title="다크모드로 전환"','aria-label="Switch to dark mode" title="Switch to dark mode"'),
+        ('🏠 홈','🏠 Home'),('🎯 경기 예측','🎯 Match Predictions'),('📅 일정 난이도','📅 Fixture Difficulty'),('⚡ 파워 랭킹','⚡ Power Ranking'),('🏆 EPL 순위','🏆 EPL Standings'),('🔍 팀 분석','🔍 Team Analysis'),('🧪 모델 소개','🧪 Model'),
+        ('EPL의 현재와 앞으로를 한눈에','The EPL: Now and What’s Ahead'),
+        ('승·무·패 확률, 기대 승점, 일정 난이도와 그 이유','Win, draw and loss probabilities, expected points, fixture difficulty and why'),
+        ('데이터 불러오는 중…','Loading data…'),
+        ('3경기','3 matches'),('5경기','5 matches'),('10경기','10 matches'),
+        ('현재 EPL 순위','Current EPL Position'),('향후 기대 승점','Projected Points'),('일정 난이도 순위','Fixture Ease Rank'),('xPts가 높을수록 쉬운 편','Higher xPts means an easier projected run'),('최근 결과','Recent Results'),('현재 시즌 최근 경기','Latest matches this season'),
+        ('다음 경기','Next Match'),('자세히 분석하기 →','View Detailed Analysis →'),
+        ('예측 해석 시 참고하세요','How to interpret these predictions'),
+        ('확률은 통계 모델의 추정치입니다. 부상·로테이션·전술 변화처럼 실시간으로 완전히 반영되지 않는 변수가 있으며, 일부 현재 시즌 세부 지표는 무료 데이터의 한계로 최신 결과와 기존 확보 지표를 함께 사용합니다.','Probabilities are statistical model estimates. Injuries, rotation and tactical changes may not be fully reflected in real time, and some current-season detailed metrics combine the latest results with previously available data because of free-data limitations.'),
+        ('향후 일정 미리보기','Upcoming Fixtures Preview'),('전체 일정 난이도 →','Full Fixture Difficulty →'),
+        ('<h1>경기 예측</h1>','<h1>Match Predictions</h1>'),('확률뿐 아니라 왜 그런 확률이 나왔는지도 설명합니다.','See not only the probabilities, but also why the model produced them.'),
+        ('<h1>일정 난이도</h1>','<h1>Fixture Difficulty</h1>'),('향후 일정에서 기대할 수 있는 승점을 기준으로 20개 팀을 비교합니다.','Compare all 20 teams using expected points from their upcoming fixtures.'),
+        ('일정 난이도 순위','Fixture Difficulty Ranking'),('<th>팀</th>','<th>Team</th>'),('향후 일정','Upcoming Fixtures'),
+        ('<h1>파워 랭킹</h1>','<h1>Power Ranking</h1>'),('실제 순위가 아니라, 같은 조건에서 붙었을 때 모델이 어느 팀을 더 강하게 보는지 비교합니다.','This is not the league table. It compares which teams the model rates as stronger under the same conditions.'),
+        ('Power Score는 어떻게 계산하나요?','How is Power Score calculated?'),('리그 평균 수준의 가상 상대와 홈·원정에서 각각 붙는다고 가정합니다.','Each team is evaluated against a league-average virtual opponent, once at home and once away.'),
+        ('현재 예측 모델이 각 팀의 기대 승점(xPts)을 계산한 뒤 홈·원정 값을 평균냅니다. 그 시점에서 가장 높은 팀을 100으로 두고 다른 팀을 상대적으로 환산한 값이 Power Score입니다. 최근 승점, 득점·실점, 슈팅·유효슈팅, 홈·원정 경기력이 같은 예측 모델을 통해 반영됩니다. 따라서 실제 승점이나 <b>Current EPL Position</b>와는 다른 지표입니다.','The prediction model calculates each team’s expected points (xPts) at home and away and averages them. The highest-rated team is set to 100 and the others are scaled relative to it. Recent points, goals for and against, shots, shots on target, and home/away performance all feed through the same model. This is therefore different from actual league points or <b>Current EPL Position</b>.'),
+        ('<span>파워</span><span>팀</span><span>점수</span><span>Current EPL Position</span>','<span>Rank</span><span>Team</span><span>Score</span><span>Current EPL Position</span>'),
+        ('<h1>EPL 순위</h1>','<h1>EPL Standings</h1>'),('현재 시즌 실제 경기 결과 기준 순위입니다.','The current table based on actual league results this season.'),('<th>경기</th><th>승</th><th>무</th><th>패</th><th>득실</th><th>승점</th>','<th>Pl</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th>'),
+        ('<h1 id="teamPageTitle">팀 분석</h1>','<h1 id="teamPageTitle">Team Analysis</h1>'),('현재 상태와 향후 일정을 한 페이지에서 봅니다.','See current form and upcoming fixtures on one page.'),('현재 승점','Current Points'),('향후 5경기 xPts','Next 5 xPts'),('모델이 보는 현재 경기력','Current Model Form'),('향후 5경기','Next 5 Matches'),
+        ('<h1>모델 소개</h1>','<h1>Model</h1>'),('예측이 어떤 데이터를 보고, 왜 이런 확률을 만드는지 설명합니다.','How the model uses data and why it produces these probabilities.'),('예측에 사용하는 정보','Inputs used by the model'),('최근 경기 흐름','Recent form'),('승점, 득점, 실점을 최근 경기일수록 더 큰 비중으로 반영합니다.','Points, goals scored and goals conceded are weighted more heavily for recent matches.'),('공격 기회 창출','Chance creation'),('확보 가능한 슈팅과 유효슈팅 정보를 사용합니다.','Uses available shots and shots-on-target data.'),('홈·원정 경기력','Home and away performance'),('전체 성적과 별도로 홈/원정 성적을 따로 계산합니다.','Home and away records are calculated separately from overall form.'),
+        ('확률의 이유는 어떻게 계산하나요?','How are the probability reasons calculated?'),('각 요인을 리그 중립 수준으로 되돌린 뒤 모델을 다시 계산합니다. 이때 선택한 팀의 승리 확률이 얼마나 달라지는지를 %p로 보여줍니다. 요인 간 상호작용이 있으므로 각 효과를 단순히 더한 값이 최종 확률과 정확히 일치하지는 않습니다.','The model is recalculated after resetting each factor to a league-neutral level. The change in the selected team’s win probability is shown in percentage points. Because factors interact, the effects do not necessarily add up exactly to the final probability.'),
+        ('승격팀은?','What about promoted teams?'),('EPL 표본이 적은 초반에는 직전 Championship 시즌 기록을 과거 승격팀 사례로 보수적으로 변환한 초기 전력값을 함께 사용하고, EPL 경기가 쌓이면 첫 10경기 동안 점차 영향이 줄어듭니다.','Early in the season, when a promoted club has little EPL data, a conservative initial strength estimate derived from its previous Championship season is used. Its influence gradually fades over the first 10 EPL matches.'),
+        ('검색 가능한 분석 페이지','Searchable analysis pages'),('>경기 예측</a>','>Match Predictions</a>'),('>일정 난이도</a>','>Fixture Difficulty</a>'),('>파워 랭킹</a>','>Power Ranking</a>'),('>EPL 순위</a>','>EPL Standings</a>'),('>팀별 분석</a>','>Team Analysis</a>'),('>모델 소개</a>','>Model</a>'),
+        ('예측 데이터 주의사항','Prediction Data Notice'),('aria-label="닫기"','aria-label="Close"'),
+        ('EPL Run-in Lab의 승·무·패 확률과 기대 승점은 과거 및 현재 경기 데이터를 이용한 통계 모델의 추정치입니다. 팀 전력, 부상, 퇴장, 로테이션, 전술 변화처럼 모델에 실시간으로 완전히 반영되지 않는 변수가 존재할 수 있습니다.','EPL Run-in Lab’s win, draw and loss probabilities and expected points are statistical estimates based on historical and current match data. Team strength, injuries, dismissals, rotation and tactical changes may not be fully reflected in real time.'),
+        ('현재 시즌의 일부 세부 경기 지표는 무료 데이터 소스에서 즉시 제공되지 않을 수 있어 최신 결과 데이터와 기존에 확보된 지표가 함께 사용될 수 있습니다.','Some detailed current-season metrics may not be immediately available from free data sources, so the model can combine the latest results with previously available metrics.'),
+        ('이 수치는 경기 결과를 보장하거나 베팅을 권유하기 위한 정보가 아니라 EPL 일정과 경기 흐름을 데이터 관점에서 비교하기 위한 참고 자료입니다.','These figures do not guarantee match outcomes and are not betting recommendations. They are intended as a data-based reference for comparing EPL fixtures and team trends.'),
+        ("themeToggle.title=d?'라이트모드로 전환':'다크모드로 전환'", "themeToggle.title=d?'Switch to light mode':'Switch to dark mode'"),
+        ("text:'EPL 경기 예측·일정 난이도·파워 랭킹'", "text:'EPL predictions, fixture difficulty and power rankings'"),
+        ("shareBtn.textContent='복사됨';setTimeout(()=>shareBtn.textContent='공유',1300)", "shareBtn.textContent='Copied';setTimeout(()=>shareBtn.textContent='Share',1300)"),
+        ("'<span class=\"metric-sub\">현재 시즌 결과 없음</span>'", "'<span class=\"metric-sub\">No results this season</span>'"),
+        ("'<div class=\"metric-sub\">예정된 경기가 없습니다.</div>'", "'<div class=\"metric-sub\">No upcoming fixtures.</div>'"),
+        ('<div class="chance">승 ${pct(g.win)} · xPts ${fmt(g.xpts)}</div>','<div class="chance">Win ${pct(g.win)} · xPts ${fmt(g.xpts)}</div>'),
+        ('<span>${displayTeam(t)} 승</span>','<span>${displayTeam(t)} Win</span>'),('<span>무승부</span>','<span>Draw</span>'),('<span>${displayTeam(t)} 패</span>','<span>${displayTeam(t)} Loss</span>'),
+        ("st.rank+'위'", "'#'+st.rank"),("`${st.played}경기 · 승점 ${st.points}`", "`${st.played} matches · ${st.points} pts`"),("`경기당 ${fmt(r.xppg)}점`", "`${fmt(r.xppg)} pts/match`"),("`${r.rank}위 / ${(D.rankings?.[String(H)]||[]).length}`", "`#${r.rank} / ${(D.rankings?.[String(H)]||[]).length}`"),
+        ('const factors=(g.details||[]).map(d=>','const factors=(g.details||[]).map(d=>'),
+        ('${d.title}</div><p>${d.body}</p>','${d.titleEn||d.title}</div><p>${d.bodyEn||d.body}</p>'),
+        ('<div class="metric-label">모델 해석</div>','<div class="metric-label">Model Interpretation</div>'),('${displayTeam(t)} 승 ${pct(g.win)}','${displayTeam(t)} Win ${pct(g.win)}'),
+        ('${displayTeam(home)} vs ${displayTeam(away)}에서 모델이 계산한 선택 팀 기준 확률입니다. 아래에서 어떤 요소가 이 확률을 올리고 내렸는지 확인할 수 있습니다.','These are the selected team probabilities calculated by the model for ${displayTeam(home)} vs ${displayTeam(away)}. Below, you can see which factors push the win probability up or down.'),
+        ('왜 ${displayTeam(t)}의 승리 확률이 ${pct(g.win)}인가?','Why is ${displayTeam(t)}’s win probability ${pct(g.win)}?'),
+        ('설명 데이터가 없습니다.','No explanation data is available.'),('<b>승격팀 전력 보정</b>','<b>Promoted-team strength adjustment</b>'),('${g.promotionNote}','${g.promotionNoteEn||g.promotionNote}'),
+        ('각 %p는 해당 요인만 리그 중립 수준으로 바꿔 다시 계산했을 때 선택한 팀의 승리 확률이 얼마나 달라지는지를 뜻합니다. 여러 요인은 서로 영향을 주므로 단순 합산값과 최종 확률은 정확히 일치하지 않을 수 있습니다.','Each percentage-point effect shows how much the selected team’s win probability changes when only that factor is reset to a league-neutral level. Because factors interact, the simple sum of the effects may not exactly match the final probability.'),
+        ('`${displayTeam(selectedTeam)} 향후 ${H}경기`','`${displayTeam(selectedTeam)} · Next ${H} matches`'),('중립 상대 xPts','Neutral-opponent xPts'),("r.currentEPLRank+'위'", "'#'+r.currentEPLRank"),('새 update_predictions.py로 자동 업데이트를 한 번 실행하면 파워 랭킹이 생성됩니다.','Run the automatic update once with the latest update_predictions.py to generate the power ranking.'),
+        ("pr?`파워 랭킹 ${pr.rank}위`:'자동 업데이트 후 표시'", "pr?`Power rank #${pr.rank}`:'Shown after automatic update'"),
+        ("['최근 가중 PPG',ms.ppg]", "['Weighted recent PPG',ms.ppg]"),("['최근 가중 득점',ms.gf]", "['Weighted goals scored',ms.gf]"),("['최근 가중 실점',ms.ga]", "['Weighted goals conceded',ms.ga]"),("['슈팅',ms.shots]", "['Shots',ms.shots]"),("['유효슈팅',ms.sot]", "['Shots on target',ms.sot]"),("['홈 / 원정 PPG'", "['Home / Away PPG'"),
+        ("fetch('./data/predictions.json?ts='", "fetch('../data/predictions.json?ts='"),
+        ("'데이터 기준: '+(D.asOf||'알 수 없음')+' · 자동 갱신'", "'Data as of: '+(D.asOf||'Unknown')+' · Auto-updated'"),
+        ("'데이터를 불러오지 못했습니다.'", "'Could not load data.'"),('predictions.json을 불러올 수 없습니다. GitHub Pages 배포와 Actions 실행 상태를 확인하세요.','Could not load predictions.json. Check the GitHub Pages deployment and Actions run status.'),
+    ]
+    for old,new in replacements:
+        s = s.replace(old,new)
+
+    # Ensure English homepage SEO URLs are self-referencing while Korean remains the alternate.
+    s = s.replace('<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">','<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">')
+    s = s.replace('<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">','<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">')
+    # Bottom crawlable links should stay inside the English URL tree.
+    for rel in ['predictions','fixture-difficulty','power-ranking','standings','teams','model']:
+        s = s.replace(f'href="./{rel}/"', f'href="./{rel}/"')
+
+    dest = DOCS / 'en' / 'index.html'
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_text(s, encoding='utf-8')
+
 if __name__=='__main__':
     build()
+    build_interactive_english_home()
