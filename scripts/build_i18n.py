@@ -26,7 +26,23 @@ def write(rel, content):
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(content, encoding='utf-8')
 
-def shell(title, desc, path, ko_path, body, active):
+def shell(title, desc, path, ko_path, body, active, schema_name=None):
+    page_name = schema_name or title.split(" | ")[0]
+    breadcrumb_items = [{"@type":"ListItem","position":1,"name":"EPL Run-in Lab","item":SITE+"/en/"}]
+    if path != "/en/":
+        breadcrumb_items.append({"@type":"ListItem","position":2,"name":page_name,"item":SITE+path})
+    structured = {
+        "@context":"https://schema.org",
+        "@graph":[
+            {"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"EPL Run-in Lab",
+             "description":"Data-driven Premier League predictions, fixture difficulty, expected points and power rankings.",
+             "inLanguage":["ko","en"]},
+            {"@type":"WebPage","@id":SITE+path+"#webpage","url":SITE+path,"name":page_name,
+             "description":desc,"isPartOf":{"@id":SITE+"/#website"},"inLanguage":"en"},
+            {"@type":"BreadcrumbList","itemListElement":breadcrumb_items}
+        ]
+    }
+    structured_json=json.dumps(structured,ensure_ascii=False).replace("</","<\\/")
     nav = [
         ('Home','/en/'),('Match Predictions','/en/predictions/'),('Fixture Difficulty','/en/fixture-difficulty/'),
         ('Power Ranking','/en/power-ranking/'),('EPL Standings','/en/standings/'),
@@ -44,6 +60,7 @@ def shell(title, desc, path, ko_path, body, active):
 <meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{SITE}{path}">
 <meta property="og:locale" content="en_GB"><meta name="twitter:card" content="summary">
+<script type="application/ld+json">{structured_json}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
 <style>
@@ -119,15 +136,15 @@ def build():
             g=games[t][0]; venue='Home' if g['venue']=='H' else 'Away'
             rows.append(f"<tr><td><a href='{SITE}/en/teams/{slug(t)}/'>{esc(t)}</a></td><td>{esc(g['date'])}</td><td>{esc(g['opponent'])} ({venue})</td><td><b>{pct(g['win'])}</b></td><td>{pct(g['draw'])}</td><td>{pct(g['loss'])}</td><td>{f2(g['xpts'])}</td></tr>")
     body=f'''<h1>EPL match predictions</h1><p class="lead">Compare each team's next-match win, draw and loss probabilities together with expected points (xPts).</p><button class="share" onclick="sharePage('EPL next-match predictions')">Share predictions</button><h2>Next match by team</h2><table><thead><tr><th>Team</th><th>Date</th><th>Opponent</th><th>Win</th><th>Draw</th><th>Loss</th><th>xPts</th></tr></thead><tbody>{''.join(rows)}</tbody></table>'''
-    write('en/predictions',shell('EPL Match Predictions & Win Probabilities | EPL Run-in Lab','EPL next-match win, draw and loss probabilities with expected points (xPts).','/en/predictions/','/predictions/',body,'/en/predictions/'))
+    write('en/predictions',shell('Premier League Predictions & Win Probabilities | EPL Run-in Lab','Premier League and EPL match predictions with win, draw and loss probabilities plus expected points (xPts).','/en/predictions/','/predictions/',body,'/en/predictions/'))
 
     rows=''.join(f"<tr><td>{x['rank']}</td><td><a href='{SITE}/en/teams/{slug(x['team'])}/'>{esc(x['team'])}</a></td><td><b>{f2(x['xpts'])}</b></td><td>{f2(x['xppg'])}</td></tr>" for x in rankings.get('5',[]))
     body=f'''<h1>EPL fixture difficulty</h1><p class="lead">Higher expected points over the next five matches means an easier projected schedule. This ranking aggregates match-level probabilities rather than simply using opponent league position.</p><button class="share" onclick="sharePage('EPL fixture difficulty')">Share ranking</button><h2>Next 5 matches</h2><table><thead><tr><th>#</th><th>Team</th><th>xPts</th><th>xPPG</th></tr></thead><tbody>{rows}</tbody></table>'''
-    write('en/fixture-difficulty',shell('EPL Fixture Difficulty Rankings | Next 5 Matches | EPL Run-in Lab','Rank all 20 EPL teams by modelled fixture difficulty over the next five matches.','/en/fixture-difficulty/','/fixture-difficulty/',body,'/en/fixture-difficulty/'))
+    write('en/fixture-difficulty',shell('Premier League Fixture Difficulty | Next 5 Matches | EPL Run-in Lab','Premier League fixture difficulty rankings for all 20 EPL teams over the next five matches, based on expected points.','/en/fixture-difficulty/','/fixture-difficulty/',body,'/en/fixture-difficulty/'))
 
     rows=''.join(f"<tr><td>{x['rank']}</td><td><a href='{SITE}/en/teams/{slug(x['team'])}/'>{esc(x['team'])}</a></td><td><b>{x['score']:.1f}</b></td><td>{x.get('currentEPLRank') or '-'}</td><td>{x['neutralXPPG']:.2f}</td></tr>" for x in powers)
     body=f'''<h1>EPL power ranking</h1><p class="lead">A model-based team strength ranking separate from the league table. Teams are evaluated against a league-average opponent at home and away, then normalised so the strongest team scores 100.</p><h2>Model strength ranking</h2><table><thead><tr><th>#</th><th>Team</th><th>Power Score</th><th>Current EPL rank</th><th>Neutral xPts</th></tr></thead><tbody>{rows}</tbody></table>'''
-    write('en/power-ranking',shell('EPL Power Rankings | Data-Driven Team Strength | EPL Run-in Lab','Model-based EPL power rankings, separate from current league position.','/en/power-ranking/','/power-ranking/',body,'/en/power-ranking/'))
+    write('en/power-ranking',shell('Premier League Power Rankings | EPL Team Strength | EPL Run-in Lab','Data-driven Premier League power rankings comparing the modelled strength of all 20 EPL teams.','/en/power-ranking/','/power-ranking/',body,'/en/power-ranking/'))
 
     rows=''.join(f"<tr><td>{x['rank']}</td><td><a href='{SITE}/en/teams/{slug(x['team'])}/'>{esc(x['team'])}</a></td><td>{x['played']}</td><td>{x['won']}</td><td>{x['drawn']}</td><td>{x['lost']}</td><td>{x['gd']:+d}</td><td><b>{x['points']}</b></td></tr>" for x in standings)
     body=f'''<h1>Current EPL standings</h1><p class="lead">League table calculated from completed Premier League matches.</p><table><thead><tr><th>#</th><th>Team</th><th>Pl</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>{rows}</tbody></table>'''
@@ -135,14 +152,18 @@ def build():
 
     links=''.join(f"<a href='{SITE}/en/teams/{slug(t)}/'>{esc(t)}</a>" for t in teams)
     body=f'''<h1>EPL team analysis</h1><p class="lead">Choose a team to see current position, power score, recent results, upcoming fixtures, win probabilities and expected points.</p><div class="teams">{links}</div>'''
-    write('en/teams',shell('EPL Team Predictions & Fixture Analysis | EPL Run-in Lab','Team-by-team EPL predictions, upcoming fixtures, expected points and model strength.','/en/teams/','/teams/',body,'/en/teams/'))
+    write('en/teams',shell('Premier League Team Predictions & Fixture Analysis | EPL Run-in Lab','Team-by-team Premier League predictions, win probabilities, upcoming fixtures, expected points and power rankings.','/en/teams/','/teams/',body,'/en/teams/'))
 
     for t in teams:
         st=sm.get(t,{}); pw=pm.get(t,{}); rr=r5.get(t,{})
         fx=''.join(f"<tr><td>{esc(g['date'])}</td><td>{'Home' if g['venue']=='H' else 'Away'}</td><td>{esc(g['opponent'])}</td><td><b>{pct(g['win'])}</b></td><td>{pct(g['draw'])}</td><td>{pct(g['loss'])}</td><td>{f2(g['xpts'])}</td></tr>" for g in games[t][:5])
         recent=' · '.join(f"{x['date'][5:]} {'Home' if x['venue']=='H' else 'Away'} {x['opponent']} {x['gf']}-{x['ga']} {x['result']}" for x in profiles.get(t,{}).get('recentResults',[])) or 'No completed league matches yet'
-        body=f'''<h1>{esc(t)} predictions & upcoming fixtures</h1><p class="lead">Current EPL position, power score, next five win/draw/loss probabilities and expected points for {esc(t)}.</p><button class="share" onclick="sharePage('{esc(t)} EPL predictions and fixtures')">Share team analysis</button><div class="grid"><div class="card"><div class="label">Current EPL position</div><div class="big">{st.get('rank','-')}</div><div class="muted">{st.get('points','-')} pts</div></div><div class="card"><div class="label">Power Score</div><div class="big">{pw.get('score','-')}</div><div class="muted">Power rank #{pw.get('rank','-')}</div></div><div class="card"><div class="label">Next 5 xPts</div><div class="big">{f2(rr['xpts']) if rr else '-'}</div><div class="muted">Fixture ease rank #{rr.get('rank','-')}</div></div></div><h2>Recent matches</h2><p>{esc(recent)}</p><h2>Next 5 match predictions</h2><table><thead><tr><th>Date</th><th>Venue</th><th>Opponent</th><th>Win</th><th>Draw</th><th>Loss</th><th>xPts</th></tr></thead><tbody>{fx}</tbody></table>'''
-        write(f'en/teams/{slug(t)}',shell(f'{t} Predictions, Fixtures & Win Probability | EPL Run-in Lab',f'{t} next-match probabilities, upcoming fixtures, expected points, current EPL position and power ranking.',f'/en/teams/{slug(t)}/',f'/teams/{slug(t)}/',body,'/en/teams/'))
+        summary=(f"{esc(t)} are currently {st.get('rank','-')} in the Premier League with {st.get('points','-')} points. "
+                 f"Their EPL Run-in Lab Power Score is {pw.get('score','-')}, ranked #{pw.get('rank','-')} by the model. "
+                 f"Across the next five fixtures, the model projects {f2(rr['xpts']) if rr else '-'} expected points, "
+                 f"with a fixture-ease rank of #{rr.get('rank','-')}. The table below shows win, draw and loss probabilities for each upcoming match.")
+        body=f'''<h1>{esc(t)} predictions, win probability & upcoming fixtures</h1><p class="lead">{summary}</p><button class="share" onclick="sharePage('{esc(t)} Premier League predictions and fixtures')">Share team analysis</button><div class="grid"><div class="card"><div class="label">Current EPL position</div><div class="big">{st.get('rank','-')}</div><div class="muted">{st.get('points','-')} pts</div></div><div class="card"><div class="label">Power Score</div><div class="big">{pw.get('score','-')}</div><div class="muted">Power rank #{pw.get('rank','-')}</div></div><div class="card"><div class="label">Next 5 xPts</div><div class="big">{f2(rr['xpts']) if rr else '-'}</div><div class="muted">Fixture ease rank #{rr.get('rank','-')}</div></div></div><h2>{esc(t)} recent form</h2><p>{esc(recent)}</p><h2>{esc(t)} next 5 match predictions</h2><table><thead><tr><th>Date</th><th>Venue</th><th>Opponent</th><th>Win</th><th>Draw</th><th>Loss</th><th>xPts</th></tr></thead><tbody>{fx}</tbody></table><h2>Related Premier League analysis</h2><div class="teams"><a href="{SITE}/en/predictions/">Premier League Predictions</a><a href="{SITE}/en/fixture-difficulty/">Fixture Difficulty</a><a href="{SITE}/en/power-ranking/">Power Rankings</a><a href="{SITE}/en/standings/">EPL Standings</a></div>'''
+        write(f'en/teams/{slug(t)}',shell(f'{t} Predictions, Win Probability & Fixtures | EPL Run-in Lab',f'{t} Premier League predictions, next-match win probability, next five fixtures, expected points, current position and power ranking.',f'/en/teams/{slug(t)}/',f'/teams/{slug(t)}/',body,'/en/teams/',f'{t} predictions, win probability and fixtures'))
 
     body='''<h1>Prediction model</h1><p class="lead">EPL Run-in Lab does not ask a generative AI to invent match outcomes. It presents probabilities from a statistical model trained on historical EPL match data.</p><h2>What does it use?</h2><p>Recent points, goals for and against, shots, shots on target, and home/away performance. Older matches gradually receive less weight. Newly promoted clubs receive a conservative prior based on their Championship season until enough EPL matches are available.</p><h2>How are reasons explained?</h2><p>Percentage-point effects come from resetting one factor group to a neutral league level and recalculating the model. Because factors interact non-linearly, individual effects do not have to sum exactly to the final probability.</p><h2>Limitations</h2><p>Injuries, line-ups and tactical changes are not always reflected in real time. Some current-season detailed metrics may lag when free data sources do not provide them immediately.</p>'''
     write('en/model',shell('EPL Run-in Lab Prediction Model & Methodology','How EPL Run-in Lab calculates match probabilities, expected points, fixture difficulty and power rankings.','/en/model/','/model/',body,'/en/model/'))
@@ -152,8 +173,19 @@ def build():
     ko=['/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
     en=['/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
     today=datetime.now(timezone.utc).strftime('%Y-%m-%d')
-    urls='\n'.join(f'  <url><loc>{SITE}{p}</loc><lastmod>{today}</lastmod></url>' for p in ko+en)
-    (DOCS/'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',encoding='utf-8')
+    pairs=list(zip(ko,en))
+    entries=[]
+    for kp,ep in pairs:
+        for p in (kp,ep):
+            entries.append(
+                f'  <url><loc>{SITE}{p}</loc><lastmod>{today}</lastmod>'
+                f'<xhtml:link rel="alternate" hreflang="ko" href="{SITE}{kp}"/>'
+                f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{ep}"/>'
+                f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{kp}"/>'
+                f'</url>'
+            )
+    urls='\n'.join(entries)
+    (DOCS/'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n{urls}\n</urlset>\n',encoding='utf-8')
     (DOCS/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n',encoding='utf-8')
 
 
