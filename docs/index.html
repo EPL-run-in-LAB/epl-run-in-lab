@@ -12,7 +12,16 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="EPL 승·무·패 확률, 기대 승점, 일정 난이도, 파워 랭킹과 확률의 이유를 데이터로 분석합니다." />
-<title>EPL Run-in Lab</title>
+<title>EPL 경기 예측·일정 난이도·파워 랭킹 | EPL Run-in Lab</title>
+<link rel="canonical" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">
+<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">
+<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">
+<link rel="alternate" hreflang="x-default" href="https://epl-run-in-lab.github.io/epl-run-in-lab/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EPL 경기 예측·일정 난이도·파워 랭킹 | EPL Run-in Lab">
+<meta property="og:description" content="EPL 승·무·패 확률, 기대 승점, 향후 일정 난이도와 파워 랭킹을 데이터 모델로 분석합니다.">
+<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/">
+<meta name="twitter:card" content="summary">
 <style>
 :root{
   --bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;
@@ -49,6 +58,13 @@ button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;
   <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button>
   <div class="brand">EPL Run-in <span>Lab</span></div>
   <div class="top-actions">
+    <div style="position:relative">
+      <button class="notice-btn" id="langBtn" aria-label="언어 선택">Language ▾</button>
+      <div id="langMenu" style="display:none;position:absolute;right:0;top:38px;min-width:138px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:6px;box-shadow:0 14px 34px rgba(0,0,0,.15);z-index:80">
+        <a href="./" data-lang="ko" style="display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text)">한국어</a>
+        <a href="./en/" data-lang="en" style="display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text)">English</a>
+      </div>
+    </div>
     <button class="notice-btn" id="noticeBtn">주의사항</button>
     <button class="theme-toggle" id="themeToggle" aria-label="다크모드로 전환" title="다크모드로 전환"><span class="switch-knob"><span class="moon"></span></span></button>
   </div>
@@ -116,7 +132,19 @@ button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;
   <div class="hero"><div><div class="kicker">Methodology</div><h1>모델 소개</h1><p>예측이 어떤 데이터를 보고, 왜 이런 확률을 만드는지 설명합니다.</p></div></div>
   <div class="grid grid-2"><div class="card"><h3>예측에 사용하는 정보</h3><div class="method-list"><div class="method-item"><b>최근 경기 흐름</b><span>승점, 득점, 실점을 최근 경기일수록 더 큰 비중으로 반영합니다.</span></div><div class="method-item"><b>공격 기회 창출</b><span>확보 가능한 슈팅과 유효슈팅 정보를 사용합니다.</span></div><div class="method-item"><b>홈·원정 경기력</b><span>전체 성적과 별도로 홈/원정 성적을 따로 계산합니다.</span></div></div></div><div class="card"><h3>확률의 이유는 어떻게 계산하나요?</h3><p class="power-help">각 요인을 리그 중립 수준으로 되돌린 뒤 모델을 다시 계산합니다. 이때 선택한 팀의 승리 확률이 얼마나 달라지는지를 %p로 보여줍니다. 요인 간 상호작용이 있으므로 각 효과를 단순히 더한 값이 최종 확률과 정확히 일치하지는 않습니다.</p><h3 style="margin-top:20px">승격팀은?</h3><p class="power-help">EPL 표본이 적은 초반에는 직전 Championship 시즌 기록을 과거 승격팀 사례로 보수적으로 변환한 초기 전력값을 함께 사용하고, EPL 경기가 쌓이면 첫 10경기 동안 점차 영향이 줄어듭니다.</p></div></div>
 </section>
-</div></main>
+</div><section style="max-width:1180px;margin:10px auto 30px;padding:0 22px">
+<div class="card">
+  <div class="metric-label">검색 가능한 분석 페이지</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">
+    <a class="link-btn" href="./predictions/">경기 예측</a>
+    <a class="link-btn" href="./fixture-difficulty/">일정 난이도</a>
+    <a class="link-btn" href="./power-ranking/">파워 랭킹</a>
+    <a class="link-btn" href="./standings/">EPL 순위</a>
+    <a class="link-btn" href="./teams/">팀별 분석</a>
+    <a class="link-btn" href="./model/">모델 소개</a>
+  </div>
+</div>
+</section></main>
 
 <div class="modal-backdrop" id="noticeModal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true"><div class="modal-head"><h3>예측 데이터 주의사항</h3><button class="modal-close" id="noticeClose" aria-label="닫기">×</button></div><p>EPL Run-in Lab의 승·무·패 확률과 기대 승점은 과거 및 현재 경기 데이터를 이용한 통계 모델의 추정치입니다. 팀 전력, 부상, 퇴장, 로테이션, 전술 변화처럼 모델에 실시간으로 완전히 반영되지 않는 변수가 존재할 수 있습니다.</p><p>현재 시즌의 일부 세부 경기 지표는 무료 데이터 소스에서 즉시 제공되지 않을 수 있어 최신 결과 데이터와 기존에 확보된 지표가 함께 사용될 수 있습니다.</p><div class="warning-line">이 수치는 경기 결과를 보장하거나 베팅을 권유하기 위한 정보가 아니라 EPL 일정과 경기 흐름을 데이터 관점에서 비교하기 위한 참고 자료입니다.</div></div></div>
 
@@ -130,7 +158,14 @@ function page(id){document.querySelectorAll('.page').forEach(p=>p.classList.togg
 function setSidebar(v){$('sidebar').classList.toggle('open',v);$('overlay').classList.toggle('show',v&&innerWidth<1100)}
 $('menuBtn').onclick=()=>setSidebar(!$('sidebar').classList.contains('open'));$('overlay').onclick=()=>setSidebar(false);if(innerWidth>=1100)setSidebar(true);
 document.querySelectorAll('.nav-btn[data-page]').forEach(b=>b.onclick=()=>page(b.dataset.page));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>page(b.dataset.go));
+const langBtn=$('langBtn'),langMenu=$('langMenu');langBtn.onclick=e=>{e.stopPropagation();langMenu.style.display=langMenu.style.display==='block'?'none':'block'};document.addEventListener('click',()=>langMenu.style.display='none');langMenu.onclick=e=>e.stopPropagation();document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>localStorage.setItem('runin-lang',a.dataset.lang)));
 const themeToggle=$('themeToggle');if(localStorage.getItem('runin-theme')==='dark')document.body.classList.add('dark');function syncTheme(){const d=document.body.classList.contains('dark');themeToggle.title=d?'라이트모드로 전환':'다크모드로 전환';themeToggle.setAttribute('aria-label',themeToggle.title)}syncTheme();themeToggle.onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('runin-theme',document.body.classList.contains('dark')?'dark':'light');syncTheme()};
+const langBtn=$('langBtn'),langMenu=$('langMenu');
+langBtn.onclick=(e)=>{e.stopPropagation();langMenu.style.display=langMenu.style.display==='block'?'none':'block'};
+document.addEventListener('click',()=>langMenu.style.display='none');
+langMenu.onclick=e=>e.stopPropagation();
+document.querySelectorAll('[data-lang]').forEach(a=>a.addEventListener('click',()=>localStorage.setItem('runin-lang',a.dataset.lang)));
+$('shareBtn').onclick=async()=>{const data={title:document.title,text:'EPL 경기 예측·일정 난이도·파워 랭킹',url:location.href};if(navigator.share){try{await navigator.share(data);return}catch(e){}}try{await navigator.clipboard.writeText(location.href);$('shareBtn').textContent='복사됨';setTimeout(()=>$('shareBtn').textContent='공유',1300)}catch(e){}};
 function notice(v){$('noticeModal').classList.toggle('show',v);$('noticeModal').setAttribute('aria-hidden',v?'false':'true')}$('noticeBtn').onclick=()=>notice(true);$('noticeClose').onclick=()=>notice(false);$('noticeModal').onclick=e=>{if(e.target===$('noticeModal'))notice(false)};addEventListener('keydown',e=>{if(e.key==='Escape')notice(false)});
 function syncControls(){document.querySelectorAll('.team-select').forEach(s=>{s.value=selectedTeam});document.querySelectorAll('.horizon button').forEach(b=>b.classList.toggle('active',+b.dataset.h===H))}
 document.querySelectorAll('.horizon button').forEach(b=>b.onclick=()=>{H=+b.dataset.h;syncControls();renderAll()});document.querySelectorAll('.team-select').forEach(s=>s.onchange=()=>{selectedTeam=s.value;syncControls();renderAll()});
