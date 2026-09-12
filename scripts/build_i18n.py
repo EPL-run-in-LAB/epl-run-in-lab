@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime, timezone
 import json, html
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
@@ -170,22 +171,35 @@ def build():
 
     patch_korean_static_pages()
 
+    # Keep the sitemap deliberately simple. hreflang remains in each page's HTML <head>;
+    # the sitemap only needs canonical URLs + lastmod for reliable Search Console parsing.
     ko=['/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
     en=['/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
     today=datetime.now(timezone.utc).strftime('%Y-%m-%d')
-    pairs=list(zip(ko,en))
-    entries=[]
-    for kp,ep in pairs:
-        for p in (kp,ep):
-            entries.append(
-                f'  <url><loc>{SITE}{p}</loc><lastmod>{today}</lastmod>'
-                f'<xhtml:link rel="alternate" hreflang="ko" href="{SITE}{kp}"/>'
-                f'<xhtml:link rel="alternate" hreflang="en" href="{SITE}{ep}"/>'
-                f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{kp}"/>'
-                f'</url>'
-            )
-    urls='\n'.join(entries)
-    (DOCS/'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n{urls}\n</urlset>\n',encoding='utf-8')
+
+    ns='http://www.sitemaps.org/schemas/sitemap/0.9'
+    ET.register_namespace('', ns)
+    root=ET.Element(f'{{{ns}}}urlset')
+    for path in ko + en:
+        url=ET.SubElement(root, f'{{{ns}}}url')
+        ET.SubElement(url, f'{{{ns}}}loc').text = SITE + path
+        ET.SubElement(url, f'{{{ns}}}lastmod').text = today
+
+    tree=ET.ElementTree(root)
+    try:
+        ET.indent(tree, space='  ')
+    except AttributeError:
+        pass
+    sitemap_path=DOCS/'sitemap.xml'
+    tree.write(sitemap_path, encoding='utf-8', xml_declaration=True)
+
+    # Fail the build immediately if the generated sitemap is malformed or incomplete.
+    check=ET.parse(sitemap_path).getroot()
+    generated=check.findall(f'{{{ns}}}url')
+    expected=len(ko)+len(en)
+    if len(generated) != expected:
+        raise RuntimeError(f'sitemap URL count mismatch: expected {expected}, got {len(generated)}')
+
     (DOCS/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n',encoding='utf-8')
 
 
