@@ -663,69 +663,31 @@ def fmt2(x):
 
 def page_shell(title, description, canonical_path, body, active="", schema_name=None):
     canonical = SITE_URL + canonical_path
+    en_path = "/en/" if canonical_path == "/" else "/en" + canonical_path
     page_name = schema_name or title.split(" | ")[0]
-    breadcrumb_items = [
-        {"@type":"ListItem","position":1,"name":"EPL Run-in Lab","item":SITE_URL + "/"}
-    ]
+    breadcrumb_items = [{"@type":"ListItem","position":1,"name":"EPL Run-in Lab","item":SITE_URL + "/"}]
     if canonical_path != "/":
         breadcrumb_items.append({"@type":"ListItem","position":2,"name":page_name,"item":canonical})
-    structured = {
-        "@context":"https://schema.org",
-        "@graph":[
-            {"@type":"WebSite","@id":SITE_URL+"/#website","url":SITE_URL+"/","name":"EPL Run-in Lab",
-             "description":"EPL 경기 예측, 일정 난이도, 기대 승점과 파워 랭킹을 데이터로 분석합니다.",
-             "inLanguage":["ko","en"]},
-            {"@type":"WebPage","@id":canonical+"#webpage","url":canonical,"name":page_name,
-             "description":description,"isPartOf":{"@id":SITE_URL+"/#website"},"inLanguage":"ko-KR"},
-            {"@type":"BreadcrumbList","itemListElement":breadcrumb_items}
-        ]
-    }
+    structured = {"@context":"https://schema.org","@graph":[
+        {"@type":"WebSite","@id":SITE_URL+"/#website","url":SITE_URL+"/","name":"EPL Run-in Lab","description":"EPL 경기 예측, 일정 난이도, 기대 승점과 파워 랭킹을 데이터로 분석합니다.","inLanguage":["ko","en"]},
+        {"@type":"WebPage","@id":canonical+"#webpage","url":canonical,"name":page_name,"description":description,"isPartOf":{"@id":SITE_URL+"/#website"},"inLanguage":"ko-KR"},
+        {"@type":"BreadcrumbList","itemListElement":breadcrumb_items}]}
     structured_json = json.dumps(structured, ensure_ascii=False).replace("</", "<\\/")
-    nav = [
-        ("홈","/"),("경기 예측","/predictions/"),("일정 난이도","/fixture-difficulty/"),
-        ("파워 랭킹","/power-ranking/"),("EPL 순위","/standings/"),("팀 분석","/teams/"),
-        ("모델 소개","/model/")
-    ]
-    links = "".join(
-        f'<a class="nav {"active" if path==active else ""}" href="{SITE_URL}{path}">{label}</a>'
-        for label,path in nav
-    )
+    nav = [("홈","/"),("경기 예측","/predictions/"),("일정 난이도","/fixture-difficulty/"),("파워 랭킹","/power-ranking/"),("EPL 순위","/standings/"),("팀 분석","/teams/")]
+    links = "".join(f'<a class="nav-btn {"active" if path==active else ""}" href="{SITE_URL}{path}">{label}</a>' for label,path in nav)
+    about = f'<div class="nav-label">About</div><a class="nav-btn {"active" if active=="/model/" else ""}" href="{SITE_URL}/model/">모델 소개</a>'
     return f"""<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)}</title>
-<meta name="description" content="{esc(description)}">
-<link rel="canonical" href="{canonical}">
-<meta property="og:type" content="website">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(description)}">
-<meta property="og:url" content="{canonical}">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">{structured_json}</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(title)}</title><meta name="description" content="{esc(description)}"><link rel="canonical" href="{canonical}">
+<link rel="alternate" hreflang="ko" href="{canonical}"><link rel="alternate" hreflang="en" href="{SITE_URL}{en_path}"><link rel="alternate" hreflang="x-default" href="{canonical}">
+<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{canonical}"><meta name="twitter:card" content="summary"><script type="application/ld+json">{structured_json}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
 <style>
-:root{{--bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;--good:#0f766e;--bad:#b91c1c}}
-body.dark{{--bg:#0b1220;--panel:#111827;--text:#f3f4f6;--muted:#9ca3af;--line:#263244;--soft:#182235;--good:#5eead4;--bad:#fca5a5}}
-*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.55}}
-header{{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line)}}.top{{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;gap:16px}}.brand{{font-weight:900;text-decoration:none;color:var(--text);white-space:nowrap}}
-nav{{display:flex;gap:6px;overflow:auto;flex:1}}.nav{{text-decoration:none;color:var(--muted);padding:7px 9px;border-radius:9px;white-space:nowrap;font-size:14px}}.nav.active,.nav:hover{{background:var(--soft);color:var(--text)}}
-.switch{{width:42px;height:24px;border:0;border-radius:99px;background:#111827;padding:3px;cursor:pointer;display:flex;align-items:center}}.knob{{width:18px;height:18px;background:#fff;border-radius:50%;display:block;transition:.2s}}body.dark .switch{{background:#e5e7eb}}body.dark .knob{{transform:translateX(18px);background:#111827}}
-main{{max-width:1100px;margin:auto;padding:34px 20px 70px}}h1{{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 10px}}h2{{margin-top:34px}}.lead{{color:var(--muted);max-width:760px}}.grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}}.card{{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}}.label{{font-size:13px;color:var(--muted)}}.big{{font-size:27px;font-weight:900;margin-top:4px}}table{{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}}th,td{{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left}}th{{font-size:12px;color:var(--muted)}}.good{{color:var(--good)}}.bad{{color:var(--bad)}}.muted{{color:var(--muted)}}.share{{border:1px solid var(--line);background:var(--panel);color:var(--text);padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:700}}.teams{{display:flex;flex-wrap:wrap;gap:8px}}.teams a{{text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:9px 12px;border-radius:10px}}footer{{max-width:1100px;margin:auto;padding:0 20px 40px;color:var(--muted);font-size:12px}}
-@media(max-width:760px){{nav{{display:none}}.grid{{grid-template-columns:1fr}}th,td{{padding:10px 7px;font-size:13px}}}}
-</style>
-</head>
-<body>
-<header><div class="top"><a class="brand" href="{SITE_URL}/">EPL Run-in Lab</a><nav>{links}</nav><button class="switch" id="theme" aria-label="다크모드 전환"><span class="knob"></span></button></div></header>
-<main>{body}</main>
-<footer>데이터 기반 확률은 경기 결과를 보장하지 않습니다. EPL Run-in Lab은 Premier League 또는 개별 구단의 공식 서비스가 아닙니다.</footer>
-<script>
-const b=document.body,t=document.getElementById('theme');if(localStorage.getItem('runin-theme')==='dark')b.classList.add('dark');t.onclick=()=>{{b.classList.toggle('dark');localStorage.setItem('runin-theme',b.classList.contains('dark')?'dark':'light')}};
-async function sharePage(text){{const data={{title:document.title,text:text,url:location.href}};if(navigator.share){{try{{await navigator.share(data);return}}catch(e){{}}}}await navigator.clipboard.writeText(location.href);const btn=document.querySelector('.share');if(btn){{const old=btn.textContent;btn.textContent='링크 복사됨';setTimeout(()=>btn.textContent=old,1500)}}}}
-</script>
-</body></html>"""
+:root{{--bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;--accent:#111827;--topbar:rgba(255,255,255,.92);--sidebar:#fff;--good:#0f766e;--bad:#b91c1c}}body.dark{{--bg:#0b1220;--panel:#111827;--text:#f3f4f6;--muted:#9ca3af;--line:#263244;--soft:#182235;--accent:#f9fafb;--topbar:rgba(17,24,39,.93);--sidebar:#111827;--good:#5eead4;--bad:#fca5a5}}*{{box-sizing:border-box}}html{{scroll-behavior:smooth}}body{{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Noto Sans KR",sans-serif;line-height:1.55}}
+.topbar{{position:sticky;top:0;z-index:40;height:64px;background:var(--topbar);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 18px}}.menu-btn{{border:0;background:transparent;color:var(--text);font-size:24px;width:38px;height:38px;border-radius:10px;cursor:pointer}}.menu-btn:hover{{background:var(--soft)}}.brand{{font-weight:900;letter-spacing:-.035em;font-size:20px;text-decoration:none;color:var(--text)}}.brand span{{color:var(--muted)}}.top-actions{{margin-left:auto;display:flex;align-items:center;gap:6px}}.plain{{border:0;background:transparent;color:var(--muted);font-size:13px;font-weight:800;height:32px;padding:0 9px;border-radius:9px;cursor:pointer}}.plain:hover{{background:var(--soft);color:var(--text)}}.lang{{position:relative}}.menu{{display:none;position:absolute;right:0;top:38px;min-width:140px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 14px 35px rgba(0,0,0,.14);z-index:60}}.menu.show{{display:block}}.menu a{{display:block;text-decoration:none;color:var(--text);padding:9px 10px;border-radius:8px}}.menu a:hover{{background:var(--soft)}}.switch{{width:46px;height:26px;border:0;border-radius:999px;background:#111827;padding:3px;display:inline-flex;align-items:center;cursor:pointer}}.knob{{width:20px;height:20px;border-radius:50%;background:#fff;display:block;transition:.2s}}body.dark .switch{{background:#e5e7eb}}body.dark .knob{{transform:translateX(20px);background:#111827}}
+.sidebar{{position:fixed;left:0;top:64px;bottom:0;width:250px;background:var(--sidebar);border-right:1px solid var(--line);transform:translateX(-100%);transition:.22s;z-index:35;padding:16px}}.sidebar.open{{transform:translateX(0)}}.overlay{{display:none;position:fixed;inset:64px 0 0;background:rgba(0,0,0,.42);z-index:30}}.overlay.show{{display:block}}.nav-label{{font-size:11px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin:10px 10px 8px}}.nav-btn{{display:block;width:100%;text-decoration:none;color:var(--text);text-align:left;padding:11px 13px;border-radius:11px;font-weight:750;margin-bottom:4px}}.nav-btn:hover{{background:var(--soft)}}.nav-btn.active{{background:var(--accent);color:var(--bg)}}.main{{min-height:calc(100vh - 64px);transition:.22s}}.container{{max-width:1180px;margin:auto;padding:34px 22px 70px}}h1{{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 10px}}h2{{margin-top:34px}}.lead{{color:var(--muted);max-width:800px}}.grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}}.card{{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}}.label{{font-size:13px;color:var(--muted)}}.big{{font-size:27px;font-weight:900;margin-top:4px}}table{{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}}th,td{{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left}}th{{font-size:12px;color:var(--muted)}}.good{{color:var(--good)}}.bad{{color:var(--bad)}}.muted{{color:var(--muted)}}.share,.app-link{{display:inline-block;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:700;text-decoration:none}}.app-link{{margin-left:6px}}.teams{{display:flex;flex-wrap:wrap;gap:8px}}.teams a{{text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:9px 12px;border-radius:10px}}footer{{max-width:1100px;margin:auto;padding:0 20px 40px;color:var(--muted);font-size:12px}}.modal-bg{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:80;align-items:center;justify-content:center;padding:20px}}.modal-bg.show{{display:flex}}.modal{{max-width:560px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}}.close{{float:right;border:0;background:transparent;color:var(--text);font-size:22px;cursor:pointer}}@media(min-width:1100px){{.sidebar.open ~ .main{{margin-left:250px}}}}@media(max-width:760px){{.grid{{grid-template-columns:1fr}}th,td{{padding:10px 7px;font-size:13px}}.notice{{display:none}}}}</style></head><body>
+<header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="메뉴 열기">☰</button><a class="brand" href="{SITE_URL}/">EPL Run-in <span>Lab</span></a><div class="top-actions"><div class="lang"><button class="plain" id="langBtn">Language ▾</button><div class="menu" id="langMenu"><a href="{canonical}">한국어</a><a href="{SITE_URL}{en_path}">English</a></div></div><button class="plain notice" id="noticeBtn">주의사항</button><button class="switch" id="theme" aria-label="다크모드 전환"><span class="knob"></span></button></div></header><aside class="sidebar" id="sidebar"><div class="nav-label">Menu</div>{links}{about}</aside><div class="overlay" id="overlay"></div><main class="main"><div class="container">{body}</div><footer>데이터 기반 확률은 경기 결과를 보장하지 않습니다. EPL Run-in Lab은 Premier League 또는 개별 구단의 공식 서비스가 아닙니다.</footer></main>
+<div class="modal-bg" id="noticeModal"><div class="modal"><button class="close" id="noticeClose">×</button><h3>예측 데이터 주의사항</h3><p>승·무·패 확률과 기대 승점은 이용 가능한 과거 및 현재 경기 데이터를 기반으로 한 통계 모델의 추정치입니다. 부상, 라인업, 전술 변화가 완전히 반영되지 않을 수 있습니다.</p></div></div><script>const sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');function setSidebar(v){{sb.classList.toggle('open',v);ov.classList.toggle('show',v&&innerWidth<1100)}}document.getElementById('menuBtn').onclick=()=>setSidebar(!sb.classList.contains('open'));ov.onclick=()=>setSidebar(false);if(innerWidth>=1100)setSidebar(true);const b=document.body,t=document.getElementById('theme');if(localStorage.getItem('runin-theme')==='dark')b.classList.add('dark');t.onclick=()=>{{b.classList.toggle('dark');localStorage.setItem('runin-theme',b.classList.contains('dark')?'dark':'light')}};const lb=document.getElementById('langBtn'),lm=document.getElementById('langMenu');lb.onclick=e=>{{e.stopPropagation();lm.classList.toggle('show')}};document.addEventListener('click',()=>lm.classList.remove('show'));lm.onclick=e=>e.stopPropagation();const nm=document.getElementById('noticeModal');document.getElementById('noticeBtn').onclick=()=>nm.classList.add('show');document.getElementById('noticeClose').onclick=()=>nm.classList.remove('show');nm.onclick=e=>{{if(e.target===nm)nm.classList.remove('show')}};async function sharePage(text){{const data={{title:document.title,text:text,url:location.href}};if(navigator.share){{try{{await navigator.share(data);return}}catch(e){{}}}}await navigator.clipboard.writeText(location.href);const btn=document.querySelector('.share');if(btn){{const old=btn.textContent;btn.textContent='링크 복사됨';setTimeout(()=>btn.textContent=old,1500)}}}}</script></body></html>"""
 
 def write_page(rel, html):
     p = ROOT / "docs" / rel
@@ -789,7 +751,7 @@ def generate_static_pages(result):
         fx="".join(f"<tr><td>{esc(g['date'])}</td><td>{'홈' if g['venue']=='H' else '원정'}</td><td><a href='{SITE_URL}/teams/{slugify_team(g['opponent'])}/'>{esc(g['opponent'])}</a></td><td><b>{fmtp(g['win'])}</b></td><td>{fmtp(g['draw'])}</td><td>{fmtp(g['loss'])}</td><td>{fmt2(g['xpts'])}</td></tr>" for g in gs)
         recent=" · ".join(f"{x['date'][5:]} {'홈' if x['venue']=='H' else '원정'} {x['opponent']} {x['gf']}-{x['ga']} {x['result']}" for x in prof.get("recentResults",[])) or "현재 시즌 완료 경기 없음"
         nextg=gs[0] if gs else None
-        next_summary=(f"다음 경기는 {esc(nextg['date'])} {'홈에서' if nextg['venue']=='H' else '원정에서'} {esc(nextg['opponent'])}을(를) 상대합니다. "
+        next_summary=(f"다음 경기는 {esc(nextg['date'])} {'홈에서' if nextg['venue']=='H' else '원정에서'} {esc(nextg['opponent'])}와 맞붙습니다. "
                       f"모델은 {esc(t)} 기준 승리 {fmtp(nextg['win'])}, 무승부 {fmtp(nextg['draw'])}, 패배 {fmtp(nextg['loss'])}, 기대 승점 {fmt2(nextg['xpts'])}점을 제시합니다.") if nextg else "현재 예정된 다음 경기 데이터가 없습니다."
         form_bits=[]
         if stats.get('ppg') is not None: form_bits.append(f"최근 경기 흐름에 반영되는 경기당 승점은 {stats['ppg']:.2f}점")
@@ -797,12 +759,13 @@ def generate_static_pages(result):
         if stats.get('shots') is not None and stats.get('sot') is not None: form_bits.append(f"경기당 슈팅/유효슈팅은 {stats['shots']:.1f}/{stats['sot']:.1f}회")
         if stats.get('homePPG') is not None and stats.get('awayPPG') is not None: form_bits.append(f"홈/원정 경기당 승점은 {stats['homePPG']:.2f}/{stats['awayPPG']:.2f}점")
         form_summary=". ".join(form_bits)+("." if form_bits else "현재 표시할 모델 입력 통계가 충분하지 않습니다.")
-        summary=(f"{esc(t)}은(는) 현재 EPL {st.get('rank','-')}위, 승점 {st.get('points','-')}점입니다. "
+        summary=(f"{esc(t)}의 현재 EPL 순위는 {st.get('rank','-')}위이며 승점은 {st.get('points','-')}점입니다. "
                  f"Power Score는 {pw.get('score','-')}로 모델 파워랭킹 {pw.get('rank','-')}위이며, "
                  f"향후 5경기 기대 승점은 {fmt2(r5['xpts']) if r5 else '-'}점, 일정 쉬움 순위는 {r5.get('rank','-')}위입니다.")
         desc=(f"{t} EPL 경기 예측. 다음 상대 {nextg['opponent']}전 승률 {fmtp(nextg['win'])}, 향후 5경기 기대 승점 {fmt2(r5['xpts']) if r5 else '-'}, 현재 순위와 Power Score를 확인하세요." if nextg else f"{t}의 EPL 경기 예측, 향후 일정, 기대 승점, 현재 순위와 Power Score를 확인하세요.")
         body=f"""<h1>{esc(t)} 경기 예측·승률·향후 일정</h1><p class="lead">{summary}</p>
 <button class="share" onclick="sharePage('{esc(t)} EPL 경기 예측과 향후 일정')">이 팀 분석 공유하기</button>
+<a class="app-link" href="{SITE_URL}/?page=team&amp;team={esc(t)}">대시보드에서 {esc(t)} 보기</a>
 <div class="grid"><div class="card"><div class="label">현재 EPL 순위</div><div class="big">{st.get('rank','-')}위</div><div class="muted">승점 {st.get('points','-')}</div></div>
 <div class="card"><div class="label">Power Score</div><div class="big">{pw.get('score','-')}</div><div class="muted">파워 랭킹 {pw.get('rank','-')}위</div></div>
 <div class="card"><div class="label">향후 5경기 xPts</div><div class="big">{fmt2(r5['xpts']) if r5 else '-'}</div><div class="muted">일정 쉬움 순위 {r5.get('rank','-')}위</div></div></div>
