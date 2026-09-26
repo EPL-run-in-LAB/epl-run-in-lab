@@ -722,11 +722,24 @@ def generate_static_pages(result):
 <button class="share" onclick="sharePage('EPL 향후 5경기 일정 난이도')">순위 공유하기</button><h2>향후 5경기</h2><table><thead><tr><th>#</th><th>팀</th><th>xPts</th><th>xPPG</th></tr></thead><tbody>{rows}</tbody></table>"""
     write_page("fixture-difficulty",page_shell("EPL 일정 난이도·남은 일정 | 향후 5경기 | EPL Run-in Lab","프리미어리그(EPL) 20개 팀의 향후 5경기 일정 난이도와 남은 일정을 기대 승점(xPts)으로 비교합니다.","/fixture-difficulty/",body,"/fixture-difficulty/"))
 
-    # Power ranking
+    # Power ranking (V12: strengthen the page that is already earning organic impressions)
     rows="".join(f"<tr><td>{r['rank']}</td><td><a href='{SITE_URL}/teams/{slugify_team(r['team'])}/'>{esc(r['team'])}</a></td><td><b>{r['score']:.1f}</b></td><td>{r.get('currentEPLRank') or '-'}</td><td>{r['neutralXPPG']:.2f}</td></tr>" for r in powers)
-    body=f"""<h1>EPL 파워 랭킹</h1><p class="lead">현재 리그 순위와 별개로, 같은 리그 평균 수준의 상대를 만난다고 가정했을 때 모델이 평가하는 팀 전력을 비교합니다. 홈·원정 중립 상대 기대 승점을 평균한 뒤 최고 팀을 100으로 정규화합니다.</p>
-<h2>모델 전력 순위</h2><table><thead><tr><th>#</th><th>팀</th><th>Power Score</th><th>현재 EPL 순위</th><th>중립 상대 xPts</th></tr></thead><tbody>{rows}</tbody></table>"""
-    write_page("power-ranking",page_shell("EPL 파워랭킹·팀 전력 순위 | EPL Run-in Lab","현재 프리미어리그 순위와 별개로 데이터 모델이 평가한 EPL 20개 팀의 파워랭킹과 상대 전력을 비교합니다.","/power-ranking/",body,"/power-ranking/"))
+    updated=result.get('asOf') or datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    gaps=[]
+    for r in powers:
+        lr=r.get('currentEPLRank')
+        if lr:
+            gaps.append((abs(int(lr)-int(r['rank'])), int(lr)-int(r['rank']), r))
+    gaps.sort(key=lambda z:(-z[0], z[2]['rank']))
+    gap_cards="".join(f"<div class='card'><div class='label'>{esc(r['team'])}</div><div class='big'>Power {r['rank']}위 · 실제 {lr}위</div><div class='muted'>{('모델 순위가 실제 순위보다 '+str(abs(diff))+'계단 높습니다.') if diff>0 else ('모델 순위가 실제 순위보다 '+str(abs(diff))+'계단 낮습니다.') if diff<0 else '모델 순위와 실제 순위가 같습니다.'}</div></div>" for _,diff,r in gaps[:3] for lr in [r.get('currentEPLRank')])
+    body=f"""<h1>EPL 파워 랭킹</h1><p class="lead">현재 프리미어리그 순위와 별개로 EPL Run-in Lab 모델이 평가하는 20개 팀의 전력을 비교합니다. 모든 팀을 같은 리그 평균 수준의 상대와 홈·원정에서 만나는 조건으로 평가하고, 가장 강한 팀의 Power Score를 100으로 정규화합니다.</p><p class="muted">업데이트 {esc(updated)}</p>
+<h2>현재 EPL 파워 랭킹</h2><table><thead><tr><th>#</th><th>팀</th><th>Power Score</th><th>현재 EPL 순위</th><th>중립 상대 xPts</th></tr></thead><tbody>{rows}</tbody></table>
+<h2>파워 랭킹과 실제 EPL 순위 비교</h2><p>실제 순위는 지금까지 획득한 승점의 결과이고, 파워 랭킹은 모든 팀을 같은 조건에서 비교한 모델 전력 지표입니다. 따라서 두 순위는 서로 다를 수 있습니다.</p><div class="grid">{gap_cards}</div>
+<h2>Power Score는 어떻게 계산하나요?</h2><p>각 팀이 리그 평균 수준의 가상 상대를 홈에서 한 번, 원정에서 한 번 만난다고 가정해 기대 승점을 계산합니다. 두 값을 평균한 뒤 EPL 20개 팀 사이에서 가장 높은 팀을 100으로 두고 정규화합니다. 따라서 Power Score는 최종 순위 예측이 아니라 현재 모델이 평가하는 상대적인 팀 전력 지표입니다.</p>
+<h2>모델에는 어떤 기록이 반영되나요?</h2><p>최근 경기 승점, 득점·실점, 슈팅·유효슈팅, 홈·원정 경기력 등이 반영되며 오래된 경기일수록 영향이 점차 줄어듭니다. 파워 랭킹은 이 경기 예측 모델을 동일한 상대 조건에 적용해 팀 간 전력을 비교합니다.</p>
+<h2>EPL 파워 랭킹 FAQ</h2><h3>실제 EPL 순위와 같은 지표인가요?</h3><p>아닙니다. 실제 순위는 경기 결과와 승점으로 결정되고, 파워 랭킹은 동일한 가상 상대를 기준으로 모델이 평가한 전력을 비교합니다.</p><h3>파워 랭킹은 언제 업데이트되나요?</h3><p>EPL Run-in Lab의 최신 경기 데이터가 갱신될 때 이 페이지도 다시 생성되므로 새로운 리그 경기 결과가 반영되면서 순위가 달라질 수 있습니다.</p><h3>Power Score가 높으면 다음 경기를 반드시 이기나요?</h3><p>아닙니다. Power Score는 상대적인 팀 전력 지표이며 개별 경기의 승·무·패 확률은 상대 팀, 홈·원정 여부와 현재 모델 입력값을 함께 반영해 계산합니다.</p>
+<h2>관련 EPL 분석</h2><div class="teams"><a href="{SITE_URL}/predictions/">EPL 경기 예측</a><a href="{SITE_URL}/fixture-difficulty/">EPL 일정 난이도</a><a href="{SITE_URL}/standings/">현재 EPL 순위</a><a href="{SITE_URL}/teams/">팀별 분석</a></div>"""
+    write_page("power-ranking",page_shell("EPL 파워랭킹 2026/27·팀 전력 순위 | EPL Run-in Lab","2026/27 프리미어리그 20개 팀의 최신 EPL 파워랭킹을 Power Score, 현재 순위와 함께 비교합니다.","/power-ranking/",body,"/power-ranking/"))
 
     # Standings
     rows="".join(f"<tr><td>{r['rank']}</td><td><a href='{SITE_URL}/teams/{slugify_team(r['team'])}/'>{esc(r['team'])}</a></td><td>{r['played']}</td><td>{r['won']}</td><td>{r['drawn']}</td><td>{r['lost']}</td><td>{r['gd']:+d}</td><td><b>{r['points']}</b></td></tr>" for r in standings)
@@ -788,7 +801,9 @@ def generate_static_pages(result):
     now=datetime.now(timezone.utc).strftime("%Y-%m-%d")
     urls="\n".join(f"  <url><loc>{SITE_URL}{p}</loc><lastmod>{now}</lastmod></url>" for p in paths)
     (ROOT/"docs/sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n',encoding="utf-8")
-    (ROOT/"docs/robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n",encoding="utf-8")
+    # V12 plain-text sitemap. build_i18n.py later expands it with English URLs too.
+    (ROOT/"docs/sitemap.txt").write_text('\n'.join(SITE_URL+p for p in paths)+'\n', encoding="utf-8")
+    (ROOT/"docs/robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\nSitemap: {SITE_URL}/sitemap.txt\n",encoding="utf-8")
 
     # Search Console verification placeholder instructions, not a fake verification token.
     (ROOT/"docs/SEARCH_CONSOLE_SETUP.txt").write_text(
