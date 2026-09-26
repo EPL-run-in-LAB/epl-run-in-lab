@@ -88,8 +88,16 @@ def build():
     write('en/fixture-difficulty',shell('Premier League Fixture Difficulty | Next 5 Matches | EPL Run-in Lab','Premier League fixture difficulty rankings for all 20 EPL teams over the next five matches, based on expected points.','/en/fixture-difficulty/','/fixture-difficulty/',body,'/en/fixture-difficulty/'))
 
     rows=''.join(f"<tr><td>{x['rank']}</td><td><a href='{SITE}/en/teams/{slug(x['team'])}/'>{esc(x['team'])}</a></td><td><b>{x['score']:.1f}</b></td><td>{x.get('currentEPLRank') or '-'}</td><td>{x['neutralXPPG']:.2f}</td></tr>" for x in powers)
-    body=f'''<h1>EPL power ranking</h1><p class="lead">A model-based team strength ranking separate from the league table. Teams are evaluated against a league-average opponent at home and away, then normalised so the strongest team scores 100.</p><h2>Model strength ranking</h2><table><thead><tr><th>#</th><th>Team</th><th>Power Score</th><th>Current EPL rank</th><th>Neutral xPts</th></tr></thead><tbody>{rows}</tbody></table>'''
-    write('en/power-ranking',shell('Premier League Power Rankings | EPL Team Strength | EPL Run-in Lab','Data-driven Premier League power rankings comparing the modelled strength of all 20 EPL teams.','/en/power-ranking/','/power-ranking/',body,'/en/power-ranking/'))
+    updated=d.get('asOf') or datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+    gaps=[]
+    for x in powers:
+        lr=x.get('currentEPLRank')
+        if lr:
+            gaps.append((abs(int(lr)-int(x['rank'])), int(lr)-int(x['rank']), x))
+    gaps.sort(key=lambda z:(-z[0], z[2]['rank']))
+    gap_cards=''.join(f"<div class='card'><div class='label'>{esc(x['team'])}</div><div class='big'>Power #{x['rank']} · Table #{lr}</div><div class='muted'>{('Model rates them '+str(abs(diff))+' place'+('s' if abs(diff)!=1 else '')+' higher than the table') if diff>0 else ('Model rates them '+str(abs(diff))+' place'+('s' if abs(diff)!=1 else '')+' lower than the table') if diff<0 else 'Power rank matches league position'}</div></div>" for _,diff,x in gaps[:3] for lr in [x.get('currentEPLRank')])
+    body=f'''<h1>Premier League Power Rankings</h1><p class="lead">Current EPL power rankings from EPL Run-in Lab. This model-based team strength ranking is separate from the Premier League table: every club is evaluated against a league-average opponent at home and away, then the strongest team is normalised to a Power Score of 100.</p><p class="muted">Updated {esc(updated)}</p><h2>Current Premier League power rankings</h2><table><thead><tr><th>#</th><th>Team</th><th>Power Score</th><th>Current EPL rank</th><th>Neutral xPts</th></tr></thead><tbody>{rows}</tbody></table><h2>Power ranking vs Premier League table</h2><p>The league table measures points already won. Power Ranking estimates underlying model strength under the same neutral-opponent conditions, so the two rankings can differ.</p><div class="grid">{gap_cards}</div><h2>How is the Power Score calculated?</h2><p>Each team is projected once at home and once away against a league-average virtual opponent. The two expected-points values are averaged and then normalised across the 20 clubs, with the strongest team set to 100. This makes Power Score a relative strength index, not a prediction of final league position.</p><h2>What does the model use?</h2><p>The underlying match model uses recent points, goals scored and conceded, shots, shots on target and home/away performance. Older matches gradually receive less weight. The Power Ranking uses that model to compare every team under the same conditions.</p><h2>Power Ranking FAQ</h2><h3>Is this the same as the Premier League table?</h3><p>No. The table is based on actual results and points. Power Ranking compares modelled team strength against the same league-average opponent.</p><h3>How often is the ranking updated?</h3><p>The page is regenerated when EPL Run-in Lab updates its current match data, so the ranking can change as new league results are added.</p><h3>Does a higher Power Score guarantee a win?</h3><p>No. It is a relative strength measure. Individual match probabilities also depend on the opponent, venue and current model inputs.</p><h2>Related Premier League analysis</h2><div class="teams"><a href="{SITE}/en/predictions/">Premier League Predictions</a><a href="{SITE}/en/fixture-difficulty/">Fixture Difficulty</a><a href="{SITE}/en/standings/">EPL Standings</a><a href="{SITE}/en/teams/">Team Analysis</a></div>'''
+    write('en/power-ranking',shell('Premier League Power Rankings 2026/27 | EPL Team Strength | EPL Run-in Lab','Updated Premier League power rankings for all 20 EPL teams, comparing modelled team strength, Power Score and current league position.','/en/power-ranking/','/power-ranking/',body,'/en/power-ranking/'))
 
     rows=''.join(f"<tr><td>{x['rank']}</td><td><a href='{SITE}/en/teams/{slug(x['team'])}/'>{esc(x['team'])}</a></td><td>{x['played']}</td><td>{x['won']}</td><td>{x['drawn']}</td><td>{x['lost']}</td><td>{x['gd']:+d}</td><td><b>{x['points']}</b></td></tr>" for x in standings)
     body=f'''<h1>Current EPL standings</h1><p class="lead">League table calculated from completed Premier League matches.</p><table><thead><tr><th>#</th><th>Team</th><th>Pl</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead><tbody>{rows}</tbody></table>'''
@@ -150,7 +158,15 @@ def build():
     if len(generated) != expected:
         raise RuntimeError(f'sitemap URL count mismatch: expected {expected}, got {len(generated)}')
 
-    (DOCS/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n',encoding='utf-8')
+    # V12: also publish Google's supported plain-text sitemap format.
+    # Keep sitemap.xml unchanged; submit sitemap.txt as an independent Search Console experiment.
+    sitemap_txt = DOCS/'sitemap.txt'
+    sitemap_txt.write_text('\n'.join(SITE + path for path in ko + en) + '\n', encoding='utf-8')
+    txt_urls=[line.strip() for line in sitemap_txt.read_text(encoding='utf-8').splitlines() if line.strip()]
+    if len(txt_urls) != expected or len(set(txt_urls)) != expected or not all(u.startswith(SITE + '/') for u in txt_urls):
+        raise RuntimeError('sitemap.txt validation failed')
+
+    (DOCS/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\nSitemap: {SITE}/sitemap.txt\n',encoding='utf-8')
 
 
 
