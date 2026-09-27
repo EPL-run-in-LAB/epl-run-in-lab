@@ -133,6 +133,15 @@ def build():
     # the sitemap only needs canonical URLs + lastmod for reliable Search Console parsing.
     ko=['/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
     en=['/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
+    # V13 match reports are generated before i18n. Include finalized reports in both sitemaps.
+    match_paths=[]
+    matches_root=DOCS/'matches'
+    if matches_root.exists():
+        for idx in sorted(matches_root.glob('*/*/index.html')):
+            rel='/' + idx.parent.relative_to(DOCS).as_posix() + '/'
+            match_paths.append(rel)
+    ko += match_paths
+    en += ['/en' + p for p in match_paths]
     today=datetime.now(timezone.utc).strftime('%Y-%m-%d')
 
     ns='http://www.sitemaps.org/schemas/sitemap/0.9'
