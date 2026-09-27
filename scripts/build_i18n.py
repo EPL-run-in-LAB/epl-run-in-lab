@@ -204,7 +204,7 @@ def build_interactive_english_home():
         ('데이터 불러오는 중…','Loading data…'),
         ('3경기','3 matches'),('5경기','5 matches'),('10경기','10 matches'),
         ('현재 EPL 순위','Current EPL Position'),('향후 기대 승점','Projected Points'),('일정 난이도 순위','Fixture Ease Rank'),('xPts가 높을수록 쉬운 편','Higher xPts means an easier projected run'),('최근 결과','Recent Results'),('현재 시즌 최근 경기','Latest matches this season'),
-        ('다음 경기','Next Match'),('자세히 분석하기 →','View Detailed Analysis →'),
+        ('다음 경기','Next Match'),('경기 상세 보기','View Match Details'),('경기 상세','Match Details'),('자세히 분석하기 →','View Detailed Analysis →'),
         ('예측 해석 시 참고하세요','How to interpret these predictions'),
         ('확률은 통계 모델의 추정치입니다. 부상·로테이션·전술 변화처럼 실시간으로 완전히 반영되지 않는 변수가 있으며, 일부 현재 시즌 세부 지표는 무료 데이터의 한계로 최신 결과와 기존 확보 지표를 함께 사용합니다.','Probabilities are statistical model estimates. Injuries, rotation and tactical changes may not be fully reflected in real time, and some current-season detailed metrics combine the latest results with previously available data because of free-data limitations.'),
         ('향후 일정 미리보기','Upcoming Fixtures Preview'),('전체 일정 난이도 →','Full Fixture Difficulty →'),
