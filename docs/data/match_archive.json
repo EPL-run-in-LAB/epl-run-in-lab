@@ -3998,7 +3998,7 @@
       "finalizedAt": "2026-10-13T02:34:00.582787+00:00"
     },
     "560597": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560597,
         "utcDate": "2026-10-12T19:00:00Z",
@@ -4111,7 +4111,404 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+      "result": {
+        "homeGoals": 4,
+        "awayGoals": 1,
+        "referee": "J. Brooks",
+        "stadium": "Coventry Building Society Arena"
+      },
+      "goals": [
+        {
+          "id": "cmv7ch7g4d1mgnv0783hznwf8",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "6",
+          "type": "GOAL",
+          "homeScorer": "J. Rudoni",
+          "homeScorerId": "4273481772",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": "Penalty",
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-14T00:01:23.957Z",
+          "updatedAt": "2026-10-14T00:01:23.957Z",
+          "timeNum": 6
+        },
+        {
+          "id": "cmv7ch7g4d1mhnv07nivndx8f",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "48",
+          "type": "GOAL",
+          "homeScorer": "S. Cherif",
+          "homeScorerId": "1780546906",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 0",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-14T00:01:23.957Z",
+          "updatedAt": "2026-10-14T00:01:23.957Z",
+          "timeNum": 48
+        },
+        {
+          "id": "cmv7ch7g4d1minv070c9tp1q9",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "70",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "S. Botman",
+          "awayScorerId": "559212774",
+          "awayAssist": "Nico",
+          "awayAssistId": "2690268063",
+          "score": "2 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-14T00:01:23.957Z",
+          "updatedAt": "2026-10-14T00:01:23.957Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmv7ch7g4d1mjnv07wp0fvy2l",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "81",
+          "type": "GOAL",
+          "homeScorer": "E. Simms",
+          "homeScorerId": "2719337198",
+          "homeAssist": "B. Thomas-Asante",
+          "homeAssistId": "637934509",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "3 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-14T00:01:23.957Z",
+          "updatedAt": "2026-10-14T00:01:23.957Z",
+          "timeNum": 81
+        },
+        {
+          "id": "cmv7ch7g4d1mknv07p0ikagze",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "86",
+          "type": "GOAL",
+          "homeScorer": "S. Mfuni",
+          "homeScorerId": "3962740092",
+          "homeAssist": "J. Dasilva",
+          "homeAssistId": "898622514",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "4 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-14T00:01:23.957Z",
+          "updatedAt": "2026-10-14T00:01:23.957Z",
+          "timeNum": 86
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmv61bar5tn3ao2088petka24",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "66",
+          "card": "yellow card",
+          "homeFault": "M. van Ewijk",
+          "homePlayerId": "2908540951",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-13T02:01:05.959Z",
+          "updatedAt": "2026-10-13T02:01:05.959Z",
+          "timeNum": 66
+        },
+        {
+          "id": "cmv61bar5tn3bo2085oxdhtez",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "81",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "Joelinton",
+          "awayPlayerId": "310238476",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-13T02:01:05.959Z",
+          "updatedAt": "2026-10-13T02:01:05.959Z",
+          "timeNum": 81
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmv61bar8tn3ho208m43bzd65",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "59",
+          "substitution": "L. Miley | A. Dedic",
+          "substitutionPlayerId": "400306928 | 2792029663",
+          "team": "away",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 59
+        },
+        {
+          "id": "cmv61bar8tn3jo208vtfrbumg",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "59",
+          "substitution": "J. Willock | Joelinton",
+          "substitutionPlayerId": "2886133965 | 310238476",
+          "team": "away",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 59
+        },
+        {
+          "id": "cmv61bar8tn3io208dzto770x",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "59",
+          "substitution": "J. Murphy | B. Toure",
+          "substitutionPlayerId": "2802751417 | 1690550683",
+          "team": "away",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 59
+        },
+        {
+          "id": "cmv61bar8tn3co208fhoai0jn",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "61",
+          "substitution": "E. Mason-Clark | T. Sakamoto",
+          "substitutionPlayerId": "1151947364 | 257254747",
+          "team": "home",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 61
+        },
+        {
+          "id": "cmv61bar8tn3eo208amwz8xc1",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "78",
+          "substitution": "S. Cherif | E. Simms",
+          "substitutionPlayerId": "1780546906 | 2719337198",
+          "team": "home",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmv61bar8tn3do208yye8now2",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "78",
+          "substitution": "C. Yirenkyi | F. Onyeka",
+          "substitutionPlayerId": "1336226147 | 731960613",
+          "team": "home",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmv61bar8tn3ko208c5vd8n9g",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "78",
+          "substitution": "Y. Wissa | W. Osula",
+          "substitutionPlayerId": "3997136875 | 778280555",
+          "team": "away",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmv61bar8tn3go208zobohry7",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "83",
+          "substitution": "M. Grimes | S. Mfuni",
+          "substitutionPlayerId": "2694160098 | 3962740092",
+          "team": "home",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmv61bar8tn3fo208asfqdkel",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "83",
+          "substitution": "J. Rudoni | V. Torp",
+          "substitutionPlayerId": "4273481772 | 1784283968",
+          "team": "home",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmv61bar8tn3lo208bf90k166",
+          "fixtureId": "cmtyc03yep5cplc07w9bjwvjz",
+          "time": "90",
+          "substitution": "B. Toure | D. Burn",
+          "substitutionPlayerId": "1690550683 | 1235443171",
+          "team": "away",
+          "createdAt": "2026-10-13T02:01:05.960Z",
+          "updatedAt": "2026-10-13T02:01:05.960Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "6",
+          "minuteNum": 6,
+          "type": "GOAL",
+          "side": "home",
+          "player": "J. Rudoni",
+          "assist": null,
+          "score": "1 - 0"
+        },
+        {
+          "minute": "48",
+          "minuteNum": 48,
+          "type": "GOAL",
+          "side": "home",
+          "player": "S. Cherif",
+          "assist": null,
+          "score": "2 - 0"
+        },
+        {
+          "minute": "59",
+          "minuteNum": 59,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "L. Miley | A. Dedic"
+        },
+        {
+          "minute": "59",
+          "minuteNum": 59,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Willock | Joelinton"
+        },
+        {
+          "minute": "59",
+          "minuteNum": 59,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Murphy | B. Toure"
+        },
+        {
+          "minute": "61",
+          "minuteNum": 61,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "E. Mason-Clark | T. Sakamoto"
+        },
+        {
+          "minute": "66",
+          "minuteNum": 66,
+          "type": "CARD",
+          "side": "home",
+          "player": "M. van Ewijk",
+          "card": "yellow card"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "GOAL",
+          "side": "away",
+          "player": "S. Botman",
+          "assist": "Nico",
+          "score": "2 - 1"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "S. Cherif | E. Simms"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "C. Yirenkyi | F. Onyeka"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Y. Wissa | W. Osula"
+        },
+        {
+          "minute": "81",
+          "minuteNum": 81,
+          "type": "CARD",
+          "side": "away",
+          "player": "Joelinton",
+          "card": "yellow card"
+        },
+        {
+          "minute": "81",
+          "minuteNum": 81,
+          "type": "GOAL",
+          "side": "home",
+          "player": "E. Simms",
+          "assist": "B. Thomas-Asante",
+          "score": "3 - 1"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "M. Grimes | S. Mfuni"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Rudoni | V. Torp"
+        },
+        {
+          "minute": "86",
+          "minuteNum": 86,
+          "type": "GOAL",
+          "side": "home",
+          "player": "S. Mfuni",
+          "assist": "J. Dasilva",
+          "score": "4 - 1"
+        },
+        {
+          "minute": "90",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "B. Toure | D. Burn"
+        }
+      ],
+      "finalizedAt": "2026-10-14T00:16:41.522073+00:00"
     },
     "560603": {
       "status": "SNAPSHOT",
