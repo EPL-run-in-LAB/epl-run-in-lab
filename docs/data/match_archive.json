@@ -16109,6 +16109,122 @@
         ],
         "capturedAt": "2026-10-13T02:34:00.582787+00:00"
       }
+    },
+    "560711": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560711,
+        "utcDate": "2026-12-26T15:00:00Z",
+        "date": "2026-12-26",
+        "home": "Ipswich",
+        "away": "Brentford",
+        "homeWin": 0.2639592906107224,
+        "draw": 0.27838115391199714,
+        "awayWin": 0.45765955547728043,
+        "homeXPts": 1.0702590257441642,
+        "awayXPts": 1.6513598203438384,
+        "homeFactors": [
+          {
+            "title": "Ipswich의 홈 경기력이 부담 요소입니다",
+            "body": "전체 경기력과 별도로 Ipswich의 최근 홈 경기 승점과 득실점을 반영합니다. Ipswich의 홈 경기력이 중립 수준보다 낮아 이번 경기 승리 가능성을 낮춥니다.",
+            "titleEn": "Ipswich's home form is a concern",
+            "bodyEn": "The model separately considers Ipswich's recent home points and goal difference. That home performance is rated below the neutral level, which reduces the chance of winning this match.",
+            "impact": -8.8,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Ipswich의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Ipswich's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Ipswich's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -4.6,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Ipswich가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Ipswich's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Ipswich's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -4.1,
+            "favorable": false
+          },
+          {
+            "title": "Brentford의 공격 기회 창출력이 Ipswich에게 유리하게 작용합니다",
+            "body": "Brentford의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Ipswich의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Brentford's chance creation works in favour of Ipswich",
+            "bodyEn": "The model evaluates Brentford's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Ipswich's win probability.",
+            "impact": 3.0,
+            "favorable": true
+          },
+          {
+            "title": "Brentford의 최근 경기 흐름이 Ipswich에게 부담입니다",
+            "body": "Brentford 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 좋게 평가되어 Ipswich의 승리 가능성에 부정적 영향을 줍니다.",
+            "titleEn": "Brentford's recent form is a concern for Ipswich",
+            "bodyEn": "Brentford's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated above the league-neutral level, which hurts Ipswich's win probability.",
+            "impact": -2.8,
+            "favorable": false
+          },
+          {
+            "title": "Brentford의 원정 경기력이 Ipswich에게 크게 위협적이지 않습니다",
+            "body": "Brentford의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 약하게 평가되어 Ipswich 입장에서는 부담이 줄어듭니다.",
+            "titleEn": "Brentford's away form is less threatening for Ipswich",
+            "bodyEn": "The model separately considers Brentford's recent away points and goal difference. The opponent's away performance is rated below the neutral level, which reduces the difficulty for Ipswich.",
+            "impact": 0.2,
+            "favorable": true
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Ipswich의 홈 경기력이 Brentford에게 크게 위협적이지 않습니다",
+            "body": "Ipswich의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 약하게 평가되어 Brentford 입장에서는 부담이 줄어듭니다.",
+            "titleEn": "Ipswich's home form is less threatening for Brentford",
+            "bodyEn": "The model separately considers Ipswich's recent home points and goal difference. The opponent's home performance is rated below the neutral level, which reduces the difficulty for Brentford.",
+            "impact": 9.7,
+            "favorable": true
+          },
+          {
+            "title": "Ipswich의 공격 기회 창출력이 Brentford에게 유리하게 작용합니다",
+            "body": "Ipswich의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Brentford의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Ipswich's chance creation works in favour of Brentford",
+            "bodyEn": "The model evaluates Ipswich's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Brentford's win probability.",
+            "impact": 4.9,
+            "favorable": true
+          },
+          {
+            "title": "Brentford의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Brentford가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Brentford's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Brentford's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -2.9,
+            "favorable": false
+          },
+          {
+            "title": "Brentford은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Brentford의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Brentford's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Brentford's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 2.5,
+            "favorable": true
+          },
+          {
+            "title": "Ipswich의 최근 경기 흐름이 Brentford에게 도움이 됩니다",
+            "body": "Ipswich 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Brentford의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Ipswich's recent form is helpful for Brentford",
+            "bodyEn": "Ipswich's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Brentford's win probability.",
+            "impact": 0.8,
+            "favorable": true
+          },
+          {
+            "title": "Brentford의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Brentford의 최근 원정 경기 승점과 득실점을 반영합니다. Brentford의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Brentford's away form is a strength",
+            "bodyEn": "The model separately considers Brentford's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 0.0,
+            "favorable": true
+          }
+        ],
+        "capturedAt": "2026-10-17T23:06:29.950779+00:00"
+      }
     }
   }
 }
