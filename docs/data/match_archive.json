@@ -8847,7 +8847,7 @@
       "finalizedAt": "2026-10-20T00:17:56.132128+00:00"
     },
     "560606": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560606,
         "utcDate": "2026-10-19T19:00:00Z",
@@ -8960,7 +8960,421 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+      "result": {
+        "homeGoals": 3,
+        "awayGoals": 1,
+        "referee": "A. Madley",
+        "stadium": "Tottenham Hotspur Stadium"
+      },
+      "goals": [
+        {
+          "id": "cmvfw08wtf7tknv07wfzrdz0e",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "14",
+          "type": "GOAL",
+          "homeScorer": "J. Maddison",
+          "homeScorerId": "141362872",
+          "homeAssist": "M. Kudus",
+          "homeAssistId": "865409496",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-19T23:30:14.429Z",
+          "updatedAt": "2026-10-19T23:30:14.429Z",
+          "timeNum": 14
+        },
+        {
+          "id": "cmvfw08wtf7tlnv07ho62ppo4",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "49",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "J. Rudoni",
+          "awayScorerId": "4273481772",
+          "awayAssist": "B. Thomas-Asante",
+          "awayAssistId": "637934509",
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-19T23:30:14.429Z",
+          "updatedAt": "2026-10-19T23:30:14.429Z",
+          "timeNum": 49
+        },
+        {
+          "id": "cmvfw08wtf7tmnv0709nuwk9q",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "58",
+          "type": "GOAL",
+          "homeScorer": "O. Marmoush",
+          "homeScorerId": "3693408449",
+          "homeAssist": "A. Robertson",
+          "homeAssistId": "2576713984",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-19T23:30:14.429Z",
+          "updatedAt": "2026-10-19T23:30:14.429Z",
+          "timeNum": 58
+        },
+        {
+          "id": "cmvfw08wtf7tnnv07bvsm6hdx",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "90+6",
+          "type": "GOAL",
+          "homeScorer": "B. Davies",
+          "homeScorerId": "362417688",
+          "homeAssist": "D. Solanke",
+          "homeAssistId": "2537958388",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "3 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-19T23:30:14.429Z",
+          "updatedAt": "2026-10-19T23:30:14.429Z",
+          "timeNum": 90
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmvhbfmzswg6qnv07awd1079c",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "20",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "C. Yirenkyi",
+          "awayPlayerId": "1336226147",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-20T23:29:52.495Z",
+          "updatedAt": "2026-10-20T23:29:52.495Z",
+          "timeNum": 20
+        },
+        {
+          "id": "cmvhbfmztwg6rnv077sztbn8d",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "22",
+          "card": "yellow card",
+          "homeFault": "D. Solanke",
+          "homePlayerId": "2537958388",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-20T23:29:52.495Z",
+          "updatedAt": "2026-10-20T23:29:52.495Z",
+          "timeNum": 22
+        },
+        {
+          "id": "cmvhbfmztwg6snv07pktnq79j",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "45",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "J. Dasilva",
+          "awayPlayerId": "898622514",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-20T23:29:52.495Z",
+          "updatedAt": "2026-10-20T23:29:52.495Z",
+          "timeNum": 45
+        },
+        {
+          "id": "cmvhbfmztwg6tnv07224uc7wd",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "64",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "J. Rudoni",
+          "awayPlayerId": "4273481772",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-20T23:29:52.495Z",
+          "updatedAt": "2026-10-20T23:29:52.495Z",
+          "timeNum": 64
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmvhbfmzuwg70nv07tcpclpfq",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "60",
+          "substitution": "C. Yirenkyi | F. Onyeka",
+          "substitutionPlayerId": "1336226147 | 731960613",
+          "team": "away",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 60
+        },
+        {
+          "id": "cmvhbfmzuwg72nv078x4lj9ch",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "60",
+          "substitution": "S. Cherif | T. Awoniyi",
+          "substitutionPlayerId": "1780546906 | 995838378",
+          "team": "away",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 60
+        },
+        {
+          "id": "cmvhbfmzuwg6vnv07ly01k70s",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "69",
+          "substitution": "J. Maddison | C. Gallagher",
+          "substitutionPlayerId": "141362872 | 18645852",
+          "team": "home",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 69
+        },
+        {
+          "id": "cmvhbfmztwg6unv07kk7fkra9",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "69",
+          "substitution": "A. Robertson | B. Davies",
+          "substitutionPlayerId": "2576713984 | 362417688",
+          "team": "home",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 69
+        },
+        {
+          "id": "cmvhbfmzuwg6wnv07blv2ftl0",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "71",
+          "substitution": "T. Adarabioyo | M. Fernandes",
+          "substitutionPlayerId": "9676216 | 2471553590",
+          "team": "home",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 71
+        },
+        {
+          "id": "cmvhbfmzuwg73nv078ukk71lz",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "78",
+          "substitution": "B. Thomas-Asante | E. Mason-Clark",
+          "substitutionPlayerId": "637934509 | 1151947364",
+          "team": "away",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmvhbfmzuwg71nv07tws72wl7",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "78",
+          "substitution": "T. Sakamoto | G. Hamer",
+          "substitutionPlayerId": "257254747 | 2984176781",
+          "team": "away",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmvhbfmzuwg6xnv073ersn7ac",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "87",
+          "substitution": "M. Kudus | D. Kulusevski",
+          "substitutionPlayerId": "865409496 | 1526001155",
+          "team": "home",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 87
+        },
+        {
+          "id": "cmvhbfmzuwg6ynv07xdaq1tsi",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "87",
+          "substitution": "O. Marmoush | M. Tel",
+          "substitutionPlayerId": "3693408449 | 440237961",
+          "team": "home",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 87
+        },
+        {
+          "id": "cmvhbfmzuwg6znv07a0msqbnj",
+          "fixtureId": "cmu74f9r3nq7zqu07h9rci1lm",
+          "time": "87",
+          "substitution": "J. Rudoni | K. Kesler-Hayden",
+          "substitutionPlayerId": "4273481772 | 1605933318",
+          "team": "away",
+          "createdAt": "2026-10-20T23:29:52.496Z",
+          "updatedAt": "2026-10-20T23:29:52.496Z",
+          "timeNum": 87
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "14",
+          "minuteNum": 14,
+          "type": "GOAL",
+          "side": "home",
+          "player": "J. Maddison",
+          "assist": "M. Kudus",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "20",
+          "minuteNum": 20,
+          "type": "CARD",
+          "side": "away",
+          "player": "C. Yirenkyi",
+          "card": "yellow card"
+        },
+        {
+          "minute": "22",
+          "minuteNum": 22,
+          "type": "CARD",
+          "side": "home",
+          "player": "D. Solanke",
+          "card": "yellow card"
+        },
+        {
+          "minute": "45",
+          "minuteNum": 45,
+          "type": "CARD",
+          "side": "away",
+          "player": "J. Dasilva",
+          "card": "yellow card"
+        },
+        {
+          "minute": "49",
+          "minuteNum": 49,
+          "type": "GOAL",
+          "side": "away",
+          "player": "J. Rudoni",
+          "assist": "B. Thomas-Asante",
+          "score": "1 - 1"
+        },
+        {
+          "minute": "58",
+          "minuteNum": 58,
+          "type": "GOAL",
+          "side": "home",
+          "player": "O. Marmoush",
+          "assist": "A. Robertson",
+          "score": "2 - 1"
+        },
+        {
+          "minute": "60",
+          "minuteNum": 60,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "C. Yirenkyi | F. Onyeka"
+        },
+        {
+          "minute": "60",
+          "minuteNum": 60,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "S. Cherif | T. Awoniyi"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "CARD",
+          "side": "away",
+          "player": "J. Rudoni",
+          "card": "yellow card"
+        },
+        {
+          "minute": "69",
+          "minuteNum": 69,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Maddison | C. Gallagher"
+        },
+        {
+          "minute": "69",
+          "minuteNum": 69,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "A. Robertson | B. Davies"
+        },
+        {
+          "minute": "71",
+          "minuteNum": 71,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "T. Adarabioyo | M. Fernandes"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "B. Thomas-Asante | E. Mason-Clark"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "T. Sakamoto | G. Hamer"
+        },
+        {
+          "minute": "87",
+          "minuteNum": 87,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "M. Kudus | D. Kulusevski"
+        },
+        {
+          "minute": "87",
+          "minuteNum": 87,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "O. Marmoush | M. Tel"
+        },
+        {
+          "minute": "87",
+          "minuteNum": 87,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Rudoni | K. Kesler-Hayden"
+        },
+        {
+          "minute": "90+6",
+          "minuteNum": 90,
+          "type": "GOAL",
+          "side": "home",
+          "player": "B. Davies",
+          "assist": "D. Solanke",
+          "score": "3 - 1"
+        }
+      ],
+      "finalizedAt": "2026-10-20T23:51:02.693839+00:00"
     },
     "560620": {
       "status": "SNAPSHOT",
