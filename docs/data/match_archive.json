@@ -9377,7 +9377,7 @@
       "finalizedAt": "2026-10-20T23:51:02.693839+00:00"
     },
     "560620": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560620,
         "utcDate": "2026-10-23T19:00:00Z",
@@ -9490,10 +9490,282 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "referee": "T. Bramall",
+        "stadium": "Portman Road"
+      },
+      "goals": [
+        {
+          "id": "cmvlmrvgs2c8mnv0729rek9hk",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "13",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "N. Williams",
+          "awayScorerId": "1513664404",
+          "awayAssist": "D. Munoz",
+          "awayAssistId": "4282633333",
+          "score": "0 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-23T23:58:24.268Z",
+          "updatedAt": "2026-10-23T23:58:24.268Z",
+          "timeNum": 13
+        },
+        {
+          "id": "cmvlmrvgs2c8nnv075fqzmb3i",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "41",
+          "type": "GOAL",
+          "homeScorer": "J. Enciso",
+          "homeScorerId": "1501343529",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-23T23:58:24.268Z",
+          "updatedAt": "2026-10-23T23:58:24.268Z",
+          "timeNum": 41
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmvlnxokb5313nv07nalgtpht",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "51",
+          "card": "yellow card",
+          "homeFault": "I. Diop",
+          "homePlayerId": "1574510501",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T00:30:52.928Z",
+          "updatedAt": "2026-10-24T00:30:52.928Z",
+          "timeNum": 51
+        },
+        {
+          "id": "cmvlnxokc5314nv07wowzpzhx",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "54",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "Murillo",
+          "awayPlayerId": "2017767083",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T00:30:52.928Z",
+          "updatedAt": "2026-10-24T00:30:52.928Z",
+          "timeNum": 54
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmvlnxokj5315nv07ldhbjrk1",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "60",
+          "substitution": "Emersonn | Z. Flemming",
+          "substitutionPlayerId": "1233413401 | 2640189962",
+          "team": "home",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 60
+        },
+        {
+          "id": "cmvlnxokk5316nv07fmeu8d2p",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "61",
+          "substitution": "J. Philogene | J. Clarke",
+          "substitutionPlayerId": "3882269067 | 2040856991",
+          "team": "home",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 61
+        },
+        {
+          "id": "cmvlnxokk531anv0737psoo1c",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "69",
+          "substitution": "D. Ndoye | C. Hudson-Odoi",
+          "substitutionPlayerId": "1596841920 | 1104769971",
+          "team": "away",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 69
+        },
+        {
+          "id": "cmvlnxokk5317nv07i6lrqawq",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "73",
+          "substitution": "I. Fatawu | D. Maeda",
+          "substitutionPlayerId": "4152984480 | 1120024898",
+          "team": "home",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmvlnxokk531bnv072yrmwiqi",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "84",
+          "substitution": "N. Williams | L. Netz",
+          "substitutionPlayerId": "1513664404 | 1826521265",
+          "team": "away",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 84
+        },
+        {
+          "id": "cmvlnxokk5318nv07r3mk3es0",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "85",
+          "substitution": "Florentino | A. Matusiwa",
+          "substitutionPlayerId": "2931374870 | 2667599873",
+          "team": "home",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 85
+        },
+        {
+          "id": "cmvlnxokk5319nv071jixg56h",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "86",
+          "substitution": "J. Enciso | C. Akpom",
+          "substitutionPlayerId": "1501343529 | 934947139",
+          "team": "home",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 86
+        },
+        {
+          "id": "cmvlnxoko531cnv07ijfuqsxr",
+          "fixtureId": "cmu74ffsbns6uqu07iti4z6zf",
+          "time": "90+4",
+          "substitution": "L. Delap | C. Wood",
+          "substitutionPlayerId": "2867126813 | 3313915333",
+          "team": "away",
+          "createdAt": "2026-10-24T00:30:52.933Z",
+          "updatedAt": "2026-10-24T00:30:52.933Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "13",
+          "minuteNum": 13,
+          "type": "GOAL",
+          "side": "away",
+          "player": "N. Williams",
+          "assist": "D. Munoz",
+          "score": "0 - 1"
+        },
+        {
+          "minute": "41",
+          "minuteNum": 41,
+          "type": "GOAL",
+          "side": "home",
+          "player": "J. Enciso",
+          "assist": null,
+          "score": "1 - 1"
+        },
+        {
+          "minute": "51",
+          "minuteNum": 51,
+          "type": "CARD",
+          "side": "home",
+          "player": "I. Diop",
+          "card": "yellow card"
+        },
+        {
+          "minute": "54",
+          "minuteNum": 54,
+          "type": "CARD",
+          "side": "away",
+          "player": "Murillo",
+          "card": "yellow card"
+        },
+        {
+          "minute": "60",
+          "minuteNum": 60,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Emersonn | Z. Flemming"
+        },
+        {
+          "minute": "61",
+          "minuteNum": 61,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Philogene | J. Clarke"
+        },
+        {
+          "minute": "69",
+          "minuteNum": 69,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. Ndoye | C. Hudson-Odoi"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "I. Fatawu | D. Maeda"
+        },
+        {
+          "minute": "84",
+          "minuteNum": 84,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "N. Williams | L. Netz"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Florentino | A. Matusiwa"
+        },
+        {
+          "minute": "86",
+          "minuteNum": 86,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Enciso | C. Akpom"
+        },
+        {
+          "minute": "90+4",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "L. Delap | C. Wood"
+        }
+      ],
+      "finalizedAt": "2026-10-24T23:09:31.613261+00:00"
     },
     "560614": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560614,
         "utcDate": "2026-10-24T11:30:00Z",
@@ -9606,7 +9878,446 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74fib6nszbqu07cld1hylx",
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 1,
+        "referee": "Peter Bankes, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmvmrjkuibdosnv082uewoxed",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "6",
+          "type": "GOAL",
+          "homeScorer": "N. Jackson",
+          "homeScorerId": "2931500671",
+          "homeAssist": "J. McGinn",
+          "homeAssistId": "215174918",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-24T18:59:41.515Z",
+          "updatedAt": "2026-10-24T18:59:41.515Z",
+          "timeNum": 6
+        },
+        {
+          "id": "cmvmrjkuibdotnv082wk7fqlm",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "52",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "E. Haaland",
+          "awayScorerId": "659972248",
+          "awayAssist": "I. Ndiaye",
+          "awayAssistId": "85525664",
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T18:59:41.515Z",
+          "updatedAt": "2026-10-24T18:59:41.515Z",
+          "timeNum": 52
+        },
+        {
+          "id": "cmvmrjkuibdounv089ep65jqc",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "60",
+          "type": "GOAL",
+          "homeScorer": "N. Jackson",
+          "homeScorerId": "2931500671",
+          "homeAssist": "I. Mbaye",
+          "homeAssistId": "3635297842",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T18:59:41.515Z",
+          "updatedAt": "2026-10-24T18:59:41.515Z",
+          "timeNum": 60
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmvn0f92yts5vnv075rae9y09",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "32",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "M. Guehi",
+          "awayPlayerId": "3665271450",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 32
+        },
+        {
+          "id": "cmvn0f92zts5wnv07tstn8a76",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "38",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "R. Cherki",
+          "awayPlayerId": "2168685639",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 38
+        },
+        {
+          "id": "cmvn0f92zts5xnv071zvub635",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "54",
+          "card": "yellow card",
+          "homeFault": "J. Manzambi",
+          "homePlayerId": "2171000892",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 54
+        },
+        {
+          "id": "cmvn0f92zts5ynv07189dfcl8",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "55",
+          "card": "yellow card",
+          "homeFault": "M. Cash",
+          "homePlayerId": "925453012",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 55
+        },
+        {
+          "id": "cmvn0f92zts5znv07s1ezre6w",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "74",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "E. Anderson",
+          "awayPlayerId": "423986543",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 74
+        },
+        {
+          "id": "cmvn0f92zts60nv07egfo0wzp",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "76",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "R. McAidoo",
+          "awayPlayerId": "805036738",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 76
+        },
+        {
+          "id": "cmvn0f92zts61nv07wvsmjx14",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "83",
+          "card": "yellow card",
+          "homeFault": "B. Madjo",
+          "homePlayerId": "3578480077",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmvn0f92zts62nv078u7gq3tc",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "90+5",
+          "card": "yellow card",
+          "homeFault": "E. Buendia",
+          "homePlayerId": "10184531",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 90
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmvn0f932ts68nv074jykdtux",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "46",
+          "substitution": "M. Guehi | R. Lewis",
+          "substitutionPlayerId": "3665271450 | 3282410665",
+          "team": "away",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmvn0f932ts6anv07ngyw5fif",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "46",
+          "substitution": "R. Cherki | P. Foden",
+          "substitutionPlayerId": "2168685639 | 2538499189",
+          "team": "away",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmvn0f932ts67nv07qntgfk2a",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "59",
+          "substitution": "Alysson | I. Mbaye",
+          "substitutionPlayerId": "123424423 | 3635297842",
+          "team": "home",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 59
+        },
+        {
+          "id": "cmvn0f932ts63nv07stnh4nu6",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "66",
+          "substitution": "J. McGinn | R. Barkley",
+          "substitutionPlayerId": "215174918 | 3977896400",
+          "team": "home",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 66
+        },
+        {
+          "id": "cmvn0f932ts65nv07i2296god",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "66",
+          "substitution": "J. Manzambi | E. Buendia",
+          "substitutionPlayerId": "2171000892 | 10184531",
+          "team": "home",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 66
+        },
+        {
+          "id": "cmvn0f932ts69nv07ys6zu588",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "69",
+          "substitution": "I. Ndiaye | R. McAidoo",
+          "substitutionPlayerId": "85525664 | 805036738",
+          "team": "away",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 69
+        },
+        {
+          "id": "cmvn0f932ts66nv073ujd0w50",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "82",
+          "substitution": "N. Jackson | B. Madjo",
+          "substitutionPlayerId": "2931500671 | 3578480077",
+          "team": "home",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 82
+        },
+        {
+          "id": "cmvn0f932ts64nv07fhnx0vu6",
+          "fixtureId": "cmu74fib6nszbqu07cld1hylx",
+          "time": "82",
+          "substitution": "Joao Gomes | L. Goretzka",
+          "substitutionPlayerId": "3279900432 | 3936327777",
+          "team": "home",
+          "createdAt": "2026-10-24T23:08:15.508Z",
+          "updatedAt": "2026-10-24T23:08:15.508Z",
+          "timeNum": 82
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "6",
+          "minuteNum": 6,
+          "type": "GOAL",
+          "side": "home",
+          "player": "N. Jackson",
+          "assist": "J. McGinn",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "32",
+          "minuteNum": 32,
+          "type": "CARD",
+          "side": "away",
+          "player": "M. Guehi",
+          "card": "yellow card"
+        },
+        {
+          "minute": "38",
+          "minuteNum": 38,
+          "type": "CARD",
+          "side": "away",
+          "player": "R. Cherki",
+          "card": "yellow card"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "M. Guehi | R. Lewis"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "R. Cherki | P. Foden"
+        },
+        {
+          "minute": "52",
+          "minuteNum": 52,
+          "type": "GOAL",
+          "side": "away",
+          "player": "E. Haaland",
+          "assist": "I. Ndiaye",
+          "score": "1 - 1"
+        },
+        {
+          "minute": "54",
+          "minuteNum": 54,
+          "type": "CARD",
+          "side": "home",
+          "player": "J. Manzambi",
+          "card": "yellow card"
+        },
+        {
+          "minute": "55",
+          "minuteNum": 55,
+          "type": "CARD",
+          "side": "home",
+          "player": "M. Cash",
+          "card": "yellow card"
+        },
+        {
+          "minute": "59",
+          "minuteNum": 59,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Alysson | I. Mbaye"
+        },
+        {
+          "minute": "60",
+          "minuteNum": 60,
+          "type": "GOAL",
+          "side": "home",
+          "player": "N. Jackson",
+          "assist": "I. Mbaye",
+          "score": "2 - 1"
+        },
+        {
+          "minute": "66",
+          "minuteNum": 66,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. McGinn | R. Barkley"
+        },
+        {
+          "minute": "66",
+          "minuteNum": 66,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Manzambi | E. Buendia"
+        },
+        {
+          "minute": "69",
+          "minuteNum": 69,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "I. Ndiaye | R. McAidoo"
+        },
+        {
+          "minute": "74",
+          "minuteNum": 74,
+          "type": "CARD",
+          "side": "away",
+          "player": "E. Anderson",
+          "card": "yellow card"
+        },
+        {
+          "minute": "76",
+          "minuteNum": 76,
+          "type": "CARD",
+          "side": "away",
+          "player": "R. McAidoo",
+          "card": "yellow card"
+        },
+        {
+          "minute": "82",
+          "minuteNum": 82,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "N. Jackson | B. Madjo"
+        },
+        {
+          "minute": "82",
+          "minuteNum": 82,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Joao Gomes | L. Goretzka"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "CARD",
+          "side": "home",
+          "player": "B. Madjo",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90+5",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "home",
+          "player": "E. Buendia",
+          "card": "yellow card"
+        }
+      ],
+      "finalizedAt": "2026-10-24T23:09:31.613261+00:00"
     },
     "560616": {
       "status": "SNAPSHOT",
