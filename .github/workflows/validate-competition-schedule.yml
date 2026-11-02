@@ -1,0 +1,38 @@
+name: Validate multi-competition schedule (no deploy)
+on:
+  pull_request:
+    paths:
+      - 'scripts/team_identity.py'
+      - 'scripts/update_competition_schedule.py'
+      - 'tests/test_competition_schedule.py'
+      - '.github/workflows/validate-competition-schedule.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install requests
+      - name: Offline unit tests
+        run: python -m unittest discover -s tests -p 'test_competition_schedule.py' -v
+      - name: Fetch live CSVs and validate schema
+        run: python scripts/update_competition_schedule.py
+      - name: Inspect output counts and required identities
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('docs/data/competition_schedule.json').read_text())
+          h=json.loads(Path('docs/data/competition_results_archive.json').read_text())
+          assert d['matches'], 'No EPL-team cup matches found'
+          assert len(d['coverage']) == 10
+          assert all(m['homeClubId'] or m['awayClubId'] for m in d['matches'])
+          print('EPL team fixtures/results:', len(d['matches']))
+          print('Historical results:', len(h['matches']))
+          print('Coverage:', d['coverage'])
+          PY
