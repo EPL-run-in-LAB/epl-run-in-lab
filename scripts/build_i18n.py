@@ -327,6 +327,7 @@ def build_english_congestion():
     """Keep the same dashboard structure, interactions and data in both languages."""
     src=(DOCS/'congestion.html').read_text(encoding='utf-8')
     s=src.replace('<html lang="ko">','<html lang="en">')
+    s=s.replace('<title>일정 혼잡도 | EPL Run-in Lab</title>', '<title>Fixture Congestion | EPL Run-in Lab</title>')
     s=s.replace('href="./en/congestion.html" lang="en">English','href="../congestion.html" lang="ko">한국어')
     s=s.replace('href="./congestion.html"','href="./congestion.html"')
     s=s.replace('href="./#','href="../?page=') if False else s
@@ -358,7 +359,6 @@ def build_english_congestion():
       ('시각 미검증','Kickoff unverified'),('EPL 예측 스냅샷','EPL snapshot'),('컵 일정 미검증','Unverified cup fixture'),
       ('선택한 조건에 해당하는 경기가 없습니다.','No fixtures match the selected filters.'),
       ('데이터 로드 실패: ','Unable to load data: '),('집계 생성: ','Generated: '),
-      ('경기',' matches'),('일',' days'),('회',' times'),
     ]
     # Translate longer copy before shorter recurring terms.
     translations.sort(key=lambda x:len(x[0]),reverse=True)
