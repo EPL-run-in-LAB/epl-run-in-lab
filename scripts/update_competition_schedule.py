@@ -12,7 +12,7 @@ import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 import requests
-from team_identity import resolve, EPL_CLUBS
+from team_identity import resolve, EPL_CLUBS, ACTIVE_EPL_IDS
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs/data/competition_schedule.json"
@@ -36,6 +36,27 @@ def read_csv(session, competition, kind):
     if not rows or not required.issubset(rows[0]):
         raise ValueError(f"Empty or invalid CSV: {url}")
     return rows, url
+
+def audit_epl_source(session):
+    """Cross-check incoming EPL team names against the independently pinned
+    official season membership. Blocks unexpected clubs before any writes.
+    This is a membership check, NOT independent verification of results.
+    """
+    observed, counts = set(), {}
+    for kind in ("results", "fixtures"):
+        rows, url = read_csv(session, "ENG_1_premier-league", kind)
+        counts[kind] = len(rows)
+        for row in rows:
+            for field in ("home", "away"):
+                info = resolve(row[field])
+                if not info["matched"]:
+                    raise ValueError(f"EPL source has unapproved club: {row[field]!r} ({url})")
+                observed.add(info["clubId"])
+    if observed != ACTIVE_EPL_IDS:
+        raise ValueError(f"2026/27 EPL membership mismatch: missing={sorted(ACTIVE_EPL_IDS-observed)} extra={sorted(observed-ACTIVE_EPL_IDS)}")
+    return {"source": "open-matchday EPL", "counts": counts,
+            "officialMembershipReference": "https://www.premierleague.com/en/news/4365156/new-to-the-premier-league-heres-all-you-need-to-know",
+            "verifiedClubIds": sorted(observed)}
 
 def valid_date(value):
     return datetime.strptime(value, "%Y-%m-%d").date().isoformat()
@@ -122,6 +143,8 @@ def compare_previous_schedule(current):
             incoming_by_pair.setdefault(pair, []).append(m)
     issues = []
     for old in previous:
+        if not (resolve(old["homeRaw"])["matched"] or resolve(old["awayRaw"])["matched"]):
+            continue
         if old["id"] in current_ids or old.get("status") == "FINISHED":
             continue
         # A scheduled fixture naturally disappears after it is played.
@@ -156,6 +179,7 @@ def atomic_json(path, data):
 
 def main():
     session = requests.Session()
+    membership_audit = audit_epl_source(session)
     all_matches, coverage = [], {}
     for code, directory in COMPETITIONS.items():
         for kind in ("results", "fixtures"):
@@ -179,7 +203,8 @@ def main():
                       for side in ("home", "away") if not m[side+"ClubId"]})
     report = {
         "version": 1, "updatedAt": now,
-        "knownEplClubs": len(EPL_CLUBS),
+        "knownEplClubs": len(ACTIVE_EPL_IDS),
+        "membershipAudit": membership_audit,
         "competitionCounts": coverage,
         "eplRelevantMatches": len(relevant),
         "unknownNames": unknown,
@@ -190,7 +215,9 @@ def main():
         "version": 1, "season": "2026/27", "updatedAt": now,
         "source": "https://github.com/oladeeayo/open-matchday",
         "notice": "Unverified source kickoff times are not used for hour-level rest calculations.",
-        "coverage": coverage, "matches": relevant,
+        "coverage": coverage, "membershipAudit": membership_audit,
+        "matchVerification": "unverified-upstream; not approved for prediction features",
+        "matches": relevant,
     }
     # Conflicts are quarantined: fail before publishing any new schedule/history.
     if issues:
