@@ -11,7 +11,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from team_identity import EPL_CLUBS, ACTIVE_EPL_IDS, resolve
-from update_competition_schedule import build_match, reconcile, compare_previous_schedule
+from update_competition_schedule import build_match, reconcile, compare_previous_schedule, refresh_archive_identity, audit_epl_source
 
 class ClubIdentityTests(unittest.TestCase):
     def test_all_canonical_names_resolve(self):
@@ -42,6 +42,34 @@ class ClubIdentityTests(unittest.TestCase):
         self.assertEqual(resolve("West Ham United")["clubId"], "west-ham")
         self.assertFalse(resolve("West Ham United")["matched"])
         self.assertTrue(resolve("Ipswich Town")["matched"])
+
+    def test_archive_membership_correction_preserves_result(self):
+        old = build_match("EFL", "results", {
+            "date": "2026-08-08", "home": "West Ham United",
+            "away": "Ipswich Town", "ft_home": "2", "ft_away": "1"
+        })
+        old["homeEpl"] = True  # Previous production bug
+        old["awayClubId"] = None
+        old["awayEpl"] = False
+        history = {"matches": {old["id"]: old}, "changes": []}
+        fixes = refresh_archive_identity(history)
+        updated = history["matches"][old["id"]]
+        self.assertEqual(updated["score"], {"home": 2, "away": 1})
+        self.assertFalse(updated["homeEpl"])
+        self.assertTrue(updated["awayEpl"])
+        self.assertEqual(updated["awayClubId"], "ipswich")
+        self.assertEqual(len(fixes), 3)
+
+    def test_epl_membership_gate_rejects_relegated_club(self):
+        import csv
+        import io
+        from unittest.mock import Mock
+        valid = sorted(ACTIVE_EPL_IDS)
+        fixture_rows = [{"date":"2026-10-01","home":name,"away":"Arsenal"} for name in EPL_CLUBS.values() if name != "West Ham"]
+        fixture_rows.append({"date":"2026-10-02","home":"West Ham United","away":"Arsenal"})
+        with patch("update_competition_schedule.read_csv", return_value=(fixture_rows, "mock")):
+            with self.assertRaisesRegex(ValueError, "unapproved club"):
+                audit_epl_source(Mock())
 
     def test_unknown_and_youth_teams_not_auto_merged(self):
         for name in ["Manchester United U21", "Manchester City Women", "Unknown FC"]:
