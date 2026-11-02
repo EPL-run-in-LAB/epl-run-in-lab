@@ -55,5 +55,21 @@ class CongestionTests(unittest.TestCase):
               {"status":"verified","source":"trusted"})
         self.assertIsNone(utc_verified(m))
 
+    def test_short_turnaround_and_away_streak(self):
+        d = self.dataset([
+            dict(cup("2026-11-02", "a"), homeRaw="Ajax",awayRaw="Arsenal"),
+            dict(cup("2026-11-04", "b"), homeRaw="Chelsea",awayRaw="Arsenal"),
+            dict(cup("2026-11-08", "c"), homeRaw="Arsenal",awayRaw="Ajax")])
+        m=d["teams"]["arsenal"]["matches"]
+        self.assertEqual([x["awayStreak"] for x in m],[1,2,0])
+        self.assertEqual([x["shortTurnaround"] for x in m],[False,True,False])
+        self.assertEqual([x["potentialDateConflict"] for x in m],[False]*3)
+
+    def test_same_day_conflict_flag_is_visible(self):
+        d = self.dataset([cup("2026-11-04","first"),cup("2026-11-04","second")])
+        ms=d["teams"]["arsenal"]["matches"]
+        self.assertTrue(all(x["potentialDateConflict"] for x in ms))
+        self.assertEqual(ms[1]["calendarRestDays"],0)
+
 if __name__ == "__main__":
     unittest.main()
