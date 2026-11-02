@@ -17704,7 +17704,7 @@
       "finalizedAt": "2026-11-01T00:05:15.194311+00:00"
     },
     "560631": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560631,
         "utcDate": "2026-11-01T16:30:00Z",
@@ -17817,7 +17817,222 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+      "result": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "referee": "Andy Madley, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmvy99tlxw8bso107ae8dkpt5",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "16",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "K. Havertz",
+          "awayScorerId": "141808407",
+          "awayAssist": "D. Rice",
+          "awayAssistId": "353204575",
+          "score": "0 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-01T20:01:27.333Z",
+          "updatedAt": "2026-11-01T20:01:27.333Z",
+          "timeNum": 16
+        }
+      ],
+      "cards": [],
+      "substitutions": [
+        {
+          "id": "cmvyfp431dd2vo107vq7os91t",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "59",
+          "substitution": "T. Nyoni | D. Szoboszlai",
+          "substitutionPlayerId": "3583009097 | 1521124062",
+          "team": "home",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 59
+        },
+        {
+          "id": "cmvyfp431dd30o107h6apo941",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "62",
+          "substitution": "Bruno Guimaraes | M. Lewis-Skelly",
+          "substitutionPlayerId": "3432657688 | 2110302551",
+          "team": "away",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 62
+        },
+        {
+          "id": "cmvyfp431dd2yo107k02evpgv",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "67",
+          "substitution": "C. Gakpo | R. Ngumoha",
+          "substitutionPlayerId": "157543942 | 1492963924",
+          "team": "home",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 67
+        },
+        {
+          "id": "cmvyfp431dd2uo107hl3owvjm",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "81",
+          "substitution": "M. Kerkez | K. Tsimikas",
+          "substitutionPlayerId": "4181640279 | 583170408",
+          "team": "home",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 81
+        },
+        {
+          "id": "cmvyfp431dd2wo107z87bztb7",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "81",
+          "substitution": "F. Wirtz | L. Koumas",
+          "substitutionPlayerId": "2411373627 | 4087518991",
+          "team": "home",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 81
+        },
+        {
+          "id": "cmvyfp431dd2xo107lblgs66g",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "81",
+          "substitution": "R. Araujo | V. Munoz",
+          "substitutionPlayerId": "2996396182 | 4180639370",
+          "team": "home",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 81
+        },
+        {
+          "id": "cmvyfp431dd2zo107hsp2nxqa",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "84",
+          "substitution": "C. Tzolis | P. Hincapie",
+          "substitutionPlayerId": "464419206 | 2450292347",
+          "team": "away",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 84
+        },
+        {
+          "id": "cmvyfp431dd32o107032tiy5g",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "84",
+          "substitution": "K. Havertz | V. Gyokeres",
+          "substitutionPlayerId": "141808407 | 1317952879",
+          "team": "away",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 84
+        },
+        {
+          "id": "cmvyfp431dd31o1073gfwnidw",
+          "fixtureId": "cmu74gve2o8k3qu07bq9mu3go",
+          "time": "88",
+          "substitution": "M. Odegaard | M. Merino",
+          "substitutionPlayerId": "1482579047 | 2208713585",
+          "team": "away",
+          "createdAt": "2026-11-01T23:01:18.125Z",
+          "updatedAt": "2026-11-01T23:01:18.125Z",
+          "timeNum": 88
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "16",
+          "minuteNum": 16,
+          "type": "GOAL",
+          "side": "away",
+          "player": "K. Havertz",
+          "assist": "D. Rice",
+          "score": "0 - 1"
+        },
+        {
+          "minute": "59",
+          "minuteNum": 59,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "T. Nyoni | D. Szoboszlai"
+        },
+        {
+          "minute": "62",
+          "minuteNum": 62,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Bruno Guimaraes | M. Lewis-Skelly"
+        },
+        {
+          "minute": "67",
+          "minuteNum": 67,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "C. Gakpo | R. Ngumoha"
+        },
+        {
+          "minute": "81",
+          "minuteNum": 81,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "M. Kerkez | K. Tsimikas"
+        },
+        {
+          "minute": "81",
+          "minuteNum": 81,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "F. Wirtz | L. Koumas"
+        },
+        {
+          "minute": "81",
+          "minuteNum": 81,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "R. Araujo | V. Munoz"
+        },
+        {
+          "minute": "84",
+          "minuteNum": 84,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "C. Tzolis | P. Hincapie"
+        },
+        {
+          "minute": "84",
+          "minuteNum": 84,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "K. Havertz | V. Gyokeres"
+        },
+        {
+          "minute": "88",
+          "minuteNum": 88,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "M. Odegaard | M. Merino"
+        }
+      ],
+      "finalizedAt": "2026-11-02T00:39:02.797067+00:00"
     },
     "560622": {
       "status": "SNAPSHOT",
@@ -29069,6 +29284,238 @@
           }
         ],
         "capturedAt": "2026-11-01T00:05:15.194311+00:00"
+      }
+    },
+    "560725": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560725,
+        "utcDate": "2027-01-02T15:00:00Z",
+        "date": "2027-01-02",
+        "home": "Arsenal",
+        "away": "Ipswich",
+        "homeWin": 0.7326177471206446,
+        "draw": 0.18501820121222023,
+        "awayWin": 0.08236405166713502,
+        "homeXPts": 2.382871442574154,
+        "awayXPts": 0.4321103562136253,
+        "homeFactors": [
+          {
+            "title": "Ipswich의 최근 경기 흐름이 Arsenal에게 도움이 됩니다",
+            "body": "Ipswich 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Arsenal의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Ipswich's recent form is helpful for Arsenal",
+            "bodyEn": "Ipswich's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Arsenal's win probability.",
+            "impact": 10.2,
+            "favorable": true
+          },
+          {
+            "title": "Arsenal은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Arsenal의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Arsenal's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Arsenal's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 9.3,
+            "favorable": true
+          },
+          {
+            "title": "Ipswich의 공격 기회 창출력이 Arsenal에게 유리하게 작용합니다",
+            "body": "Ipswich의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Arsenal의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Ipswich's chance creation works in favour of Arsenal",
+            "bodyEn": "The model evaluates Ipswich's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Arsenal's win probability.",
+            "impact": 5.8,
+            "favorable": true
+          },
+          {
+            "title": "Arsenal의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Arsenal의 최근 홈 경기 승점과 득실점을 반영합니다. Arsenal의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Arsenal's home form is a strength",
+            "bodyEn": "The model separately considers Arsenal's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 5.4,
+            "favorable": true
+          },
+          {
+            "title": "Arsenal의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Arsenal가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Arsenal's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Arsenal's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 4.7,
+            "favorable": true
+          },
+          {
+            "title": "Ipswich의 원정 경기력이 Arsenal에게 부담입니다",
+            "body": "Ipswich의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Arsenal 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Ipswich's away form is a concern for Arsenal",
+            "bodyEn": "The model separately considers Ipswich's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Arsenal.",
+            "impact": -0.6,
+            "favorable": false
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Arsenal의 최근 경기 흐름이 Ipswich에게 부담입니다",
+            "body": "Arsenal 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 좋게 평가되어 Ipswich의 승리 가능성에 부정적 영향을 줍니다.",
+            "titleEn": "Arsenal's recent form is a concern for Ipswich",
+            "bodyEn": "Arsenal's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated above the league-neutral level, which hurts Ipswich's win probability.",
+            "impact": -7.1,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Ipswich의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Ipswich's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Ipswich's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -6.6,
+            "favorable": false
+          },
+          {
+            "title": "Arsenal의 홈 경기력이 Ipswich에게 부담입니다",
+            "body": "Arsenal의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Ipswich 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Arsenal's home form is a concern for Ipswich",
+            "bodyEn": "The model separately considers Arsenal's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Ipswich.",
+            "impact": -5.6,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Ipswich가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Ipswich's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Ipswich's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -5.4,
+            "favorable": false
+          },
+          {
+            "title": "Arsenal의 공격 기회 창출력이 Ipswich에게 불리하게 작용합니다",
+            "body": "Arsenal의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Ipswich의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Arsenal's chance creation works against Ipswich",
+            "bodyEn": "The model evaluates Arsenal's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Ipswich's win probability.",
+            "impact": -5.3,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich의 원정 경기력이 부담 요소입니다",
+            "body": "전체 경기력과 별도로 Ipswich의 최근 원정 경기 승점과 득실점을 반영합니다. Ipswich의 원정 경기력이 중립 수준보다 낮아 이번 경기 승리 가능성을 낮춥니다.",
+            "titleEn": "Ipswich's away form is a concern",
+            "bodyEn": "The model separately considers Ipswich's recent away points and goal difference. That away performance is rated below the neutral level, which reduces the chance of winning this match.",
+            "impact": -0.6,
+            "favorable": false
+          }
+        ],
+        "capturedAt": "2026-11-02T00:39:02.797067+00:00"
+      }
+    },
+    "560727": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560727,
+        "utcDate": "2027-01-02T15:00:00Z",
+        "date": "2027-01-02",
+        "home": "Liverpool",
+        "away": "Coventry",
+        "homeWin": 0.5978497387249221,
+        "draw": 0.24523908003709866,
+        "awayWin": 0.15691118123797926,
+        "homeXPts": 2.0387882962118646,
+        "awayXPts": 0.7159726237510364,
+        "homeFactors": [
+          {
+            "title": "Liverpool의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Liverpool가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Liverpool's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Liverpool's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 7.2,
+            "favorable": true
+          },
+          {
+            "title": "Coventry의 최근 경기 흐름이 Liverpool에게 도움이 됩니다",
+            "body": "Coventry 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Liverpool의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Coventry's recent form is helpful for Liverpool",
+            "bodyEn": "Coventry's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Liverpool's win probability.",
+            "impact": 6.5,
+            "favorable": true
+          },
+          {
+            "title": "Liverpool은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Liverpool의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Liverpool's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Liverpool's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 2.1,
+            "favorable": true
+          },
+          {
+            "title": "Liverpool의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Liverpool의 최근 홈 경기 승점과 득실점을 반영합니다. Liverpool의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Liverpool's home form is a strength",
+            "bodyEn": "The model separately considers Liverpool's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 1.9,
+            "favorable": true
+          },
+          {
+            "title": "Coventry의 공격 기회 창출력이 Liverpool에게 유리하게 작용합니다",
+            "body": "Coventry의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Liverpool의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Coventry's chance creation works in favour of Liverpool",
+            "bodyEn": "The model evaluates Coventry's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Liverpool's win probability.",
+            "impact": 0.3,
+            "favorable": true
+          },
+          {
+            "title": "Coventry의 원정 경기력이 Liverpool에게 크게 위협적이지 않습니다",
+            "body": "Coventry의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 약하게 평가되어 Liverpool 입장에서는 부담이 줄어듭니다.",
+            "titleEn": "Coventry's away form is less threatening for Liverpool",
+            "bodyEn": "The model separately considers Coventry's recent away points and goal difference. The opponent's away performance is rated below the neutral level, which reduces the difficulty for Liverpool.",
+            "impact": 0.1,
+            "favorable": true
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Liverpool의 공격 기회 창출력이 Coventry에게 불리하게 작용합니다",
+            "body": "Liverpool의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Coventry의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Liverpool's chance creation works against Coventry",
+            "bodyEn": "The model evaluates Liverpool's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Coventry's win probability.",
+            "impact": -7.9,
+            "favorable": false
+          },
+          {
+            "title": "Coventry은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Coventry의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Coventry's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Coventry's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -5.0,
+            "favorable": false
+          },
+          {
+            "title": "Liverpool의 홈 경기력이 Coventry에게 부담입니다",
+            "body": "Liverpool의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Coventry 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Liverpool's home form is a concern for Coventry",
+            "bodyEn": "The model separately considers Liverpool's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Coventry.",
+            "impact": -1.9,
+            "favorable": false
+          },
+          {
+            "title": "Liverpool의 최근 경기 흐름이 Coventry에게 부담입니다",
+            "body": "Liverpool 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 좋게 평가되어 Coventry의 승리 가능성에 부정적 영향을 줍니다.",
+            "titleEn": "Liverpool's recent form is a concern for Coventry",
+            "bodyEn": "Liverpool's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated above the league-neutral level, which hurts Coventry's win probability.",
+            "impact": -1.0,
+            "favorable": false
+          },
+          {
+            "title": "Coventry의 원정 경기력이 부담 요소입니다",
+            "body": "전체 경기력과 별도로 Coventry의 최근 원정 경기 승점과 득실점을 반영합니다. Coventry의 원정 경기력이 중립 수준보다 낮아 이번 경기 승리 가능성을 낮춥니다.",
+            "titleEn": "Coventry's away form is a concern",
+            "bodyEn": "The model separately considers Coventry's recent away points and goal difference. That away performance is rated below the neutral level, which reduces the chance of winning this match.",
+            "impact": -0.9,
+            "favorable": false
+          },
+          {
+            "title": "Coventry의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Coventry가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Coventry's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Coventry's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -0.3,
+            "favorable": false
+          }
+        ],
+        "capturedAt": "2026-11-02T00:39:02.797067+00:00"
       }
     }
   }
