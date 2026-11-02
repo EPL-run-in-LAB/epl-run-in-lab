@@ -52,7 +52,7 @@ summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:
 </div><p class="footnotes">휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.</p></section>
 <section class="card"><h2>경기일별 7일 누적 경기 수</h2><p class="muted">막대가 높을수록 해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.</p><div id="chart" class="chart" role="img" aria-label="날짜별 7일 누적 경기 수 차트"></div>
 <div class="legend"><span><i class="dot"></i>EPL</span><span><i class="dot cup"></i>컵대회</span><span><i class="dot short"></i>3일 이내 경기 간격</span></div></section>
-<section class="card"><h2>상세 일정</h2><div class="table-wrap"><table><thead><tr><th scope="col">날짜</th><th scope="col">대회</th><th scope="col">상대</th><th scope="col">홈/원정</th><th scope="col">휴식일</th><th scope="col">7일·14일</th><th scope="col">자료 상태</th></tr></thead><tbody id="rows"></tbody></table></div>
+<section class="card"><h2>상세 일정</h2><div class="table-wrap"><table><thead><tr><th scope="col">날짜</th><th scope="col">대회</th><th scope="col">상대</th><th scope="col">홈/원정</th><th scope="col">휴식일 / 시각</th><th scope="col">7일·14일</th><th scope="col">자료 상태</th></tr></thead><tbody id="rows"></tbody></table></div>
 <details><summary>지표 정의와 데이터 한계</summary><div class="footnotes"><p>7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.</p><p>시간 단위 간격은 인접한 두 경기에 신뢰 가능한 UTC 킥오프 시각과 검증 출처가 함께 있을 때만 표시할 예정입니다. 같은 날 중복 경기가 나타나면 원본 자료 충돌 가능성이 있으므로 주의 표시합니다. 경기 이동 거리와 선수별 출전 시간은 반영되지 않았습니다.</p><p id="provenance"></p></div></details></section>
 <p class="footnotes" id="updated" role="status"></p></main>
 <script>
@@ -76,8 +76,8 @@ if(!ms.length){const p=document.createElement('p');p.className='muted';p.textCon
 for(const m of ms){const item=document.createElement('div');item.className='bar-item';item.title=m.date+' / 최근 7일 '+m.gamesIn7Days+'경기';
 const b=document.createElement('div');b.className='bar'+(m.competition!=='EPL'?' cup':'')+(m.shortTurnaround?' short':'');b.style.height=(Math.min(m.gamesIn7Days,5)*22)+'px';
 const number=document.createElement('b');number.textContent=m.gamesIn7Days;const small=document.createElement('small');small.textContent=m.date.slice(5);item.append(number,b,small);chart.append(item);
-const tr=document.createElement('tr');cell(tr,m.date);cell(tr,m.competition);cell(tr,m.opponent);cell(tr,m.venue==='H'?'홈':'원정');
-cell(tr,m.calendarRestDays==null?'—':m.calendarRestDays+'일'+(m.potentialDateConflict?' · 날짜 중복 주의':''));
+const tr=document.createElement('tr');cell(tr,m.date);cell(tr,m.competition);cell(tr,m.opponent);cell(tr,m.venue==='H'?'홈':('원정'+(m.awayStreak>1?' · '+m.awayStreak+'연속':'')));
+cell(tr,m.calendarRestDays==null?'—':m.calendarRestDays+'일'+(m.kickoffGapHours!=null?' · '+m.kickoffGapHours+'시간(검증)':'')+(m.potentialDateConflict?' · 날짜 중복 주의':''));
 cell(tr,m.gamesIn7Days+' / '+m.gamesIn14Days);cell(tr,m.quality==='prediction_snapshot'?'EPL 예측 스냅샷':'컵 일정 미검증');table.append(tr);}
 chart.setAttribute('aria-label',team.name+' 팀 선택 기간 '+ms.length+'경기, 7일 최대 '+(ms.length?Math.max(...ms.map(m=>m.gamesIn7Days)):0)+'경기. 상세 값은 아래 표 참조.');
 }
