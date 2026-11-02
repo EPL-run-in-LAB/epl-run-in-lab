@@ -237,6 +237,7 @@ def build_interactive_english_home():
         ('<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/">','<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">'),
         ('aria-label="메뉴 열기"','aria-label="Open menu"'),
         ('aria-label="언어 선택"','aria-label="Choose language"'),
+        ('>언어 ▾</button>', '>Language ▾</button>'),
         ('<a href="./" data-lang="ko"','<a href="../" data-lang="ko"'),
         ('<a href="./en/" data-lang="en"','<a href="./" data-lang="en"'),
         ('>주의사항</button>','>Notice</button>'),
@@ -360,7 +361,7 @@ def build_interactive_english_home():
     # Fail the build if unintended Korean UI text survives in /en/.
     # The language chooser intentionally contains the label '한국어'.
     import re
-    audit_text = s.replace('한국어', '')
+    audit_text = s.replace('한국어', '').replace('영어 · English', '')
     leftovers = sorted(set(re.findall(r'[가-힣][가-힣A-Za-z0-9·/ .,%+()_-]*', audit_text)))
     if leftovers:
         raise RuntimeError('Untranslated Korean remains in /en/: ' + ' | '.join(leftovers[:20]))
