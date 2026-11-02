@@ -117,9 +117,17 @@ def build(cups, predictions):
                                        "nextFixture": upcoming[0]["date"] if upcoming else None,
                                        "upcoming7DayPeak": max((m["gamesIn7Days"] for m in upcoming),default=None),
                                        "potentialDateConflicts": sum(m["potentialDateConflict"] for m in annotated)})
+    snapshot_age_days = None
+    try:
+        snapshot_date = date.fromisoformat(str(predictions.get("asOf",""))[:10])
+        snapshot_age_days = (reference_date - snapshot_date).days
+    except ValueError:
+        pass
     return dict(version=1, season="2026/27",
                 generatedAt=datetime.now(timezone.utc).isoformat(),
                 asOfDate=reference_date.isoformat(),
+                snapshotAgeDays=snapshot_age_days,
+                eplSnapshotStale=(snapshot_age_days is None or snapshot_age_days > 7),
                 sources={"cupUpdatedAt":cups.get("updatedAt"), "eplSnapshotAsOf":predictions.get("asOf")},
                 disclaimer="Cup fixture truth not independently verified; EPL schedule derived from prediction snapshot. No fatigue effect is applied to predictions.",
                 timestampPolicy="Verified UTC kickoff interval only when both adjacent fixtures have trusted provenance; otherwise calendar-date rest days.",
