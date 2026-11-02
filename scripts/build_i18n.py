@@ -254,6 +254,16 @@ def build_interactive_english_home():
     for old,new in replacements:
         s = s.replace(old,new)
 
+    # The Korean homepage uses localized labels, but English must keep
+    # original club names and contain no Korean literals in the output.
+    if 'const TEAM_KO=' in s:
+        before = s.index('const TEAM_KO=')
+        after = s.index('function teamSlug(n)',before)
+        s = s[:before] + '''function displayTeam(n){return n==="Nott'm Forest"||n==='Nottingham Forest'?'Nottingham':n}
+''' + s[after:]
+    s = s.replace("displayTeam(a).localeCompare(displayTeam(b),'ko')",
+                  "displayTeam(a).localeCompare(displayTeam(b),'en')")
+
     # Final EN-only cleanup after all generic replacements.
     # '향후 일정' -> 'Upcoming Fixtures' leaves the Korean particle '을',
     # producing 'Upcoming Fixtures을', so handle that exact intermediate form.
@@ -341,6 +351,28 @@ def build_english_congestion():
     s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
     s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
     translations=[
+      ('팀별 월간 일정 혼잡도','Monthly Fixture Congestion'),
+      ('월간 경기 달력','Monthly Fixture Calendar'),
+      ('달력에서 경기 날짜를 선택하면 상대·휴식일·대회 정보를 볼 수 있습니다.','Select a date with a match to see opponents, rest days and competition information.'),
+      ('리그와 컵대회 일정, 경기 사이 휴식일을 달력에서 확인하세요.','See league and cup fixtures and rest days directly on a calendar.'),
+      ('주간 경기 수는 월요일~일요일 기준입니다. 필터는 표시만 바꾸며 휴식일은 전체 대회를 기준으로 계산합니다.','Weekly totals run from Monday to Sunday. Filters affect display only; rest includes all competitions.'),
+      ('경기장 간 이동 경로와 거리 시각화는 검증된 경기장 정보가 확보된 후 추가할 수 있도록 확장할 예정입니다.','Stadium travel routes and distances can be added once verified venue information is available.'),
+      ('컵대회 일정 · 경기별 독립 검증 미완료','Cup fixture · not independently verified'),
+      ('경기 없는 날','Rest days'),
+      ('시각 미검증','Kickoff unverified'),
+      ('킥오프 간격','Kickoff gap'),
+      ('휴식 0~2일','0–2 rest days'),
+      ('날짜를 누르면 상세 일정 표시','Select a match date for details'),
+      ('이번 달','This month'),
+      ('선택한 달의 일정 요약','Summary for selected month'),
+      ('이번 달 경기 수','Matches this month'),
+      ('선택한 달에 해당 대회 경기가 없습니다.','No matches in this month for this competition.'),
+      ('원정 · ','Away · '),('홈 · ','Home · '),
+      ('직전 7일','Previous 7 days'),('직전 14일','Previous 14 days'),
+      ('월간 일정','Monthly fixtures'),('1주차','Week 1'),
+      ('휴식 ','Rest '),('경기 날짜를 선택','Select a match date'),
+      ('독립 검증 미완료','Not independently verified'),
+      ('전체 대회','All competitions'),
       ('일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.','This experimental analysis combines sources with different verification levels. Cup fixtures have not been independently matched to official match records, and these figures are not used in win-probability predictions.'),
       ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.','Rest days exclude match days. Summary cards reflect the selected fixtures, while previous-match intervals and rolling match counts still include competitions hidden by the filter.'),
       ('7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.','Rolling 7- and 14-day counts include the fixture date and look backwards. Hidden competitions still contribute to rest days and rolling counts; filters only control the displayed fixtures.'),
@@ -382,6 +414,12 @@ def build_english_congestion():
       ('데이터 로드 실패: ','Unable to load data: '),('집계 생성: ','Generated: '),
       ('원정','Away'),('경기 없는 날','Rest days'),('단위','unit'),('선택한','Selected'),('전체 기록','All fixtures'),
     ]
+    # English page must not display Korean club names.
+    if 'const KOREAN_TEAMS=' in s:
+        before=s.index('const KOREAN_TEAMS=')
+        after=s.index('let calendarYear',before)
+        s=s[:before]+'''function koTeam(name){return name==="Nott'm Forest"?"Nottingham":name}
+'''+s[after:]
     # Translate longer copy before shorter recurring terms.
     translations.sort(key=lambda x:len(x[0]),reverse=True)
     for ko,en in translations:
