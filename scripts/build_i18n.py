@@ -381,7 +381,12 @@ def build_english_congestion():
     src=(DOCS/'congestion.html').read_text(encoding='utf-8')
     s=src.replace('<html lang="ko">','<html lang="en">')
     s=s.replace('<title>일정 혼잡도 | EPL Run-in Lab</title>', '<title>Fixture Congestion | EPL Run-in Lab</title>')
-    s=s.replace('href="./en/congestion.html" lang="en">English','href="../congestion.html" lang="ko">한국어')
+    # Turn the Korean language-selector links into English-tree routes.
+    s=s.replace('href="./congestion.html" lang="ko" data-lang="ko" aria-current="page"',
+                'href="../congestion.html" lang="ko" data-lang="ko"')
+    s=s.replace('href="./en/congestion.html" lang="en" data-lang="en"',
+                'href="./congestion.html" lang="en" data-lang="en" aria-current="page"')
+    s=s.replace('>언어 ▾</button>', '>Language ▾</button>')
     s=s.replace('href="./congestion.html"','href="./congestion.html"')
     s=s.replace('href="./#','href="../?page=') if False else s
     # English page is inside /en/; route local navigation to the English dashboard.
