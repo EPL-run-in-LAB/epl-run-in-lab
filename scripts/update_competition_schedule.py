@@ -10,6 +10,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 import requests
+from team_identity import resolve
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs/data/competition_schedule.json"
@@ -23,31 +24,6 @@ COMPETITIONS = {
     "FAC": "ENG_CUP_fa-cup",
     "EFL": "ENG_CUP_efl-cup",
 }
-# Only explicitly reviewed spellings are matched to EPL teams.
-EPL = {
-    "Arsenal", "Aston Villa", "Bournemouth", "Brentford", "Brighton",
-    "Chelsea", "Coventry", "Crystal Palace", "Everton", "Fulham",
-    "Hull", "Leeds", "Liverpool", "Man City", "Man United",
-    "Newcastle", "Nottingham", "Sunderland", "Tottenham", "West Ham",
-}
-ALIASES = {
-    "Manchester City": "Man City", "Man Utd": "Man United",
-    "Manchester United": "Man United", "Newcastle United": "Newcastle",
-    "AFC Bournemouth": "Bournemouth", "Brighton & Hove Albion": "Brighton",
-    "Brighton and Hove Albion": "Brighton", "Nottingham Forest": "Nottingham",
-    "Nottingham Forest FC": "Nottingham", "Tottenham Hotspur": "Tottenham",
-    "West Ham United": "West Ham", "Leeds United": "Leeds",
-    "Coventry City": "Coventry", "Hull City": "Hull",
-    "Sunderland AFC": "Sunderland", "Arsenal FC": "Arsenal",
-    "Chelsea FC": "Chelsea", "Liverpool FC": "Liverpool",
-    "Fulham FC": "Fulham", "Everton FC": "Everton",
-    "Brentford FC": "Brentford", "Crystal Palace FC": "Crystal Palace",
-    "Aston Villa FC": "Aston Villa",
-}
-def canon(name):
-    value = name.strip()
-    return ALIASES.get(value, value)
-
 def read_csv(session, competition, kind):
     url = f"{BASE}/{competition}/{kind}_{SEASON}.csv"
     response = session.get(url, timeout=35)
@@ -66,15 +42,17 @@ def build_match(competition, kind, row):
     home_raw, away_raw = row["home"].strip(), row["away"].strip()
     if not home_raw or not away_raw:
         raise ValueError(f"Missing team in {competition} {date}")
-    home, away = canon(home_raw), canon(away_raw)
+    home_info, away_info = resolve(home_raw), resolve(away_raw)
+    home, away = home_info['displayName'], away_info['displayName']
     # Stable identity does not depend on the mutable kickoff time.
     key = f"{competition}|{date}|{home_raw}|{away_raw}"
     result = {
         "id": key, "competition": competition, "date": date,
         "timeSource": row.get("time", "").strip(), "timeVerifiedUTC": None,
         "home": home, "away": away,
+        "homeClubId": home_info["clubId"], "awayClubId": away_info["clubId"],
         "homeRaw": home_raw, "awayRaw": away_raw,
-        "homeEpl": home in EPL, "awayEpl": away in EPL,
+        "homeEpl": home_info["matched"], "awayEpl": away_info["matched"],
         "status": "FINISHED" if kind == "results" else "SCHEDULED",
         "source": "open-matchday",
     }
