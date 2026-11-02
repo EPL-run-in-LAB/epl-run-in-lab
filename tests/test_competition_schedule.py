@@ -66,7 +66,7 @@ class ClubIdentityTests(unittest.TestCase):
             "date": "2026-12-17", "home": "Man City", "away": "Man Utd"
         })
         _, issues = reconcile([moved], history, "2026-11-03T00:00:00Z")
-        self.assertTrue(any(i["type"] == "possible_reschedule" for i in issues))
+        self.assertEqual(issues, [])  # No false positive from past results
         self.assertEqual(len(history["matches"]), 1)
 
     def test_score_conflict_preserves_original(self):
