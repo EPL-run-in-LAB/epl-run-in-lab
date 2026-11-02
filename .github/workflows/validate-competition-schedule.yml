@@ -46,6 +46,24 @@ jobs:
           assert 'runin-theme' in ko and 'runin-theme' in en
           print('Bilingual congestion navigation, theme and sitemap verified')
           PY
+      - name: Validate calendar scripts and localized names
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          for name in ['docs/congestion.html','docs/en/congestion.html']:
+              src=Path(name).read_text(encoding='utf-8')
+              scripts=re.findall(r'<script(?: [^>]*)?>([\\s\\S]*?)</script>',src)
+              assert scripts, f'No JS in {name}'
+              Path('/tmp/calendar_'+('en' if '/en/' in name else 'ko')+'.js').write_text(scripts[-1],encoding='utf-8')
+          ko=Path('docs/index.html').read_text(encoding='utf-8')
+          en=Path('docs/en/index.html').read_text(encoding='utf-8')
+          assert 'TEAM_KO' in ko and 'TEAM_KO' not in en, 'English homepage must not contain Korean club display map'
+          assert 'calendarGrid' in Path('docs/congestion.html').read_text()
+          print('Calendar scripts extracted; bilingual team labels verified')
+          PY
+          node --check /tmp/calendar_ko.js
+          node --check /tmp/calendar_en.js
       - name: Inspect output counts and required identities
         run: |
           python - <<'PY'
