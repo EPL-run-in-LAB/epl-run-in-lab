@@ -35,10 +35,10 @@ summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:
 </style></head><body>
 <header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false">☰</button><a class="brand" href="./">EPL <span>Run-in Lab</span></a><div class="top-actions"><a class="plain" href="./en/congestion.html" lang="en">English</a><button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">다크모드</button></div></header>
 <nav class="sidebar" id="sidebar" aria-label="사이트 메뉴"><div class="nav-label">Menu</div>
-<a class="nav-btn" href="./">홈</a><a class="nav-btn" href="./#prediction">경기 예측</a><a class="nav-btn" href="./#schedule">일정 난이도</a>
-<a class="nav-btn active" href="./congestion.html" aria-current="page">일정 혼잡도</a><a class="nav-btn" href="./#power">파워 랭킹</a>
-<a class="nav-btn" href="./#standings">EPL 순위</a><a class="nav-btn" href="./#team">팀 분석</a>
-<div class="nav-label">About</div><a class="nav-btn" href="./#model">모델 소개</a></nav><div class="overlay" id="overlay"></div>
+<a class="nav-btn" href="./">홈</a><a class="nav-btn" href="./?page=prediction">경기 예측</a><a class="nav-btn" href="./?page=schedule">일정 난이도</a>
+<a class="nav-btn active" href="./congestion.html" aria-current="page">일정 혼잡도</a><a class="nav-btn" href="./?page=power">파워 랭킹</a>
+<a class="nav-btn" href="./?page=standings">EPL 순위</a><a class="nav-btn" href="./?page=team">팀 분석</a>
+<div class="nav-label">About</div><a class="nav-btn" href="./?page=model">모델 소개</a></nav><div class="overlay" id="overlay"></div>
 <main>
 <div class="hero"><div><div class="eyebrow">EPL Dashboard / Fixture Congestion</div><h1>팀별 일정 혼잡도</h1>
 <p class="muted">리그와 컵대회를 함께 보고, 경기 사이 휴식 기간을 비교하세요.</p></div>
@@ -49,7 +49,7 @@ summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:
 <div class="metric"><span>최단 경기 없는 날</span><strong id="minrest">—</strong></div>
 <div class="metric"><span>7일 최다 경기</span><strong id="peak">—</strong></div>
 <div class="metric"><span>짧은 경기 간격 (3일 이내)</span><strong id="short">—</strong></div>
-</div><p class="footnotes">휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 현재 선택 조건의 경기를 대상으로 표시합니다.</p></section>
+</div><p class="footnotes">휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.</p></section>
 <section class="card"><h2>경기일별 7일 누적 경기 수</h2><p class="muted">막대가 높을수록 해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.</p><div id="chart" class="chart" role="img" aria-label="날짜별 7일 누적 경기 수 차트"></div>
 <div class="legend"><span><i class="dot"></i>EPL</span><span><i class="dot cup"></i>컵대회</span><span><i class="dot short"></i>3일 이내 경기 간격</span></div></section>
 <section class="card"><h2>상세 일정</h2><div class="table-wrap"><table><thead><tr><th scope="col">날짜</th><th scope="col">대회</th><th scope="col">상대</th><th scope="col">홈/원정</th><th scope="col">휴식일</th><th scope="col">7일·14일</th><th scope="col">자료 상태</th></tr></thead><tbody id="rows"></tbody></table></div>
