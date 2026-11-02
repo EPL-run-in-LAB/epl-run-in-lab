@@ -10,12 +10,12 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from team_identity import EPL_CLUBS, resolve
+from team_identity import EPL_CLUBS, ACTIVE_EPL_IDS, resolve
 from update_competition_schedule import build_match, reconcile, compare_previous_schedule
 
 class ClubIdentityTests(unittest.TestCase):
     def test_all_canonical_names_resolve(self):
-        self.assertEqual(len(EPL_CLUBS), 20)
+        self.assertEqual(len(ACTIVE_EPL_IDS), 20)
         for club_id, name in EPL_CLUBS.items():
             self.assertEqual(resolve(name)["clubId"], club_id)
 
@@ -27,9 +27,21 @@ class ClubIdentityTests(unittest.TestCase):
             "AFC Bournemouth": "bournemouth",
             "Newcastle United": "newcastle",
             "Nottingham Forest": "nottingham",
+            "Ipswich Town": "ipswich",
         }
         for alias, club_id in pairs.items():
             self.assertEqual(resolve(alias)["clubId"], club_id)
+
+    def test_official_2026_27_membership_and_relegated_club(self):
+        expected = {"arsenal", "aston-villa", "bournemouth", "brentford",
+                    "brighton", "chelsea", "coventry", "crystal-palace",
+                    "everton", "fulham", "hull", "ipswich", "leeds",
+                    "liverpool", "man-city", "man-united", "newcastle",
+                    "nottingham", "sunderland", "tottenham"}
+        self.assertEqual(ACTIVE_EPL_IDS, expected)
+        self.assertEqual(resolve("West Ham United")["clubId"], "west-ham")
+        self.assertFalse(resolve("West Ham United")["matched"])
+        self.assertTrue(resolve("Ipswich Town")["matched"])
 
     def test_unknown_and_youth_teams_not_auto_merged(self):
         for name in ["Manchester United U21", "Manchester City Women", "Unknown FC"]:
