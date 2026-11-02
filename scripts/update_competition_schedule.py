@@ -127,6 +127,7 @@ def compare_previous_schedule(current):
     previous = json.loads(OUT.read_text(encoding="utf-8")).get("matches", [])
     current_ids = {m["id"] for m in current}
     old_ids = {m["id"] for m in previous}
+    finished_pairs = {fixture_pair(m) for m in current if m["status"] == "FINISHED"}
     incoming_by_pair = {}
     for m in current:
         pair = fixture_pair(m)
@@ -136,6 +137,11 @@ def compare_previous_schedule(current):
     for old in previous:
         if old["id"] in current_ids or old.get("status") == "FINISHED":
             continue
+        # A scheduled fixture naturally disappears after it is played.
+        # Match-by-pair alone is not enough to prove identity; flag only if
+        # the same fixture reappears with a changed date or source spelling.
+        if fixture_pair(old) in finished_pairs:
+            continue
         pair = fixture_pair(old)
         candidates = [m for m in incoming_by_pair.get(pair, [])
                       if m["id"] not in old_ids] if pair else []
@@ -144,6 +150,7 @@ def compare_previous_schedule(current):
                            "previous": old["id"],
                            "candidates": [m["id"] for m in candidates]})
         else:
+            # Missing from upstream is recorded for review, not a destructive deletion.
             issues.append({"type": "fixture_disappeared", "previous": old["id"]})
     return issues
 
