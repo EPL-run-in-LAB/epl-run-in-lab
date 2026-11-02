@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from team_identity import EPL_CLUBS, resolve
-from update_competition_schedule import build_match
+from update_competition_schedule import build_match, reconcile
 
 class ClubIdentityTests(unittest.TestCase):
     def test_all_canonical_names_resolve(self):
@@ -52,6 +52,30 @@ class ClubIdentityTests(unittest.TestCase):
         self.assertEqual(m["score"], {"home": 2, "away": 1})
         self.assertEqual(m["awayClubId"], "man-united")
         self.assertEqual(m["status"], "FINISHED")
+
+    def test_reschedule_is_quarantined_not_merged(self):
+        original = build_match("EFL", "results", {
+            "date": "2026-12-15", "home": "Manchester City",
+            "away": "Manchester United", "ft_home": "1", "ft_away": "0"
+        })
+        history = {"matches": {original["id"]: original}, "changes": []}
+        moved = build_match("EFL", "fixtures", {
+            "date": "2026-12-17", "home": "Man City", "away": "Man Utd"
+        })
+        _, issues = reconcile([moved], history, "2026-11-03T00:00:00Z")
+        self.assertTrue(any(i["type"] == "possible_reschedule" for i in issues))
+        self.assertEqual(len(history["matches"]), 1)
+
+    def test_score_conflict_preserves_original(self):
+        original = build_match("UCL", "results", {
+            "date": "2026-10-21", "home": "Arsenal", "away": "Chelsea",
+            "ft_home": "2", "ft_away": "0"
+        })
+        incoming = dict(original, score={"home": 1, "away": 0})
+        history = {"matches": {original["id"]: original}, "changes": []}
+        _, issues = reconcile([incoming], history, "2026-11-03T00:00:00Z")
+        self.assertEqual(history["matches"][original["id"]]["score"]["home"], 2)
+        self.assertEqual(issues[0]["type"], "result_conflict")
 
 if __name__ == "__main__":
     unittest.main()
