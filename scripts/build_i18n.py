@@ -39,6 +39,44 @@ def shell(title, desc, path, ko_path, body, active, schema_name=None):
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}{path}"><link rel="alternate" hreflang="ko" href="{SITE}{ko_path}"><link rel="alternate" hreflang="en" href="{SITE}{path}"><link rel="alternate" hreflang="x-default" href="{SITE}{ko_path}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{SITE}{path}"><meta property="og:locale" content="en_GB"><meta name="twitter:card" content="summary"><script type="application/ld+json">{structured_json}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
 <style>:root{{--bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;--accent:#111827;--topbar:rgba(255,255,255,.92);--sidebar:#fff}}body.dark{{--bg:#0b1220;--panel:#111827;--text:#f3f4f6;--muted:#9ca3af;--line:#263244;--soft:#182235;--accent:#f9fafb;--topbar:rgba(17,24,39,.93);--sidebar:#111827}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.55}}.topbar{{position:sticky;top:0;z-index:40;height:64px;background:var(--topbar);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 18px}}.menu-btn{{border:0;background:transparent;color:var(--text);font-size:24px;width:38px;height:38px;border-radius:10px;cursor:pointer}}.menu-btn:hover{{background:var(--soft)}}.brand{{font-weight:900;letter-spacing:-.035em;font-size:20px;text-decoration:none;color:var(--text)}}.brand span{{color:var(--muted)}}.top-actions{{margin-left:auto;display:flex;align-items:center;gap:6px}}.plain{{border:0;background:transparent;color:var(--muted);font-size:13px;font-weight:800;height:32px;padding:0 9px;border-radius:9px;cursor:pointer}}.lang{{position:relative}}.menu{{display:none;position:absolute;right:0;top:38px;min-width:140px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 14px 35px rgba(0,0,0,.14);z-index:60}}.menu.show{{display:block}}.menu a{{display:block;text-decoration:none;color:var(--text);padding:9px 10px;border-radius:8px}}.switch{{width:46px;height:26px;border:0;border-radius:999px;background:#111827;padding:3px;display:inline-flex;align-items:center;cursor:pointer}}.knob{{width:20px;height:20px;border-radius:50%;background:#fff;display:block;transition:.2s}}body.dark .switch{{background:#e5e7eb}}body.dark .knob{{transform:translateX(20px);background:#111827}}.sidebar{{position:fixed;left:0;top:64px;bottom:0;width:250px;background:var(--sidebar);border-right:1px solid var(--line);transform:translateX(-100%);transition:.22s;z-index:35;padding:16px}}.sidebar.open{{transform:translateX(0)}}.overlay{{display:none;position:fixed;inset:64px 0 0;background:rgba(0,0,0,.42);z-index:30}}.overlay.show{{display:block}}.nav-label{{font-size:11px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin:10px 10px 8px}}.nav-btn{{display:block;width:100%;text-decoration:none;color:var(--text);text-align:left;padding:11px 13px;border-radius:11px;font-weight:750;margin-bottom:4px}}.nav-btn:hover{{background:var(--soft)}}.nav-btn.active{{background:var(--accent);color:var(--bg)}}.main{{min-height:calc(100vh - 64px);transition:.22s}}.container{{max-width:1180px;margin:auto;padding:34px 22px 70px}}h1{{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 10px}}h2{{margin-top:34px}}.lead{{color:var(--muted);max-width:800px}}.grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}}.card{{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}}.label{{font-size:13px;color:var(--muted)}}.big{{font-size:27px;font-weight:900;margin-top:4px}}table{{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}}th,td{{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left}}th{{font-size:12px;color:var(--muted)}}.muted{{color:var(--muted)}}.share,.app-link{{display:inline-block;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:700;text-decoration:none}}.app-link{{margin-left:6px}}.teams{{display:flex;flex-wrap:wrap;gap:8px}}.teams a{{text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:9px 12px;border-radius:10px}}footer{{max-width:1100px;margin:auto;padding:0 20px 40px;color:var(--muted);font-size:12px}}.modal-bg{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:80;align-items:center;justify-content:center;padding:20px}}.modal-bg.show{{display:flex}}.modal{{max-width:560px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}}.close{{float:right;border:0;background:transparent;color:var(--text);font-size:22px;cursor:pointer}}@media(min-width:1100px){{.sidebar.open ~ .main{{margin-left:250px}}}}@media(max-width:760px){{.grid{{grid-template-columns:1fr}}th,td{{padding:10px 7px;font-size:13px}}.notice{{display:none}}}}</style></head><body><header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button><a class="brand" href="{SITE}/en/">EPL Run-in <span>Lab</span></a><div class="top-actions"><div class="lang"><button class="plain" id="langBtn">Language ▾</button><div class="menu" id="langMenu"><a href="{SITE}{ko_path}">한국어</a><a href="{SITE}{path}">English</a></div></div><button class="plain notice" id="noticeBtn">Notice</button><button class="switch" id="theme" aria-label="Dark mode"><span class="knob"></span></button></div></header><aside class="sidebar" id="sidebar"><div class="nav-label">Menu</div>{links}{about}</aside><div class="overlay" id="overlay"></div><main class="main"><div class="container">{body}</div><footer>Probabilities are model estimates and do not guarantee match results. EPL Run-in Lab is not an official service of the Premier League or any club.</footer></main><div class="modal-bg" id="noticeModal"><div class="modal"><button class="close" id="noticeClose">×</button><h3>Important notice</h3><p>Probabilities and expected points are statistical estimates. Injuries, line-ups and tactical changes may not be fully reflected.</p></div></div><script>const sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');function setSidebar(v){{sb.classList.toggle('open',v);ov.classList.toggle('show',v&&innerWidth<1100)}}document.getElementById('menuBtn').onclick=()=>setSidebar(!sb.classList.contains('open'));ov.onclick=()=>setSidebar(false);if(innerWidth>=1100)setSidebar(true);const b=document.body,t=document.getElementById('theme');if(localStorage.getItem('runin-theme')==='dark')b.classList.add('dark');t.onclick=()=>{{b.classList.toggle('dark');localStorage.setItem('runin-theme',b.classList.contains('dark')?'dark':'light')}};const lb=document.getElementById('langBtn'),lm=document.getElementById('langMenu');lb.onclick=e=>{{e.stopPropagation();lm.classList.toggle('show')}};document.addEventListener('click',()=>lm.classList.remove('show'));lm.onclick=e=>e.stopPropagation();const nm=document.getElementById('noticeModal');document.getElementById('noticeBtn').onclick=()=>nm.classList.add('show');document.getElementById('noticeClose').onclick=()=>nm.classList.remove('show');nm.onclick=e=>{{if(e.target===nm)nm.classList.remove('show')}};async function sharePage(text){{const d={{title:document.title,text,url:location.href}};if(navigator.share){{try{{await navigator.share(d);return}}catch(e){{}}}}await navigator.clipboard.writeText(location.href)}}</script></body></html>'''
 
+# Display-label localization only: never change the canonical English club IDs,
+# fixture names, URLs, CSS, or embedded JavaScript.
+KO_CLUB_DISPLAY = {
+    "Arsenal": "아스널", "Aston Villa": "애스턴 빌라",
+    "Bournemouth": "본머스", "Brentford": "브렌트퍼드",
+    "Brighton": "브라이턴", "Chelsea": "첼시",
+    "Coventry City": "코번트리", "Coventry": "코번트리",
+    "Crystal Palace": "크리스털 팰리스", "Everton": "에버튼",
+    "Fulham": "풀럼", "Hull City": "헐 시티", "Hull": "헐 시티",
+    "Ipswich Town": "입스위치", "Ipswich": "입스위치",
+    "Leeds United": "리즈", "Leeds": "리즈",
+    "Liverpool": "리버풀", "Manchester City": "맨시티",
+    "Man City": "맨시티", "Manchester United": "맨유",
+    "Man United": "맨유", "Newcastle United": "뉴캐슬",
+    "Newcastle": "뉴캐슬", "Nottingham Forest": "노팅엄",
+    "Nott'm Forest": "노팅엄", "Nottingham": "노팅엄",
+    "Sunderland": "선덜랜드", "Tottenham Hotspur": "토트넘",
+    "Tottenham": "토트넘", "West Ham United": "웨스트햄",
+    "West Ham": "웨스트햄",
+}
+
+def localize_korean_visible_team_names(source):
+    """Translate HTML text nodes only; preserve attributes and JS data keys."""
+    import re
+    # Ignore complete code/style blocks and any HTML tags while replacing
+    # words in visible text, e.g. <td>Everton</td>.
+    tokens = re.split(
+        r'(<script\\b[^>]*>[\\s\\S]*?</script>|<style\\b[^>]*>[\\s\\S]*?</style>|<[^>]+>)',
+        source, flags=re.I
+    )
+    names = sorted(KO_CLUB_DISPLAY, key=len, reverse=True)
+    pat = re.compile(r'(?<![A-Za-z])(?:' +
+                     '|'.join(re.escape(name) for name in names) +
+                     r')(?![A-Za-z])')
+    for i in range(0, len(tokens), 2):
+        tokens[i] = pat.sub(lambda m: KO_CLUB_DISPLAY[m.group(0)], tokens[i])
+    return ''.join(tokens)
+
 def patch_korean_static_pages():
     for p in DOCS.rglob('index.html'):
         rel_parts = p.relative_to(DOCS).parts
@@ -66,6 +104,7 @@ def patch_korean_static_pages():
         if 'id="sidebar"' in s and 'href="'+SITE+'/congestion.html"' not in s:
             insert = f'<a class="nav-btn" href="{SITE}/congestion.html">일정 혼잡도</a>'
             s = s.replace('<div class="nav-label">About</div>',insert+'<div class="nav-label">About</div>',1)
+        s = localize_korean_visible_team_names(s)
         p.write_text(s,encoding='utf-8')
 
 def build():
