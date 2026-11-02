@@ -3,12 +3,15 @@
 Run from repository root: python -m unittest discover -s tests -p 'test_competition_schedule.py'
 """
 import sys
+import json
+import tempfile
+from unittest.mock import patch
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from team_identity import EPL_CLUBS, resolve
-from update_competition_schedule import build_match, reconcile
+from update_competition_schedule import build_match, reconcile, compare_previous_schedule
 
 class ClubIdentityTests(unittest.TestCase):
     def test_all_canonical_names_resolve(self):
@@ -76,6 +79,22 @@ class ClubIdentityTests(unittest.TestCase):
         _, issues = reconcile([incoming], history, "2026-11-03T00:00:00Z")
         self.assertEqual(history["matches"][original["id"]]["score"]["home"], 2)
         self.assertEqual(issues[0]["type"], "result_conflict")
+
+    def test_schedule_date_change_detected(self):
+        old = build_match("EFL", "fixtures", {
+            "date": "2026-12-15", "home": "Manchester City",
+            "away": "Manchester United"
+        })
+        new = build_match("EFL", "fixtures", {
+            "date": "2026-12-17", "home": "Man City",
+            "away": "Man Utd"
+        })
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "schedule.json"
+            path.write_text(json.dumps({"matches": [old]}))
+            with patch("update_competition_schedule.OUT", path):
+                issues = compare_previous_schedule([new])
+        self.assertEqual(issues[0]["type"], "schedule_date_or_name_change")
 
 if __name__ == "__main__":
     unittest.main()
