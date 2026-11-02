@@ -160,7 +160,7 @@ const qp=new URLSearchParams(location.search);let D=null,H=5,selectedTeam=qp.get
 const pct=x=>Number.isFinite(x)?(x*100).toFixed(1)+'%':'-';
 const fmt=x=>Number.isFinite(x)?x.toFixed(2):'-';
 const $=id=>document.getElementById(id);
-const TEAM_KO={"Arsenal":"아스널","Aston Villa":"애스턴 빌라","Bournemouth":"본머스","Brentford":"브렌트퍼드","Brighton":"브라이턴","Chelsea":"첼시","Coventry":"코번트리 시티","Coventry City":"코번트리 시티","Crystal Palace":"크리스털 팰리스","Everton":"에버턴","Fulham":"풀럼","Hull":"헐 시티","Ipswich":"입스위치 타운","Leeds":"리즈 유나이티드","Liverpool":"리버풀","Man City":"맨체스터 시티","Man United":"맨체스터 유나이티드","Newcastle":"뉴캐슬 유나이티드","Nottingham":"노팅엄 포레스트","Nott'm Forest":"노팅엄 포레스트","Nottingham Forest":"노팅엄 포레스트","Sunderland":"선덜랜드","Tottenham":"토트넘 홋스퍼"};
+const TEAM_KO={"Arsenal":"아스널","Aston Villa":"애스턴 빌라","Bournemouth":"본머스","Brentford":"브렌트퍼드","Brighton":"브라이턴","Chelsea":"첼시","Coventry":"코번트리","Coventry City":"코번트리","Crystal Palace":"크리스털 팰리스","Everton":"에버튼","Fulham":"풀럼","Hull":"헐 시티","Ipswich":"입스위치","Leeds":"리즈","Liverpool":"리버풀","Man City":"맨시티","Man United":"맨유","Newcastle":"뉴캐슬","Nottingham":"노팅엄","Nott'm Forest":"노팅엄","Nottingham Forest":"노팅엄","Sunderland":"선덜랜드","Tottenham":"토트넘"};
 function displayTeam(n){return TEAM_KO[n]||n}
 function teamSlug(n){return String(n||'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function page(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(innerWidth<1100)setSidebar(false);scrollTo({top:0,behavior:'smooth'});renderAll()}
