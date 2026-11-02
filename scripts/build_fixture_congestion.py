@@ -7,7 +7,6 @@ when *both* adjacent matches have explicit independently verified timestamps.
 import json
 import os
 import tempfile
-from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from team_identity import ACTIVE_EPL_IDS, EPL_CLUBS, resolve
@@ -83,10 +82,12 @@ def build(cups, predictions):
         ids.add(m["id"])
         events.append(m)
     teams = {}
+    reference_date = datetime.now(timezone.utc).date()
     for club_id in sorted(ACTIVE_EPL_IDS):
         matches = sorted([m for m in events if m["homeClubId"] == club_id or m["awayClubId"] == club_id],
                          key=lambda m: (m["date"], m["id"]))
         annotated = []
+        away_streak = 0
         for idx, m in enumerate(matches):
             d = date.fromisoformat(m["date"])
             # Include fixture itself; future events do not affect counts.
@@ -97,16 +98,28 @@ def build(cups, predictions):
             prev_utc = utc_verified(prev) if prev else None
             curr_utc = utc_verified(m)
             hours = round((curr_utc-prev_utc).total_seconds()/3600, 1) if prev_utc and curr_utc and curr_utc > prev_utc else None
+            venue = "H" if m["homeClubId"] == club_id else "A"
+            away_streak = away_streak + 1 if venue == "A" else 0
+            same_day = any(p["date"] == m["date"] and p["id"] != m["id"] for p in matches)
             annotated.append(dict(id=m["id"], date=m["date"], competition=m["competition"],
                                   opponent=m["away"] if m["homeClubId"] == club_id else m["home"],
-                                  venue="H" if m["homeClubId"] == club_id else "A",
+                                  venue=venue,
                                   status=m["status"], quality=m["quality"],
                                   daysSincePrevious=gap, calendarRestDays=max(gap-1,0) if gap is not None else None,
                                   kickoffGapHours=hours, restBasis="verified_kickoff" if hours is not None else "calendar_date",
-                                  gamesIn7Days=past7, gamesIn14Days=past14))
-        teams[club_id] = dict(name=EPL_CLUBS[club_id], matches=annotated)
+                                  gamesIn7Days=past7, gamesIn14Days=past14,
+                                  awayStreak=away_streak, shortTurnaround=(gap is not None and 0 < gap <= 3),
+                                  potentialDateConflict=same_day,
+                                  isUpcoming=d >= reference_date))
+        upcoming = [m for m in annotated if m["isUpcoming"]]
+        teams[club_id] = dict(name=EPL_CLUBS[club_id], matches=annotated,
+                              summary={"upcomingCount": len(upcoming),
+                                       "nextFixture": upcoming[0]["date"] if upcoming else None,
+                                       "upcoming7DayPeak": max((m["gamesIn7Days"] for m in upcoming),default=None),
+                                       "potentialDateConflicts": sum(m["potentialDateConflict"] for m in annotated)})
     return dict(version=1, season="2026/27",
                 generatedAt=datetime.now(timezone.utc).isoformat(),
+                asOfDate=reference_date.isoformat(),
                 sources={"cupUpdatedAt":cups.get("updatedAt"), "eplSnapshotAsOf":predictions.get("asOf")},
                 disclaimer="Cup fixture truth not independently verified; EPL schedule derived from prediction snapshot. No fatigue effect is applied to predictions.",
                 timestampPolicy="Verified UTC kickoff interval only when both adjacent fixtures have trusted provenance; otherwise calendar-date rest days.",
