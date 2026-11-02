@@ -43,7 +43,7 @@ summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:
 <div class="hero"><div><div class="eyebrow">EPL Dashboard / Fixture Congestion</div><h1>팀별 일정 혼잡도</h1>
 <p class="muted">리그와 컵대회를 함께 보고, 경기 사이 휴식 기간을 비교하세요.</p></div>
 <div class="controls"><label class="field">팀<select id="team" aria-label="팀 선택"></select></label><label class="field">표시 경기<select id="scope"><option value="upcoming">예정 경기</option><option value="all">전체 기록</option></select></label><label class="field">대회<select id="competition"><option value="ALL">모든 대회</option><option value="EPL">EPL</option><option value="CUP">컵대회</option></select></label></div></div>
-<div class="notice">일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.</div>
+<div class="notice" id="qualityNotice">일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.</div>
 <section class="card"><h2>선택한 기간의 일정 요약</h2><div class="grid">
 <div class="metric"><span>선택한 경기 수</span><strong id="total">—</strong></div>
 <div class="metric"><span>최단 경기 없는 날</span><strong id="minrest">—</strong></div>
@@ -83,6 +83,7 @@ chart.setAttribute('aria-label',team.name+' 팀 선택 기간 '+ms.length+'경�
 }
 (async()=>{try{const res=await fetch('./data/fixture_congestion.json',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();
 for(const [id,t] of Object.entries(d.teams).sort((a,b)=>a[1].name.localeCompare(b[1].name,'en'))){const o=document.createElement('option');o.value=id;o.textContent=t.name;$('team').append(o)}
+if(d.eplSnapshotStale){const q=document.createElement('p');q.textContent='주의: EPL 일정 스냅샷이 '+(d.snapshotAgeDays==null?'갱신 날짜 불명':'약 '+d.snapshotAgeDays+'일 경과')+' 상태입니다. 최신 일정과 다를 수 있습니다.';$('qualityNotice').append(q)}
 const params=new URLSearchParams(location.search);$('team').value=d.teams[params.get('team')]?params.get('team'):'arsenal';
 for(const id of ['team','scope','competition'])$(id).onchange=()=>draw(d);
 $('provenance').textContent='컵대회 수집 시각: '+(d.sources.cupUpdatedAt||'미상')+' / EPL 스냅샷: '+(d.sources.eplSnapshotAsOf||'미상');
