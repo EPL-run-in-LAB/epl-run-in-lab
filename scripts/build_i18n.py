@@ -33,7 +33,7 @@ def shell(title, desc, path, ko_path, body, active, schema_name=None):
     if path != "/en/": breadcrumb_items.append({"@type":"ListItem","position":2,"name":page_name,"item":SITE+path})
     structured={"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"EPL Run-in Lab","description":"Data-driven Premier League predictions, fixture difficulty, expected points and power rankings.","inLanguage":["ko","en"]},{"@type":"WebPage","@id":SITE+path+"#webpage","url":SITE+path,"name":page_name,"description":desc,"isPartOf":{"@id":SITE+"/#website"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":breadcrumb_items}]}
     structured_json=json.dumps(structured,ensure_ascii=False).replace("</","<\\/")
-    nav=[('Home','/en/'),('Match Predictions','/en/predictions/'),('Fixture Difficulty','/en/fixture-difficulty/'),('Power Ranking','/en/power-ranking/'),('EPL Standings','/en/standings/'),('Team Analysis','/en/teams/')]
+    nav=[('Home','/en/'),('Match Predictions','/en/predictions/'),('Fixture Difficulty','/en/fixture-difficulty/'),('Fixture Congestion','/en/congestion.html'),('Power Ranking','/en/power-ranking/'),('EPL Standings','/en/standings/'),('Team Analysis','/en/teams/')]
     links=''.join(f'<a class="nav-btn {"active" if p==active else ""}" href="{SITE}{p}">{lab}</a>' for lab,p in nav)
     about=f'<div class="nav-label">About</div><a class="nav-btn {"active" if active=="/en/model/" else ""}" href="{SITE}/en/model/">Model</a>'
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}{path}"><link rel="alternate" hreflang="ko" href="{SITE}{ko_path}"><link rel="alternate" hreflang="en" href="{SITE}{path}"><link rel="alternate" hreflang="x-default" href="{SITE}{ko_path}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{SITE}{path}"><meta property="og:locale" content="en_GB"><meta name="twitter:card" content="summary"><script type="application/ld+json">{structured_json}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
@@ -131,8 +131,8 @@ def build():
 
     # Keep the sitemap deliberately simple. hreflang remains in each page's HTML <head>;
     # the sitemap only needs canonical URLs + lastmod for reliable Search Console parsing.
-    ko=['/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
-    en=['/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
+    ko=['/congestion.html','/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
+    en=['/en/congestion.html','/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
     # V13 match reports are generated before i18n. Include finalized reports in both sitemaps.
     match_paths=[]
     matches_root=DOCS/'matches'
@@ -198,7 +198,7 @@ def build_interactive_english_home():
         ('<a href="./en/" data-lang="en"','<a href="./" data-lang="en"'),
         ('>주의사항</button>','>Notice</button>'),
         ('aria-label="다크모드로 전환" title="다크모드로 전환"','aria-label="Switch to dark mode" title="Switch to dark mode"'),
-        ('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),('팀 분석','Team Analysis'),('모델 소개','Model'),
+        ('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),('일정 혼잡도','Fixture Congestion'),('컵대회 포함 일정 혼잡도 확인 →','Explore Fixture Congestion →'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),('팀 분석','Team Analysis'),('모델 소개','Model'),
         ('EPL의 현재와 앞으로를 한눈에','The EPL: Now and What’s Ahead'),
         ('승·무·패 확률, 기대 승점, 일정 난이도와 그 이유','Win, draw and loss probabilities, expected points, fixture difficulty and why'),
         ('데이터 불러오는 중…','Loading data…'),
@@ -323,6 +323,53 @@ def build_interactive_english_home():
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(s, encoding='utf-8')
 
+def build_english_congestion():
+    """Keep the same dashboard structure, interactions and data in both languages."""
+    src=(DOCS/'congestion.html').read_text(encoding='utf-8')
+    s=src.replace('<html lang="ko">','<html lang="en">')
+    s=s.replace('href="./en/congestion.html" lang="en">English','href="../congestion.html" lang="ko">한국어')
+    s=s.replace('href="./congestion.html"','href="./congestion.html"')
+    s=s.replace('href="./#','href="../?page=') if False else s
+    # English page is inside /en/; route local navigation to the English dashboard.
+    s=s.replace('href="./#','href="./?page=').replace('href="./"','href="./"')
+    s=s.replace('href="./congestion.html"','href="./congestion.html"')
+    s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
+    s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
+    translations=[
+      ('팀별 일정 혼잡도','Team Fixture Congestion'),
+      ('리그와 컵대회를 함께 보고, 경기 사이 휴식 기간을 비교하세요.','Compare rest between league and cup fixtures.'),
+      ('사이트 메뉴','Site navigation'),('메뉴 열기','Open menu'),
+      ('홈/원정','Home/Away'),('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),
+      ('일정 혼잡도','Fixture Congestion'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),
+      ('팀 분석','Team Analysis'),('모델 소개','Model'),('다크모드 전환','Toggle dark mode'),
+      ('라이트모드','Light mode'),('다크모드','Dark mode'),
+      ('팀 선택','Select team'),('팀<select','Team<select'),('표시 경기','Fixtures'),
+      ('예정 경기','Upcoming'),('전체 기록','All fixtures'),('모든 대회','All competitions'),('컵대회','Cup competitions'),
+      ('선택한 기간의 일정 요약','Summary for selection'),('선택한 경기 수','Fixtures shown'),
+      ('최단 경기 없는 날','Shortest rest'),('7일 최다 경기','Peak matches in 7 days'),
+      ('짧은 경기 간격 (3일 이내)','Short intervals (3 days or less)'),
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 현재 선택 조건의 경기를 대상으로 표시합니다.','Rest days exclude the two match days. Summary metrics are based on the selected view.'),
+      ('경기일별 7일 누적 경기 수','Rolling 7-day match count'),
+      ('막대가 높을수록 해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.','Taller bars show more matches within the previous seven days including match day.'),
+      ('3일 이내 경기 간격','Intervals within 3 days'),('상세 일정','Fixture details'),
+      ('날짜','Date'),('대회','Competition'),('상대','Opponent'),('휴식일','Rest'),
+      ('7일·14일','7d · 14d'),('자료 상태','Source status'),
+      ('지표 정의와 데이터 한계','Metric definitions and data limitations'),
+      ('시각 미검증','Kickoff unverified'),('EPL 예측 스냅샷','EPL snapshot'),('컵 일정 미검증','Unverified cup fixture'),
+      ('선택한 조건에 해당하는 경기가 없습니다.','No fixtures match the selected filters.'),
+      ('데이터 로드 실패: ','Unable to load data: '),('집계 생성: ','Generated: '),
+      ('경기',' matches'),('일',' days'),('회',' times'),
+    ]
+    # Translate longer copy before shorter recurring terms.
+    translations.sort(key=lambda x:len(x[0]),reverse=True)
+    for ko,en in translations:
+        s=s.replace(ko,en)
+    s=s.replace("m.venue==='H'?'Home':'원정'","m.venue==='H'?'Home':'Away'")
+    s=s.replace('href="../?page=prediction"','href="./?page=prediction"')
+    (DOCS/'en').mkdir(exist_ok=True)
+    (DOCS/'en'/'congestion.html').write_text(s,encoding='utf-8')
+
 if __name__=='__main__':
     build()
     build_interactive_english_home()
+    build_english_congestion()
