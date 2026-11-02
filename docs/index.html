@@ -65,10 +65,10 @@ button,select{font:inherit}.topbar{position:sticky;top:0;z-index:40;height:64px;
   <div class="brand">EPL Run-in <span>Lab</span></div>
   <div class="top-actions">
     <div style="position:relative">
-      <button class="notice-btn" id="langBtn" aria-label="언어 선택">Language ▾</button>
+      <button class="notice-btn" id="langBtn" aria-label="언어 선택" aria-expanded="false" aria-controls="langMenu" aria-haspopup="true">언어 ▾</button>
       <div id="langMenu" style="display:none;position:absolute;right:0;top:38px;min-width:138px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:6px;box-shadow:0 14px 34px rgba(0,0,0,.15);z-index:80">
-        <a href="./" data-lang="ko" style="display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text)">한국어</a>
-        <a href="./en/" data-lang="en" style="display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text)">English</a>
+        <a href="./" data-lang="ko" style="display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text)">한국어 · Korean</a>
+        <a href="./en/" data-lang="en" style="display:block;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text)">영어 · English</a>
       </div>
     </div>
     <button class="notice-btn" id="noticeBtn">주의사항</button>
