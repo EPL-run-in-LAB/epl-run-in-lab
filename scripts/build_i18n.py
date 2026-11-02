@@ -66,7 +66,7 @@ def localize_korean_visible_team_names(source):
     # Ignore complete code/style blocks and any HTML tags while replacing
     # words in visible text, e.g. <td>Everton</td>.
     tokens = re.split(
-        r'(<script\\b[^>]*>[\\s\\S]*?</script>|<style\\b[^>]*>[\\s\\S]*?</style>|<[^>]+>)',
+        r'(<script\b[^>]*>[\s\S]*?</script>|<style\b[^>]*>[\s\S]*?</style>|<[^>]+>)',
         source, flags=re.I
     )
     names = sorted(KO_CLUB_DISPLAY, key=len, reverse=True)
