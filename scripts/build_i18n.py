@@ -353,6 +353,7 @@ def build_english_congestion():
       ('컵대회 수집 시각: ','Cup source updated: '),
       ('EPL 스냅샷: ','EPL snapshot: '),
       ('경기일별 7일 누적 경기 수 차트','Chart of rolling 7-day match count'),
+      ('휴식일 / 시각','Rest / verified kickoff gap'),('시간(검증)','hrs (verified)'),('연속','consecutive'),
       ('날짜 중복 주의','possible date conflict'),
       ('최근 7일 ','Last 7d '),('기간 ','period '),('미상','unknown'),('약 ','about '),('상태입니다. ','old. '),
       ('해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.','more matches were played in the last seven days including this date.'),
