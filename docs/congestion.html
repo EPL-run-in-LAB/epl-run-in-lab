@@ -1,68 +1,91 @@
 <!doctype html>
-<html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>일정 혼잡도 | EPL Run-in Lab</title>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>일정 혼잡도 | EPL Run-in Lab</title><meta name="description" content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다.">
+<link rel="canonical" href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">
+<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">
+<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">
 <style>
-:root{color-scheme:light;--ink:#172238;--muted:#66758c;--line:#e4eaf1;--accent:#2665ca;--bg:#f7f9fc}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.6 system-ui,-apple-system,"Noto Sans KR",sans-serif;color:var(--ink)}
-header{background:#fff;border-bottom:1px solid var(--line);padding:15px max(24px,calc((100vw - 1080px)/2))}
-header a{color:var(--accent);text-decoration:none;font-weight:650}
-main{max-width:1080px;margin:38px auto;padding:0 20px}h1{font-size:30px;line-height:1.25;margin:0 0 10px}h2{font-size:18px;margin:0 0 12px}
-.muted{color:var(--muted)}.notice{border:1px solid #e5d5a7;background:#fffaf0;padding:12px 16px;border-radius:12px;margin:22px 0}
-.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:22px 0}
-select{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit;min-width:200px}
-.card{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#f7f9fc;border-radius:10px;padding:14px}.stat b{display:block;font-size:24px}
-.chart{display:flex;align-items:flex-end;gap:5px;overflow:auto;min-height:160px;padding:10px 0 25px}
-.barbox{min-width:39px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:145px;position:relative}
-.bar{width:27px;background:#5788da;border-radius:5px 5px 0 0;min-height:3px}.barbox small{position:absolute;bottom:-23px;white-space:nowrap;font-size:10px;color:var(--muted)}
-.barbox span{font-size:11px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{text-align:left;border-bottom:1px solid var(--line);padding:12px 8px}th{color:var(--muted);font-weight:550}
-.table-wrap{overflow-x:auto}.pill{font-size:12px;padding:3px 7px;border-radius:8px;background:#f0f3f8;white-space:nowrap}
-@media(max-width:600px){h1{font-size:24px}.stats{grid-template-columns:1fr}td,th{padding:10px 6px;white-space:nowrap}}
-</style></head>
-<body><header><a href="./">EPL Run-in Lab</a>　<span class="muted">/ 일정 혼잡도</span></header>
-<main><h1>팀별 일정 혼잡도</h1><p class="muted">EPL · UCL · UEL · UECL · FA컵 · 카라바오컵 일정 통합 보기</p>
-<div class="notice">실험적 일정 분석입니다. 컵대회 일정은 독립적인 경기별 공식 대조가 완료되지 않았으며, EPL 일정은 예측 스냅샷을 기반으로 합니다. 혼잡도 수치는 현재 승률 예측에 반영되지 않습니다.</div>
-<div class="controls"><label for="team">분석할 팀</label><select id="team" aria-label="팀 선택"></select><span class="muted" id="source"></span></div>
-<section class="card"><h2>일정 요약</h2><div class="stats">
-<div class="stat"><span class="muted">등록된 전체 경기</span><b id="total">—</b></div>
-<div class="stat"><span class="muted">가장 짧은 경기 간격</span><b id="minrest">—</b></div>
-<div class="stat"><span class="muted">7일간 최대 경기 수</span><b id="peak">—</b></div>
-</div></section>
-<section class="card"><h2>경기별 7일 혼잡도</h2><div class="chart" id="chart" role="img" aria-label="경기별 이전 7일간 경기 수 막대그래프"></div><p class="muted">각 막대는 해당 경기일을 포함한 이전 7일간 경기 수입니다. 날짜 단위 집계이며 선수별 출전시간은 반영하지 않습니다.</p></section>
-<section class="card"><h2>경기 일정과 휴식일</h2><div class="table-wrap"><table><thead><tr><th>날짜</th><th>대회</th><th>상대</th><th>장소</th><th>경기 없는 날</th><th>킥오프 간격</th><th>7일/14일</th><th>자료 상태</th></tr></thead><tbody id="rows"></tbody></table></div></section>
-<p class="muted" id="updated"></p></main>
+:root{--bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;--warn:#a16207;--topbar:rgba(255,255,255,.92);--sidebar:#fff}
+body.dark{--bg:#0b1220;--panel:#111827;--text:#f3f4f6;--muted:#9ca3af;--line:#263244;--soft:#182235;--warn:#fbbf24;--topbar:rgba(17,24,39,.93);--sidebar:#111827}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI","Noto Sans KR",sans-serif}a{color:inherit}
+.topbar{height:64px;position:sticky;top:0;z-index:40;background:var(--topbar);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 18px;backdrop-filter:blur(14px)}
+.brand{font-weight:900;font-size:20px;letter-spacing:-.035em;text-decoration:none}.brand span{color:var(--muted)}.top-actions{margin-left:auto;display:flex;align-items:center;gap:12px}
+.menu-btn,.plain{border:0;background:transparent;color:var(--text);cursor:pointer;font:inherit;padding:8px}.menu-btn{font-size:23px}
+.sidebar{position:fixed;left:0;top:64px;bottom:0;width:250px;background:var(--sidebar);border-right:1px solid var(--line);transform:translateX(-100%);transition:transform .2s;z-index:35;padding:16px;overflow-y:auto}
+.sidebar.open{transform:translateX(0)}.nav-label{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:12px 10px}
+.nav-btn{display:block;width:100%;text-decoration:none;padding:11px 13px;border-radius:10px;font-weight:600}.nav-btn:hover,.nav-btn.active{background:var(--soft)}
+.overlay{display:none;position:fixed;inset:64px 0 0;background:rgba(0,0,0,.4);z-index:30}.overlay.show{display:block}
+.theme-toggle{border:1px solid var(--line);border-radius:99px;background:var(--soft);color:var(--text);padding:6px 12px;cursor:pointer}
+main{max-width:1150px;margin:38px auto;padding:0 24px 65px}h1{font-size:30px;letter-spacing:-.04em;margin:4px 0 8px}h2{font-size:18px;margin:0 0 14px}p{margin:8px 0}.muted{color:var(--muted)}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.09em;color:var(--muted);text-transform:uppercase}
+.hero{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:end;margin-bottom:22px}
+.controls{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:650}
+select{border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);padding:10px;min-width:150px;font:inherit}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:21px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{padding:15px;border:1px solid var(--line);border-radius:10px}.metric span{font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:24px;letter-spacing:-.035em;margin-top:6px}
+.notice{border-left:3px solid var(--warn);padding:9px 14px;background:var(--soft);color:var(--text);font-size:13px;border-radius:0 9px 9px 0}
+.legend{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:12px;margin-top:8px}.dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:#64748b;margin-right:5px}.dot.cup{background:#c38b48}.dot.short{background:#bf6352}
+.chart{display:flex;align-items:end;gap:5px;overflow-x:auto;padding:10px 1px 29px;min-height:170px}.bar-item{min-width:34px;height:135px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.bar{width:24px;min-height:5px;background:#64748b;border-radius:4px 4px 0 0}.bar.cup{background:#c38b48}.bar.short{outline:2px solid #bf6352;outline-offset:-2px}
+.bar-item small{position:absolute;bottom:-23px;font-size:10px;color:var(--muted);white-space:nowrap}.bar-item b{font-size:11px}
+.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:650}
+th[scope="col"]{text-align:left}.tag{display:inline-block;border-radius:7px;padding:3px 7px;background:var(--soft);font-size:11px}.tag.warn{color:var(--warn)}
+summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:var(--muted);font-size:12px}
+@media(min-width:1150px){.sidebar{transform:none}.topbar .menu-btn{display:none}main{margin-left:max(280px,calc((100vw - 1150px)/2));margin-right:24px;max-width:1050px}}
+@media(max-width:760px){main{padding:0 16px 38px;margin-top:22px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:25px}.card{padding:15px}}
+</style></head><body>
+<header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false">☰</button><a class="brand" href="./">EPL <span>Run-in Lab</span></a><div class="top-actions"><a class="plain" href="./en/congestion.html" lang="en">English</a><button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">다크모드</button></div></header>
+<nav class="sidebar" id="sidebar" aria-label="사이트 메뉴"><div class="nav-label">Menu</div>
+<a class="nav-btn" href="./">홈</a><a class="nav-btn" href="./#prediction">경기 예측</a><a class="nav-btn" href="./#schedule">일정 난이도</a>
+<a class="nav-btn active" href="./congestion.html" aria-current="page">일정 혼잡도</a><a class="nav-btn" href="./#power">파워 랭킹</a>
+<a class="nav-btn" href="./#standings">EPL 순위</a><a class="nav-btn" href="./#team">팀 분석</a>
+<div class="nav-label">About</div><a class="nav-btn" href="./#model">모델 소개</a></nav><div class="overlay" id="overlay"></div>
+<main>
+<div class="hero"><div><div class="eyebrow">EPL Dashboard / Fixture Congestion</div><h1>팀별 일정 혼잡도</h1>
+<p class="muted">리그와 컵대회를 함께 보고, 경기 사이 휴식 기간을 비교하세요.</p></div>
+<div class="controls"><label class="field">팀<select id="team" aria-label="팀 선택"></select></label><label class="field">표시 경기<select id="scope"><option value="upcoming">예정 경기</option><option value="all">전체 기록</option></select></label><label class="field">대회<select id="competition"><option value="ALL">모든 대회</option><option value="EPL">EPL</option><option value="CUP">컵대회</option></select></label></div></div>
+<div class="notice">일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.</div>
+<section class="card"><h2>선택한 기간의 일정 요약</h2><div class="grid">
+<div class="metric"><span>선택한 경기 수</span><strong id="total">—</strong></div>
+<div class="metric"><span>최단 경기 없는 날</span><strong id="minrest">—</strong></div>
+<div class="metric"><span>7일 최다 경기</span><strong id="peak">—</strong></div>
+<div class="metric"><span>짧은 경기 간격 (3일 이내)</span><strong id="short">—</strong></div>
+</div><p class="footnotes">휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 현재 선택 조건의 경기를 대상으로 표시합니다.</p></section>
+<section class="card"><h2>경기일별 7일 누적 경기 수</h2><p class="muted">막대가 높을수록 해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.</p><div id="chart" class="chart" role="img" aria-label="날짜별 7일 누적 경기 수 차트"></div>
+<div class="legend"><span><i class="dot"></i>EPL</span><span><i class="dot cup"></i>컵대회</span><span><i class="dot short"></i>3일 이내 경기 간격</span></div></section>
+<section class="card"><h2>상세 일정</h2><div class="table-wrap"><table><thead><tr><th scope="col">날짜</th><th scope="col">대회</th><th scope="col">상대</th><th scope="col">홈/원정</th><th scope="col">휴식일</th><th scope="col">7일·14일</th><th scope="col">자료 상태</th></tr></thead><tbody id="rows"></tbody></table></div>
+<details><summary>지표 정의와 데이터 한계</summary><div class="footnotes"><p>7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.</p><p>시간 단위 간격은 인접한 두 경기에 신뢰 가능한 UTC 킥오프 시각과 검증 출처가 함께 있을 때만 표시할 예정입니다. 같은 날 중복 경기가 나타나면 원본 자료 충돌 가능성이 있으므로 주의 표시합니다. 경기 이동 거리와 선수별 출전 시간은 반영되지 않았습니다.</p><p id="provenance"></p></div></details></section>
+<p class="footnotes" id="updated" role="status"></p></main>
 <script>
-const $=id=>document.getElementById(id);
-function td(tr,value){const el=document.createElement("td");el.textContent=String(value);tr.appendChild(el);}
-function render(team){
- const matches=team.matches,rest=matches.map(x=>x.calendarRestDays).filter(x=>x!==null);
- $("total").textContent=matches.length+"경기";
- $("minrest").textContent=rest.length?Math.min(...rest)+"일":"—";
- $("peak").textContent=matches.length?Math.max(...matches.map(x=>x.gamesIn7Days))+"경기":"—";
- const chart=$("chart");chart.replaceChildren();
- for(const m of matches){const wrap=document.createElement("div");wrap.className="barbox";wrap.title=m.date+" / 최근 7일 "+m.gamesIn7Days+"경기";
- const count=document.createElement("span");count.textContent=m.gamesIn7Days;
- const bar=document.createElement("div");bar.className="bar";bar.style.height=(m.gamesIn7Days*28)+"px";
- const label=document.createElement("small");label.textContent=m.date.slice(5);
- wrap.append(count,bar,label);chart.append(wrap);}
- const rows=$("rows");rows.replaceChildren();
- for(const m of matches){const tr=document.createElement("tr");td(tr,m.date);td(tr,m.competition);td(tr,m.opponent);
- td(tr,m.venue==="H"?"홈":"원정");td(tr,m.calendarRestDays===null?"—":m.calendarRestDays+"일");
- td(tr,m.kickoffGapHours===null?"시각 미검증":m.kickoffGapHours+"시간 (검증)");
- td(tr,m.gamesIn7Days+" / "+m.gamesIn14Days);
- td(tr,m.quality==="prediction_snapshot"?"EPL 스냅샷":"컵 일정 미검증");rows.appendChild(tr);}
+const $=id=>document.getElementById(id),root=document.body;
+function theme(){root.classList.toggle('dark');localStorage.setItem('runin-theme',root.classList.contains('dark')?'dark':'light');$('themeToggle').textContent=root.classList.contains('dark')?'라이트모드':'다크모드'}
+if(localStorage.getItem('runin-theme')==='dark'){root.classList.add('dark');$('themeToggle').textContent='라이트모드'}
+$('themeToggle').onclick=theme;const sidebar=$('sidebar'),overlay=$('overlay');
+function menu(open){sidebar.classList.toggle('open',open);overlay.classList.toggle('show',open);$('menuBtn').setAttribute('aria-expanded',String(open))}
+$('menuBtn').onclick=()=>menu(!sidebar.classList.contains('open'));overlay.onclick=()=>menu(false);
+function cell(tr,value){const td=document.createElement('td');td.textContent=value;tr.append(td)}
+function draw(data){const team=data.teams[$('team').value];if(!team)return;
+const scope=$('scope').value,filter=$('competition').value;
+const ms=team.matches.filter(m=>(scope==='all'||m.isUpcoming)&&(filter==='ALL'||(filter==='CUP'?m.competition!=='EPL':m.competition==='EPL')));
+const rest=ms.map(m=>m.calendarRestDays).filter(v=>v!==null&&v!==undefined);
+$('total').textContent=ms.length+'경기';$('minrest').textContent=rest.length?Math.min(...rest)+'일':'—';
+$('peak').textContent=ms.length?Math.max(...ms.map(m=>m.gamesIn7Days))+'경기':'—';
+$('short').textContent=ms.filter(m=>m.shortTurnaround).length+'회';
+const chart=$('chart');chart.replaceChildren();
+const table=$('rows');table.replaceChildren();
+if(!ms.length){const p=document.createElement('p');p.className='muted';p.textContent='선택한 조건에 해당하는 경기가 없습니다.';chart.append(p);}
+for(const m of ms){const item=document.createElement('div');item.className='bar-item';item.title=m.date+' / 최근 7일 '+m.gamesIn7Days+'경기';
+const b=document.createElement('div');b.className='bar'+(m.competition!=='EPL'?' cup':'')+(m.shortTurnaround?' short':'');b.style.height=(Math.min(m.gamesIn7Days,5)*22)+'px';
+const number=document.createElement('b');number.textContent=m.gamesIn7Days;const small=document.createElement('small');small.textContent=m.date.slice(5);item.append(number,b,small);chart.append(item);
+const tr=document.createElement('tr');cell(tr,m.date);cell(tr,m.competition);cell(tr,m.opponent);cell(tr,m.venue==='H'?'홈':'원정');
+cell(tr,m.calendarRestDays==null?'—':m.calendarRestDays+'일'+(m.potentialDateConflict?' · 날짜 중복 주의':''));
+cell(tr,m.gamesIn7Days+' / '+m.gamesIn14Days);cell(tr,m.quality==='prediction_snapshot'?'EPL 예측 스냅샷':'컵 일정 미검증');table.append(tr);}
+chart.setAttribute('aria-label',team.name+' 팀 선택 기간 '+ms.length+'경기, 7일 최대 '+(ms.length?Math.max(...ms.map(m=>m.gamesIn7Days)):0)+'경기. 상세 값은 아래 표 참조.');
 }
-(async()=>{
- try{const response=await fetch("./data/fixture_congestion.json",{cache:"no-store"});
- if(!response.ok)throw Error("HTTP "+response.status);
- const data=await response.json();const ids=Object.keys(data.teams);
- const select=$("team");
- for(const id of ids){const option=document.createElement("option");option.value=id;option.textContent=data.teams[id].name;select.appendChild(option);}
- select.addEventListener("change",()=>render(data.teams[select.value]));
- if(ids.length){select.value=ids.includes("arsenal")?"arsenal":ids[0];render(data.teams[select.value]);}
- $("source").textContent="EPL 스냅샷: "+(data.sources.eplSnapshotAsOf||"정보 없음");
- $("updated").textContent="집계 생성: "+data.generatedAt+" (UTC)";
- }catch(e){$("source").textContent="데이터를 불러올 수 없습니다: "+e.message;}
-})();
+(async()=>{try{const res=await fetch('./data/fixture_congestion.json',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();
+for(const [id,t] of Object.entries(d.teams).sort((a,b)=>a[1].name.localeCompare(b[1].name,'en'))){const o=document.createElement('option');o.value=id;o.textContent=t.name;$('team').append(o)}
+const params=new URLSearchParams(location.search);$('team').value=d.teams[params.get('team')]?params.get('team'):'arsenal';
+for(const id of ['team','scope','competition'])$(id).onchange=()=>draw(d);
+$('provenance').textContent='컵대회 수집 시각: '+(d.sources.cupUpdatedAt||'미상')+' / EPL 스냅샷: '+(d.sources.eplSnapshotAsOf||'미상');
+$('updated').textContent='집계 생성: '+d.generatedAt+' (UTC)';draw(d)}
+catch(e){$('updated').textContent='데이터 로드 실패: '+e.message}})();
 </script></body></html>
