@@ -202,7 +202,7 @@ def build_interactive_english_home():
         ('<a href="./en/" data-lang="en"','<a href="./" data-lang="en"'),
         ('>주의사항</button>','>Notice</button>'),
         ('aria-label="다크모드로 전환" title="다크모드로 전환"','aria-label="Switch to dark mode" title="Switch to dark mode"'),
-        ('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),('일정 혼잡도','Fixture Congestion'),('컵대회 포함 일정 혼잡도 확인 →','Explore Fixture Congestion →'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),('팀 분석','Team Analysis'),('모델 소개','Model'),
+        ('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),('일정 혼잡도','Fixture Congestion'),('컵대회 포함 일정 혼잡도 확인 →','Explore Fixture Congestion →'),('컵대회 포함 Fixture Congestion 확인 →','Explore Fixture Congestion →'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),('팀 분석','Team Analysis'),('모델 소개','Model'),
         ('EPL의 현재와 앞으로를 한눈에','The EPL: Now and What’s Ahead'),
         ('승·무·패 확률, 기대 승점, 일정 난이도와 그 이유','Win, draw and loss probabilities, expected points, fixture difficulty and why'),
         ('데이터 불러오는 중…','Loading data…'),
