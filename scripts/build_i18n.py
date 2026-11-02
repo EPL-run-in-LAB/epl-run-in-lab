@@ -344,6 +344,7 @@ def build_english_congestion():
       ('일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.','This experimental analysis combines sources with different verification levels. Cup fixtures have not been independently matched to official match records, and these figures are not used in win-probability predictions.'),
       ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.','Rest days exclude match days. Summary cards reflect the selected fixtures, while previous-match intervals and rolling match counts still include competitions hidden by the filter.'),
       ('7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.','Rolling 7- and 14-day counts include the fixture date and look backwards. Hidden competitions still contribute to rest days and rolling counts; filters only control the displayed fixtures.'),
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.','Rest days exclude match days. Selected fixtures are used for overview statistics; previous-match rest and rolling counts include competitions hidden by the filters.'),
       ('시간 단위 간격은 인접한 두 경기에 신뢰 가능한 UTC 킥오프 시각과 검증 출처가 함께 있을 때만 표시할 예정입니다. 같은 날 중복 경기가 나타나면 원본 자료 충돌 가능성이 있으므로 주의 표시합니다. 경기 이동 거리와 선수별 출전 시간은 반영되지 않았습니다.','Kickoff gaps in hours are shown only when both adjacent matches have independently verified UTC kickoff times with provenance. Multiple fixtures on the same date are flagged as possible source conflicts. Travel distances and player minutes are not included.'),
       ('주의: EPL 일정 스냅샷이 ','Warning: EPL fixture snapshot is '),
       ('갱신 날짜 불명','of unknown age'),
@@ -351,7 +352,9 @@ def build_english_congestion():
       ('일 경과',' days old'),
       ('컵대회 수집 시각: ','Cup source updated: '),
       ('EPL 스냅샷: ','EPL snapshot: '),
+      ('경기일별 7일 누적 경기 수 차트','Chart of rolling 7-day match count'),
       ('날짜 중복 주의','possible date conflict'),
+      ('최근 7일 ','Last 7d '),('기간 ','period '),('미상','unknown'),('약 ','about '),('상태입니다. ','old. '),
       ('해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.','more matches were played in the last seven days including this date.'),
 
       ('팀별 일정 혼잡도','Team Fixture Congestion'),
@@ -389,6 +392,10 @@ def build_english_congestion():
     s=s.replace("+'회'", "+' times'")
     s=s.replace("'경기, 7일 최대 '", "' matches, peak in 7d '")
     s=s.replace("'경기. 상세 값은 아래 표 참조.'", "' matches. Values are in the table below.'")
+    s=s.replace("+'경기, 7일 최대 '", "+' matches; peak 7d '")
+    s=s.replace("+'경기. 상세 값은 아래 표 참조.'", "+' matches. See table below.'")
+    s=s.replace("+'경기'", "+' matches'")
+    s=s.replace("'경기'", "'matches'")
     s=s.replace('href="../?page=prediction"','href="./?page=prediction"')
     (DOCS/'en').mkdir(exist_ok=True)
     (DOCS/'en'/'congestion.html').write_text(s,encoding='utf-8')
