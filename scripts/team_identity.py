@@ -30,6 +30,7 @@ ALIASES.update({
     "Brighton and Hove Albion": "brighton",
     "Nottingham Forest": "nottingham",
     "Nottingham Forest FC": "nottingham",
+    "Nott'm Forest": "nottingham",
     "Tottenham Hotspur": "tottenham",
     "West Ham United": "west-ham",
     "Leeds United": "leeds", "Coventry City": "coventry",
