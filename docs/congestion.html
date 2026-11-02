@@ -20,11 +20,11 @@ main{max-width:1150px;margin:38px auto;padding:0 24px 65px}h1{font-size:30px;let
 .hero{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:end;margin-bottom:22px}
 .controls{display:flex;gap:10px;align-items:end;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:650}
 select{border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);padding:10px;min-width:150px;font:inherit}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:21px;margin:16px 0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:21px;margin:16px 0;min-width:0}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .metric{padding:15px;border:1px solid var(--line);border-radius:10px}.metric span{font-size:12px;color:var(--muted)}.metric strong{display:block;font-size:24px;letter-spacing:-.035em;margin-top:6px}
 .notice{border-left:3px solid var(--warn);padding:9px 14px;background:var(--soft);color:var(--text);font-size:13px;border-radius:0 9px 9px 0}
 .legend{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:12px;margin-top:8px}.dot{display:inline-block;width:10px;height:10px;border-radius:3px;background:#64748b;margin-right:5px}.dot.cup{background:#c38b48}.dot.short{background:#bf6352}
-.chart{display:flex;align-items:end;gap:5px;overflow-x:auto;padding:10px 1px 29px;min-height:170px}.bar-item{min-width:34px;height:135px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
+.chart{display:flex;align-items:end;gap:5px;min-width:0;max-width:100%;overflow-x:auto;padding:10px 1px 29px;min-height:170px}.bar-item{min-width:34px;height:135px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}
 .bar{width:24px;min-height:5px;background:#64748b;border-radius:4px 4px 0 0}.bar.cup{background:#c38b48}.bar.short{outline:2px solid #bf6352;outline-offset:-2px}
 .bar-item small{position:absolute;bottom:-23px;font-size:10px;color:var(--muted);white-space:nowrap}.bar-item b{font-size:11px}
 .table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:11px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-weight:650}
