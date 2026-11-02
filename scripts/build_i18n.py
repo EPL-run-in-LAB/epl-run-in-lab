@@ -62,6 +62,10 @@ def patch_korean_static_pages():
             )
             s = s.replace('<button class="switch" id="theme"', control + '<button class="switch" id="theme"')
             s = s.replace("const b=document.body,t=document.getElementById('theme');", "const lb=document.getElementById('langBtn'),lm=document.getElementById('langMenu');if(lb){lb.onclick=e=>{e.stopPropagation();lm.style.display=lm.style.display==='block'?'none':'block'};document.addEventListener('click',()=>lm.style.display='none');lm.onclick=e=>e.stopPropagation();}const b=document.body,t=document.getElementById('theme');")
+        # Add the experimental congestion tool to the existing static-page navigation.
+        if 'id="sidebar"' in s and 'href="'+SITE+'/congestion.html"' not in s:
+            insert = f'<a class="nav-btn" href="{SITE}/congestion.html">일정 혼잡도</a>'
+            s = s.replace('<div class="nav-label">About</div>',insert+'<div class="nav-label">About</div>',1)
         p.write_text(s,encoding='utf-8')
 
 def build():
