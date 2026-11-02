@@ -82,26 +82,14 @@ def reconcile(observations, history, now):
     known = history.setdefault("matches", {})
     changes = history.setdefault("changes", [])
     issues = []
-    by_pair = {}
-    for ident, old in known.items():
-        pair = fixture_pair(old)
-        if pair:
-            by_pair.setdefault(pair, []).append((ident, old))
-    matched_old = set()
     current = []
     for m in observations:
         exact = known.get(m["id"])
         if exact is not None:
             stable_id = m["id"]
         else:
-            pair = fixture_pair(m)
-            candidates = [(i, old) for i, old in by_pair.get(pair, [])
-                          if i not in matched_old] if pair else []
-            # A unique pairing is safe only if it is not a second leg or another round.
-            # Without an upstream fixture ID, date changes remain review-only.
-            if candidates:
-                issues.append({"type": "possible_reschedule", "incoming": m["id"],
-                               "candidates": [i for i, _ in candidates]})
+            # No upstream immutable fixture ID: do not merge different dates.
+            # Previous schedule comparison reports potential date changes.
             stable_id = m["id"]
         m = dict(m, id=stable_id)
         current.append(m)
@@ -117,7 +105,6 @@ def reconcile(observations, history, now):
                        for x in changes):
                 changes.append(change)
             issues.append({"type": "result_conflict", "id": stable_id})
-        matched_old.add(stable_id)
     return current, issues
 
 def compare_previous_schedule(current):
