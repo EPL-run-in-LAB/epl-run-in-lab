@@ -105,7 +105,7 @@ function menu(open){sidebar.classList.toggle('open',open);overlay.classList.togg
 $('menuBtn').onclick=()=>menu(!sidebar.classList.contains('open'));overlay.onclick=()=>menu(false);
 function cell(tr,value){const td=document.createElement('td');td.textContent=value;tr.append(td)}
 const KOREAN_TEAMS={
-"Arsenal":"아스널","Aston Villa":"애스턴 빌라","Bournemouth":"본머스","Brentford":"브렌트퍼드","Brighton":"브라이턴","Chelsea":"첼시","Coventry":"코번트리 시티","Crystal Palace":"크리스털 팰리스","Everton":"에버턴","Fulham":"풀럼","Hull":"헐 시티","Ipswich":"입스위치 타운","Leeds":"리즈 유나이티드","Liverpool":"리버풀","Man City":"맨체스터 시티","Man United":"맨체스터 유나이티드","Newcastle":"뉴캐슬 유나이티드","Nottingham":"노팅엄 포레스트","Nott'm Forest":"노팅엄 포레스트","Sunderland":"선덜랜드","Tottenham":"토트넘 홋스퍼","West Ham":"웨스트햄 유나이티드",
+"Arsenal":"아스널","Aston Villa":"애스턴 빌라","Bournemouth":"본머스","Brentford":"브렌트퍼드","Brighton":"브라이턴","Chelsea":"첼시","Coventry":"코번트리","Crystal Palace":"크리스털 팰리스","Everton":"에버튼","Fulham":"풀럼","Hull":"헐 시티","Ipswich":"입스위치","Leeds":"리즈","Liverpool":"리버풀","Man City":"맨시티","Man United":"맨유","Newcastle":"뉴캐슬","Nottingham":"노팅엄","Nott'm Forest":"노팅엄","Sunderland":"선덜랜드","Tottenham":"토트넘","West Ham":"웨스트햄 유나이티드",
 "Ajax":"아약스","Inter":"인테르","Inter Milan":"인테르","Bayern Munich":"바이에른 뮌헨","PSG":"파리 생제르맹","Real Madrid":"레알 마드리드"};
 function koTeam(name){return KOREAN_TEAMS[name]||name}
 let calendarYear,calendarMonth,selectedDate;
