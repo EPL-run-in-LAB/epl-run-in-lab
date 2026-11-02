@@ -29,6 +29,23 @@ jobs:
         run: python scripts/update_competition_schedule.py
       - name: Generate congestion data
         run: python scripts/build_fixture_congestion.py
+      - name: Generate bilingual pages and sitemap
+        run: python scripts/build_i18n.py
+      - name: Verify navigation and English page
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          ko=Path('docs/congestion.html').read_text()
+          en=Path('docs/en/congestion.html').read_text()
+          home=Path('docs/index.html').read_text()
+          enhome=Path('docs/en/index.html').read_text()
+          sitemap=Path('docs/sitemap.xml').read_text()
+          assert 'lang="en"' in en and 'Fixture Congestion' in en
+          assert 'congestion.html' in home and 'congestion.html' in enhome
+          assert '/congestion.html' in sitemap and '/en/congestion.html' in sitemap
+          assert 'runin-theme' in ko and 'runin-theme' in en
+          print('Bilingual congestion navigation, theme and sitemap verified')
+          PY
       - name: Inspect output counts and required identities
         run: |
           python - <<'PY'
