@@ -120,6 +120,33 @@ def reconcile(observations, history, now):
         matched_old.add(stable_id)
     return current, issues
 
+def compare_previous_schedule(current):
+    """Detect disappeared or moved fixtures without assuming the same pairing is unique."""
+    if not OUT.exists():
+        return []
+    previous = json.loads(OUT.read_text(encoding="utf-8")).get("matches", [])
+    current_ids = {m["id"] for m in current}
+    old_ids = {m["id"] for m in previous}
+    incoming_by_pair = {}
+    for m in current:
+        pair = fixture_pair(m)
+        if pair:
+            incoming_by_pair.setdefault(pair, []).append(m)
+    issues = []
+    for old in previous:
+        if old["id"] in current_ids or old.get("status") == "FINISHED":
+            continue
+        pair = fixture_pair(old)
+        candidates = [m for m in incoming_by_pair.get(pair, [])
+                      if m["id"] not in old_ids] if pair else []
+        if candidates:
+            issues.append({"type": "schedule_date_or_name_change",
+                           "previous": old["id"],
+                           "candidates": [m["id"] for m in candidates]})
+        else:
+            issues.append({"type": "fixture_disappeared", "previous": old["id"]})
+    return issues
+
 def atomic_json(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(prefix="."+path.name+".", dir=path.parent)
@@ -152,6 +179,7 @@ def main():
         [m for m in all_matches if m["homeEpl"] or m["awayEpl"]],
         key=lambda m: (m["date"], m["competition"], m["home"]),
     )
+    issues.extend(compare_previous_schedule(relevant))
     # No fuzzy matching: retain raw names and report unknown opponents for review.
     unknown = sorted({m[side+"Raw"] for m in all_matches
                       for side in ("home", "away") if not m[side+"ClubId"]})
