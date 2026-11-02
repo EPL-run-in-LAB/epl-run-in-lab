@@ -341,6 +341,15 @@ def build_english_congestion():
     s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
     s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
     translations=[
+      ('일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.','This experimental analysis combines sources with different verification levels. Cup fixtures have not been independently matched to official match records, and these figures are not used in win-probability predictions.'),
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.','Rest days exclude match days. Summary cards reflect the selected fixtures, while previous-match intervals and rolling match counts still include competitions hidden by the filter.'),
+      ('7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.','Rolling 7- and 14-day counts include the fixture date and look backwards. Hidden competitions still contribute to rest days and rolling counts; filters only control the displayed fixtures.'),
+      ('시간 단위 간격은 인접한 두 경기에 신뢰 가능한 UTC 킥오프 시각과 검증 출처가 함께 있을 때만 표시할 예정입니다. 같은 날 중복 경기가 나타나면 원본 자료 충돌 가능성이 있으므로 주의 표시합니다. 경기 이동 거리와 선수별 출전 시간은 반영되지 않았습니다.','Kickoff gaps in hours are shown only when both adjacent matches have independently verified UTC kickoff times with provenance. Multiple fixtures on the same date are flagged as possible source conflicts. Travel distances and player minutes are not included.'),
+      ('컵대회 수집 시각: ','Cup source updated: '),
+      ('EPL 스냅샷: ','EPL snapshot: '),
+      ('날짜 중복 주의','possible date conflict'),
+      ('해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.','more matches were played in the last seven days including this date.'),
+
       ('팀별 일정 혼잡도','Team Fixture Congestion'),
       ('리그와 컵대회를 함께 보고, 경기 사이 휴식 기간을 비교하세요.','Compare rest between league and cup fixtures.'),
       ('사이트 메뉴','Site navigation'),('메뉴 열기','Open menu'),
@@ -363,12 +372,19 @@ def build_english_congestion():
       ('시각 미검증','Kickoff unverified'),('EPL 예측 스냅샷','EPL snapshot'),('컵 일정 미검증','Unverified cup fixture'),
       ('선택한 조건에 해당하는 경기가 없습니다.','No fixtures match the selected filters.'),
       ('데이터 로드 실패: ','Unable to load data: '),('집계 생성: ','Generated: '),
+      ('원정','Away'),('경기 없는 날','Rest days'),('단위','unit'),('선택한','Selected'),('전체 기록','All fixtures'),
     ]
     # Translate longer copy before shorter recurring terms.
     translations.sort(key=lambda x:len(x[0]),reverse=True)
     for ko,en in translations:
         s=s.replace(ko,en)
     s=s.replace("m.venue==='H'?'Home':'원정'","m.venue==='H'?'Home':'Away'")
+    s=s.replace("ms.length+'경기'", "ms.length+' matches'")
+    s=s.replace("+'경기'", "+' matches'")
+    s=s.replace("+'일'", "+' days'")
+    s=s.replace("+'회'", "+' times'")
+    s=s.replace("'경기, 7일 최대 '", "' matches, peak in 7d '")
+    s=s.replace("'경기. 상세 값은 아래 표 참조.'", "' matches. Values are in the table below.'")
     s=s.replace('href="../?page=prediction"','href="./?page=prediction"')
     (DOCS/'en').mkdir(exist_ok=True)
     (DOCS/'en'/'congestion.html').write_text(s,encoding='utf-8')
