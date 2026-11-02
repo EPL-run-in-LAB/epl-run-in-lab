@@ -128,6 +128,28 @@ def reconcile(observations, history, now):
             issues.append({"type": "result_conflict", "id": stable_id})
     return current, issues
 
+def refresh_archive_identity(history):
+    """Refresh identity metadata only; never mutate match IDs or scores.
+    Preserve first-seen records, original raw names and provenance.
+    """
+    revisions = []
+    for match_id, m in history.get("matches", {}).items():
+        for side in ("home", "away"):
+            raw = m.get(side+"Raw")
+            if not raw:
+                continue
+            info = resolve(raw)
+            desired = {"ClubId": info["clubId"], "Epl": info["matched"]}
+            for suffix, new_value in desired.items():
+                field = side + suffix
+                old_value = m.get(field)
+                if old_value != new_value:
+                    revisions.append({"matchId": match_id, "field": field,
+                                      "previous": old_value, "corrected": new_value})
+                    m[field] = new_value
+            m[side] = info["displayName"]
+    return revisions
+
 def compare_previous_schedule(current):
     """Detect disappeared or moved fixtures without assuming the same pairing is unique."""
     if not OUT.exists():
@@ -191,6 +213,7 @@ def main():
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate competition/date/team identity; manual review required")
     history = load_history()
+    identity_revisions = refresh_archive_identity(history)
     now = datetime.now(timezone.utc).isoformat()
     all_matches, issues = reconcile(all_matches, history, now)
     relevant = sorted(
@@ -205,6 +228,7 @@ def main():
         "version": 1, "updatedAt": now,
         "knownEplClubs": len(ACTIVE_EPL_IDS),
         "membershipAudit": membership_audit,
+        "archiveIdentityCorrections": identity_revisions,
         "competitionCounts": coverage,
         "eplRelevantMatches": len(relevant),
         "unknownNames": unknown,
