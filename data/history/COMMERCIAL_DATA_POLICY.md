@@ -40,6 +40,26 @@ Official terms:
 * https://www.football-data.org/pricing
 * https://www.football-data.org/documentation/faq
 
+## Commercially licensed feed candidates (not installed)
+
+* [FootyStats API FAQ](https://footystats.org/api/documentations/faq) says its
+  API data may be used for websites, stored databases, prediction systems and
+  machine-learning analysis. Its separate
+  [API legal terms](https://footystats.org/api/documentations/terms-of-use-and-legal)
+  prohibit raw-data resale and redistribution. Before using it in an ad-funded
+  EPL Run-in Lab, confirm the specific paid plan, advertising rights, caching,
+  bulk/history access, and public JSON export permissions.
+* [football-data.org](https://www.football-data.org/pricing) offers paid
+  historical plans, but publication/advertising and derived-model rights must
+  be verified under the subscription terms; attribution is requested.
+* A provider with expressly granted commercial analytics and storage rights
+  is preferable to scraping an unlicensed public match website.
+
+Do not automatically switch to any provider without verifying and recording
+the active contract or license and the data's redistribution limits. For
+commercial deployment, the current open-matchday ingestion must be replaced
+or authorized independently of this CC0 historical warehouse.
+
 ## Architecture
 
 * Raw source snapshots live in data/history/snapshots, not docs/.
