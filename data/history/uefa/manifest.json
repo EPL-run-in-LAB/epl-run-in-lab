@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "license": "CC0-1.0",
+  "sourceRepository": "https://github.com/openfootball/champions-league",
+  "sourceCommit": "abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef",
+  "available": [
+    {
+      "season": "2021-22",
+      "competition": "UCL",
+      "path": "raw/2021-22/cl.txt",
+      "declaredRows": 125
+    },
+    {
+      "season": "2021-22",
+      "competition": "UEL",
+      "path": "raw/2021-22/el.txt",
+      "declaredRows": 141
+    },
+    {
+      "season": "2021-22",
+      "competition": "UECL",
+      "path": "raw/2021-22/conf.txt",
+      "declaredRows": 141
+    },
+    {
+      "season": "2022-23",
+      "competition": "UCL",
+      "path": "raw/2022-23/cl.txt",
+      "declaredRows": 125
+    },
+    {
+      "season": "2022-23",
+      "competition": "UEL",
+      "path": "raw/2022-23/el.txt",
+      "declaredRows": 141
+    },
+    {
+      "season": "2022-23",
+      "competition": "UECL",
+      "path": "raw/2022-23/conf.txt",
+      "declaredRows": 141
+    },
+    {
+      "season": "2023-24",
+      "competition": "UCL",
+      "path": "raw/2023-24/cl.txt",
+      "declaredRows": 125
+    },
+    {
+      "season": "2023-24",
+      "competition": "UEL",
+      "path": "raw/2023-24/el.txt",
+      "declaredRows": 141
+    },
+    {
+      "season": "2023-24",
+      "competition": "UECL",
+      "path": "raw/2023-24/conf.txt",
+      "declaredRows": 141
+    },
+    {
+      "season": "2024-25",
+      "competition": "UCL",
+      "path": "raw/2024-25/cl.txt",
+      "declaredRows": 189
+    },
+    {
+      "season": "2024-25",
+      "competition": "UEL",
+      "path": "raw/2024-25/el.txt",
+      "declaredRows": 189
+    },
+    {
+      "season": "2024-25",
+      "competition": "UECL",
+      "path": "raw/2024-25/conf.txt",
+      "declaredRows": 153
+    },
+    {
+      "season": "2025-26",
+      "competition": "UCL",
+      "path": "raw/2025-26/cl.txt",
+      "declaredRows": 189
+    }
+  ],
+  "missing": [
+    {
+      "season": "2025-26",
+      "competition": "UEL",
+      "reason": "No main-phase el.txt at pinned upstream commit"
+    },
+    {
+      "season": "2025-26",
+      "competition": "UECL",
+      "reason": "No main-phase conf.txt at pinned upstream commit"
+    }
+  ],
+  "scope": "main tournaments only; qualification files excluded"
+}
