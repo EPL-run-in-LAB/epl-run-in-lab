@@ -400,6 +400,11 @@ def build_english_congestion():
     s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
     s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
     translations=[
+      ('팀별 월간 경기 달력','Team monthly fixture calendar'),
+      ('달력에서 경기 날짜를 선택해 주세요.','Select a match date on the calendar.'),
+      ('시간 (검증)','hours (verified)'),
+      ('언어 선택','Choose language'),
+      ('표시 언어','Display language'),
       ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.',
        'Rest days exclude match days. Figures are calculated for the selected matches, while previous-match intervals and rolling counts include all competitions, even those hidden by the filter.'),
       ('이전 달','Previous month'),('다음 달','Next month'),
