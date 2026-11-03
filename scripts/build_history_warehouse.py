@@ -31,6 +31,13 @@ VALID_ORIGINS = {
     "cc0_upstream_text", "official_decision",
 }
 
+ALIAS_FILE = ROOT / "data/history/club_alias_reviewed.json"
+REVIEWED_ALIASES = json.loads(ALIAS_FILE.read_text(encoding="utf-8"))
+
+def canonical_name(country, raw):
+    """Only merge reviewed, explicit source aliases; never fuzzy-match clubs."""
+    return REVIEWED_ALIASES.get(country, {}).get(raw.strip(), raw.strip())
+
 SCHEMA = """
 PRAGMA foreign_keys=ON;
 CREATE TABLE competitions (
@@ -99,17 +106,24 @@ def expected_count(competition, season):
         return 306
     return 380
 
-def register_club(con, country, raw):
+def register_club(con, country, raw, source_project="openfootball/football.json"):
     if not isinstance(raw, str) or not raw.strip():
         raise ValueError("Missing club name")
-    club_id = country.lower() + "-" + club_slug(raw.strip())
+    name = canonical_name(country, raw)
+    club_id = country.lower() + "-" + club_slug(name)
     con.execute(
         "INSERT OR IGNORE INTO clubs VALUES (?, ?, ?)",
-        (club_id, country, raw.strip()),
+        (club_id, country, name),
     )
+    existing = con.execute(
+        "SELECT club_id FROM club_aliases WHERE source_project=? AND country=? AND raw_name=?",
+        (source_project, country, raw.strip()),
+    ).fetchone()
+    if existing is not None and existing[0] != club_id:
+        raise ValueError("Conflicting reviewed club alias: " + repr((country, raw)))
     con.execute(
         "INSERT OR IGNORE INTO club_aliases VALUES (?, ?, ?, ?)",
-        ("openfootball/football.json", country, raw.strip(), club_id),
+        (source_project, country, raw.strip(), club_id),
     )
     return club_id
 

@@ -1,0 +1,38 @@
+{
+  "DE": {
+    "Bayern München": "FC Bayern München",
+    "Bayer Leverkusen": "Bayer 04 Leverkusen",
+    "Union Berlin": "1. FC Union Berlin",
+    "1899 Hoffenheim": "TSG 1899 Hoffenheim"
+  },
+  "ES": {
+    "Real Madrid": "Real Madrid CF",
+    "Real Sociedad": "Real Sociedad de Fútbol",
+    "Real Betis": "Real Betis Balompié",
+    "Atlético Madrid": "Club Atlético de Madrid"
+  },
+  "IT": {
+    "Inter": "FC Internazionale Milano",
+    "Juventus": "Juventus FC",
+    "Atalanta": "Atalanta BC",
+    "Lazio Roma": "SS Lazio"
+  },
+  "FR": {
+    "AS Monaco FC": "AS Monaco",
+    "Paris Saint-Germain FC": "Paris Saint-Germain",
+    "Racing Club de Lens": "RC Lens",
+    "Olympique de Marseille": "Olympique Marseille",
+    "RC Strasbourg Alsace": "RC Strasbourg",
+    "Stade Rennais FC 1901": "Stade Rennais"
+  },
+  "ENG": {
+    "Arsenal": "Arsenal FC",
+    "Aston Villa": "Aston Villa FC",
+    "Chelsea": "Chelsea FC",
+    "Liverpool": "Liverpool FC",
+    "Manchester City": "Manchester City FC",
+    "Manchester United": "Manchester United FC",
+    "Newcastle United": "Newcastle United FC",
+    "Tottenham Hotspur": "Tottenham Hotspur FC"
+  }
+}
