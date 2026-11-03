@@ -57,6 +57,7 @@ main.main{box-sizing:border-box}
 .kicker,.eyebrow{font-size:12px!important;font-weight:750!important;letter-spacing:.09em!important;
   color:var(--muted,#6b7280)!important;text-transform:uppercase!important}
 /* Match the calendar hero's typography and spacing to other pages. */
+body>main:not(.main)>.hero .eyebrow{margin-bottom:7px!important}
 body>main:not(.main)>.hero h1{font-size:32px;line-height:1.08;margin:0 0 7px}
 body>main:not(.main)>.hero p{margin:0}
 @media(min-width:1100px){
