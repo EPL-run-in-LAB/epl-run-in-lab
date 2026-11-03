@@ -18035,7 +18035,7 @@
       "finalizedAt": "2026-11-02T00:39:02.797067+00:00"
     },
     "560622": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560622,
         "utcDate": "2026-11-02T20:00:00Z",
@@ -18148,7 +18148,388 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+      "result": {
+        "homeGoals": 0,
+        "awayGoals": 1,
+        "referee": "John Brooks, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmvzv63qbw8jzlj07lsf47aev",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "49",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "T. Barry",
+          "awayScorerId": "2796859808",
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "0 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-02T23:02:11.556Z",
+          "updatedAt": "2026-11-02T23:02:11.556Z",
+          "timeNum": 49
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmw01la5frt8wlj073ef6y82u",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "32",
+          "card": "yellow card",
+          "homeFault": "D. Burn",
+          "homePlayerId": "1235443171",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 32
+        },
+        {
+          "id": "cmw01la5frt8xlj07dkfozdup",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "52",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "T. George",
+          "awayPlayerId": "3486270577",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 52
+        },
+        {
+          "id": "cmw01la5frt8ylj0795h9jfnf",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "73",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "D. Moyes",
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmw01la5grt8zlj07i8skuqtv",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "90+6",
+          "card": "yellow card",
+          "homeFault": "J. Ramsey",
+          "homePlayerId": "1954339457",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmw01la5grt90lj07a52adois",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "90+8",
+          "card": "yellow card",
+          "homeFault": "J. Ramsey",
+          "homePlayerId": "1954339457",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmw01la5grt91lj07302r83m4",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "90+8",
+          "card": "red card",
+          "homeFault": "J. Ramsey",
+          "homePlayerId": "1954339457",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmw01la5grt92lj077lyct9qf",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "90+9",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "B. Johnson",
+          "awayPlayerId": "3235726555",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmw01la5grt93lj079acu0rrn",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "90+9",
+          "card": "yellow card",
+          "homeFault": "F. Schar",
+          "homePlayerId": "2223376254",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-03T02:01:56.916Z",
+          "updatedAt": "2026-11-03T02:01:56.916Z",
+          "timeNum": 90
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmw01la5ort95lj075txpnf1v",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "64",
+          "substitution": "Nico | S. Steur",
+          "substitutionPlayerId": "2690268063 | 653471197",
+          "team": "home",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmw01la5ort94lj0794krbbcm",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "64",
+          "substitution": "J. Willock | Y. Wissa",
+          "substitutionPlayerId": "2886133965 | 3997136875",
+          "team": "home",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmw01la5ort96lj075pi4qmd8",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "75",
+          "substitution": "Joelinton | J. Ramsey",
+          "substitutionPlayerId": "310238476 | 1954339457",
+          "team": "home",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 75
+        },
+        {
+          "id": "cmw01la5ort97lj07cu4ahrio",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "76",
+          "substitution": "A. Elanga | J. Murphy",
+          "substitutionPlayerId": "2287492793 | 2802751417",
+          "team": "home",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 76
+        },
+        {
+          "id": "cmw01la5ort99lj07tju1nbnj",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "80",
+          "substitution": "T. Barry | B. Johnson",
+          "substitutionPlayerId": "2796859808 | 3235726555",
+          "team": "away",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 80
+        },
+        {
+          "id": "cmw01la5ort9alj070zzd0dim",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "82",
+          "substitution": "J. Branthwaite | M. Keane",
+          "substitutionPlayerId": "1625079183 | 687688740",
+          "team": "away",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 82
+        },
+        {
+          "id": "cmw01la5ort98lj07y97xgihs",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "87",
+          "substitution": "A. Dedic | B. Toure",
+          "substitutionPlayerId": "2792029663 | 1690550683",
+          "team": "home",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 87
+        },
+        {
+          "id": "cmw01la5ort9blj07vay4w4d8",
+          "fixtureId": "cmu74gybfo9dzqu07hw7yxxd4",
+          "time": "90+2",
+          "substitution": "T. George | H. Hackney",
+          "substitutionPlayerId": "3486270577 | 2049149239",
+          "team": "away",
+          "createdAt": "2026-11-03T02:01:56.917Z",
+          "updatedAt": "2026-11-03T02:01:56.917Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "32",
+          "minuteNum": 32,
+          "type": "CARD",
+          "side": "home",
+          "player": "D. Burn",
+          "card": "yellow card"
+        },
+        {
+          "minute": "49",
+          "minuteNum": 49,
+          "type": "GOAL",
+          "side": "away",
+          "player": "T. Barry",
+          "assist": null,
+          "score": "0 - 1"
+        },
+        {
+          "minute": "52",
+          "minuteNum": 52,
+          "type": "CARD",
+          "side": "away",
+          "player": "T. George",
+          "card": "yellow card"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Nico | S. Steur"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Willock | Y. Wissa"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "CARD",
+          "side": "away",
+          "player": "D. Moyes",
+          "card": "yellow card"
+        },
+        {
+          "minute": "75",
+          "minuteNum": 75,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Joelinton | J. Ramsey"
+        },
+        {
+          "minute": "76",
+          "minuteNum": 76,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "A. Elanga | J. Murphy"
+        },
+        {
+          "minute": "80",
+          "minuteNum": 80,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "T. Barry | B. Johnson"
+        },
+        {
+          "minute": "82",
+          "minuteNum": 82,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Branthwaite | M. Keane"
+        },
+        {
+          "minute": "87",
+          "minuteNum": 87,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "A. Dedic | B. Toure"
+        },
+        {
+          "minute": "90+6",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "home",
+          "player": "J. Ramsey",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90+8",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "home",
+          "player": "J. Ramsey",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90+8",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "home",
+          "player": "J. Ramsey",
+          "card": "red card"
+        },
+        {
+          "minute": "90+9",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "away",
+          "player": "B. Johnson",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90+9",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "home",
+          "player": "F. Schar",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90+2",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "T. George | H. Hackney"
+        }
+      ],
+      "finalizedAt": "2026-11-03T02:53:52.168068+00:00"
     },
     "560634": {
       "status": "SNAPSHOT",
@@ -29516,6 +29897,238 @@
           }
         ],
         "capturedAt": "2026-11-02T00:39:02.797067+00:00"
+      }
+    },
+    "560724": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560724,
+        "utcDate": "2027-01-01T20:00:00Z",
+        "date": "2027-01-01",
+        "home": "Leeds",
+        "away": "Everton",
+        "homeWin": 0.45531910443850004,
+        "draw": 0.2561404644457798,
+        "awayWin": 0.2885404311157202,
+        "homeXPts": 1.62209777776128,
+        "awayXPts": 1.1217617577929404,
+        "homeFactors": [
+          {
+            "title": "Leeds의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Leeds의 최근 홈 경기 승점과 득실점을 반영합니다. Leeds의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Leeds's home form is a strength",
+            "bodyEn": "The model separately considers Leeds's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 1.5,
+            "favorable": true
+          },
+          {
+            "title": "Everton의 공격 기회 창출력이 Leeds에게 유리하게 작용합니다",
+            "body": "Everton의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Leeds의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Everton's chance creation works in favour of Leeds",
+            "bodyEn": "The model evaluates Everton's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Leeds's win probability.",
+            "impact": 0.7,
+            "favorable": true
+          },
+          {
+            "title": "Leeds의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Leeds가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Leeds's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Leeds's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 0.3,
+            "favorable": true
+          },
+          {
+            "title": "Everton의 원정 경기력이 Leeds에게 크게 위협적이지 않습니다",
+            "body": "Everton의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 약하게 평가되어 Leeds 입장에서는 부담이 줄어듭니다.",
+            "titleEn": "Everton's away form is less threatening for Leeds",
+            "bodyEn": "The model separately considers Everton's recent away points and goal difference. The opponent's away performance is rated below the neutral level, which reduces the difficulty for Leeds.",
+            "impact": 0.3,
+            "favorable": true
+          },
+          {
+            "title": "Leeds은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Leeds의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Leeds's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Leeds's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 0.2,
+            "favorable": true
+          },
+          {
+            "title": "Everton의 최근 경기 흐름이 Leeds에게 도움이 됩니다",
+            "body": "Everton 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Leeds의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Everton's recent form is helpful for Leeds",
+            "bodyEn": "Everton's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Leeds's win probability.",
+            "impact": 0.0,
+            "favorable": true
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Leeds의 홈 경기력이 Everton에게 부담입니다",
+            "body": "Leeds의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Everton 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Leeds's home form is a concern for Everton",
+            "bodyEn": "The model separately considers Leeds's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Everton.",
+            "impact": -1.6,
+            "favorable": false
+          },
+          {
+            "title": "Everton은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Everton의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Everton's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Everton's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -0.6,
+            "favorable": false
+          },
+          {
+            "title": "Leeds의 최근 경기 흐름이 Everton에게 도움이 됩니다",
+            "body": "Leeds 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Everton의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Leeds's recent form is helpful for Everton",
+            "bodyEn": "Leeds's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Everton's win probability.",
+            "impact": 0.5,
+            "favorable": true
+          },
+          {
+            "title": "Everton의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Everton의 최근 원정 경기 승점과 득실점을 반영합니다. Everton의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Everton's away form is a strength",
+            "bodyEn": "The model separately considers Everton's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 0.5,
+            "favorable": true
+          },
+          {
+            "title": "Leeds의 공격 기회 창출력이 Everton에게 불리하게 작용합니다",
+            "body": "Leeds의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Everton의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Leeds's chance creation works against Everton",
+            "bodyEn": "The model evaluates Leeds's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Everton's win probability.",
+            "impact": -0.3,
+            "favorable": false
+          },
+          {
+            "title": "Everton의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Everton가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Everton's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Everton's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -0.2,
+            "favorable": false
+          }
+        ],
+        "capturedAt": "2026-11-03T02:53:52.168068+00:00"
+      }
+    },
+    "560728": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560728,
+        "utcDate": "2027-01-03T14:00:00Z",
+        "date": "2027-01-03",
+        "home": "Chelsea",
+        "away": "Newcastle",
+        "homeWin": 0.4499858673423637,
+        "draw": 0.25781788775038506,
+        "awayWin": 0.2921962449072512,
+        "homeXPts": 1.607775489777476,
+        "awayXPts": 1.1344066224721385,
+        "homeFactors": [
+          {
+            "title": "Newcastle의 공격 기회 창출력이 Chelsea에게 불리하게 작용합니다",
+            "body": "Newcastle의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Chelsea의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Newcastle's chance creation works against Chelsea",
+            "bodyEn": "The model evaluates Newcastle's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Chelsea's win probability.",
+            "impact": -3.2,
+            "favorable": false
+          },
+          {
+            "title": "Newcastle의 최근 경기 흐름이 Chelsea에게 도움이 됩니다",
+            "body": "Newcastle 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Chelsea의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Newcastle's recent form is helpful for Chelsea",
+            "bodyEn": "Newcastle's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Chelsea's win probability.",
+            "impact": 2.7,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Chelsea가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Chelsea's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Chelsea's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 2.0,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Chelsea의 최근 홈 경기 승점과 득실점을 반영합니다. Chelsea의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Chelsea's home form is a strength",
+            "bodyEn": "The model separately considers Chelsea's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 1.5,
+            "favorable": true
+          },
+          {
+            "title": "Newcastle의 원정 경기력이 Chelsea에게 부담입니다",
+            "body": "Newcastle의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Chelsea 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Newcastle's away form is a concern for Chelsea",
+            "bodyEn": "The model separately considers Newcastle's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Chelsea.",
+            "impact": -0.3,
+            "favorable": false
+          },
+          {
+            "title": "Chelsea은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Chelsea의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Chelsea's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Chelsea's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -0.2,
+            "favorable": false
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Newcastle의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Newcastle가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Newcastle's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Newcastle's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 3.3,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea의 공격 기회 창출력이 Newcastle에게 불리하게 작용합니다",
+            "body": "Chelsea의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Newcastle의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Chelsea's chance creation works against Newcastle",
+            "bodyEn": "The model evaluates Chelsea's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Newcastle's win probability.",
+            "impact": -2.3,
+            "favorable": false
+          },
+          {
+            "title": "Newcastle은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Newcastle의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Newcastle's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Newcastle's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -1.7,
+            "favorable": false
+          },
+          {
+            "title": "Chelsea의 홈 경기력이 Newcastle에게 부담입니다",
+            "body": "Chelsea의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Newcastle 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Chelsea's home form is a concern for Newcastle",
+            "bodyEn": "The model separately considers Chelsea's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Newcastle.",
+            "impact": -1.2,
+            "favorable": false
+          },
+          {
+            "title": "Newcastle의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Newcastle의 최근 원정 경기 승점과 득실점을 반영합니다. Newcastle의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Newcastle's away form is a strength",
+            "bodyEn": "The model separately considers Newcastle's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 0.3,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea의 최근 경기 흐름이 Newcastle에게 도움이 됩니다",
+            "body": "Chelsea 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Newcastle의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Chelsea's recent form is helpful for Newcastle",
+            "bodyEn": "Chelsea's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Newcastle's win probability.",
+            "impact": 0.2,
+            "favorable": true
+          }
+        ],
+        "capturedAt": "2026-11-03T02:53:52.168068+00:00"
       }
     }
   }
