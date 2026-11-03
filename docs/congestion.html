@@ -78,15 +78,18 @@ summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:
 .language-options[hidden]{display:none!important}
 .language-options a{display:grid;grid-template-columns:1fr auto;gap:0 8px;padding:9px 11px;border-radius:8px;text-decoration:none;color:var(--text);font-size:13px;font-weight:750}
 .language-options a small{grid-column:1;font-weight:500;color:var(--muted)}
-.language-options a span:last-child{grid-column:2;grid-row:1 / 3;color:#527bb3}
+.language-options a span:last-child{display:none;grid-column:2;grid-row:1 / 3;color:#527bb3}
+.language-options a[aria-current="page"] span:last-child{display:block}
 .language-options a:hover,.language-options a[aria-current="page"]{background:var(--soft)}
 @media(max-width:410px){.topbar{gap:6px;padding:0 10px}.brand{font-size:17px}.top-actions{gap:4px}.plain{font-size:12px}.theme-toggle{font-size:12px;padding:5px 8px}}
-</style></head><body>
+</style><link rel="stylesheet" href="./assets/site-shell.css">
+<script defer src="./assets/site-shell.js"></script>
+</head><body>
 <header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="메뉴 열기" aria-expanded="false">☰</button><a class="brand" href="./">EPL <span>Run-in Lab</span></a><div class="top-actions"><div class="language-picker" id="languagePicker">
 <button class="plain language-trigger" id="languageButton" type="button" aria-label="언어 선택" aria-haspopup="true" aria-expanded="false" aria-controls="languageOptions">언어 ▾</button>
 <div class="language-options" id="languageOptions" aria-label="표시 언어" hidden>
 <a href="./congestion.html" lang="ko" data-lang="ko" aria-current="page"><span>한국어</span><small>Korean</small><span aria-hidden="true">✓</span></a>
-<a href="./en/congestion.html" lang="en" data-lang="en"><span>영어</span><small>English</small></a>
+<a href="./en/congestion.html" lang="en" data-lang="en"><span>영어</span><small>English</small><span aria-hidden="true">✓</span></a>
 </div></div><button class="theme-toggle" id="themeToggle" aria-label="다크모드 전환">다크모드</button></div></header>
 <nav class="sidebar" id="sidebar" aria-label="사이트 메뉴"><div class="nav-label">Menu</div>
 <a class="nav-btn" href="./">홈</a><a class="nav-btn" href="./?page=prediction">경기 예측</a><a class="nav-btn" href="./?page=schedule">일정 난이도</a>
@@ -109,7 +112,7 @@ summary{cursor:pointer;font-weight:650}details{margin-top:15px}.footnotes{color:
 <div class="calendar-legend"><span><i></i>EPL</span><span><i class="cup"></i>컵대회</span><span><i class="tight"></i>휴식 0~2일</span><span>날짜를 누르면 상세 일정 표시</span></div>
 <div class="calendar-shell"><div><div class="calendar-weekdays" id="weekdays"></div><div class="calendar-grid" id="calendarGrid" aria-label="팀별 월간 경기 달력"></div><div class="weekly-summary" id="weeklySummary"></div><p class="calendar-caption">주간 경기 수는 월요일~일요일 기준입니다. 필터는 표시만 바꾸며 휴식일은 전체 대회를 기준으로 계산합니다.</p></div><aside class="day-detail" id="dayDetail" aria-live="polite">경기 날짜를 선택해 주세요.</aside></div>
 </section>
-<section class="card"><h2>상세 일정</h2><div class="table-wrap"><table><thead><tr><th scope="col">날짜</th><th scope="col">대회</th><th scope="col">상대</th><th scope="col">홈/원정</th><th scope="col">휴식일 / 시각</th><th scope="col">7일·14일</th><th scope="col">자료 상태</th></tr></thead><tbody id="rows"></tbody></table></div>
+<section class="card"><h2>상세 일정</h2><div class="table-wrap"><table><thead><tr><th scope="col">날짜</th><th scope="col">대회</th><th scope="col">상대</th><th scope="col">홈/원정</th><th scope="col">휴식일 / 시각</th><th scope="col">7일·14일</th></tr></thead><tbody id="rows"></tbody></table></div>
 <details><summary>지표 정의와 데이터 한계</summary><div class="footnotes"><p>7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.</p><p>시간 단위 간격은 인접한 두 경기에 신뢰 가능한 UTC 킥오프 시각과 검증 출처가 함께 있을 때만 표시할 예정입니다. 같은 날 중복 경기가 나타나면 원본 자료 충돌 가능성이 있으므로 주의 표시합니다. 경기 이동 거리와 선수별 출전 시간은 반영되지 않았습니다.</p><p id="provenance"></p></div></details></section>
 <p class="footnotes" id="updated" role="status"></p></main>
 <script>
@@ -165,8 +168,8 @@ const sum=$('weeklySummary');sum.replaceChildren();sum.style.gridTemplateColumns
 for(let i=0;i<total/7;i++){const firstDay=new Date(Date.UTC(calendarYear,calendarMonth,1-leading+i*7));const lastDay=new Date(Date.UTC(calendarYear,calendarMonth,7-leading+i*7));const start=isoCalendar(firstDay.getUTCFullYear(),firstDay.getUTCMonth(),firstDay.getUTCDate()),end=isoCalendar(lastDay.getUTCFullYear(),lastDay.getUTCMonth(),lastDay.getUTCDate());const n=all.filter(m=>m.date>=start&&m.date<=end&&($('competition').value==='ALL'||($('competition').value==='CUP'?m.competition!=='EPL':m.competition==='EPL'))).length;
 const box=document.createElement('div');box.className=n>=3?'dense':'';box.textContent=(i+1)+'주차';const strong=document.createElement('strong');strong.textContent=n+'경기';box.append(strong);sum.append(box)}
 renderDayDetail(ms);
-const rows=$('rows');rows.replaceChildren();for(const m of ms){const tr=document.createElement('tr');tr.style.cursor='pointer';tr.onclick=()=>{selectedDate=m.date;renderCalendar(d);$('calendarGrid').scrollIntoView({block:'start',behavior:'smooth'})};for(const val of [m.date,m.competition,koTeam(m.opponent),m.venue==='H'?'홈':'원정',m.calendarRestDays==null?'—':m.calendarRestDays+'일'+(m.kickoffGapHours!=null?' · '+m.kickoffGapHours+'시간(검증)':''),m.gamesIn7Days+' / '+m.gamesIn14Days,m.quality==='prediction_snapshot'?'EPL 스냅샷':'컵 일정 미검증'])cell(tr,val);rows.append(tr)}
-if(!ms.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=7;td.textContent='선택한 달에 해당 대회 경기가 없습니다.';tr.append(td);rows.append(tr)}
+const rows=$('rows');rows.replaceChildren();for(const m of ms){const tr=document.createElement('tr');tr.style.cursor='pointer';tr.onclick=()=>{selectedDate=m.date;renderCalendar(d);$('calendarGrid').scrollIntoView({block:'start',behavior:'smooth'})};for(const val of [m.date,m.competition,koTeam(m.opponent),m.venue==='H'?'홈':'원정',m.calendarRestDays==null?'—':m.calendarRestDays+'일'+(m.kickoffGapHours!=null?' · '+m.kickoffGapHours+'시간(검증)':''),m.gamesIn7Days+' / '+m.gamesIn14Days])cell(tr,val);rows.append(tr)}
+if(!ms.length){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=6;td.textContent='선택한 달에 해당 대회 경기가 없습니다.';tr.append(td);rows.append(tr)}
 }
 (async()=>{try{const res=await fetch('./data/fixture_congestion.json',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);const d=await res.json();
 for(const [id,t] of Object.entries(d.teams).sort((a,b)=>koTeam(a[1].name).localeCompare(koTeam(b[1].name),'ko'))){const o=document.createElement('option');o.value=id;o.textContent=koTeam(t.name);$('team').append(o)}
