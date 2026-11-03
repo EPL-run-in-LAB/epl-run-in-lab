@@ -130,7 +130,8 @@ jobs:
           for phrase in ('한국어','영어'):
               s=s.replace(phrase,'')
           leftovers=sorted(set(re.findall(r'[가-힣]{1,}[가-힣 A-Za-z0-9·/.,:()_-]*',s)))
-          print('English calendar untranslated fragments:', leftovers[:35])
+          assert not leftovers, 'Untranslated English calendar UI: ' + str(leftovers[:35])
+          print('English calendar UI contains no unintended Korean text')
           PY
       - name: Inspect output counts and required identities
         run: |
