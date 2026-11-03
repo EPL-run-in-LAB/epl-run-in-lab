@@ -37,7 +37,7 @@ def timeline(goals,cards,subs):
     return sorted(out,key=lambda z:(z.get('minuteNum',0),z.get('type','')))
 def match_date(record):
     """Only accept a provider-supplied calendar date or an explicit timestamp."""
-    for field in ('matchDate', 'utcDate', 'kickoffUTC', 'date', 'startTime'):
+    for field in ('kickoffUtc', 'kickoffUTC', 'utcDate', 'startTime', 'matchDate', 'date'):
         value = record.get(field)
         if not value:
             continue
