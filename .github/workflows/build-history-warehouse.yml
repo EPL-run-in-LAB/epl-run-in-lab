@@ -9,6 +9,10 @@ on:
       - "scripts/build_history_warehouse.py"
       - "tests/test_history_warehouse.py"
       - "data/history/snapshots/**"
+      - "data/history/uefa/**"
+      - "data/history/club_alias_reviewed.json"
+      - "scripts/build_uefa_history.py"
+      - "tests/test_uefa_history.py"
 
 permissions:
   contents: write
@@ -30,9 +34,13 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run isolated SQLite import tests
-        run: python -m unittest discover -s tests -p 'test_history_warehouse.py' -v
+        run: |
+          python -m unittest discover -s tests -p 'test_history_warehouse.py' -v
+          python -m unittest discover -s tests -p 'test_uefa_history.py' -v
       - name: Build independent warehouse
-        run: python scripts/build_history_warehouse.py
+        run: |
+          python scripts/build_history_warehouse.py
+          python scripts/build_uefa_history.py
       - name: Validate complete five-season coverage
         run: |
           python - <<'PY'
@@ -48,13 +56,23 @@ jobs:
               assert db.execute("SELECT COUNT(*) FROM matches").fetchone()[0] == 7008
               assert db.execute("PRAGMA foreign_key_check").fetchall() == []
               assert db.execute("SELECT COUNT(*) FROM seasons").fetchone()[0] == 20
-          print("Verified 7,008 fixtures in 20 season snapshots.")
+          europe = json.loads(Path("data/history/uefa_validation_report.json").read_text(encoding="utf-8"))
+          assert europe["totals"]["rows"] == 1941, europe["totals"]
+          assert europe["totals"]["finished"] == 1939, europe["totals"]
+          assert europe["totals"]["cancelled"] == 2, europe["totals"]
+          assert europe["allMatchRows"] == 8949
+          assert europe["linkedDomesticClubs"] > 30
+          assert len(europe["missingCompetitionSeasons"]) == 2
+          with sqlite3.connect("data/history/history.sqlite") as db:
+              assert db.execute("SELECT COUNT(*) FROM uefa_matches").fetchone()[0] == 1941
+              assert db.execute("SELECT COUNT(*) FROM v_all_matches").fetchone()[0] == 8949
+          print("Verified 7,008 league and 1,941 UEFA fixtures with shared club IDs.")
           PY
       - name: Persist validated database and quality report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/history/history.sqlite data/history/validation_report.json
+          git add data/history/history.sqlite data/history/validation_report.json data/history/uefa_validation_report.json
           if git diff --cached --quiet; then
             echo "No history warehouse changes."
           else
