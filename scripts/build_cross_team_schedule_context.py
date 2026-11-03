@@ -54,9 +54,23 @@ def build(data):
             raise ValueError("Invalid external league staging")
         allowed={k for k,v in extra.get("coverage",{}).items()
                  if v.get("status")=="COMPLETE_SOURCE_UNVERIFIED_DATES"}
-        for m in extra.get("matches",[]):
-            if m.get("competition") in allowed:
-                matches.append(m)
+        extended=[m for m in extra.get("matches",[]) if m.get("competition") in allowed]
+        # Only exact, unambiguous same-provider club spellings may bridge UEFA and NL/PT.
+        # Never overwrite an independently reviewed ID or perform fuzzy matching.
+        from collections import defaultdict as _dd
+        ids_by_name=_dd(set)
+        for row in extended:
+            for side in ("home", "away"):
+                if row.get(side+"ClubId"):
+                    ids_by_name[row[side]].add(row[side+"ClubId"])
+        unique_ids={name:next(iter(ids)) for name,ids in ids_by_name.items() if len(ids)==1}
+        for row in matches:
+            if row.get("competition") not in UEFA:continue
+            for side in ("home", "away"):
+                if not row.get(side+"ClubId") and row.get(side) in unique_ids:
+                    row[side+"ClubId"]=unique_ids[row[side]]
+                    row[side+"IdentityBasis"]="EXACT_NAME_SAME_PROVIDER_PROVISIONAL"
+        matches.extend(extended)
     domestic={id for m in matches if m["competition"] in DOMESTIC
               for id in (m.get("homeClubId"),m.get("awayClubId")) if id}
     index=defaultdict(list)
