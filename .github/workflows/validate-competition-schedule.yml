@@ -8,6 +8,10 @@ on:
       - 'tests/test_fixture_congestion.py'
       - 'scripts/build_fixture_congestion.py'
       - 'docs/congestion.html'
+      - 'docs/assets/site-shell.css'
+      - 'docs/assets/site-shell.js'
+      - 'scripts/build_i18n.py'
+      - 'docs/index.html'
       - 'docs/index.html'
       - 'scripts/build_i18n.py'
       - 'tests/test_ko_localization.py'
@@ -86,6 +90,48 @@ jobs:
           assert 'id="languageOptions"' in ko and 'id="languageOptions"' in en
           assert 'data-lang="ko"' in en and 'data-lang="en"' in en
           print('Deployment and both locale calendar routes verified')
+          PY
+      - name: Validate unified navigation and visible table columns
+        run: |
+          node --check docs/assets/site-shell.js
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('docs')
+          js=(root/'assets/site-shell.js').read_text()
+          assert 'aria-current' in js
+          assert 'locale === entry.code' in js
+          assert "base + 'en/' + relative" in js
+          for rel in ['index.html','en/index.html','congestion.html','en/congestion.html']:
+              s=(root/rel).read_text(encoding='utf-8')
+              assert 'assets/site-shell.js' in s, rel
+              assert 'assets/site-shell.css' in s, rel
+          ko=(root/'congestion.html').read_text()
+          en=(root/'en/congestion.html').read_text()
+          assert '자료 상태</th>' not in ko
+          assert 'Source status</th>' not in en
+          assert 'td.colSpan=6' in ko and 'td.colSpan=6' in en
+          assert 'selectedDate' in ko and 'selectedDate' in en
+          assert 'Monthly fixture calendar' in en or 'Monthly Fixture Calendar' in en
+          assert '2026년' not in en
+          for page in root.rglob('index.html'):
+              s=page.read_text(encoding='utf-8')
+              if 'class="topbar"' in s:
+                  assert 'assets/site-shell.js' in s, str(page)
+                  assert 'assets/site-shell.css' in s, str(page)
+          print('Shared UI, locale checkmarks, and six-column tables verified')
+          PY
+      - name: Audit remaining Korean strings in English calendar
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          s=Path('docs/en/congestion.html').read_text(encoding='utf-8')
+          for phrase in ('한국어','영어'):
+              s=s.replace(phrase,'')
+          leftovers=sorted(set(re.findall(r'[가-힣]{1,}[가-힣 A-Za-z0-9·/.,:()_-]*',s)))
+          assert not leftovers, 'Untranslated English calendar UI: ' + str(leftovers[:35])
+          print('English calendar UI contains no unintended Korean text')
           PY
       - name: Inspect output counts and required identities
         run: |
