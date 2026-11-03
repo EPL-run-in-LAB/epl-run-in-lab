@@ -1074,10 +1074,10 @@
     }
   ],
   "interpretationLimits": [
-    "Only archived 40 results available as of this run; a small sample is not proof of predictive superiority.",
+    "Only 40 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
     "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
     "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
-    "Team points-above-expected over four matches is not a reliable causal measure of strength or coaching.",
+    "Points-above-expected in small samples is not a reliable causal measure of strength or coaching.",
     "Any future rescheduled fixtures are excluded if capture time is not before recorded kickoff.",
     "GOAL API archived match results are not independently audited here; external data licensing remains separate."
   ]
