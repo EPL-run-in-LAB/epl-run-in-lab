@@ -55,7 +55,7 @@ jobs:
           with sqlite3.connect("data/history/history.sqlite") as db:
               assert db.execute("SELECT COUNT(*) FROM matches").fetchone()[0] == 7008
               assert db.execute("PRAGMA foreign_key_check").fetchall() == []
-              assert db.execute("SELECT COUNT(*) FROM seasons").fetchone()[0] == 20
+              assert db.execute("SELECT COUNT(*) FROM seasons").fetchone()[0] == 33
           europe = json.loads(Path("data/history/uefa_validation_report.json").read_text(encoding="utf-8"))
           assert europe["totals"]["rows"] == 1941, europe["totals"]
           assert europe["totals"]["finished"] == 1939, europe["totals"]
