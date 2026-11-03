@@ -1,13 +1,6 @@
 name: Collect cup schedules and results (isolated)
 on:
   workflow_dispatch:
-  push:
-    branches: ["main"]
-    paths:
-      - ".github/workflows/update-competition-data.yml"
-      - "scripts/build_multi_competition_schedule.py"
-      - "tests/test_multi_competition_schedule.py"
-      - "data/live/club_aliases_2627.json"
   schedule:
     - cron: "35 21 * * *"
 permissions:
