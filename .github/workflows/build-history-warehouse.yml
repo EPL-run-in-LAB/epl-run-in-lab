@@ -2,19 +2,6 @@ name: Build CC0 football history warehouse
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["main"]
-    paths:
-      - ".github/workflows/build-history-warehouse.yml"
-      - "scripts/build_history_warehouse.py"
-      - "tests/test_history_warehouse.py"
-      - "data/history/snapshots/**"
-      - "data/history/uefa/**"
-      - "data/history/club_alias_reviewed.json"
-      - "scripts/build_uefa_history.py"
-      - "tests/test_uefa_history.py"
-      - "scripts/build_team_competition_analysis.py"
-      - "tests/test_team_competition_analysis.py"
 
 permissions:
   contents: write

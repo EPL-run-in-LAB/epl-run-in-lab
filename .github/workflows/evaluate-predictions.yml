@@ -6,12 +6,6 @@ on:
     workflows: ["Update EPL predictions and deploy Pages"]
     types: [completed]
     branches: [main]
-  push:
-    branches: ["main"]
-    paths:
-      - ".github/workflows/evaluate-predictions.yml"
-      - "scripts/evaluate_prediction_archive.py"
-      - "tests/test_evaluate_prediction_archive.py"
 
 permissions:
   contents: write
