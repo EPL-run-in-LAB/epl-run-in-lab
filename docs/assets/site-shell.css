@@ -59,7 +59,7 @@ main.main{box-sizing:border-box}
   .sidebar,.sidebar.open{transform:translateX(0)!important}
   main.main{margin-left:var(--site-sidebar-width)!important;width:calc(100% - var(--site-sidebar-width))!important;
     max-width:none!important;padding:38px 24px 70px!important;min-height:calc(100vh - 64px)!important}
-  main.main .container{max-width:1050px!important;margin:0 auto!important}
+  main.main .container{max-width:1050px!important;margin:0 auto!important;padding:0!important}
   body>main:not(.main){margin-left:var(--site-sidebar-width)!important;margin-right:0!important;
     width:calc(100% - var(--site-sidebar-width))!important;max-width:none!important;
     padding:38px 32px 70px!important}
