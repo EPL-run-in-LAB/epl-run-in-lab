@@ -73,3 +73,7 @@ or authorized independently of this CC0 historical warehouse.
 Before monetization: separately audit every active current-season feed, historical
 feature source and asset license. Use a commercial agreement if a provider's
 rules do not expressly permit an advertising-supported application.
+
+## Expanded implementation-level audit
+
+Read [COMMERCIAL_SOURCE_AUDIT_KO.md](COMMERCIAL_SOURCE_AUDIT_KO.md) and the machine-readable [commercial_readiness.json](commercial_readiness.json) before publishing any advertising. The current site is **not** yet verified as commercially cleared. football-data.org also requires visible attribution and restricts referencing API data after cancellation (see its About/Terms sections 7 and 9).

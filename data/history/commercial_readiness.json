@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "auditedOn": "2026-11-03",
+  "adsReady": false,
+  "confirmedCC0": [
+    "openfootball/football.json",
+    "openfootball/champions-league"
+  ],
+  "blockers": [
+    {
+      "id": "R1",
+      "label": "EPL/Championship historical feature provenance",
+      "severity": "high",
+      "status": "unknown",
+      "paths": [
+        "model_data/epl_master_2016_2026.csv",
+        "model_data/championship_master_2016_2026.csv"
+      ]
+    },
+    {
+      "id": "R2",
+      "label": "football-data.org attribution and subscription terms",
+      "severity": "medium",
+      "status": "unconfirmed",
+      "paths": [
+        "scripts/update_predictions.py"
+      ]
+    },
+    {
+      "id": "R3",
+      "label": "open-matchday non-commercial current-season feed",
+      "severity": "critical",
+      "status": "noncommercial",
+      "paths": [
+        "scripts/update_competition_schedule.py",
+        "docs/data/competition_schedule.json"
+      ]
+    },
+    {
+      "id": "R4",
+      "label": "GOAL API event storage/publication/commercial rights",
+      "severity": "high",
+      "status": "unconfirmed",
+      "paths": [
+        "scripts/update_match_archive.py",
+        "docs/data/match_archive.json"
+      ]
+    }
+  ],
+  "decision": "Advertising blocked pending replacement/permission for R1-R4; independent CC0 warehouse remains unchanged"
+}
