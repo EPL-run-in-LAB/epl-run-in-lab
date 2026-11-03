@@ -598,6 +598,7 @@ def generate(payload):
             (h,a,"H",ph,pa),(a,h,"A",pa,ph)
         ]:
             _, details = explain(model,neutral,v,selected,opponent,venue)
+            all_fixtures[-1]["homeFactors" if venue == "H" else "awayFactors"] = details
             note = ""
             note_en = ""
             if selected in priors or opponent in priors:
@@ -634,21 +635,7 @@ def generate(payload):
 
     # Freeze *all* remaining league fixtures, including those beyond next ten.
     # Use ID-based details lookup when possible; avoid ambiguous same-day pair matching.
-    explanation_by_id = {}
-    for match in all_fixtures:
-        fid = match.get("footballDataId")
-        if fid is not None:
-            explanation_by_id[str(fid)] = match
-    fixture_snapshots = []
-    for m in all_fixtures:
-        h, a = m["home"], m["away"]
-        hg = next((g for g in games.get(h, []) if g["date"] == m["date"] and g["opponent"] == a and g["venue"] == "H"), None)
-        ag = next((g for g in games.get(a, []) if g["date"] == m["date"] and g["opponent"] == h and g["venue"] == "A"), None)
-        fixture_snapshots.append({
-            **m,
-            "homeFactors": hg.get("details", []) if hg else [],
-            "awayFactors": ag.get("details", []) if ag else [],
-        })
+    fixture_snapshots = [dict(m) for m in all_fixtures]
     expected_ids = [str(m["footballDataId"]) for m in all_fixtures if m.get("footballDataId") is not None]
     if len(expected_ids) != len(set(expected_ids)):
         raise ValueError("Duplicate football-data.org fixture IDs in full-season predictions")
@@ -659,7 +646,7 @@ def generate(payload):
         "asOf": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "methodVersion":"v4-auto",
         "games":games,
-        "allRemainingFixtures": all_fixtures,
+        "allRemainingFixtures": [{k:v for k,v in m.items() if k not in ("homeFactors","awayFactors")} for m in all_fixtures],
         "fixtureSnapshots": fixture_snapshots,
         "rankings":rankings,
         "standings":standings,
