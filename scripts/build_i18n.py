@@ -400,6 +400,7 @@ def build_english_congestion():
     s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
     s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
     translations=[
+      ('경기 날짜를 선택해 주세요.','Select a match date.'),
       ('팀별 월간 경기 달력','Team monthly fixture calendar'),
       ('달력에서 경기 날짜를 선택해 주세요.','Select a match date on the calendar.'),
       ('시간 (검증)','hours (verified)'),
