@@ -389,6 +389,10 @@ def build_english_congestion():
                 'href="./congestion.html" lang="en" data-lang="en" aria-current="page"')
     s=s.replace('>언어 ▾</button>', '>Language ▾</button>')
     s=s.replace('href="./congestion.html"','href="./congestion.html"')
+    # /en/congestion.html is one path level deeper than /congestion.html.
+    # Keep the standalone bilingual page pointed at the shared JSON file.
+    s=s.replace("fetch('./data/fixture_congestion.json'",
+                "fetch('../data/fixture_congestion.json'")
     s=s.replace('href="./#','href="../?page=') if False else s
     # English page is inside /en/; route local navigation to the English dashboard.
     s=s.replace('href="./#','href="./?page=').replace('href="./"','href="./"')
