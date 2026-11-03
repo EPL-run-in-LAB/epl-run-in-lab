@@ -6,6 +6,10 @@ on:
     - cron: "10 21 * * *"
   push:
     branches: ["main"]
+  workflow_run:
+    workflows: ["Collect cup schedules and results (isolated)"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: write
@@ -18,7 +22,11 @@ concurrency:
 
 jobs:
   build:
-    if: ${{ !contains(github.event.head_commit.message || '', '[skip ci]') }}
+    if: >-
+      ${{
+        (github.event_name != 'push' || !contains(github.event.head_commit.message || '', '[skip ci]')) &&
+        (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+      }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +42,24 @@ jobs:
         run: |
           python scripts/update_predictions.py
           python scripts/update_match_archive.py
+          python scripts/build_fixture_congestion.py
           python scripts/build_i18n.py
+      - name: Validate Pages fixture congestion dataset
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('docs/data/fixture_congestion.json')
+          assert p.is_file(), 'fixture_congestion.json is missing'
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert len(d.get('teams',{})) == 20, 'Expected 20 EPL clubs'
+          assert all('matches' in v for v in d['teams'].values())
+          en=Path('docs/en/congestion.html').read_text(encoding='utf-8')
+          assert "fetch('../data/fixture_congestion.json'" in en, 'English page JSON path is broken'
+          ko=Path('docs/congestion.html').read_text(encoding='utf-8')
+          assert "fetch('./data/fixture_congestion.json'" in ko, 'Korean page JSON path is broken'
+          print('Fixture calendar and locale routes are ready for deployment.')
+          PY
       - name: Persist immutable pre-match snapshots
         run: |
           if [ -z "$(git status --porcelain -- docs/data/match_archive.json)" ]; then
