@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "sourceScope": "CC0 historical leagues + one sourced official match adjudication",
+  "competitions": 4,
+  "seasons": 20,
+  "clubs": 109,
+  "totals": {
+    "cc0_json_ft": 6901,
+    "eligible": 7007,
+    "matches": 7008,
+    "cc0_upstream_text": 20,
+    "cc0_json_array": 86,
+    "official_decision": 1
+  },
+  "bySeason": {
+    "DE1|2021-22": {
+      "cc0_json_ft": 306,
+      "eligible": 306,
+      "matches": 306
+    },
+    "ES1|2021-22": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "FR1|2021-22": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "IT1|2021-22": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "DE1|2022-23": {
+      "cc0_json_ft": 306,
+      "eligible": 306,
+      "matches": 306
+    },
+    "ES1|2022-23": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "FR1|2022-23": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "IT1|2022-23": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "DE1|2023-24": {
+      "cc0_json_ft": 306,
+      "eligible": 306,
+      "matches": 306
+    },
+    "ES1|2023-24": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "FR1|2023-24": {
+      "cc0_json_ft": 306,
+      "eligible": 306,
+      "matches": 306
+    },
+    "IT1|2023-24": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
+    "DE1|2024-25": {
+      "cc0_json_ft": 306,
+      "eligible": 306,
+      "matches": 306
+    },
+    "ES1|2024-25": {
+      "cc0_json_ft": 370,
+      "eligible": 380,
+      "cc0_upstream_text": 10,
+      "matches": 380
+    },
+    "FR1|2024-25": {
+      "cc0_json_ft": 306,
+      "eligible": 306,
+      "matches": 306
+    },
+    "IT1|2024-25": {
+      "cc0_json_ft": 370,
+      "eligible": 380,
+      "cc0_upstream_text": 10,
+      "matches": 380
+    },
+    "DE1|2025-26": {
+      "cc0_json_ft": 294,
+      "eligible": 306,
+      "cc0_json_array": 12,
+      "matches": 306
+    },
+    "ES1|2025-26": {
+      "cc0_json_ft": 365,
+      "eligible": 380,
+      "cc0_json_array": 15,
+      "matches": 380
+    },
+    "FR1|2025-26": {
+      "cc0_json_ft": 282,
+      "eligible": 305,
+      "cc0_json_array": 23,
+      "official_decision": 1,
+      "matches": 306
+    },
+    "IT1|2025-26": {
+      "cc0_json_array": 36,
+      "eligible": 380,
+      "cc0_json_ft": 344,
+      "matches": 380
+    }
+  },
+  "reviewedCorrections": [
+    {
+      "match_id": "match-60362fed2ba50c1e89cb87dc",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-23",
+      "home": "Real Betis Balompié",
+      "away": "Valencia CF",
+      "score": [
+        1,
+        1
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-c089ddfe38c29b042f5cec68",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "Real Madrid CF",
+      "away": "Real Sociedad de Fútbol",
+      "score": [
+        2,
+        0
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-57e747df3a61baa336115bcc",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "CD Leganés",
+      "away": "Real Valladolid CF",
+      "score": [
+        3,
+        0
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-e59b987dee9a35ccf159dcde",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "RCD Espanyol de Barcelona",
+      "away": "UD Las Palmas",
+      "score": [
+        2,
+        0
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-60ade9f5bcd00d011ed6c579",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "Deportivo Alavés",
+      "away": "CA Osasuna",
+      "score": [
+        1,
+        1
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-5579e0bbffd6da1fd53d034f",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "Getafe CF",
+      "away": "RC Celta de Vigo",
+      "score": [
+        1,
+        2
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-a60c58e3c886a17fc1853234",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "Rayo Vallecano de Madrid",
+      "away": "RCD Mallorca",
+      "score": [
+        0,
+        0
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-18ecfa9e27960d7d0dceb1e7",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Girona FC",
+      "away": "Club Atlético de Madrid",
+      "score": [
+        0,
+        4
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-284118e1738ead25f3944c97",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Villarreal CF",
+      "away": "Sevilla FC",
+      "score": [
+        4,
+        2
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-bf1557b3344a0f1506e169d8",
+      "competition": "ES1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Athletic Club",
+      "away": "FC Barcelona",
+      "score": [
+        0,
+        3
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/espana/master/2024-25/1-liga.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-84937cdb88042bb2d7112f0f",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-23",
+      "home": "Como 1907",
+      "away": "FC Internazionale Milano",
+      "score": [
+        0,
+        2
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-7d51a5cfc8bd1b30d108cab0",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-23",
+      "home": "SSC Napoli",
+      "away": "Cagliari Calcio",
+      "score": [
+        2,
+        0
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-17bd0301c4151f06ad7c874f",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "Bologna FC 1909",
+      "away": "Genoa CFC",
+      "score": [
+        1,
+        3
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-fb58d23f0e58a786b7eafd63",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-24",
+      "home": "AC Milan",
+      "away": "AC Monza",
+      "score": [
+        2,
+        0
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-bb0694a3d1677aec5969276f",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Atalanta BC",
+      "away": "Parma Calcio 1913",
+      "score": [
+        2,
+        3
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-4f6885f0cdba12798ff88630",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Empoli FC",
+      "away": "Hellas Verona FC",
+      "score": [
+        1,
+        2
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-0ecd9c96efd270e14f966b51",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "SS Lazio",
+      "away": "US Lecce",
+      "score": [
+        0,
+        1
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-02cddc8c6bee0ab9648c043d",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Torino FC",
+      "away": "AS Roma",
+      "score": [
+        0,
+        2
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-c60435eb1bef2177359f0933",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Udinese Calcio",
+      "away": "ACF Fiorentina",
+      "score": [
+        2,
+        3
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-a698c4a49298a28e518e19f6",
+      "competition": "IT1",
+      "season": "2024-25",
+      "date": "2025-05-25",
+      "home": "Venezia FC",
+      "away": "Juventus FC",
+      "score": [
+        2,
+        3
+      ],
+      "origin": "cc0_upstream_text",
+      "evidence": "https://raw.githubusercontent.com/openfootball/italy/master/2024-25/1-seriea.txt",
+      "train_eligible": true
+    },
+    {
+      "match_id": "match-a7a251af7c0b0d3dfc7f53b8",
+      "competition": "FR1",
+      "season": "2025-26",
+      "date": "2026-05-17",
+      "home": "FC Nantes",
+      "away": "Toulouse FC",
+      "score": [
+        0,
+        0
+      ],
+      "origin": "official_decision",
+      "evidence": "https://ligue1.com/fr/articles/l1_article_5189-discipline-toutes-les-decisions-l1-270526",
+      "train_eligible": false
+    }
+  ],
+  "qualityNotes": [
+    "86 direct score arrays [0,0] are correctly interpreted as actual draws.",
+    "20 missing JSON results are repaired from same-project CC0 Football.TXT.",
+    "Nantes-Toulouse 2026-05-17 was abandoned and awarded 0-0; exclude from 90-minute model training.",
+    "Club identity only merges exact normalized country/name; cross-league alias mapping requires review.",
+    "Existing prediction and cup pipelines are separate and untouched."
+  ]
+}
