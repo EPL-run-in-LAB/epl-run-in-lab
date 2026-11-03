@@ -21,6 +21,8 @@ class TestHistoryWarehouse(unittest.TestCase):
         self.assertEqual(canonical_name("DE", "Bayern München"), "FC Bayern München")
         self.assertEqual(canonical_name("IT", "Inter"), "FC Internazionale Milano")
         self.assertEqual(canonical_name("ES", "Atlético Madrid"), "Club Atlético de Madrid")
+        self.assertEqual(canonical_name("EN", "Arsenal"), "Arsenal FC")
+        self.assertEqual(canonical_name("EN", "Tottenham Hotspur"), "Tottenham Hotspur FC")
         self.assertEqual(canonical_name("FR", "Unknown FC"), "Unknown FC")
 
     def write_sample(self, root, matches):

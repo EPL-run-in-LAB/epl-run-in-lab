@@ -19,7 +19,7 @@ from build_history_warehouse import ROOT, register_club, DB
 MANIFEST = ROOT / "data/history/uefa/manifest.json"
 REPORT = ROOT / "data/history/uefa_validation_report.json"
 CODES = {"UCL": "cl", "UEL": "el", "UECL": "conf"}
-COUNTRY_MAP = {"GER": "DE", "ESP": "ES", "ITA": "IT", "FRA": "FR", "MCO": "FR"}
+COUNTRY_MAP = {"ENG": "EN", "GER": "DE", "ESP": "ES", "ITA": "IT", "FRA": "FR", "MCO": "FR"}
 MONTHS = {v:i for i,v in enumerate(("Jan", "Feb", "Mar", "Apr", "May", "Jun",
                                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"),1)}
 DATE_RE = re.compile(r"^\s*(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+([A-Za-z]{3})\s+(\d{1,2})(?:\s+(\d{4}))?\s*$")
