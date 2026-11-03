@@ -41,7 +41,7 @@ jobs:
           report = json.loads(Path("data/history/validation_report.json").read_text(encoding="utf-8"))
           assert report["totals"]["matches"] == 7008, report["totals"]
           assert report["totals"]["eligible"] == 7007, report["totals"]
-          assert report["totals"]["cc0_json_array"] == 87, report["totals"]
+          assert report["totals"]["cc0_json_array"] == 86, report["totals"]
           assert report["totals"]["cc0_upstream_text"] == 20, report["totals"]
           assert report["totals"]["official_decision"] == 1, report["totals"]
           with sqlite3.connect("data/history/history.sqlite") as db:

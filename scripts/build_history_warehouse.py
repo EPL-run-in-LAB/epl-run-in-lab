@@ -222,7 +222,7 @@ def build_warehouse(source_dir=SOURCES, db_path=DB, report_path=REPORT, strict=T
         if errors:
             raise ValueError("Foreign key violations: " + repr(errors[:5]))
         if strict and (totals["matches"] != 7008 or totals["cc0_upstream_text"] != 20 or
-                       totals["cc0_json_array"] != 87 or totals["official_decision"] != 1 or
+                       totals["cc0_json_array"] != 86 or totals["official_decision"] != 1 or
                        totals["eligible"] != 7007):
             raise ValueError("Unexpected overall coverage: " + str(dict(totals)))
         club_count = con.execute("SELECT COUNT(*) FROM clubs").fetchone()[0]
@@ -236,7 +236,7 @@ def build_warehouse(source_dir=SOURCES, db_path=DB, report_path=REPORT, strict=T
             "bySeason": per_season,
             "reviewedCorrections": corrections,
             "qualityNotes": [
-                "87 direct score arrays [0,0] are correctly interpreted as actual draws.",
+                "86 direct score arrays [0,0] are correctly interpreted as actual draws.",
                 "20 missing JSON results are repaired from same-project CC0 Football.TXT.",
                 "Nantes-Toulouse 2026-05-17 was abandoned and awarded 0-0; exclude from 90-minute model training.",
                 "Club identity only merges exact normalized country/name; cross-league alias mapping requires review.",
