@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "source": "validated frozen pre-kickoff prediction report",
+  "sample": 40,
+  "overall": {
+    "matches": 40,
+    "correct": 18,
+    "accuracy": 0.45,
+    "brier": 0.6408,
+    "logLoss": 1.0634
+  },
+  "predictedByActual": {
+    "home": {
+      "home": 12,
+      "draw": 4,
+      "away": 7
+    },
+    "draw": {
+      "home": 0,
+      "draw": 0,
+      "away": 0
+    },
+    "away": {
+      "home": 6,
+      "draw": 5,
+      "away": 6
+    }
+  },
+  "byActual": {
+    "home": {
+      "matches": 18,
+      "correct": 12,
+      "accuracy": 0.6667,
+      "brier": 0.5088,
+      "logLoss": 0.8794
+    },
+    "draw": {
+      "matches": 9,
+      "correct": 0,
+      "accuracy": 0.0,
+      "brier": 0.8151,
+      "logLoss": 1.2991
+    },
+    "away": {
+      "matches": 13,
+      "correct": 6,
+      "accuracy": 0.4615,
+      "brier": 0.7029,
+      "logLoss": 1.155
+    }
+  },
+  "byTopPick": {
+    "home": {
+      "matches": 23,
+      "correct": 12,
+      "accuracy": 0.5217,
+      "brier": 0.6027,
+      "logLoss": 1.0075
+    },
+    "draw": {
+      "matches": 0,
+      "correct": 0,
+      "accuracy": null,
+      "brier": null,
+      "logLoss": null
+    },
+    "away": {
+      "matches": 17,
+      "correct": 6,
+      "accuracy": 0.3529,
+      "brier": 0.6924,
+      "logLoss": 1.1391
+    }
+  },
+  "calibration": {
+    "home": {
+      "meanProbability": 0.4193,
+      "actualFrequency": 0.45,
+      "binaryBrier": 0.2463
+    },
+    "draw": {
+      "meanProbability": 0.2645,
+      "actualFrequency": 0.225,
+      "binaryBrier": 0.1725
+    },
+    "away": {
+      "meanProbability": 0.3162,
+      "actualFrequency": 0.325,
+      "binaryBrier": 0.2221
+    }
+  },
+  "confidenceBins": [
+    {
+      "min": 0,
+      "maxExclusive": 0.4,
+      "matches": 6,
+      "correct": 3,
+      "accuracy": 0.5,
+      "brier": 0.6488,
+      "logLoss": 1.0747,
+      "averageConfidence": 0.3813
+    },
+    {
+      "min": 0.4,
+      "maxExclusive": 0.5,
+      "matches": 24,
+      "correct": 9,
+      "accuracy": 0.375,
+      "brier": 0.6723,
+      "logLoss": 1.1053,
+      "averageConfidence": 0.4568
+    },
+    {
+      "min": 0.5,
+      "maxExclusive": 0.6,
+      "matches": 5,
+      "correct": 3,
+      "accuracy": 0.6,
+      "brier": 0.5877,
+      "logLoss": 1.0037,
+      "averageConfidence": 0.5313
+    },
+    {
+      "min": 0.6,
+      "maxExclusive": 1.01,
+      "matches": 5,
+      "correct": 3,
+      "accuracy": 0.6,
+      "brier": 0.5332,
+      "logLoss": 0.9084,
+      "averageConfidence": 0.6476
+    }
+  ],
+  "byMonth": {
+    "2026-10": {
+      "matches": 38,
+      "correct": 18,
+      "accuracy": 0.4737,
+      "brier": 0.6324,
+      "logLoss": 1.0518
+    },
+    "2026-11": {
+      "matches": 2,
+      "correct": 0,
+      "accuracy": 0.0,
+      "brier": 0.7998,
+      "logLoss": 1.2835
+    }
+  },
+  "highestLogLossGames": [
+    {
+      "date": "2026-10-31",
+      "home": "Man City",
+      "away": "Brighton",
+      "score": [
+        0,
+        1
+      ],
+      "expected": "home",
+      "actual": "away",
+      "probabilities": {
+        "home": 0.6175307884535945,
+        "draw": 0.22535109460873964,
+        "away": 0.1571181169376658
+      },
+      "logLoss": 1.8508
+    },
+    {
+      "date": "2026-10-12",
+      "home": "Coventry",
+      "away": "Newcastle",
+      "score": [
+        4,
+        1
+      ],
+      "expected": "away",
+      "actual": "home",
+      "probabilities": {
+        "home": 0.20652835686483811,
+        "draw": 0.25913748882305804,
+        "away": 0.5343341543121038
+      },
+      "logLoss": 1.5773
+    },
+    {
+      "date": "2026-10-25",
+      "home": "Man United",
+      "away": "Bournemouth",
+      "score": [
+        0,
+        3
+      ],
+      "expected": "home",
+      "actual": "away",
+      "probabilities": {
+        "home": 0.5248160327168944,
+        "draw": 0.26240540194709805,
+        "away": 0.2127785653360076
+      },
+      "logLoss": 1.5475
+    },
+    {
+      "date": "2026-10-10",
+      "home": "Man United",
+      "away": "Tottenham",
+      "score": [
+        1,
+        1
+      ],
+      "expected": "home",
+      "actual": "draw",
+      "probabilities": {
+        "home": 0.6157114135153051,
+        "draw": 0.2313708627025821,
+        "away": 0.15291772378211269
+      },
+      "logLoss": 1.4637
+    },
+    {
+      "date": "2026-10-24",
+      "home": "Chelsea",
+      "away": "Tottenham",
+      "score": [
+        0,
+        2
+      ],
+      "expected": "home",
+      "actual": "away",
+      "probabilities": {
+        "home": 0.4925845589839954,
+        "draw": 0.27102250062612016,
+        "away": 0.2363929403898844
+      },
+      "logLoss": 1.4423
+    },
+    {
+      "date": "2026-10-18",
+      "home": "Leeds",
+      "away": "Man United",
+      "score": [
+        1,
+        1
+      ],
+      "expected": "away",
+      "actual": "draw",
+      "probabilities": {
+        "home": 0.3215159438277201,
+        "draw": 0.24225920017190145,
+        "away": 0.4362248560003784
+      },
+      "logLoss": 1.4177
+    },
+    {
+      "date": "2026-11-02",
+      "home": "Newcastle",
+      "away": "Everton",
+      "score": [
+        0,
+        1
+      ],
+      "expected": "home",
+      "actual": "away",
+      "probabilities": {
+        "home": 0.49206147271147843,
+        "draw": 0.2591625910519342,
+        "away": 0.24877593623658742
+      },
+      "logLoss": 1.3912
+    },
+    {
+      "date": "2026-10-24",
+      "home": "Aston Villa",
+      "away": "Man City",
+      "score": [
+        2,
+        1
+      ],
+      "expected": "away",
+      "actual": "home",
+      "probabilities": {
+        "home": 0.24972641039088725,
+        "draw": 0.26683148923399663,
+        "away": 0.48344210037511604
+      },
+      "logLoss": 1.3874
+    },
+    {
+      "date": "2026-10-17",
+      "home": "Newcastle",
+      "away": "Aston Villa",
+      "score": [
+        0,
+        1
+      ],
+      "expected": "home",
+      "actual": "away",
+      "probabilities": {
+        "home": 0.4836166702842611,
+        "draw": 0.2577160574527187,
+        "away": 0.2586672722630201
+      },
+      "logLoss": 1.3522
+    },
+    {
+      "date": "2026-10-31",
+      "home": "Hull",
+      "away": "Ipswich",
+      "score": [
+        2,
+        2
+      ],
+      "expected": "home",
+      "actual": "draw",
+      "probabilities": {
+        "home": 0.47579108068218107,
+        "draw": 0.26604551854746844,
+        "away": 0.2581634007703503
+      },
+      "logLoss": 1.3241
+    }
+  ],
+  "baseline": {
+    "uniformBrier": 0.666667,
+    "uniformLogLoss": 1.098612,
+    "alwaysHomeTop1": 0.45
+  },
+  "warnings": [
+    "40 games are not enough to establish systematic bias or retrain weights.",
+    "Draws can be calibrated even when not the single highest outcome.",
+    "Neither causes of upsets nor coach/lineup fatigue are established.",
+    "Only frozen pre-kickoff probabilities are included."
+  ]
+}
