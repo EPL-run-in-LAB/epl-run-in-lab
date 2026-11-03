@@ -1,0 +1,59 @@
+name: Audit frozen EPL forecast accuracy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/evaluate-predictions.yml"
+      - "scripts/evaluate_prediction_archive.py"
+      - "tests/test_evaluate_prediction_archive.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: independent-epl-forecast-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test 90-minute forecast audit
+        run: python -m unittest discover -s tests -p 'test_evaluate_prediction_archive.py' -v
+      - name: Evaluate immutable, pre-kickoff archive snapshots
+        run: python scripts/evaluate_prediction_archive.py
+      - name: Validate output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path("data/performance/epl_prediction_accuracy.json").read_text(encoding="utf-8"))
+          s=r["sample"]
+          assert s["eligibleFinalizedFixtures"] >= 1
+          assert s["teamAppearances"] == s["eligibleFinalizedFixtures"] * 2
+          assert 0 <= r["results"]["top1Accuracy"] <= 1
+          assert r["results"]["multiclassBrierSum"] >= 0
+          assert r["results"]["logLoss"] >= 0
+          assert all(x["matches"] > 0 for x in r["teamRecords"])
+          print("Verified frozen pre-match accuracy audit:",s["eligibleFinalizedFixtures"],"fixtures")
+          PY
+      - name: Save independent audit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/performance/epl_prediction_accuracy.json data/performance/EPL_PREDICTION_ACCURACY_KO.md
+          if git diff --cached --quiet; then
+            echo "No forecast audit changes."
+          else
+            git commit -m "data: archive verified forecast accuracy scores [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
