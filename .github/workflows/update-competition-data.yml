@@ -1,6 +1,13 @@
 name: Collect cup schedules and results (isolated)
 on:
   workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - ".github/workflows/update-competition-data.yml"
+      - "scripts/build_multi_competition_schedule.py"
+      - "tests/test_multi_competition_schedule.py"
+      - "data/live/club_aliases_2627.json"
   schedule:
     - cron: "35 21 * * *"
 permissions:
@@ -27,14 +34,36 @@ jobs:
         run: python scripts/update_competition_schedule.py
       - name: Generate fixture congestion dataset
         run: python scripts/build_fixture_congestion.py
+      - name: Validate multi-competition staging transformations
+        run: python -m unittest discover -s tests -p 'test_multi_competition_schedule.py' -v
+      - name: Build independent 2026-27 multi-league and UEFA staging
+        run: python scripts/build_multi_competition_schedule.py
+      - name: Audit staged match coverage and commercial isolation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("data/live/quality_report_2627.json")
+          d=json.loads(p.read_text(encoding="utf-8"))
+          assert sum(d["coverage"][c]["total"] for c in ("EN1","EN2","DE1","ES1","IT1","FR1"))==2304
+          assert all(d["coverage"][c]["total"]>0 for c in ("UCL","UEL","UECL","FAC","EFL"))
+          assert d["matchTotal"]>2500
+          assert len(d["historicalUEFAGaps"])==2
+          output=json.loads(Path("data/live/current_schedule_2627.json").read_text(encoding="utf-8"))
+          assert output["status"]=="STAGING_NOT_MODEL_INPUT"
+          assert len(output["matches"])==d["matchTotal"]
+          assert all(m["kickoffUTC"] is None for m in output["matches"])
+          print("Validated independent multi-competition match staging:",d["matchTotal"])
+          PY
       - name: Persist cup datasets only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/competition_schedule.json docs/data/competition_results_archive.json docs/data/competition_validation_report.json docs/data/fixture_congestion.json
+          git add docs/data/competition_schedule.json docs/data/competition_results_archive.json docs/data/competition_validation_report.json docs/data/fixture_congestion.json data/live/current_schedule_2627.json data/live/quality_report_2627.json
           if git diff --cached --quiet; then
             echo "No new cup data"
           else
             git commit -m "data: update cup fixtures and results [skip ci]"
-            git push
+            git -c rebase.autoStash=true pull --rebase origin main
+            git push origin HEAD:main
           fi
