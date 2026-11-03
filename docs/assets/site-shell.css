@@ -12,13 +12,16 @@
   font-weight:900!important;text-decoration:none!important;color:var(--text,#111827)!important;white-space:nowrap}
 .topbar .brand span{color:var(--muted,#6b7280)!important}
 .topbar .top-actions{margin-left:auto!important;display:flex!important;align-items:center!important;gap:12px!important}
-.topbar .menu-btn{border:0!important;background:transparent!important;color:var(--text,#111827)!important;
+.topbar .menu-btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  border:0!important;background:transparent!important;color:var(--text,#111827)!important;
   font-size:23px!important;width:38px!important;height:38px!important;border-radius:10px!important;cursor:pointer}
 .topbar .menu-btn:hover{background:var(--soft,#eef2f7)!important}
 .sidebar{position:fixed!important;left:0!important;top:var(--site-header-height)!important;
   bottom:0!important;width:var(--site-sidebar-width)!important;background:var(--sidebar,#fff)!important;
   border-right:1px solid var(--line,#e5e7eb)!important;
   z-index:35!important;padding:16px!important;overflow-y:auto!important;transition:transform .2s!important}
+.sidebar:not(.open){transform:translateX(-100%)!important}
+.sidebar.open{transform:translateX(0)!important}
 .sidebar .nav-label{color:var(--muted,#6b7280)!important;font-size:11px!important;font-weight:800!important;
   letter-spacing:.1em!important;text-transform:uppercase!important;margin:12px 10px!important}
 .sidebar .nav-btn{display:block!important;text-align:left!important;width:100%!important;
@@ -61,16 +64,18 @@ body>main:not(.main)>.hero .eyebrow{margin-bottom:7px!important}
 body>main:not(.main)>.hero h1{font-size:32px;line-height:1.08;margin:0 0 7px}
 body>main:not(.main)>.hero p{margin:0}
 @media(min-width:1100px){
-  .topbar .menu-btn{display:none!important}
-  .sidebar,.sidebar.open{transform:translateX(0)!important}
-  main.main{margin-left:var(--site-sidebar-width)!important;width:calc(100% - var(--site-sidebar-width))!important;
+  /* The hamburger remains visible; the sidebar pushes content only while open. */
+  main.main{margin-left:0!important;width:100%!important;
     max-width:none!important;padding:38px 24px 70px!important;min-height:calc(100vh - 64px)!important}
+  .sidebar.open ~ main.main{margin-left:var(--site-sidebar-width)!important;
+    width:calc(100% - var(--site-sidebar-width))!important}
   main.main .container{max-width:1050px!important;margin:0 auto!important;padding:0!important}
-  body>main:not(.main){margin-left:var(--site-sidebar-width)!important;margin-right:0!important;
-    margin-top:0!important;margin-bottom:0!important;
-    width:calc(100% - var(--site-sidebar-width))!important;max-width:none!important;
+  body>main:not(.main){margin:0!important;width:100%!important;max-width:none!important;
     padding:38px 24px 70px!important}
+  .sidebar.open ~ main:not(.main){margin-left:var(--site-sidebar-width)!important;
+    width:calc(100% - var(--site-sidebar-width))!important}
   body>main:not(.main)>*{max-width:1050px;margin-left:auto;margin-right:auto}
+  .overlay.show{display:none!important}
 }
 @media(max-width:1099px){
   .sidebar:not(.open){transform:translateX(-100%)!important}
