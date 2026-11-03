@@ -42,7 +42,7 @@ def match_date(record):
         if not value:
             continue
         raw = str(value).strip()
-        if re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', raw):
+        if re.fullmatch(r'\d{4}-\d{2}-\d{2}', raw):
             return raw
         try:
             parsed = datetime.fromisoformat(raw.replace('Z', '+00:00'))
