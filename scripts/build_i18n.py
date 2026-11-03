@@ -174,8 +174,8 @@ def build():
 
     # Keep the sitemap deliberately simple. hreflang remains in each page's HTML <head>;
     # the sitemap only needs canonical URLs + lastmod for reliable Search Console parsing.
-    ko=['/congestion.html','/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
-    en=['/en/congestion.html','/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
+    ko=['/congestion.html','/accuracy.html','/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
+    en=['/en/congestion.html','/en/accuracy.html','/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
     # V13 match reports are generated before i18n. Include finalized reports in both sitemaps.
     match_paths=[]
     matches_root=DOCS/'matches'

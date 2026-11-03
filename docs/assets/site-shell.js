@@ -98,6 +98,26 @@
     }
   }
 
+  // Prediction accuracy is available from every locale and every page, including
+  // older generated SEO pages without a hardcoded accuracy link.
+  if (sidebarNav) {
+    const allLinks = Array.from(sidebarNav.querySelectorAll('.nav-btn'));
+    const hasAccuracy = allLinks.some(el =>
+      (el.getAttribute('href') || '').includes('accuracy.html'));
+    if (!hasAccuracy) {
+      const link = document.createElement('a');
+      link.className = 'nav-btn';
+      link.href = base + (english ? 'en/' : '') + 'accuracy.html';
+      link.textContent = english ? 'Prediction Accuracy' : '예측 정확도';
+      const congestion = allLinks.find(el =>
+        (el.getAttribute('href') || '').includes('congestion.html') ||
+        (el.textContent || '').includes('Fixture Congestion') ||
+        (el.textContent || '').includes('일정 혼잡도'));
+      if (congestion) congestion.after(link);
+      else sidebarNav.prepend(link);
+    }
+  }
+
   // Retain the existing notice modal, but keep the header as clean as
   // the congestion page. Moving the original node preserves its listener.
   const notice = actions.querySelector('#noticeBtn');

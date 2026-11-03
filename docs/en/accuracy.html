@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Premier League Prediction Accuracy | EPL Run-in Lab</title>
+<meta name="description" content="Explore EPL Run-in Lab's pre-match prediction accuracy, Brier Score, Log Loss and team-level expected versus actual points.">
+<link rel="canonical" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/accuracy.html">
+<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/accuracy.html">
+<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/accuracy.html">
+<link rel="alternate" hreflang="x-default" href="https://epl-run-in-lab.github.io/epl-run-in-lab/accuracy.html">
+<link rel="stylesheet" href="../assets/accuracy-dashboard.css">
+<link rel="stylesheet" href="../assets/site-shell.css">
+<script defer src="../assets/site-shell.js"></script>
+<script defer src="../assets/accuracy-dashboard.js"></script>
+</head>
+<body>
+<header class="topbar">
+<button class="menu-btn" type="button" id="menuBtn" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu">☰</button>
+<a class="brand" href="./">EPL <span>Run-in Lab</span></a>
+<div class="top-actions"></div>
+</header>
+<nav class="sidebar" id="sidebar" aria-label="Site menu">
+<div class="nav-label">Menu</div>
+<a class="nav-btn" href="./">Home</a>
+<a class="nav-btn" href="./?page=prediction">Match Predictions</a>
+<a class="nav-btn" href="./?page=schedule">Fixture Difficulty</a>
+<a class="nav-btn" href="./congestion.html">Fixture Congestion</a>
+<a class="nav-btn active" href="./accuracy.html" aria-current="page">Prediction Accuracy</a>
+<a class="nav-btn" href="./?page=power">Power Ranking</a>
+<a class="nav-btn" href="./?page=standings">EPL Standings</a>
+<a class="nav-btn" href="./?page=team">Team Analysis</a>
+<a class="nav-btn" href="./?page=model">Model</a>
+</nav>
+<div class="overlay" id="overlay"></div>
+<main>
+<div class="hero"><div><div class="eyebrow">EPL Dashboard / Prediction Accuracy</div><h1>Prediction Accuracy</h1><p>See how frozen pre-match win, draw and loss probabilities compare with real Premier League results.</p><div class="status" id="accStatus" aria-live="polite"></div></div><div class="data-range">Match period: <strong id="accDates">—</strong></div></div>
+<section class="acc-kpis" aria-label="Model accuracy metrics"><div class="acc-kpi"><span>Evaluated matches</span><strong id="accCount">—</strong><small>Completed games with frozen forecasts · <span id="accCountNote">—</span></small></div>
+<div class="acc-kpi"><span>Top-probability accuracy</span><strong id="accAccuracy">—</strong><small>Correct highest-probability outcome</small></div>
+<div class="acc-kpi"><span>Brier Score</span><strong id="accBrier">—</strong><small>Lower means better probability quality</small></div>
+<div class="acc-kpi"><span>Log Loss</span><strong id="accLoss">—</strong><small>Lower means better probability quality</small></div></section>
+<p class="acc-note" id="accLimit" role="note"></p>
+<section class="acc-card" aria-labelledby="accBenchTitle">
+<div class="acc-card-head"><div><h2 id="accBenchTitle">Probability scoring</h2><p class="acc-desc">Compare the model with assigning exactly 33.3% to home win, draw and away win in each match. Lower scores are better.</p></div></div>
+<div class="acc-two">
+<div class="acc-benchmark"><div class="acc-benchmark-label">Multiclass Brier Score</div><div class="acc-benchmark-values"><strong id="accBrier2">—</strong><small>Our model</small></div><div class="acc-benchmark-meta">Uniform probability baseline: <b id="accBaseBrier">—</b></div></div>
+<div class="acc-benchmark"><div class="acc-benchmark-label">Log Loss</div><div class="acc-benchmark-values"><strong id="accLoss2">—</strong><small>Our model</small></div><div class="acc-benchmark-meta">Uniform probability baseline: <b id="accBaseLoss">—</b></div></div>
+</div>
+<p class="acc-footnote">Accuracy from predicting a home win in every game in this sample: <strong id="accBaseHome">—</strong></p>
+</section>
+<section class="acc-card" aria-labelledby="accCalTitle">
+<div class="acc-card-head"><div><h2 id="accCalTitle">Confidence by probability range</h2><p class="acc-desc">Compare the model's highest predicted probability with how often that prediction was correct. Small samples are unstable.</p></div></div>
+<div class="acc-legend"><span><b></b>Mean predicted confidence</span><span><b class="observed"></b>Observed accuracy</span></div>
+<div class="acc-calibration" id="accCalibrationRows"></div>
+<p class="acc-footnote">Check the number of matches in each group. This visual summarises the highest-probability outcome and does not replace the three-class Brier Score.</p>
+</section>
+<section class="acc-card" aria-labelledby="accTeamTitle">
+<div class="acc-card-head"><div><h2 id="accTeamTitle">Expected versus actual points by team</h2><p class="acc-desc">Expected points (xPts) versus earned points in eligible fixtures. Select a team to filter the match table.</p></div></div>
+<div class="acc-table-wrap"><table class="acc-table"><thead><tr><th scope="col">Team</th><th scope="col">Matches</th><th scope="col">Expected pts</th><th scope="col">Actual pts</th><th scope="col">Actual − expected</th></tr></thead><tbody id="accTeamRows"></tbody></table></div>
+</section>
+<section class="acc-card" id="accFixtureSection" aria-labelledby="accFixtureTitle">
+<div class="acc-card-head"><div><h2 id="accFixtureTitle">Fixture-by-fixture forecast audit</h2><p class="acc-desc">Only probabilities saved before kickoff are evaluated. Compare the model's favourite outcome with the recorded result.</p></div>
+<div class="acc-controls">
+<label class="acc-field">Team<select id="accTeamFilter"><option value="all">All results</option></select></label>
+<label class="acc-field">Prediction outcome<select id="accHitFilter"><option value="all">All results</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select></label>
+</div></div>
+<div class="acc-footnote" id="accFixtureCount"></div>
+<div class="acc-table-wrap"><table class="acc-table"><thead><tr><th scope="col">Date</th><th scope="col">Fixture</th><th scope="col">Final score</th><th scope="col">Probabilities (H / D / A)</th><th scope="col">Model favourite</th><th scope="col">Result</th><th scope="col">Details</th></tr></thead><tbody id="accFixtureRows"></tbody></table></div>
+<p id="accNoFixtures" class="acc-empty acc-hidden">No matches meet these filters.</p>
+<div class="acc-more"><button class="acc-btn acc-hidden" type="button" id="accShowMore">Show more matches</button></div>
+</section>
+<section class="acc-note" aria-label="Interpretation matters"><strong>Interpretation matters.</strong> The current sample is small. Teams outperforming or underperforming their projected points are not automatically stronger or weaker than the model estimates. Forecast probabilities do not guarantee outcomes.</section>
+</main>
+<script>
+(() => {
+  const menu=document.getElementById('menuBtn');
+  const nav=document.getElementById('sidebar');
+  const overlay=document.getElementById('overlay');
+  menu.addEventListener('click', () => nav.classList.toggle('open'));
+  overlay.addEventListener('click', () => nav.classList.remove('open'));
+})();
+</script>
+</body>
+</html>

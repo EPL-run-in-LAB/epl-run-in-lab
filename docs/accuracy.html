@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>예측 정확도 | EPL Run-in Lab</title>
+<meta name="description" content="EPL Run-in Lab의 경기 전 승·무·패 예측 정확도, Brier Score, Log Loss, 팀별 예상 승점과 실제 결과를 검증합니다.">
+<link rel="canonical" href="https://epl-run-in-lab.github.io/epl-run-in-lab/accuracy.html">
+<link rel="alternate" hreflang="ko" href="https://epl-run-in-lab.github.io/epl-run-in-lab/accuracy.html">
+<link rel="alternate" hreflang="en" href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/accuracy.html">
+<link rel="alternate" hreflang="x-default" href="https://epl-run-in-lab.github.io/epl-run-in-lab/accuracy.html">
+<link rel="stylesheet" href="./assets/accuracy-dashboard.css">
+<link rel="stylesheet" href="./assets/site-shell.css">
+<script defer src="./assets/site-shell.js"></script>
+<script defer src="./assets/accuracy-dashboard.js"></script>
+</head>
+<body>
+<header class="topbar">
+<button class="menu-btn" type="button" id="menuBtn" aria-controls="sidebar" aria-expanded="false" aria-label="메뉴 열기">☰</button>
+<a class="brand" href="./">EPL <span>Run-in Lab</span></a>
+<div class="top-actions"></div>
+</header>
+<nav class="sidebar" id="sidebar" aria-label="사이트 메뉴">
+<div class="nav-label">Menu</div>
+<a class="nav-btn" href="./">홈</a>
+<a class="nav-btn" href="./?page=prediction">경기 예측</a>
+<a class="nav-btn" href="./?page=schedule">일정 난이도</a>
+<a class="nav-btn" href="./congestion.html">일정 혼잡도</a>
+<a class="nav-btn active" href="./accuracy.html" aria-current="page">예측 정확도</a>
+<a class="nav-btn" href="./?page=power">파워 랭킹</a>
+<a class="nav-btn" href="./?page=standings">EPL 순위</a>
+<a class="nav-btn" href="./?page=team">팀 분석</a>
+<a class="nav-btn" href="./?page=model">모델 소개</a>
+</nav>
+<div class="overlay" id="overlay"></div>
+<main>
+<div class="hero"><div><div class="eyebrow">EPL Dashboard / Prediction Accuracy</div><h1>예측 정확도</h1><p>경기 전에 저장한 승·무·패 확률이 실제 경기 결과와 얼마나 일치했는지 확인합니다.</p><div class="status" id="accStatus" aria-live="polite"></div></div><div class="data-range">평가 경기 기간: <strong id="accDates">—</strong></div></div>
+<section class="acc-kpis" aria-label="모델 예측 정확도 지표"><div class="acc-kpi"><span>검증 완료 경기</span><strong id="accCount">—</strong><small>실제 결과가 연결된 경기 · <span id="accCountNote">—</span></small></div>
+<div class="acc-kpi"><span>최다 확률 결과 적중률</span><strong id="accAccuracy">—</strong><small>세 가지 결과 중 가장 높은 확률</small></div>
+<div class="acc-kpi"><span>Brier Score</span><strong id="accBrier">—</strong><small>낮을수록 좋은 확률 오차</small></div>
+<div class="acc-kpi"><span>Log Loss</span><strong id="accLoss">—</strong><small>낮을수록 좋은 확률 오차</small></div></section>
+<p class="acc-note" id="accLimit" role="note"></p>
+<section class="acc-card" aria-labelledby="accBenchTitle">
+<div class="acc-card-head"><div><h2 id="accBenchTitle">예측 확률의 정확도</h2><p class="acc-desc">모든 경기에 승·무·패 확률을 각각 33.3%로 주는 단순 기준과 비교합니다. 점수가 낮을수록 좋습니다.</p></div></div>
+<div class="acc-two">
+<div class="acc-benchmark"><div class="acc-benchmark-label">다중분류 Brier Score</div><div class="acc-benchmark-values"><strong id="accBrier2">—</strong><small>우리 모델</small></div><div class="acc-benchmark-meta">동일 확률 기준: <b id="accBaseBrier">—</b></div></div>
+<div class="acc-benchmark"><div class="acc-benchmark-label">Log Loss</div><div class="acc-benchmark-values"><strong id="accLoss2">—</strong><small>우리 모델</small></div><div class="acc-benchmark-meta">동일 확률 기준: <b id="accBaseLoss">—</b></div></div>
+</div>
+<p class="acc-footnote">동일 표본에서 모든 경기를 홈승으로 선택한 경우의 적중률: <strong id="accBaseHome">—</strong></p>
+</section>
+<section class="acc-card" aria-labelledby="accCalTitle">
+<div class="acc-card-head"><div><h2 id="accCalTitle">확률 구간별 적중 현황</h2><p class="acc-desc">가장 높게 예측한 승·무·패 확률과 실제 적중률을 비교합니다. 표본이 적어 확률 구간별 오차가 큽니다.</p></div></div>
+<div class="acc-legend"><span><b></b>평균 예측 확신도</span><span><b class="observed"></b>실제 적중률</span></div>
+<div class="acc-calibration" id="accCalibrationRows"></div>
+<p class="acc-footnote">각 구간의 경기 수와 예측 확률을 함께 살펴보세요. 이 그래프는 모델의 승·무·패 전체 확률을 검증한 Brier Score와 별개의 참고 지표입니다.</p>
+</section>
+<section class="acc-card" aria-labelledby="accTeamTitle">
+<div class="acc-card-head"><div><h2 id="accTeamTitle">팀별 예상 승점과 실제 승점</h2><p class="acc-desc">평가 대상 경기에서 계산한 기대 승점(xPts)과 실제 획득 승점의 차이입니다. 팀 이름을 누르면 해당 팀 경기로 이동합니다.</p></div></div>
+<div class="acc-table-wrap"><table class="acc-table"><thead><tr><th scope="col">팀</th><th scope="col">경기</th><th scope="col">예상 승점</th><th scope="col">실제 승점</th><th scope="col">실제 − 예상</th></tr></thead><tbody id="accTeamRows"></tbody></table></div>
+</section>
+<section class="acc-card" id="accFixtureSection" aria-labelledby="accFixtureTitle">
+<div class="acc-card-head"><div><h2 id="accFixtureTitle">경기별 예측 검증</h2><p class="acc-desc">킥오프 이전에 저장된 확률을 사용합니다. 실제 종료 결과와 모델에서 가장 높게 예측한 결과를 비교할 수 있습니다.</p></div>
+<div class="acc-controls">
+<label class="acc-field">팀 선택<select id="accTeamFilter"><option value="all">전체 결과</option></select></label>
+<label class="acc-field">예측 성공 여부<select id="accHitFilter"><option value="all">전체 결과</option><option value="correct">예측 적중</option><option value="incorrect">예측 실패</option></select></label>
+</div></div>
+<div class="acc-footnote" id="accFixtureCount"></div>
+<div class="acc-table-wrap"><table class="acc-table"><thead><tr><th scope="col">날짜</th><th scope="col">경기</th><th scope="col">결과</th><th scope="col">확률 (홈 / 무 / 원정)</th><th scope="col">모델 선택</th><th scope="col">판정</th><th scope="col">상세</th></tr></thead><tbody id="accFixtureRows"></tbody></table></div>
+<p id="accNoFixtures" class="acc-empty acc-hidden">조건에 맞는 경기가 없습니다.</p>
+<div class="acc-more"><button class="acc-btn acc-hidden" type="button" id="accShowMore">경기 더 보기</button></div>
+</section>
+<section class="acc-note" aria-label="해석 시 주의"><strong>해석 시 주의.</strong> 아직 검증 경기 수가 적습니다. 특정 팀의 실제 승점이 예상 승점보다 높거나 낮다는 사실만으로 해당 팀을 과소·과대평가했다고 단정할 수 없습니다. 확률 예측은 실제 경기 결과를 보장하지 않습니다.</section>
+</main>
+<script>
+(() => {
+  const menu=document.getElementById('menuBtn');
+  const nav=document.getElementById('sidebar');
+  const overlay=document.getElementById('overlay');
+  menu.addEventListener('click', () => nav.classList.toggle('open'));
+  overlay.addEventListener('click', () => nav.classList.remove('open'));
+})();
+</script>
+</body>
+</html>
