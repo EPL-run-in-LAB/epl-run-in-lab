@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/openfootball/champions-league",
+  "sourceCommit": "abfaeddc2ee3d14f99ecc163c9ddb46cb4d67cef",
+  "license": "CC0-1.0",
+  "totals": {
+    "rows": 1941,
+    "finished": 1939,
+    "extra_time": 52,
+    "penalties": 26,
+    "cancelled": 2
+  },
+  "bySeason": {
+    "UCL|2021-22": {
+      "rows": 125,
+      "finished": 125,
+      "extra_time": 2
+    },
+    "UECL|2021-22": {
+      "rows": 141,
+      "finished": 141,
+      "extra_time": 2,
+      "penalties": 1
+    },
+    "UEL|2021-22": {
+      "rows": 141,
+      "finished": 139,
+      "extra_time": 5,
+      "penalties": 2,
+      "cancelled": 2
+    },
+    "UCL|2022-23": {
+      "rows": 125,
+      "finished": 125
+    },
+    "UECL|2022-23": {
+      "rows": 141,
+      "finished": 141,
+      "extra_time": 6,
+      "penalties": 4
+    },
+    "UEL|2022-23": {
+      "rows": 141,
+      "finished": 141,
+      "extra_time": 6,
+      "penalties": 4
+    },
+    "UCL|2023-24": {
+      "rows": 125,
+      "finished": 125,
+      "extra_time": 3,
+      "penalties": 3
+    },
+    "UECL|2023-24": {
+      "rows": 141,
+      "finished": 141,
+      "extra_time": 7,
+      "penalties": 3
+    },
+    "UEL|2023-24": {
+      "rows": 141,
+      "finished": 141,
+      "extra_time": 4,
+      "penalties": 2
+    },
+    "UCL|2024-25": {
+      "rows": 189,
+      "finished": 189,
+      "extra_time": 2,
+      "penalties": 2
+    },
+    "UECL|2024-25": {
+      "rows": 153,
+      "finished": 153,
+      "extra_time": 7,
+      "penalties": 2
+    },
+    "UEL|2024-25": {
+      "rows": 189,
+      "finished": 189,
+      "extra_time": 5,
+      "penalties": 2
+    },
+    "UCL|2025-26": {
+      "rows": 189,
+      "finished": 189,
+      "extra_time": 3,
+      "penalties": 1
+    }
+  },
+  "allMatchRows": 8949,
+  "totalDistinctClubs": 251,
+  "linkedDomesticClubs": 41,
+  "linkedDomesticClubIds": [
+    "de-1-fc-heidenheim-1846",
+    "de-1-fc-koln",
+    "de-1-fc-union-berlin",
+    "de-bayer-04-leverkusen",
+    "de-borussia-dortmund",
+    "de-eintracht-frankfurt",
+    "de-fc-bayern-munchen",
+    "de-rb-leipzig",
+    "de-sc-freiburg",
+    "de-tsg-1899-hoffenheim",
+    "de-vfb-stuttgart",
+    "de-vfl-wolfsburg",
+    "es-athletic-club",
+    "es-club-atletico-de-madrid",
+    "es-fc-barcelona",
+    "es-girona-fc",
+    "es-real-betis-balompie",
+    "es-real-madrid-cf",
+    "es-real-sociedad-de-futbol",
+    "es-sevilla-fc",
+    "es-villarreal-cf",
+    "fr-as-monaco",
+    "fr-fc-nantes",
+    "fr-lille-osc",
+    "fr-ogc-nice",
+    "fr-olympique-lyonnais",
+    "fr-olympique-marseille",
+    "fr-paris-saint-germain",
+    "fr-rc-lens",
+    "fr-stade-brestois-29",
+    "fr-stade-rennais",
+    "fr-toulouse-fc",
+    "it-ac-milan",
+    "it-acf-fiorentina",
+    "it-as-roma",
+    "it-atalanta-bc",
+    "it-bologna-fc-1909",
+    "it-fc-internazionale-milano",
+    "it-juventus-fc",
+    "it-ss-lazio",
+    "it-ssc-napoli"
+  ],
+  "potentialUnmatchedDomesticAliases": [],
+  "missingCompetitionSeasons": [
+    {
+      "season": "2025-26",
+      "competition": "UEL",
+      "reason": "No main-phase el.txt at pinned upstream commit"
+    },
+    {
+      "season": "2025-26",
+      "competition": "UECL",
+      "reason": "No main-phase conf.txt at pinned upstream commit"
+    }
+  ],
+  "metricPolicy": "90-minute goals kept separate from AET/penalties. Cancellations never included in model.",
+  "identityPolicy": "Reviewed alias table only. Country tags distinguish clubs; no fuzzy joins.",
+  "dataPolicy": "No current non-commercial feeds or existing prediction model files imported."
+}
