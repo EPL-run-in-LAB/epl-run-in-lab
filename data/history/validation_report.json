@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
   "sourceScope": "CC0 historical leagues + one sourced official match adjudication",
-  "competitions": 4,
-  "seasons": 20,
-  "clubs": 103,
+  "competitions": 5,
+  "seasons": 25,
+  "clubs": 130,
   "totals": {
-    "cc0_json_ft": 6901,
-    "eligible": 7007,
-    "matches": 7008,
+    "cc0_json_ft": 8774,
+    "eligible": 8907,
+    "matches": 8908,
     "cc0_upstream_text": 20,
-    "cc0_json_array": 86,
+    "cc0_json_array": 113,
     "official_decision": 1
   },
   "bySeason": {
@@ -17,6 +17,11 @@
       "cc0_json_ft": 306,
       "eligible": 306,
       "matches": 306
+    },
+    "EN1|2021-22": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
     },
     "ES1|2021-22": {
       "cc0_json_ft": 380,
@@ -38,6 +43,11 @@
       "eligible": 306,
       "matches": 306
     },
+    "EN1|2022-23": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
     "ES1|2022-23": {
       "cc0_json_ft": 380,
       "eligible": 380,
@@ -58,6 +68,11 @@
       "eligible": 306,
       "matches": 306
     },
+    "EN1|2023-24": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
+    },
     "ES1|2023-24": {
       "cc0_json_ft": 380,
       "eligible": 380,
@@ -77,6 +92,11 @@
       "cc0_json_ft": 306,
       "eligible": 306,
       "matches": 306
+    },
+    "EN1|2024-25": {
+      "cc0_json_ft": 380,
+      "eligible": 380,
+      "matches": 380
     },
     "ES1|2024-25": {
       "cc0_json_ft": 370,
@@ -100,6 +120,12 @@
       "eligible": 306,
       "cc0_json_array": 12,
       "matches": 306
+    },
+    "EN1|2025-26": {
+      "cc0_json_ft": 353,
+      "eligible": 380,
+      "cc0_json_array": 27,
+      "matches": 380
     },
     "ES1|2025-26": {
       "cc0_json_ft": 365,
@@ -439,7 +465,7 @@
     }
   ],
   "qualityNotes": [
-    "86 direct score arrays [0,0] are correctly interpreted as actual draws.",
+    "113 direct score arrays [0,0] are correctly interpreted as actual draws.",
     "20 missing JSON results are repaired from same-project CC0 Football.TXT.",
     "Nantes-Toulouse 2026-05-17 was abandoned and awarded 0-0; exclude from 90-minute model training.",
     "Club identity only merges exact normalized country/name; cross-league alias mapping requires review.",
