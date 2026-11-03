@@ -4,7 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from update_match_archive import find_result, match_date
-from enrich_schedule_integrity import audit_dates
+from enrich_schedule_integrity import audit_dates, collect
 
 class ResultIdentityTests(unittest.TestCase):
     def setUp(self):
@@ -44,6 +44,45 @@ class ConflictAuditTests(unittest.TestCase):
         self.assertEqual(r["byStatus"]["SCHEDULED"],1)
         self.assertIsNone(r["issues"][0]["kickoffVerifiedUTC"])
         self.assertFalse(r["issues"][0]["dateVerified"])
+
+
+class ExtendedLeagueTests(unittest.TestCase):
+    @staticmethod
+    def rows(count=18):
+        clubs = [f"Club-{i:02d}" for i in range(count)]
+        lines = ["gw,date,time,home,away"]
+        for i,h in enumerate(clubs):
+            for j,a in enumerate(clubs):
+                if i != j:
+                    lines.append(f"1,2026-12-01,20:00,{h},{a}")
+        return "\\n".join(lines).replace("\\n", "\n") + "\n"
+    def test_complete_league_and_unknown_clubs(self):
+        class Response:
+            def __init__(self,body): self.text=body
+            def raise_for_status(self): pass
+        class Session:
+            def __init__(self, body): self.body=body
+            def get(self,url,timeout=35):
+                if "/results_" in url: return Response("gw,date,time,home,away,ft_home,ft_away\n")
+                return Response(self.body)
+        fixtures, coverage = collect(Session(self.rows()), {"other": {}}, "2026-11-04")
+        self.assertEqual(coverage["NL1"]["count"],306)
+        self.assertEqual(coverage["PT1"]["count"],306)
+        self.assertEqual(len(fixtures),612)
+        self.assertTrue(all(m["kickoffUTC"] is None for m in fixtures))
+        self.assertTrue(all(m["dateAuditStatus"] == "SINGLE_SOURCE_PROVISIONAL" for m in fixtures))
+        self.assertTrue(all(m["homeClubId"] and m["awayClubId"] for m in fixtures))
+    def test_incomplete_leagues_quarantined(self):
+        class Response:
+            def __init__(self,body):self.text=body
+            def raise_for_status(self):pass
+        class Session:
+            def get(self,url,timeout=35):
+                if "/results_" in url:return Response("gw,date,time,home,away,ft_home,ft_away\n")
+                return Response("gw,date,time,home,away\n1,2026-12-01,20:00,A,B\n")
+        fixtures, coverage = collect(Session(), {"other": {}}, "2026-11-04")
+        self.assertEqual(fixtures, [])
+        self.assertEqual(coverage["NL1"]["status"],"INCOMPLETE_QUARANTINED")
 
 if __name__ == "__main__":
     unittest.main()
