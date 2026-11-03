@@ -29,6 +29,35 @@
     brand.replaceWith(link);
   }
 
+  // Keep the same sidebar sections even on older generated report pages.
+  const sidebarNav = document.getElementById('sidebar');
+  if (sidebarNav) {
+    const existing = Array.from(sidebarNav.querySelectorAll('.nav-btn'));
+    const congestionPath = base + (english ? 'en/' : '') + 'congestion.html';
+    const hasCongestion = existing.some(el =>
+      (el.getAttribute('href') || '').includes('/congestion.html') ||
+      (el.textContent || '').includes('일정 혼잡도') ||
+      (el.textContent || '').includes('Fixture Congestion')
+    );
+    if (!hasCongestion) {
+      const link = document.createElement('a');
+      link.className = 'nav-btn';
+      link.href = congestionPath;
+      link.textContent = english ? 'Fixture Congestion' : '일정 혼잡도';
+      const difficulty = existing.find(el =>
+        (el.textContent || '').includes('일정 난이도') ||
+        (el.textContent || '').includes('Fixture Difficulty')
+      );
+      if (difficulty) difficulty.after(link);
+      else {
+        const about = Array.from(sidebarNav.querySelectorAll('.nav-label'))
+          .find(el => (el.textContent || '').trim().toLowerCase() === 'about');
+        if (about) about.before(link);
+        else sidebarNav.append(link);
+      }
+    }
+  }
+
   // Retain the existing notice modal, but keep the header as clean as
   // the congestion page. Moving the original node preserves its listener.
   const notice = actions.querySelector('#noticeBtn');
