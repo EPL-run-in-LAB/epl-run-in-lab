@@ -8,6 +8,10 @@ on:
       - 'tests/test_fixture_congestion.py'
       - 'scripts/build_fixture_congestion.py'
       - 'docs/congestion.html'
+      - 'docs/index.html'
+      - 'scripts/build_i18n.py'
+      - 'tests/test_ko_localization.py'
+      - '.github/workflows/update-and-deploy.yml'
       - '.github/workflows/validate-competition-schedule.yml'
   workflow_dispatch:
 permissions:
@@ -66,6 +70,23 @@ jobs:
           PY
           node --check /tmp/calendar_ko.js
           node --check /tmp/calendar_en.js
+      - name: Validate production deployment routes and triggers
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          en=Path('docs/en/congestion.html').read_text(encoding='utf-8')
+          ko=Path('docs/congestion.html').read_text(encoding='utf-8')
+          pages=Path('.github/workflows/update-and-deploy.yml').read_text(encoding='utf-8')
+          cup=Path('.github/workflows/update-competition-data.yml').read_text(encoding='utf-8')
+          assert "fetch('../data/fixture_congestion.json'" in en, 'English URL must refer to shared JSON'
+          assert "fetch('./data/fixture_congestion.json'" in ko, 'Korean URL must refer to shared JSON'
+          assert "python scripts/build_fixture_congestion.py" in pages, 'Missing build stage in deployment'
+          assert "workflow_run:" in pages and 'Collect cup schedules and results (isolated)' in pages
+          assert "[skip ci]" in cup, 'Cup push should not independently redeploy'
+          assert 'id="languageOptions"' in ko and 'id="languageOptions"' in en
+          assert 'data-lang="ko"' in en and 'data-lang="en"' in en
+          print('Deployment and both locale calendar routes verified')
+          PY
       - name: Inspect output counts and required identities
         run: |
           python - <<'PY'
