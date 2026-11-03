@@ -71,6 +71,39 @@ jobs:
           assert '/accuracy.html' in sitemap and '/en/accuracy.html' in sitemap
           print('Fixture congestion and forecast-accuracy dashboard routes verified.')
           PY
+      - name: Validate accuracy dashboard JavaScript and bilingual HTML
+        run: |
+          node --check docs/assets/site-shell.js
+          node --check docs/assets/accuracy-dashboard.js
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Ids(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = set()
+              def handle_starttag(self, tag, attrs):
+                  attr = dict(attrs)
+                  if 'id' in attr:
+                      if attr['id'] in self.ids: raise AssertionError('Duplicate element id: '+attr['id'])
+                      self.ids.add(attr['id'])
+          required = {'menuBtn','sidebar','overlay','accCount','accAccuracy','accBrier',
+                      'accLoss','accBrier2','accLoss2','accCountNote','accDates','accLimit',
+                      'accBaseBrier','accBaseLoss','accBaseHome','accStatus','accTeamRows',
+                      'accCalibrationRows','accTeamFilter','accHitFilter','accFixtureRows',
+                      'accFixtureCount','accNoFixtures','accShowMore','accFixtureSection'}
+          for lang,path,src in [('ko','docs/accuracy.html','./assets/accuracy-dashboard.js'),
+                                ('en','docs/en/accuracy.html','../assets/accuracy-dashboard.js')]:
+              text = Path(path).read_text(encoding='utf-8')
+              parser = Ids()
+              parser.feed(text)
+              assert not (required - parser.ids), (lang,sorted(required - parser.ids))
+              assert '<html lang="'+lang+'">' in text
+              assert 'src="'+src+'"' in text
+              assert 'href="./accuracy.html"' in text
+              assert 'aria-current="page"' in text
+          print('Bilingual accuracy dashboard markup and JavaScript syntax verified.')
+          PY
       - name: Persist immutable pre-match snapshots
         run: |
           if [ -z "$(git status --porcelain -- docs/data/match_archive.json)" ]; then
