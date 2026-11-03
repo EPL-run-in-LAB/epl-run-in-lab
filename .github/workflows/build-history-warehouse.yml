@@ -13,6 +13,8 @@ on:
       - "data/history/club_alias_reviewed.json"
       - "scripts/build_uefa_history.py"
       - "tests/test_uefa_history.py"
+      - "scripts/build_team_competition_analysis.py"
+      - "tests/test_team_competition_analysis.py"
 
 permissions:
   contents: write
@@ -37,10 +39,12 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_history_warehouse.py' -v
           python -m unittest discover -s tests -p 'test_uefa_history.py' -v
+          python -m unittest discover -s tests -p 'test_team_competition_analysis.py' -v
       - name: Build independent warehouse
         run: |
           python scripts/build_history_warehouse.py
           python scripts/build_uefa_history.py
+          python scripts/build_team_competition_analysis.py
       - name: Validate complete five-season coverage
         run: |
           python - <<'PY'
@@ -66,13 +70,19 @@ jobs:
           with sqlite3.connect("data/history/history.sqlite") as db:
               assert db.execute("SELECT COUNT(*) FROM uefa_matches").fetchone()[0] == 1941
               assert db.execute("SELECT COUNT(*) FROM v_all_matches").fetchone()[0] == 10849
-          print("Verified 8,908 league and 1,941 UEFA fixtures with shared club IDs.")
+          comparison = json.loads(Path("data/history/domestic_uefa_comparison.json").read_text(encoding="utf-8"))
+          assert comparison["coverage"]["domesticFixtures"] == 8908
+          assert comparison["coverage"]["uefaFixtures"] == 1941
+          assert comparison["coverage"]["pairedClubs"] > 35
+          assert comparison["coverage"]["pairedClubSeasons"] >= comparison["coverage"]["pairedClubs"]
+          assert Path("data/history/DOMESTIC_VS_UEFA_ANALYSIS_KO.md").is_file()
+          print("Verified 8,908 league and 1,941 UEFA fixtures plus paired analysis.")
           PY
       - name: Persist validated database and quality report
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/history/history.sqlite data/history/validation_report.json data/history/uefa_validation_report.json
+          git add data/history/history.sqlite data/history/validation_report.json data/history/uefa_validation_report.json data/history/domestic_uefa_comparison.json data/history/DOMESTIC_VS_UEFA_ANALYSIS_KO.md
           if git diff --cached --quiet; then
             echo "No history warehouse changes."
           else
