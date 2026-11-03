@@ -33,11 +33,49 @@ def shell(title, desc, path, ko_path, body, active, schema_name=None):
     if path != "/en/": breadcrumb_items.append({"@type":"ListItem","position":2,"name":page_name,"item":SITE+path})
     structured={"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":SITE+"/#website","url":SITE+"/","name":"EPL Run-in Lab","description":"Data-driven Premier League predictions, fixture difficulty, expected points and power rankings.","inLanguage":["ko","en"]},{"@type":"WebPage","@id":SITE+path+"#webpage","url":SITE+path,"name":page_name,"description":desc,"isPartOf":{"@id":SITE+"/#website"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":breadcrumb_items}]}
     structured_json=json.dumps(structured,ensure_ascii=False).replace("</","<\\/")
-    nav=[('Home','/en/'),('Match Predictions','/en/predictions/'),('Fixture Difficulty','/en/fixture-difficulty/'),('Power Ranking','/en/power-ranking/'),('EPL Standings','/en/standings/'),('Team Analysis','/en/teams/')]
+    nav=[('Home','/en/'),('Match Predictions','/en/predictions/'),('Fixture Difficulty','/en/fixture-difficulty/'),('Fixture Congestion','/en/congestion.html'),('Power Ranking','/en/power-ranking/'),('EPL Standings','/en/standings/'),('Team Analysis','/en/teams/')]
     links=''.join(f'<a class="nav-btn {"active" if p==active else ""}" href="{SITE}{p}">{lab}</a>' for lab,p in nav)
     about=f'<div class="nav-label">About</div><a class="nav-btn {"active" if active=="/en/model/" else ""}" href="{SITE}/en/model/">Model</a>'
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}{path}"><link rel="alternate" hreflang="ko" href="{SITE}{ko_path}"><link rel="alternate" hreflang="en" href="{SITE}{path}"><link rel="alternate" hreflang="x-default" href="{SITE}{ko_path}"><meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{SITE}{path}"><meta property="og:locale" content="en_GB"><meta name="twitter:card" content="summary"><script type="application/ld+json">{structured_json}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-2MHM6WELBT"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments)}}gtag('js',new Date());gtag('config','G-2MHM6WELBT');</script>
 <style>:root{{--bg:#f5f7fb;--panel:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--soft:#eef2f7;--accent:#111827;--topbar:rgba(255,255,255,.92);--sidebar:#fff}}body.dark{{--bg:#0b1220;--panel:#111827;--text:#f3f4f6;--muted:#9ca3af;--line:#263244;--soft:#182235;--accent:#f9fafb;--topbar:rgba(17,24,39,.93);--sidebar:#111827}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.55}}.topbar{{position:sticky;top:0;z-index:40;height:64px;background:var(--topbar);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:0 18px}}.menu-btn{{border:0;background:transparent;color:var(--text);font-size:24px;width:38px;height:38px;border-radius:10px;cursor:pointer}}.menu-btn:hover{{background:var(--soft)}}.brand{{font-weight:900;letter-spacing:-.035em;font-size:20px;text-decoration:none;color:var(--text)}}.brand span{{color:var(--muted)}}.top-actions{{margin-left:auto;display:flex;align-items:center;gap:6px}}.plain{{border:0;background:transparent;color:var(--muted);font-size:13px;font-weight:800;height:32px;padding:0 9px;border-radius:9px;cursor:pointer}}.lang{{position:relative}}.menu{{display:none;position:absolute;right:0;top:38px;min-width:140px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 14px 35px rgba(0,0,0,.14);z-index:60}}.menu.show{{display:block}}.menu a{{display:block;text-decoration:none;color:var(--text);padding:9px 10px;border-radius:8px}}.switch{{width:46px;height:26px;border:0;border-radius:999px;background:#111827;padding:3px;display:inline-flex;align-items:center;cursor:pointer}}.knob{{width:20px;height:20px;border-radius:50%;background:#fff;display:block;transition:.2s}}body.dark .switch{{background:#e5e7eb}}body.dark .knob{{transform:translateX(20px);background:#111827}}.sidebar{{position:fixed;left:0;top:64px;bottom:0;width:250px;background:var(--sidebar);border-right:1px solid var(--line);transform:translateX(-100%);transition:.22s;z-index:35;padding:16px}}.sidebar.open{{transform:translateX(0)}}.overlay{{display:none;position:fixed;inset:64px 0 0;background:rgba(0,0,0,.42);z-index:30}}.overlay.show{{display:block}}.nav-label{{font-size:11px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin:10px 10px 8px}}.nav-btn{{display:block;width:100%;text-decoration:none;color:var(--text);text-align:left;padding:11px 13px;border-radius:11px;font-weight:750;margin-bottom:4px}}.nav-btn:hover{{background:var(--soft)}}.nav-btn.active{{background:var(--accent);color:var(--bg)}}.main{{min-height:calc(100vh - 64px);transition:.22s}}.container{{max-width:1180px;margin:auto;padding:34px 22px 70px}}h1{{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:0 0 10px}}h2{{margin-top:34px}}.lead{{color:var(--muted);max-width:800px}}.grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}}.card{{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}}.label{{font-size:13px;color:var(--muted)}}.big{{font-size:27px;font-weight:900;margin-top:4px}}table{{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}}th,td{{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left}}th{{font-size:12px;color:var(--muted)}}.muted{{color:var(--muted)}}.share,.app-link{{display:inline-block;border:1px solid var(--line);background:var(--panel);color:var(--text);padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:700;text-decoration:none}}.app-link{{margin-left:6px}}.teams{{display:flex;flex-wrap:wrap;gap:8px}}.teams a{{text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);padding:9px 12px;border-radius:10px}}footer{{max-width:1100px;margin:auto;padding:0 20px 40px;color:var(--muted);font-size:12px}}.modal-bg{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:80;align-items:center;justify-content:center;padding:20px}}.modal-bg.show{{display:flex}}.modal{{max-width:560px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}}.close{{float:right;border:0;background:transparent;color:var(--text);font-size:22px;cursor:pointer}}@media(min-width:1100px){{.sidebar.open ~ .main{{margin-left:250px}}}}@media(max-width:760px){{.grid{{grid-template-columns:1fr}}th,td{{padding:10px 7px;font-size:13px}}.notice{{display:none}}}}</style></head><body><header class="topbar"><button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button><a class="brand" href="{SITE}/en/">EPL Run-in <span>Lab</span></a><div class="top-actions"><div class="lang"><button class="plain" id="langBtn">Language ▾</button><div class="menu" id="langMenu"><a href="{SITE}{ko_path}">한국어</a><a href="{SITE}{path}">English</a></div></div><button class="plain notice" id="noticeBtn">Notice</button><button class="switch" id="theme" aria-label="Dark mode"><span class="knob"></span></button></div></header><aside class="sidebar" id="sidebar"><div class="nav-label">Menu</div>{links}{about}</aside><div class="overlay" id="overlay"></div><main class="main"><div class="container">{body}</div><footer>Probabilities are model estimates and do not guarantee match results. EPL Run-in Lab is not an official service of the Premier League or any club.</footer></main><div class="modal-bg" id="noticeModal"><div class="modal"><button class="close" id="noticeClose">×</button><h3>Important notice</h3><p>Probabilities and expected points are statistical estimates. Injuries, line-ups and tactical changes may not be fully reflected.</p></div></div><script>const sb=document.getElementById('sidebar'),ov=document.getElementById('overlay');function setSidebar(v){{sb.classList.toggle('open',v);ov.classList.toggle('show',v&&innerWidth<1100)}}document.getElementById('menuBtn').onclick=()=>setSidebar(!sb.classList.contains('open'));ov.onclick=()=>setSidebar(false);if(innerWidth>=1100)setSidebar(true);const b=document.body,t=document.getElementById('theme');if(localStorage.getItem('runin-theme')==='dark')b.classList.add('dark');t.onclick=()=>{{b.classList.toggle('dark');localStorage.setItem('runin-theme',b.classList.contains('dark')?'dark':'light')}};const lb=document.getElementById('langBtn'),lm=document.getElementById('langMenu');lb.onclick=e=>{{e.stopPropagation();lm.classList.toggle('show')}};document.addEventListener('click',()=>lm.classList.remove('show'));lm.onclick=e=>e.stopPropagation();const nm=document.getElementById('noticeModal');document.getElementById('noticeBtn').onclick=()=>nm.classList.add('show');document.getElementById('noticeClose').onclick=()=>nm.classList.remove('show');nm.onclick=e=>{{if(e.target===nm)nm.classList.remove('show')}};async function sharePage(text){{const d={{title:document.title,text,url:location.href}};if(navigator.share){{try{{await navigator.share(d);return}}catch(e){{}}}}await navigator.clipboard.writeText(location.href)}}</script></body></html>'''
+
+# Display-label localization only: never change the canonical English club IDs,
+# fixture names, URLs, CSS, or embedded JavaScript.
+KO_CLUB_DISPLAY = {
+    "Arsenal": "아스널", "Aston Villa": "애스턴 빌라",
+    "Bournemouth": "본머스", "Brentford": "브렌트퍼드",
+    "Brighton": "브라이턴", "Chelsea": "첼시",
+    "Coventry City": "코번트리", "Coventry": "코번트리",
+    "Crystal Palace": "크리스털 팰리스", "Everton": "에버튼",
+    "Fulham": "풀럼", "Hull City": "헐 시티", "Hull": "헐 시티",
+    "Ipswich Town": "입스위치", "Ipswich": "입스위치",
+    "Leeds United": "리즈", "Leeds": "리즈",
+    "Liverpool": "리버풀", "Manchester City": "맨시티",
+    "Man City": "맨시티", "Manchester United": "맨유",
+    "Man United": "맨유", "Newcastle United": "뉴캐슬",
+    "Newcastle": "뉴캐슬", "Nottingham Forest": "노팅엄",
+    "Nott'm Forest": "노팅엄", "Nottingham": "노팅엄",
+    "Sunderland": "선덜랜드", "Tottenham Hotspur": "토트넘",
+    "Tottenham": "토트넘", "West Ham United": "웨스트햄",
+    "West Ham": "웨스트햄",
+}
+
+def localize_korean_visible_team_names(source):
+    """Translate HTML text nodes only; preserve attributes and JS data keys."""
+    import re
+    # Ignore complete code/style blocks and any HTML tags while replacing
+    # words in visible text, e.g. <td>Everton</td>.
+    tokens = re.split(
+        r'(<script\b[^>]*>[\s\S]*?</script>|<style\b[^>]*>[\s\S]*?</style>|<[^>]+>)',
+        source, flags=re.I
+    )
+    names = sorted(KO_CLUB_DISPLAY, key=len, reverse=True)
+    pat = re.compile(r'(?<![A-Za-z])(?:' +
+                     '|'.join(re.escape(name) for name in names) +
+                     r')(?![A-Za-z])')
+    for i in range(0, len(tokens), 2):
+        tokens[i] = pat.sub(lambda m: KO_CLUB_DISPLAY[m.group(0)], tokens[i])
+    return ''.join(tokens)
 
 def patch_korean_static_pages():
     for p in DOCS.rglob('index.html'):
@@ -62,6 +100,11 @@ def patch_korean_static_pages():
             )
             s = s.replace('<button class="switch" id="theme"', control + '<button class="switch" id="theme"')
             s = s.replace("const b=document.body,t=document.getElementById('theme');", "const lb=document.getElementById('langBtn'),lm=document.getElementById('langMenu');if(lb){lb.onclick=e=>{e.stopPropagation();lm.style.display=lm.style.display==='block'?'none':'block'};document.addEventListener('click',()=>lm.style.display='none');lm.onclick=e=>e.stopPropagation();}const b=document.body,t=document.getElementById('theme');")
+        # Add the experimental congestion tool to the existing static-page navigation.
+        if 'id="sidebar"' in s and 'href="'+SITE+'/congestion.html"' not in s:
+            insert = f'<a class="nav-btn" href="{SITE}/congestion.html">일정 혼잡도</a>'
+            s = s.replace('<div class="nav-label">About</div>',insert+'<div class="nav-label">About</div>',1)
+        s = localize_korean_visible_team_names(s)
         p.write_text(s,encoding='utf-8')
 
 def build():
@@ -131,8 +174,8 @@ def build():
 
     # Keep the sitemap deliberately simple. hreflang remains in each page's HTML <head>;
     # the sitemap only needs canonical URLs + lastmod for reliable Search Console parsing.
-    ko=['/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
-    en=['/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
+    ko=['/congestion.html','/','/predictions/','/fixture-difficulty/','/power-ranking/','/standings/','/teams/','/model/']+[f'/teams/{slug(t)}/' for t in teams]
+    en=['/en/congestion.html','/en/','/en/predictions/','/en/fixture-difficulty/','/en/power-ranking/','/en/standings/','/en/teams/','/en/model/']+[f'/en/teams/{slug(t)}/' for t in teams]
     # V13 match reports are generated before i18n. Include finalized reports in both sitemaps.
     match_paths=[]
     matches_root=DOCS/'matches'
@@ -194,11 +237,12 @@ def build_interactive_english_home():
         ('<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/">','<meta property="og:url" content="https://epl-run-in-lab.github.io/epl-run-in-lab/en/">'),
         ('aria-label="메뉴 열기"','aria-label="Open menu"'),
         ('aria-label="언어 선택"','aria-label="Choose language"'),
+        ('>언어 ▾</button>', '>Language ▾</button>'),
         ('<a href="./" data-lang="ko"','<a href="../" data-lang="ko"'),
         ('<a href="./en/" data-lang="en"','<a href="./" data-lang="en"'),
         ('>주의사항</button>','>Notice</button>'),
         ('aria-label="다크모드로 전환" title="다크모드로 전환"','aria-label="Switch to dark mode" title="Switch to dark mode"'),
-        ('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),('팀 분석','Team Analysis'),('모델 소개','Model'),
+        ('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),('일정 혼잡도','Fixture Congestion'),('컵대회 포함 일정 혼잡도 확인 →','Explore Fixture Congestion →'),('컵대회 포함 Fixture Congestion 확인 →','Explore Fixture Congestion →'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),('팀 분석','Team Analysis'),('모델 소개','Model'),
         ('EPL의 현재와 앞으로를 한눈에','The EPL: Now and What’s Ahead'),
         ('승·무·패 확률, 기대 승점, 일정 난이도와 그 이유','Win, draw and loss probabilities, expected points, fixture difficulty and why'),
         ('데이터 불러오는 중…','Loading data…'),
@@ -249,6 +293,16 @@ def build_interactive_english_home():
     ]
     for old,new in replacements:
         s = s.replace(old,new)
+
+    # The Korean homepage uses localized labels, but English must keep
+    # original club names and contain no Korean literals in the output.
+    if 'const TEAM_KO=' in s:
+        before = s.index('const TEAM_KO=')
+        after = s.index('function teamSlug(n)',before)
+        s = s[:before] + '''function displayTeam(n){return n==="Nott'm Forest"||n==='Nottingham Forest'?'Nottingham':n}
+''' + s[after:]
+    s = s.replace("displayTeam(a).localeCompare(displayTeam(b),'ko')",
+                  "displayTeam(a).localeCompare(displayTeam(b),'en')")
 
     # Final EN-only cleanup after all generic replacements.
     # '향후 일정' -> 'Upcoming Fixtures' leaves the Korean particle '을',
@@ -307,7 +361,7 @@ def build_interactive_english_home():
     # Fail the build if unintended Korean UI text survives in /en/.
     # The language chooser intentionally contains the label '한국어'.
     import re
-    audit_text = s.replace('한국어', '')
+    audit_text = s.replace('한국어', '').replace('영어 · English', '')
     leftovers = sorted(set(re.findall(r'[가-힣][가-힣A-Za-z0-9·/ .,%+()_-]*', audit_text)))
     if leftovers:
         raise RuntimeError('Untranslated Korean remains in /en/: ' + ' | '.join(leftovers[:20]))
@@ -323,6 +377,118 @@ def build_interactive_english_home():
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(s, encoding='utf-8')
 
+def build_english_congestion():
+    """Keep the same dashboard structure, interactions and data in both languages."""
+    src=(DOCS/'congestion.html').read_text(encoding='utf-8')
+    s=src.replace('<html lang="ko">','<html lang="en">')
+    s=s.replace('<title>일정 혼잡도 | EPL Run-in Lab</title>', '<title>Fixture Congestion | EPL Run-in Lab</title>')
+    # Turn the Korean language-selector links into English-tree routes.
+    s=s.replace('href="./congestion.html" lang="ko" data-lang="ko" aria-current="page"',
+                'href="../congestion.html" lang="ko" data-lang="ko"')
+    s=s.replace('href="./en/congestion.html" lang="en" data-lang="en"',
+                'href="./congestion.html" lang="en" data-lang="en" aria-current="page"')
+    s=s.replace('>언어 ▾</button>', '>Language ▾</button>')
+    s=s.replace('href="./congestion.html"','href="./congestion.html"')
+    # /en/congestion.html is one path level deeper than /congestion.html.
+    # Keep the standalone bilingual page pointed at the shared JSON file.
+    s=s.replace("fetch('./data/fixture_congestion.json'",
+                "fetch('../data/fixture_congestion.json'")
+    s=s.replace('href="./#','href="../?page=') if False else s
+    # English page is inside /en/; route local navigation to the English dashboard.
+    s=s.replace('href="./#','href="./?page=').replace('href="./"','href="./"')
+    s=s.replace('href="./congestion.html"','href="./congestion.html"')
+    s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
+    s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
+    translations=[
+      ('팀별 월간 일정 혼잡도','Monthly Fixture Congestion'),
+      ('월간 경기 달력','Monthly Fixture Calendar'),
+      ('달력에서 경기 날짜를 선택하면 상대·휴식일·대회 정보를 볼 수 있습니다.','Select a date with a match to see opponents, rest days and competition information.'),
+      ('리그와 컵대회 일정, 경기 사이 휴식일을 달력에서 확인하세요.','See league and cup fixtures and rest days directly on a calendar.'),
+      ('주간 경기 수는 월요일~일요일 기준입니다. 필터는 표시만 바꾸며 휴식일은 전체 대회를 기준으로 계산합니다.','Weekly totals run from Monday to Sunday. Filters affect display only; rest includes all competitions.'),
+      ('경기장 간 이동 경로와 거리 시각화는 검증된 경기장 정보가 확보된 후 추가할 수 있도록 확장할 예정입니다.','Stadium travel routes and distances can be added once verified venue information is available.'),
+      ('컵대회 일정 · 경기별 독립 검증 미완료','Cup fixture · not independently verified'),
+      ('경기 없는 날','Rest days'),
+      ('시각 미검증','Kickoff unverified'),
+      ('킥오프 간격','Kickoff gap'),
+      ('휴식 0~2일','0–2 rest days'),
+      ('날짜를 누르면 상세 일정 표시','Select a match date for details'),
+      ('이번 달','This month'),
+      ('선택한 달의 일정 요약','Summary for selected month'),
+      ('이번 달 경기 수','Matches this month'),
+      ('선택한 달에 해당 대회 경기가 없습니다.','No matches in this month for this competition.'),
+      ('원정 · ','Away · '),('홈 · ','Home · '),
+      ('직전 7일','Previous 7 days'),('직전 14일','Previous 14 days'),
+      ('월간 일정','Monthly fixtures'),('1주차','Week 1'),
+      ('휴식 ','Rest '),('경기 날짜를 선택','Select a match date'),
+      ('독립 검증 미완료','Not independently verified'),
+      ('전체 대회','All competitions'),
+      ('일정 정보는 검증 상태가 다른 자료를 통합한 실험적 분석입니다. 컵대회 원본 결과는 경기별 독립 교차검증이 완료되지 않았으며, 이 수치는 승률 예측 모델에 사용되지 않습니다.','This experimental analysis combines sources with different verification levels. Cup fixtures have not been independently matched to official match records, and these figures are not used in win-probability predictions.'),
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.','Rest days exclude match days. Summary cards reflect the selected fixtures, while previous-match intervals and rolling match counts still include competitions hidden by the filter.'),
+      ('7일·14일 경기 수는 해당 경기 날짜를 포함하여 역방향으로 계산합니다. 필터로 숨겨진 대회도 휴식일과 누적 수 계산에 포함되어 있으며, 선택한 조건은 화면에 보이는 행에만 적용됩니다.','Rolling 7- and 14-day counts include the fixture date and look backwards. Hidden competitions still contribute to rest days and rolling counts; filters only control the displayed fixtures.'),
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.','Rest days exclude match days. Selected fixtures are used for overview statistics; previous-match rest and rolling counts include competitions hidden by the filters.'),
+      ('시간 단위 간격은 인접한 두 경기에 신뢰 가능한 UTC 킥오프 시각과 검증 출처가 함께 있을 때만 표시할 예정입니다. 같은 날 중복 경기가 나타나면 원본 자료 충돌 가능성이 있으므로 주의 표시합니다. 경기 이동 거리와 선수별 출전 시간은 반영되지 않았습니다.','Kickoff gaps in hours are shown only when both adjacent matches have independently verified UTC kickoff times with provenance. Multiple fixtures on the same date are flagged as possible source conflicts. Travel distances and player minutes are not included.'),
+      ('주의: EPL 일정 스냅샷이 ','Warning: EPL fixture snapshot is '),
+      ('갱신 날짜 불명','of unknown age'),
+      ('최신 일정과 다를 수 있습니다.','It may differ from the latest fixtures.'),
+      ('일 경과',' days old'),
+      ('컵대회 수집 시각: ','Cup source updated: '),
+      ('EPL 스냅샷: ','EPL snapshot: '),
+      ('경기일별 7일 누적 경기 수 차트','Chart of rolling 7-day match count'),
+      ('휴식일 / 시각','Rest / verified kickoff gap'),('시간(검증)','hrs (verified)'),('연속','consecutive'),
+      ('날짜 중복 주의','possible date conflict'),
+      ('최근 7일 ','Last 7d '),('기간 ','period '),('미상','unknown'),('약 ','about '),('상태입니다. ','old. '),
+      ('해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.','more matches were played in the last seven days including this date.'),
+
+      ('팀별 일정 혼잡도','Team Fixture Congestion'),
+      ('리그와 컵대회를 함께 보고, 경기 사이 휴식 기간을 비교하세요.','Compare rest between league and cup fixtures.'),
+      ('사이트 메뉴','Site navigation'),('메뉴 열기','Open menu'),
+      ('홈/원정','Home/Away'),('홈','Home'),('경기 예측','Match Predictions'),('일정 난이도','Fixture Difficulty'),
+      ('일정 혼잡도','Fixture Congestion'),('파워 랭킹','Power Ranking'),('EPL 순위','EPL Standings'),
+      ('팀 분석','Team Analysis'),('모델 소개','Model'),('다크모드 전환','Toggle dark mode'),
+      ('라이트모드','Light mode'),('다크모드','Dark mode'),
+      ('팀 선택','Select team'),('팀<select','Team<select'),('표시 경기','Fixtures'),
+      ('예정 경기','Upcoming'),('전체 기록','All fixtures'),('모든 대회','All competitions'),('컵대회','Cup competitions'),
+      ('선택한 기간의 일정 요약','Summary for selection'),('선택한 경기 수','Fixtures shown'),
+      ('최단 경기 없는 날','Shortest rest'),('7일 최다 경기','Peak matches in 7 days'),
+      ('짧은 경기 간격 (3일 이내)','Short intervals (3 days or less)'),
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 현재 선택 조건의 경기를 대상으로 표시합니다.','Rest days exclude the two match days. Summary metrics are based on the selected view.'),
+      ('경기일별 7일 누적 경기 수','Rolling 7-day match count'),
+      ('막대가 높을수록 해당 날짜를 포함한 최근 7일 동안 경기가 많았다는 뜻입니다.','Taller bars show more matches within the previous seven days including match day.'),
+      ('3일 이내 경기 간격','Intervals within 3 days'),('상세 일정','Fixture details'),
+      ('날짜','Date'),('대회','Competition'),('상대','Opponent'),('휴식일','Rest'),
+      ('7일·14일','7d · 14d'),('자료 상태','Source status'),
+      ('지표 정의와 데이터 한계','Metric definitions and data limitations'),
+      ('시각 미검증','Kickoff unverified'),('EPL 예측 스냅샷','EPL snapshot'),('컵 일정 미검증','Unverified cup fixture'),
+      ('선택한 조건에 해당하는 경기가 없습니다.','No fixtures match the selected filters.'),
+      ('데이터 로드 실패: ','Unable to load data: '),('집계 생성: ','Generated: '),
+      ('원정','Away'),('경기 없는 날','Rest days'),('단위','unit'),('선택한','Selected'),('전체 기록','All fixtures'),
+    ]
+    # English page must not display Korean club names.
+    if 'const KOREAN_TEAMS=' in s:
+        before=s.index('const KOREAN_TEAMS=')
+        after=s.index('let calendarYear',before)
+        s=s[:before]+'''function koTeam(name){return name==="Nott'm Forest"?"Nottingham":name}
+'''+s[after:]
+    # Translate longer copy before shorter recurring terms.
+    translations.sort(key=lambda x:len(x[0]),reverse=True)
+    for ko,en in translations:
+        s=s.replace(ko,en)
+    s=s.replace("m.venue==='H'?'Home':'원정'","m.venue==='H'?'Home':'Away'")
+    s=s.replace("ms.length+'경기'", "ms.length+' matches'")
+    s=s.replace("+'경기'", "+' matches'")
+    s=s.replace("+'일'", "+' days'")
+    s=s.replace("+'회'", "+' times'")
+    s=s.replace("'경기, 7일 최대 '", "' matches, peak in 7d '")
+    s=s.replace("'경기. 상세 값은 아래 표 참조.'", "' matches. Values are in the table below.'")
+    s=s.replace("+'경기, 7일 최대 '", "+' matches; peak 7d '")
+    s=s.replace("+'경기. 상세 값은 아래 표 참조.'", "+' matches. See table below.'")
+    s=s.replace("+'경기'", "+' matches'")
+    s=s.replace("'경기'", "'matches'")
+    s=s.replace('href="../?page=prediction"','href="./?page=prediction"')
+    (DOCS/'en').mkdir(exist_ok=True)
+    (DOCS/'en'/'congestion.html').write_text(s,encoding='utf-8')
+
 if __name__=='__main__':
     build()
     build_interactive_english_home()
+    build_english_congestion()

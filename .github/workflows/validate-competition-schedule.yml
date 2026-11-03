@@ -5,6 +5,13 @@ on:
       - 'scripts/team_identity.py'
       - 'scripts/update_competition_schedule.py'
       - 'tests/test_competition_schedule.py'
+      - 'tests/test_fixture_congestion.py'
+      - 'scripts/build_fixture_congestion.py'
+      - 'docs/congestion.html'
+      - 'docs/index.html'
+      - 'scripts/build_i18n.py'
+      - 'tests/test_ko_localization.py'
+      - '.github/workflows/update-and-deploy.yml'
       - '.github/workflows/validate-competition-schedule.yml'
   workflow_dispatch:
 permissions:
@@ -20,8 +27,66 @@ jobs:
       - run: python -m pip install requests
       - name: Offline unit tests
         run: python -m unittest discover -s tests -p 'test_competition_schedule.py' -v
+      - name: Validate Korean team-name localization
+        run: python -m unittest discover -s tests -p 'test_ko_localization.py' -v
+      - name: Offline congestion unit tests
+        run: python -m unittest discover -s tests -p 'test_fixture_congestion.py' -v
       - name: Fetch live CSVs and validate schema
         run: python scripts/update_competition_schedule.py
+      - name: Generate congestion data
+        run: python scripts/build_fixture_congestion.py
+      - name: Generate bilingual pages and sitemap
+        run: python scripts/build_i18n.py
+      - name: Verify navigation and English page
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          ko=Path('docs/congestion.html').read_text()
+          en=Path('docs/en/congestion.html').read_text()
+          home=Path('docs/index.html').read_text()
+          enhome=Path('docs/en/index.html').read_text()
+          sitemap=Path('docs/sitemap.xml').read_text()
+          assert 'lang="en"' in en and 'Fixture Congestion' in en
+          assert 'congestion.html' in home and 'congestion.html' in enhome
+          assert '/congestion.html' in sitemap and '/en/congestion.html' in sitemap
+          assert 'runin-theme' in ko and 'runin-theme' in en
+          print('Bilingual congestion navigation, theme and sitemap verified')
+          PY
+      - name: Validate calendar scripts and localized names
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          for name in ['docs/congestion.html','docs/en/congestion.html']:
+              src=Path(name).read_text(encoding='utf-8')
+              scripts=re.findall(r'<script(?: [^>]*)?>([\s\S]*?)</script>',src)
+              assert scripts, f'No JS in {name}'
+              Path('/tmp/calendar_'+('en' if '/en/' in name else 'ko')+'.js').write_text(scripts[-1],encoding='utf-8')
+          ko=Path('docs/index.html').read_text(encoding='utf-8')
+          en=Path('docs/en/index.html').read_text(encoding='utf-8')
+          assert 'TEAM_KO' in ko and 'TEAM_KO' not in en, 'English homepage must not contain Korean club display map'
+          assert 'calendarGrid' in Path('docs/congestion.html').read_text()
+          print('Calendar scripts extracted; bilingual team labels verified')
+          PY
+          node --check /tmp/calendar_ko.js
+          node --check /tmp/calendar_en.js
+      - name: Validate production deployment routes and triggers
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          en=Path('docs/en/congestion.html').read_text(encoding='utf-8')
+          ko=Path('docs/congestion.html').read_text(encoding='utf-8')
+          pages=Path('.github/workflows/update-and-deploy.yml').read_text(encoding='utf-8')
+          cup=Path('.github/workflows/update-competition-data.yml').read_text(encoding='utf-8')
+          assert "fetch('../data/fixture_congestion.json'" in en, 'English URL must refer to shared JSON'
+          assert "fetch('./data/fixture_congestion.json'" in ko, 'Korean URL must refer to shared JSON'
+          assert "python scripts/build_fixture_congestion.py" in pages, 'Missing build stage in deployment'
+          assert "workflow_run:" in pages and 'Collect cup schedules and results (isolated)' in pages
+          assert "[skip ci]" in cup, 'Cup push should not independently redeploy'
+          assert 'id="languageOptions"' in ko and 'id="languageOptions"' in en
+          assert 'data-lang="ko"' in en and 'data-lang="en"' in en
+          print('Deployment and both locale calendar routes verified')
+          PY
       - name: Inspect output counts and required identities
         run: |
           python - <<'PY'
@@ -29,6 +94,9 @@ jobs:
           from pathlib import Path
           d=json.loads(Path('docs/data/competition_schedule.json').read_text())
           h=json.loads(Path('docs/data/competition_results_archive.json').read_text())
+          congestion=json.loads(Path('docs/data/fixture_congestion.json').read_text())
+          assert len(congestion['teams']) == 20
+          assert all(m['kickoffGapHours'] is None for team in congestion['teams'].values() for m in team['matches'])
           assert d['matches'], 'No EPL-team cup matches found'
           assert len(d['coverage']) == 10
           assert all(m['homeClubId'] or m['awayClubId'] for m in d['matches'])
