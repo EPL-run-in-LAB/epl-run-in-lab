@@ -1,7 +1,7 @@
 {
   "version": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-02T15:14:44.810507+00:00",
+  "updatedAt": "2026-11-03T03:01:50.769478+00:00",
   "source": "https://github.com/oladeeayo/open-matchday",
   "notice": "Unverified source kickoff times are not used for hour-level rest calculations.",
   "coverage": {
@@ -46,29 +46,38 @@
       "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ENG_CUP_efl-cup/fixtures_2627.csv"
     }
   },
-  "matches": [
-    {
-      "id": "EFL|2026-08-08|West Ham United|Portsmouth",
-      "competition": "EFL",
-      "date": "2026-08-08",
-      "timeSource": "15:00",
-      "timeVerifiedUTC": null,
-      "home": "West Ham",
-      "away": "Portsmouth",
-      "homeClubId": "west-ham",
-      "awayClubId": null,
-      "homeRaw": "West Ham United",
-      "awayRaw": "Portsmouth",
-      "homeEpl": true,
-      "awayEpl": false,
-      "status": "FINISHED",
-      "source": "open-matchday",
-      "score": {
-        "home": 3,
-        "away": 1
-      },
-      "upstreamSource": "espn"
+  "membershipAudit": {
+    "source": "open-matchday EPL",
+    "counts": {
+      "results": 89,
+      "fixtures": 291
     },
+    "officialMembershipReference": "https://www.premierleague.com/en/news/4365156/new-to-the-premier-league-heres-all-you-need-to-know",
+    "verifiedClubIds": [
+      "arsenal",
+      "aston-villa",
+      "bournemouth",
+      "brentford",
+      "brighton",
+      "chelsea",
+      "coventry",
+      "crystal-palace",
+      "everton",
+      "fulham",
+      "hull",
+      "ipswich",
+      "leeds",
+      "liverpool",
+      "man-city",
+      "man-united",
+      "newcastle",
+      "nottingham",
+      "sunderland",
+      "tottenham"
+    ]
+  },
+  "matchVerification": "unverified-upstream; not approved for prediction features",
+  "matches": [
     {
       "id": "EFL|2026-08-25|Birmingham City|Brentford",
       "competition": "EFL",
@@ -88,6 +97,28 @@
       "score": {
         "home": 1,
         "away": 6
+      },
+      "upstreamSource": "espn"
+    },
+    {
+      "id": "EFL|2026-08-25|Ipswich Town|Leicester City",
+      "competition": "EFL",
+      "date": "2026-08-25",
+      "timeSource": "19:45",
+      "timeVerifiedUTC": null,
+      "home": "Ipswich",
+      "away": "Leicester City",
+      "homeClubId": "ipswich",
+      "awayClubId": null,
+      "homeRaw": "Ipswich Town",
+      "awayRaw": "Leicester City",
+      "homeEpl": true,
+      "awayEpl": false,
+      "status": "FINISHED",
+      "source": "open-matchday",
+      "score": {
+        "home": 3,
+        "away": 1
       },
       "upstreamSource": "espn"
     },
@@ -131,28 +162,6 @@
       "source": "open-matchday",
       "score": {
         "home": 2,
-        "away": 4
-      },
-      "upstreamSource": "espn"
-    },
-    {
-      "id": "EFL|2026-08-25|Southampton|West Ham United",
-      "competition": "EFL",
-      "date": "2026-08-25",
-      "timeSource": "19:45",
-      "timeVerifiedUTC": null,
-      "home": "Southampton",
-      "away": "West Ham",
-      "homeClubId": null,
-      "awayClubId": "west-ham",
-      "homeRaw": "Southampton",
-      "awayRaw": "West Ham United",
-      "homeEpl": false,
-      "awayEpl": true,
-      "status": "FINISHED",
-      "source": "open-matchday",
-      "score": {
-        "home": 1,
         "away": 4
       },
       "upstreamSource": "espn"
@@ -515,13 +524,13 @@
       "date": "2026-09-15",
       "timeSource": "20:00",
       "timeVerifiedUTC": null,
-      "home": "Ipswich Town",
+      "home": "Ipswich",
       "away": "Arsenal",
-      "homeClubId": null,
+      "homeClubId": "ipswich",
       "awayClubId": "arsenal",
       "homeRaw": "Ipswich Town",
       "awayRaw": "Arsenal",
-      "homeEpl": false,
+      "homeEpl": true,
       "awayEpl": true,
       "status": "FINISHED",
       "source": "open-matchday",
@@ -587,7 +596,7 @@
       "awayClubId": "fulham",
       "homeRaw": "West Ham United",
       "awayRaw": "Fulham",
-      "homeEpl": true,
+      "homeEpl": false,
       "awayEpl": true,
       "status": "FINISHED",
       "source": "open-matchday",

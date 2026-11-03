@@ -1,7 +1,81 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-02T15:14:44.810507+00:00",
+  "updatedAt": "2026-11-03T03:01:50.769478+00:00",
   "knownEplClubs": 20,
+  "membershipAudit": {
+    "source": "open-matchday EPL",
+    "counts": {
+      "results": 89,
+      "fixtures": 291
+    },
+    "officialMembershipReference": "https://www.premierleague.com/en/news/4365156/new-to-the-premier-league-heres-all-you-need-to-know",
+    "verifiedClubIds": [
+      "arsenal",
+      "aston-villa",
+      "bournemouth",
+      "brentford",
+      "brighton",
+      "chelsea",
+      "coventry",
+      "crystal-palace",
+      "everton",
+      "fulham",
+      "hull",
+      "ipswich",
+      "leeds",
+      "liverpool",
+      "man-city",
+      "man-united",
+      "newcastle",
+      "nottingham",
+      "sunderland",
+      "tottenham"
+    ]
+  },
+  "archiveIdentityCorrections": [
+    {
+      "matchId": "EFL|2026-08-08|West Ham United|Portsmouth",
+      "field": "homeEpl",
+      "previous": true,
+      "corrected": false
+    },
+    {
+      "matchId": "EFL|2026-08-25|Ipswich Town|Leicester City",
+      "field": "homeClubId",
+      "previous": null,
+      "corrected": "ipswich"
+    },
+    {
+      "matchId": "EFL|2026-08-25|Ipswich Town|Leicester City",
+      "field": "homeEpl",
+      "previous": false,
+      "corrected": true
+    },
+    {
+      "matchId": "EFL|2026-08-25|Southampton|West Ham United",
+      "field": "awayEpl",
+      "previous": true,
+      "corrected": false
+    },
+    {
+      "matchId": "EFL|2026-09-15|West Ham United|Fulham",
+      "field": "homeEpl",
+      "previous": true,
+      "corrected": false
+    },
+    {
+      "matchId": "EFL|2026-09-15|Ipswich Town|Arsenal",
+      "field": "homeClubId",
+      "previous": null,
+      "corrected": "ipswich"
+    },
+    {
+      "matchId": "EFL|2026-09-15|Ipswich Town|Arsenal",
+      "field": "homeEpl",
+      "previous": false,
+      "corrected": true
+    }
+  ],
   "competitionCounts": {
     "UCL_results": {
       "count": 54,
@@ -44,7 +118,7 @@
       "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/ENG_CUP_efl-cup/fixtures_2627.csv"
     }
   },
-  "eplRelevantMatches": 105,
+  "eplRelevantMatches": 104,
   "unknownNames": [
     "AEK Athens",
     "AFC Fylde",
@@ -222,7 +296,6 @@
     "Iberia Tbilisi",
     "Inter",
     "Inter Escaldes",
-    "Ipswich Town",
     "Jablonec",
     "Jagiellonia",
     "Juventus",
