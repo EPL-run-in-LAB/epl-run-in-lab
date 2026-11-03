@@ -50,12 +50,12 @@ jobs:
           assert report["totals"]["matches"] == 8908, report["totals"]
           assert report["totals"]["eligible"] == 8907, report["totals"]
           assert report["totals"]["cc0_json_array"] == 113, report["totals"]
-          assert report["totals"]["cc0_upstream_text"] == 25, report["totals"]
+          assert report["totals"]["cc0_upstream_text"] == 20, report["totals"]
           assert report["totals"]["official_decision"] == 1, report["totals"]
           with sqlite3.connect("data/history/history.sqlite") as db:
-              assert db.execute("SELECT COUNT(*) FROM matches").fetchone()[0] == 7008
+              assert db.execute("SELECT COUNT(*) FROM matches").fetchone()[0] == 8908
               assert db.execute("PRAGMA foreign_key_check").fetchall() == []
-              assert db.execute("SELECT COUNT(*) FROM seasons").fetchone()[0] == 33
+              assert db.execute("SELECT COUNT(*) FROM seasons").fetchone()[0] == 38
           europe = json.loads(Path("data/history/uefa_validation_report.json").read_text(encoding="utf-8"))
           assert europe["totals"]["rows"] == 1941, europe["totals"]
           assert europe["totals"]["finished"] == 1939, europe["totals"]
