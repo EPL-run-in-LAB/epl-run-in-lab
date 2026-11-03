@@ -89,8 +89,8 @@
     }
   },
   "allMatchRows": 10849,
-  "totalDistinctClubs": 278,
-  "linkedDomesticClubs": 41,
+  "totalDistinctClubs": 270,
+  "linkedDomesticClubs": 49,
   "linkedDomesticClubIds": [
     "de-1-fc-heidenheim-1846",
     "de-1-fc-koln",
@@ -104,6 +104,14 @@
     "de-tsg-1899-hoffenheim",
     "de-vfb-stuttgart",
     "de-vfl-wolfsburg",
+    "en-arsenal-fc",
+    "en-aston-villa-fc",
+    "en-chelsea-fc",
+    "en-liverpool-fc",
+    "en-manchester-city-fc",
+    "en-manchester-united-fc",
+    "en-newcastle-united-fc",
+    "en-tottenham-hotspur-fc",
     "es-athletic-club",
     "es-club-atletico-de-madrid",
     "es-fc-barcelona",
@@ -134,7 +142,23 @@
     "it-ss-lazio",
     "it-ssc-napoli"
   ],
-  "potentialUnmatchedDomesticAliases": [],
+  "potentialUnmatchedDomesticAliases": [
+    {
+      "country": "EN",
+      "rawName": "Brighton & Hove Albion",
+      "assignedClubId": "en-brighton-hove-albion"
+    },
+    {
+      "country": "EN",
+      "rawName": "Leicester City",
+      "assignedClubId": "en-leicester-city"
+    },
+    {
+      "country": "EN",
+      "rawName": "West Ham United",
+      "assignedClubId": "en-west-ham-united"
+    }
+  ],
   "missingCompetitionSeasons": [
     {
       "season": "2025-26",
