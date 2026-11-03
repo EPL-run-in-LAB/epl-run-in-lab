@@ -1,0 +1,3767 @@
+{
+  "schemaVersion": 1,
+  "season": "2026-27",
+  "generatedAt": "2026-11-03T14:51:09.885148+00:00",
+  "coverage": {
+    "EN1": {
+      "total": 380,
+      "finished": 90,
+      "future": 290,
+      "pastWithoutResult": 0,
+      "cc0Scored": 50,
+      "dateDisagreements": 31
+    },
+    "DE1": {
+      "total": 306,
+      "finished": 72,
+      "future": 234,
+      "pastWithoutResult": 0,
+      "cc0Scored": 36,
+      "dateDisagreements": 18
+    },
+    "ES1": {
+      "total": 380,
+      "finished": 109,
+      "future": 271,
+      "pastWithoutResult": 0,
+      "cc0Scored": 69,
+      "dateDisagreements": 24
+    },
+    "IT1": {
+      "total": 380,
+      "finished": 100,
+      "future": 280,
+      "pastWithoutResult": 0,
+      "cc0Scored": 50,
+      "dateDisagreements": 229
+    },
+    "FR1": {
+      "total": 306,
+      "finished": 81,
+      "future": 225,
+      "pastWithoutResult": 0,
+      "cc0Scored": 45,
+      "dateDisagreements": 169
+    },
+    "EN2": {
+      "total": 552,
+      "finished": 156,
+      "future": 396,
+      "pastWithoutResult": 0,
+      "cc0Scored": 95,
+      "dateDisagreements": 3
+    },
+    "UCL": {
+      "total": 144,
+      "finished": 54,
+      "future": 90,
+      "pastWithoutResult": 0,
+      "unknownClubFixtures": 96
+    },
+    "UEL": {
+      "total": 144,
+      "finished": 54,
+      "future": 90,
+      "pastWithoutResult": 0,
+      "unknownClubFixtures": 129
+    },
+    "UECL": {
+      "total": 108,
+      "finished": 36,
+      "future": 72,
+      "pastWithoutResult": 0,
+      "unknownClubFixtures": 105
+    },
+    "FAC": {
+      "total": 220,
+      "finished": 180,
+      "future": 40,
+      "pastWithoutResult": 0,
+      "unknownClubFixtures": 220
+    },
+    "EFL": {
+      "total": 88,
+      "finished": 84,
+      "future": 4,
+      "pastWithoutResult": 0,
+      "unknownClubFixtures": 56
+    }
+  },
+  "matchTotal": 3008,
+  "cc0ScoreAgreementCount": 345,
+  "supplementaryResultsMissingFromCC0": 263,
+  "dateDisagreements": [
+    {
+      "competition": "EN1",
+      "home": "Everton FC",
+      "away": "Coventry City FC",
+      "cc0Date": "2026-11-07",
+      "stagingDate": "2026-11-06"
+    },
+    {
+      "competition": "EN1",
+      "home": "Brighton & Hove Albion FC",
+      "away": "Brentford FC",
+      "cc0Date": "2026-11-07",
+      "stagingDate": "2026-11-08"
+    },
+    {
+      "competition": "EN1",
+      "home": "Crystal Palace FC",
+      "away": "Liverpool FC",
+      "cc0Date": "2026-11-07",
+      "stagingDate": "2026-11-08"
+    },
+    {
+      "competition": "EN1",
+      "home": "Ipswich Town FC",
+      "away": "AFC Bournemouth",
+      "cc0Date": "2026-11-07",
+      "stagingDate": "2026-11-08"
+    },
+    {
+      "competition": "EN1",
+      "home": "Sunderland AFC",
+      "away": "Chelsea FC",
+      "cc0Date": "2026-11-07",
+      "stagingDate": "2026-11-08"
+    },
+    {
+      "competition": "EN1",
+      "home": "Manchester United FC",
+      "away": "Aston Villa FC",
+      "cc0Date": "2026-11-07",
+      "stagingDate": "2026-11-08"
+    },
+    {
+      "competition": "EN1",
+      "home": "Hull City AFC",
+      "away": "Brighton & Hove Albion FC",
+      "cc0Date": "2026-11-21",
+      "stagingDate": "2026-11-22"
+    },
+    {
+      "competition": "EN1",
+      "home": "Liverpool FC",
+      "away": "Manchester United FC",
+      "cc0Date": "2026-11-21",
+      "stagingDate": "2026-11-22"
+    },
+    {
+      "competition": "EN1",
+      "home": "Brentford FC",
+      "away": "Everton FC",
+      "cc0Date": "2026-11-21",
+      "stagingDate": "2026-11-23"
+    },
+    {
+      "competition": "EN1",
+      "home": "Nottingham Forest FC",
+      "away": "Chelsea FC",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-27"
+    },
+    {
+      "competition": "EN1",
+      "home": "Everton FC",
+      "away": "Liverpool FC",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-29"
+    },
+    {
+      "competition": "EN1",
+      "home": "Brighton & Hove Albion FC",
+      "away": "Newcastle United FC",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-29"
+    },
+    {
+      "competition": "EN1",
+      "home": "Crystal Palace FC",
+      "away": "Hull City AFC",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-29"
+    },
+    {
+      "competition": "EN1",
+      "home": "Fulham FC",
+      "away": "AFC Bournemouth",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-29"
+    },
+    {
+      "competition": "EN1",
+      "home": "Sunderland AFC",
+      "away": "Tottenham Hotspur FC",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-29"
+    },
+    {
+      "competition": "EN1",
+      "home": "Arsenal FC",
+      "away": "Manchester City FC",
+      "cc0Date": "2026-11-28",
+      "stagingDate": "2026-11-29"
+    },
+    {
+      "competition": "EN1",
+      "home": "Coventry City FC",
+      "away": "Ipswich Town FC",
+      "cc0Date": "2026-12-02",
+      "stagingDate": "2026-12-01"
+    },
+    {
+      "competition": "EN1",
+      "home": "Tottenham Hotspur FC",
+      "away": "Fulham FC",
+      "cc0Date": "2026-12-02",
+      "stagingDate": "2026-12-03"
+    },
+    {
+      "competition": "EN1",
+      "home": "Everton FC",
+      "away": "Fulham FC",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-06"
+    },
+    {
+      "competition": "EN1",
+      "home": "Newcastle United FC",
+      "away": "Sunderland AFC",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-06"
+    },
+    {
+      "competition": "EN1",
+      "home": "Tottenham Hotspur FC",
+      "away": "Arsenal FC",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-06"
+    },
+    {
+      "competition": "EN1",
+      "home": "Arsenal FC",
+      "away": "AFC Bournemouth",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "EN1",
+      "home": "Brighton & Hove Albion FC",
+      "away": "Everton FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "EN1",
+      "home": "Sunderland AFC",
+      "away": "Nottingham Forest FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "EN1",
+      "home": "Coventry City FC",
+      "away": "Aston Villa FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "EN1",
+      "home": "Crystal Palace FC",
+      "away": "Manchester United FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "EN1",
+      "home": "Hull City AFC",
+      "away": "Tottenham Hotspur FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-14"
+    },
+    {
+      "competition": "EN1",
+      "home": "Brighton & Hove Albion FC",
+      "away": "Ipswich Town FC",
+      "cc0Date": "2026-12-19",
+      "stagingDate": "2026-12-20"
+    },
+    {
+      "competition": "EN1",
+      "home": "Sunderland AFC",
+      "away": "Crystal Palace FC",
+      "cc0Date": "2026-12-19",
+      "stagingDate": "2026-12-20"
+    },
+    {
+      "competition": "EN1",
+      "home": "Arsenal FC",
+      "away": "Manchester United FC",
+      "cc0Date": "2026-12-19",
+      "stagingDate": "2026-12-20"
+    },
+    {
+      "competition": "EN1",
+      "home": "Chelsea FC",
+      "away": "Aston Villa FC",
+      "cc0Date": "2026-12-19",
+      "stagingDate": "2026-12-21"
+    },
+    {
+      "competition": "DE1",
+      "home": "1. FC Köln",
+      "away": "Borussia Dortmund",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "1. FC Union Berlin",
+      "away": "SC Paderborn 07",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "1. FSV Mainz 05",
+      "away": "TSG 1899 Hoffenheim",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "FC Augsburg",
+      "away": "Borussia Mönchengladbach",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "FC Bayern München",
+      "away": "Bayer 04 Leverkusen",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "FC Schalke 04",
+      "away": "SV Werder Bremen",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "RB Leipzig",
+      "away": "VfB Stuttgart",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "SC Freiburg",
+      "away": "Hamburger SV",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "SV 07 Elversberg",
+      "away": "Eintracht Frankfurt",
+      "cc0Date": "2027-01-13",
+      "stagingDate": "2027-01-12"
+    },
+    {
+      "competition": "DE1",
+      "home": "1. FC Union Berlin",
+      "away": "FC Augsburg",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "Bayer 04 Leverkusen",
+      "away": "TSG 1899 Hoffenheim",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "Borussia Mönchengladbach",
+      "away": "VfB Stuttgart",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "Eintracht Frankfurt",
+      "away": "Borussia Dortmund",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "FC Bayern München",
+      "away": "SC Freiburg",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "FC Schalke 04",
+      "away": "1. FC Köln",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "Hamburger SV",
+      "away": "SC Paderborn 07",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "SV 07 Elversberg",
+      "away": "RB Leipzig",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "DE1",
+      "home": "SV Werder Bremen",
+      "away": "1. FSV Mainz 05",
+      "cc0Date": "2027-03-03",
+      "stagingDate": "2027-03-02"
+    },
+    {
+      "competition": "ES1",
+      "home": "Deportivo Alavés",
+      "away": "Málaga CF",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-23"
+    },
+    {
+      "competition": "ES1",
+      "home": "Rayo Vallecano de Madrid",
+      "away": "Elche CF",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-24"
+    },
+    {
+      "competition": "ES1",
+      "home": "Real Racing Club de Santander",
+      "away": "RCD Espanyol de Barcelona",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-24"
+    },
+    {
+      "competition": "ES1",
+      "home": "Valencia CF",
+      "away": "Villarreal CF",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-24"
+    },
+    {
+      "competition": "ES1",
+      "home": "Club Atlético de Madrid",
+      "away": "RC Deportivo La Coruña",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-24"
+    },
+    {
+      "competition": "ES1",
+      "home": "Sevilla FC",
+      "away": "CA Osasuna",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-26"
+    },
+    {
+      "competition": "ES1",
+      "home": "Villarreal CF",
+      "away": "RCD Espanyol de Barcelona",
+      "cc0Date": "2026-11-01",
+      "stagingDate": "2026-10-30"
+    },
+    {
+      "competition": "ES1",
+      "home": "Levante UD",
+      "away": "Club Atlético de Madrid",
+      "cc0Date": "2026-11-01",
+      "stagingDate": "2026-10-31"
+    },
+    {
+      "competition": "ES1",
+      "home": "Rayo Vallecano de Madrid",
+      "away": "RC Celta de Vigo",
+      "cc0Date": "2026-11-01",
+      "stagingDate": "2026-10-31"
+    },
+    {
+      "competition": "ES1",
+      "home": "Real Betis Balompié",
+      "away": "Málaga CF",
+      "cc0Date": "2026-11-01",
+      "stagingDate": "2026-10-31"
+    },
+    {
+      "competition": "ES1",
+      "home": "FC Barcelona",
+      "away": "Deportivo Alavés",
+      "cc0Date": "2026-11-01",
+      "stagingDate": "2026-10-31"
+    },
+    {
+      "competition": "ES1",
+      "home": "RC Deportivo La Coruña",
+      "away": "CA Osasuna",
+      "cc0Date": "2026-11-01",
+      "stagingDate": "2026-11-02"
+    },
+    {
+      "competition": "ES1",
+      "home": "Sevilla FC",
+      "away": "Deportivo Alavés",
+      "cc0Date": "2026-11-08",
+      "stagingDate": "2026-11-06"
+    },
+    {
+      "competition": "ES1",
+      "home": "Málaga CF",
+      "away": "Real Racing Club de Santander",
+      "cc0Date": "2026-11-08",
+      "stagingDate": "2026-11-07"
+    },
+    {
+      "competition": "ES1",
+      "home": "RCD Espanyol de Barcelona",
+      "away": "RC Deportivo La Coruña",
+      "cc0Date": "2026-11-08",
+      "stagingDate": "2026-11-07"
+    },
+    {
+      "competition": "ES1",
+      "home": "CA Osasuna",
+      "away": "Athletic Club",
+      "cc0Date": "2026-11-08",
+      "stagingDate": "2026-11-07"
+    },
+    {
+      "competition": "ES1",
+      "home": "Valencia CF",
+      "away": "Real Madrid CF",
+      "cc0Date": "2026-11-08",
+      "stagingDate": "2026-11-07"
+    },
+    {
+      "competition": "ES1",
+      "home": "Athletic Club",
+      "away": "RCD Espanyol de Barcelona",
+      "cc0Date": "2026-11-22",
+      "stagingDate": "2026-11-20"
+    },
+    {
+      "competition": "ES1",
+      "home": "Deportivo Alavés",
+      "away": "RC Deportivo La Coruña",
+      "cc0Date": "2026-11-22",
+      "stagingDate": "2026-11-21"
+    },
+    {
+      "competition": "ES1",
+      "home": "Rayo Vallecano de Madrid",
+      "away": "Valencia CF",
+      "cc0Date": "2026-11-22",
+      "stagingDate": "2026-11-21"
+    },
+    {
+      "competition": "ES1",
+      "home": "Sevilla FC",
+      "away": "Real Betis Balompié",
+      "cc0Date": "2026-11-22",
+      "stagingDate": "2026-11-21"
+    },
+    {
+      "competition": "ES1",
+      "home": "Real Madrid CF",
+      "away": "RC Celta de Vigo",
+      "cc0Date": "2026-11-22",
+      "stagingDate": "2026-11-21"
+    },
+    {
+      "competition": "ES1",
+      "home": "Levante UD",
+      "away": "Elche CF",
+      "cc0Date": "2026-11-22",
+      "stagingDate": "2026-11-23"
+    },
+    {
+      "competition": "ES1",
+      "home": "Rayo Vallecano de Madrid",
+      "away": "Athletic Club",
+      "cc0Date": "2026-10-10",
+      "stagingDate": "2026-12-09"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "Venezia FC",
+      "cc0Date": "2026-11-23",
+      "stagingDate": "2026-11-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2026-11-29",
+      "stagingDate": "2026-11-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2026-11-29",
+      "stagingDate": "2026-11-28"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "SS Lazio",
+      "cc0Date": "2026-11-29",
+      "stagingDate": "2026-11-28"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "Genoa CFC",
+      "cc0Date": "2026-11-29",
+      "stagingDate": "2026-11-28"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Atalanta BC",
+      "cc0Date": "2026-11-29",
+      "stagingDate": "2026-11-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "AC Milan",
+      "cc0Date": "2026-11-29",
+      "stagingDate": "2026-11-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "AS Roma",
+      "cc0Date": "2026-12-06",
+      "stagingDate": "2026-12-04"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Como 1907",
+      "cc0Date": "2026-12-06",
+      "stagingDate": "2026-12-05"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2026-12-06",
+      "stagingDate": "2026-12-05"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "US Lecce",
+      "cc0Date": "2026-12-06",
+      "stagingDate": "2026-12-05"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2026-12-06",
+      "stagingDate": "2026-12-07"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2026-12-06",
+      "stagingDate": "2026-12-07"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2026-12-13",
+      "stagingDate": "2026-12-11"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Venezia FC",
+      "cc0Date": "2026-12-13",
+      "stagingDate": "2026-12-12"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2026-12-13",
+      "stagingDate": "2026-12-12"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2026-12-13",
+      "stagingDate": "2026-12-12"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "Genoa CFC",
+      "cc0Date": "2026-12-13",
+      "stagingDate": "2026-12-14"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "AC Monza",
+      "cc0Date": "2026-12-13",
+      "stagingDate": "2026-12-14"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "SS Lazio",
+      "cc0Date": "2026-12-20",
+      "stagingDate": "2026-12-18"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2026-12-20",
+      "stagingDate": "2026-12-18"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2026-12-20",
+      "stagingDate": "2026-12-19"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "Como 1907",
+      "cc0Date": "2026-12-20",
+      "stagingDate": "2026-12-19"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Juventus FC",
+      "cc0Date": "2026-12-20",
+      "stagingDate": "2026-12-19"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-01-03",
+      "stagingDate": "2027-01-02"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "SS Lazio",
+      "cc0Date": "2027-01-03",
+      "stagingDate": "2027-01-02"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "Venezia FC",
+      "cc0Date": "2027-01-03",
+      "stagingDate": "2027-01-02"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-01-03",
+      "stagingDate": "2027-01-02"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "AC Milan",
+      "cc0Date": "2027-01-03",
+      "stagingDate": "2027-01-02"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "AC Monza",
+      "cc0Date": "2027-01-06",
+      "stagingDate": "2027-01-05"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "AS Roma",
+      "cc0Date": "2027-01-06",
+      "stagingDate": "2027-01-05"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-01-06",
+      "stagingDate": "2027-01-05"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-01-06",
+      "stagingDate": "2027-01-07"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-01-06",
+      "stagingDate": "2027-01-07"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-01-10",
+      "stagingDate": "2027-01-09"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "AC Milan",
+      "cc0Date": "2027-01-10",
+      "stagingDate": "2027-01-09"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-01-10",
+      "stagingDate": "2027-01-09"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-01-10",
+      "stagingDate": "2027-01-11"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-01-10",
+      "stagingDate": "2027-01-11"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "AS Roma",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Como 1907",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "Torino FC",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "AC Monza",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-01-17",
+      "stagingDate": "2027-01-16"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "AC Milan",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "Venezia FC",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Torino FC",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "SS Lazio",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-01-24",
+      "stagingDate": "2027-01-23"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "US Lecce",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Venezia FC",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "Juventus FC",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "AS Roma",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Como 1907",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-01-31",
+      "stagingDate": "2027-01-30"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "SS Lazio",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "AC Milan",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "AC Monza",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Torino FC",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Como 1907",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "SS Lazio",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "AC Milan",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "US Lecce",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Juventus FC",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Venezia FC",
+      "cc0Date": "2027-02-14",
+      "stagingDate": "2027-02-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "AC Monza",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "Torino FC",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "AS Roma",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-02-21",
+      "stagingDate": "2027-02-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "US Lecce",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "AC Milan",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "SS Lazio",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Juventus FC",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Venezia FC",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-27"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "Torino FC",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "Venezia FC",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "AS Roma",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Como 1907",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-03-07",
+      "stagingDate": "2027-03-06"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "AC Monza",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "AS Roma",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Juventus FC",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "US Lecce",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-03-14",
+      "stagingDate": "2027-03-13"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "AC Milan",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "Como 1907",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Venezia FC",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "SS Lazio",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "US Lecce",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Torino FC",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-20"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "SS Lazio",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "AC Monza",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "Juventus FC",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-04-04",
+      "stagingDate": "2027-04-03"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Venezia FC",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "AC Milan",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "AS Roma",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "US Lecce",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Torino FC",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "Como 1907",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "AC Monza",
+      "cc0Date": "2027-04-11",
+      "stagingDate": "2027-04-10"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "SS Lazio",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "US Lecce",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Juventus FC",
+      "cc0Date": "2027-04-18",
+      "stagingDate": "2027-04-17"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "AC Monza",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "AS Roma",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Como 1907",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "AC Milan",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Torino FC",
+      "cc0Date": "2027-04-25",
+      "stagingDate": "2027-04-24"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "Juventus FC",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "SS Lazio",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Venezia FC",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-05-02",
+      "stagingDate": "2027-05-01"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "AS Roma",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "US Lecce",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "AC Monza",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "AC Milan",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "Juventus FC",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "Como 1907",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-08"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "Torino FC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "AS Roma",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "Venezia FC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "IT1",
+      "home": "Atalanta BC",
+      "away": "US Lecce",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "ACF Fiorentina",
+      "away": "AC Monza",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Frosinone Calcio",
+      "away": "Cagliari Calcio",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Genoa CFC",
+      "away": "Bologna FC 1909",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "FC Internazionale Milano",
+      "away": "SS Lazio",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Parma Calcio 1913",
+      "away": "Juventus FC",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "AS Roma",
+      "away": "Como 1907",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Torino FC",
+      "away": "SSC Napoli",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Udinese Calcio",
+      "away": "US Sassuolo Calcio",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Venezia FC",
+      "away": "AC Milan",
+      "cc0Date": "2027-05-23",
+      "stagingDate": "2027-05-22"
+    },
+    {
+      "competition": "IT1",
+      "home": "Bologna FC 1909",
+      "away": "Parma Calcio 1913",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "Cagliari Calcio",
+      "away": "AS Roma",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "Como 1907",
+      "away": "Genoa CFC",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "Juventus FC",
+      "away": "Frosinone Calcio",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "SS Lazio",
+      "away": "ACF Fiorentina",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Lecce",
+      "away": "Venezia FC",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Milan",
+      "away": "Udinese Calcio",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "AC Monza",
+      "away": "Torino FC",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "SSC Napoli",
+      "away": "Atalanta BC",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "IT1",
+      "home": "US Sassuolo Calcio",
+      "away": "FC Internazionale Milano",
+      "cc0Date": "2027-05-30",
+      "stagingDate": "2027-05-29"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "ES Troyes AC",
+      "cc0Date": "2026-10-24",
+      "stagingDate": "2026-10-25"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2026-10-25",
+      "stagingDate": "2026-10-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2026-10-31",
+      "stagingDate": "2026-10-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Angers SCO",
+      "cc0Date": "2026-10-31",
+      "stagingDate": "2026-11-01"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2026-10-31",
+      "stagingDate": "2026-11-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-04"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-06"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-06"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "OGC Nice",
+      "cc0Date": "2026-12-05",
+      "stagingDate": "2026-12-06"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Toulouse FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-11"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Lille OSC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "AS Monaco FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-01-02",
+      "stagingDate": "2027-01-03"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-01-02",
+      "stagingDate": "2027-01-03"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "Lille OSC",
+      "cc0Date": "2027-01-16",
+      "stagingDate": "2027-01-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-01-16",
+      "stagingDate": "2027-01-17"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-01-16",
+      "stagingDate": "2027-01-17"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "FC Lorient",
+      "cc0Date": "2027-01-16",
+      "stagingDate": "2027-01-17"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-01-23",
+      "stagingDate": "2027-01-22"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-01-23",
+      "stagingDate": "2027-01-24"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-01-23",
+      "stagingDate": "2027-01-24"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-01-23",
+      "stagingDate": "2027-01-24"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-01-30",
+      "stagingDate": "2027-01-29"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "FC Lorient",
+      "cc0Date": "2027-01-30",
+      "stagingDate": "2027-01-31"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-01-30",
+      "stagingDate": "2027-01-31"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Lille OSC",
+      "cc0Date": "2027-01-30",
+      "stagingDate": "2027-01-31"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "Lille OSC",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-02-07",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "Angers SCO",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Paris FC",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-02-06",
+      "stagingDate": "2027-02-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "OGC Nice",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "Angers SCO",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-02-13",
+      "stagingDate": "2027-02-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "Paris FC",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "FC Lorient",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Lille OSC",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "OGC Nice",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Angers SCO",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "Paris FC",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-02-28",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-26"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "FC Lorient",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "OGC Nice",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-03-06",
+      "stagingDate": "2027-03-05"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "FC Lorient",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Angers SCO",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "Lille OSC",
+      "cc0Date": "2027-03-13",
+      "stagingDate": "2027-03-12"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "OGC Nice",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-03-21",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "Lille OSC",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "Paris FC",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-03-20",
+      "stagingDate": "2027-03-19"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "FC Lorient",
+      "cc0Date": "2027-04-03",
+      "stagingDate": "2027-04-02"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "Angers SCO",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Paris FC",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-04-10",
+      "stagingDate": "2027-04-09"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "FC Lorient",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Lille OSC",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "OGC Nice",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "Paris FC",
+      "cc0Date": "2027-04-17",
+      "stagingDate": "2027-04-16"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Angers SCO",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-04-24",
+      "stagingDate": "2027-04-23"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "FC Lorient",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Paris FC",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Angers SCO",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "Lille OSC",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "OGC Nice",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-05-01",
+      "stagingDate": "2027-04-30"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2027-05-09",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "Lille OSC",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-05-08",
+      "stagingDate": "2027-05-07"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "Paris FC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "Angers SCO",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "OGC Nice",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "FC Lorient",
+      "cc0Date": "2027-05-16",
+      "stagingDate": "2027-05-15"
+    },
+    {
+      "competition": "FR1",
+      "home": "Angers SCO",
+      "away": "Stade Brestois 29",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "ES Troyes AC",
+      "away": "Paris Saint-Germain FC",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "FC Lorient",
+      "away": "Olympique Lyonnais",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Havre AC",
+      "away": "Lille OSC",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "Le Mans FC",
+      "away": "RC Strasbourg Alsace",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "OGC Nice",
+      "away": "AS Monaco FC",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris FC",
+      "away": "Olympique de Marseille",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "Racing Club de Lens",
+      "away": "Stade Rennais FC 1901",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "Toulouse FC",
+      "away": "AJ Auxerre",
+      "cc0Date": "2027-05-22",
+      "stagingDate": "2027-05-21"
+    },
+    {
+      "competition": "FR1",
+      "home": "AJ Auxerre",
+      "away": "Le Havre AC",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "AS Monaco FC",
+      "away": "ES Troyes AC",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "Lille OSC",
+      "away": "Le Mans FC",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique Lyonnais",
+      "away": "Paris FC",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "Olympique de Marseille",
+      "away": "FC Lorient",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "Paris Saint-Germain FC",
+      "away": "Toulouse FC",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "RC Strasbourg Alsace",
+      "away": "OGC Nice",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Brestois 29",
+      "away": "Racing Club de Lens",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "FR1",
+      "home": "Stade Rennais FC 1901",
+      "away": "Angers SCO",
+      "cc0Date": "2027-05-29",
+      "stagingDate": "2027-05-28"
+    },
+    {
+      "competition": "EN2",
+      "home": "Lincoln City FC",
+      "away": "Norwich City FC",
+      "cc0Date": "2026-12-12",
+      "stagingDate": "2026-12-13"
+    },
+    {
+      "competition": "EN2",
+      "home": "West Ham United FC",
+      "away": "Millwall FC",
+      "cc0Date": "2027-02-20",
+      "stagingDate": "2027-02-21"
+    },
+    {
+      "competition": "EN2",
+      "home": "Portsmouth FC",
+      "away": "Southampton FC",
+      "cc0Date": "2027-02-27",
+      "stagingDate": "2027-02-28"
+    }
+  ],
+  "unknownOpponentNames": [
+    "AEK Athens",
+    "AFC Fylde",
+    "AFC Rushden & Diamonds",
+    "AFC Stoneham",
+    "AFC Telford",
+    "AFC Totton",
+    "AFC Wimbledon",
+    "AZ Alkmaar",
+    "Aarhus",
+    "Accrington",
+    "Accrington Stanley",
+    "Ajax",
+    "Aldershot",
+    "Altrincham",
+    "Alvechurch",
+    "Anderlecht",
+    "Anstey Nomads",
+    "Ararat-Armenia",
+    "Ashton Utd",
+    "Atherton",
+    "Aveley",
+    "Barnet",
+    "Barnsley",
+    "Barrow",
+    "Barton Town",
+    "Bedford",
+    "Benfica",
+    "Berkhamsted",
+    "Besiktas",
+    "Billericay",
+    "Bishops Cleeve",
+    "Blackpool",
+    "Bodø/Glimt",
+    "Boldmere",
+    "Borac",
+    "Boreham Wood",
+    "Boston Utd",
+    "Brackley Town",
+    "Bradford City",
+    "Bradford PA",
+    "Braga",
+    "Braintree",
+    "Brann",
+    "Brentwood",
+    "Bristol Rovers",
+    "Bromley",
+    "Bromsgrove",
+    "Buckhurst Hill",
+    "Burgess Hill",
+    "Burton",
+    "Burton Albion",
+    "Bury",
+    "Bury Town",
+    "Buxton",
+    "CSKA Sofia",
+    "Cambridge City",
+    "Cambridge United",
+    "Cambridge Utd",
+    "Canvey",
+    "Carlisle",
+    "Celje",
+    "Celtic",
+    "Chatham",
+    "Chelmsford",
+    "Cheltenham",
+    "Cheltenham Town",
+    "Chertsey",
+    "Chesham",
+    "Chester",
+    "Chesterfield",
+    "Chichester",
+    "Chippenham",
+    "Chorley",
+    "Cirencester",
+    "Club Brugge",
+    "Colchester",
+    "Colchester United",
+    "Copenhagen",
+    "Coventry United",
+    "Crawley",
+    "Crawley Town",
+    "Cray Wanderers",
+    "Crewe",
+    "Crewe Alexandra",
+    "Crowborough",
+    "Crvena Zvezda",
+    "Dag & Red",
+    "Darlington",
+    "Dartford",
+    "Doncaster",
+    "Doncaster Rovers",
+    "Dorchester",
+    "Dorking",
+    "Dover",
+    "Dulwich Hamlet",
+    "Dunston",
+    "Eastbourne Boro",
+    "Eastleigh",
+    "Ebbsfleet",
+    "Egnatia",
+    "Emley",
+    "Enfield Town",
+    "Evesham",
+    "Exeter",
+    "Exeter City",
+    "Exmouth Town",
+    "FC Halifax",
+    "FC United",
+    "Farnborough",
+    "Farnham",
+    "Fenerbahçe",
+    "Ferencváros",
+    "Feyenoord",
+    "Fleetwood",
+    "Fleetwood Town",
+    "Folkestone",
+    "Forest Green",
+    "Frome",
+    "GNK Dinamo",
+    "Gainsborough",
+    "Galatasaray",
+    "Gateshead",
+    "Gent",
+    "Gillingham",
+    "Gloucester",
+    "Gorleston",
+    "Greenwich Borough",
+    "Grimsby",
+    "Grimsby Town",
+    "Guiseley",
+    "H. Beer-Sheva",
+    "Hajduk Split",
+    "Halesowen",
+    "Hampton & Richmond",
+    "Hanley Town",
+    "Hanwell Town",
+    "Hanworth",
+    "Harborough",
+    "Harleston Town",
+    "Harrogate",
+    "Hartlepool",
+    "Hayes & Yeading",
+    "Hearts",
+    "Heaton Stannington",
+    "Hebburn Town",
+    "Hednesford",
+    "Hemel Hempstead",
+    "Hendon",
+    "Hereford",
+    "Hitchin",
+    "Hornchurch",
+    "Horsham FC",
+    "Huddersfield",
+    "Huddersfield Town",
+    "Hungerford",
+    "Iberia Tbilisi",
+    "Inter Escaldes",
+    "Jablonec",
+    "Jagiellonia",
+    "Kairat Almaty",
+    "Kauno Žalgiris",
+    "Kettering",
+    "Kidderminster",
+    "Kingstonian",
+    "King’s Lynn",
+    "KuPS Kuopio",
+    "L. Red Imps",
+    "LASK",
+    "Lancaster",
+    "Leamington",
+    "Leatherhead",
+    "Lech Poznan",
+    "Leeds United",
+    "Leek",
+    "Leicester",
+    "Leicester City",
+    "Leiston",
+    "Levski Sofia",
+    "Leyton Orient",
+    "Lillestrøm",
+    "Lower Breck",
+    "Lugano",
+    "Luton",
+    "Luton Town",
+    "MK Dons",
+    "Macclesfield",
+    "Maidenhead",
+    "Maidstone",
+    "Mansfield",
+    "Mansfield Town",
+    "Marine",
+    "Merthyr Town",
+    "Mickleover",
+    "Midtjylland",
+    "Milton Keynes Dons",
+    "Mjällby",
+    "Morecambe",
+    "Mulbarton Wanderers",
+    "N.E.C.",
+    "Needham Market",
+    "Newcastle Town",
+    "Newport",
+    "Newport County",
+    "Nordsjælland",
+    "Northampton",
+    "Northampton Town",
+    "Notts County",
+    "OFI Crete",
+    "Oldham",
+    "Oldham Athletic",
+    "Olympiacos",
+    "Omonia",
+    "Ossett United",
+    "Oxford City",
+    "Oxford United",
+    "Oxford Utd",
+    "PSV",
+    "Pafos",
+    "Pagham",
+    "Panathinaikos",
+    "Peterborough",
+    "Peterborough Sports",
+    "Peterborough United",
+    "Plymouth",
+    "Plymouth Argyle",
+    "Plymouth Parkway",
+    "Port Vale",
+    "Portchester",
+    "Porto",
+    "Prescot",
+    "Quorn",
+    "Racing Club Warwick",
+    "Radcliffe",
+    "Ramsgate",
+    "Reading",
+    "Real Bedford",
+    "Redcar Athletic",
+    "Redcar Town",
+    "Redditch",
+    "Riga",
+    "Rochdale",
+    "Rotherham",
+    "Rotherham United",
+    "Rushall",
+    "S. Bratislava",
+    "SE Dons",
+    "Sabah",
+    "Salford",
+    "Salford City",
+    "Salisbury",
+    "Salzburg",
+    "Scarborough",
+    "Scunthorpe",
+    "Shakhtar",
+    "Sheffield Wed",
+    "Sheffield Wednesday",
+    "Sheppey United",
+    "Sholing",
+    "Shrewsbury",
+    "Shrewsbury Town",
+    "Sint-Truidense",
+    "Slavia Praha",
+    "Slimbridge",
+    "Slough",
+    "Snodland",
+    "Solihull Moors",
+    "South Liverpool",
+    "South Shields",
+    "Southall FC",
+    "Southend",
+    "Southport",
+    "Spalding United",
+    "Sparta Praha",
+    "Spennymoor",
+    "Sporting CP",
+    "St. Albans",
+    "Stafford",
+    "Stevenage",
+    "Stockport County",
+    "Sturm Graz",
+    "Sutton",
+    "Swindon",
+    "Swindon S",
+    "Swindon Town",
+    "Tadley",
+    "Tamworth",
+    "Taunton",
+    "Thame",
+    "Thun",
+    "Tiverton",
+    "Tonbridge",
+    "Torquay",
+    "Torreense",
+    "Trabzonspor",
+    "Trafford",
+    "Tranmere",
+    "Tranmere Rovers",
+    "Truro",
+    "Twente",
+    "U. Craiova",
+    "Union SG",
+    "Uxbridge",
+    "Viking",
+    "Viktoria Plzen",
+    "Walsall",
+    "Waltham Abbey",
+    "Walton & Hersham",
+    "Ware",
+    "Warrington",
+    "Warrington Rylands",
+    "Wealdstone",
+    "Welling",
+    "Weston-super-Mare",
+    "Weymouth",
+    "Wigan",
+    "Wigan Athletic",
+    "Wimborne",
+    "Windsor & Eton",
+    "Wingate & Finchley",
+    "Witham",
+    "Witton",
+    "Woking",
+    "Woodford Town",
+    "Worcester",
+    "Workington",
+    "Worksop",
+    "Worthing",
+    "Wycombe",
+    "Wycombe Wanderers",
+    "Yate Town",
+    "Yeovil",
+    "York City"
+  ],
+  "historicalUEFAGaps": [
+    {
+      "season": "2025-26",
+      "competition": "UEL",
+      "status": "unresolved-source-rights"
+    },
+    {
+      "season": "2025-26",
+      "competition": "UECL",
+      "status": "unresolved-source-rights"
+    }
+  ],
+  "warnings": [
+    "OpenFootball scores lag current fixtures in some leagues.",
+    "Current results beyond CC0 are provisional, from a noncommercial dataset.",
+    "Dates with conflicts are flagged and may not be used for verified rest intervals.",
+    "Unknown non-top-five teams must not be interpreted as having no domestic fixtures.",
+    "There are no verified UTC kickoff times in this dataset.",
+    "2025/26 missing UEFA competition files have not been silently fabricated."
+  ]
+}
