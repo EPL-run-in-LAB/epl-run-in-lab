@@ -37,10 +37,11 @@ def collect(session, aliases, reference_date):
             stats[comp] = {"status": "INCOMPLETE_QUARANTINED", "count": len(rows),
                            "distinctPairs": len(set(pairs)), "clubs": len(clubs)}
             continue
-        mapped_clubs = {name: approved.get(name) for name in clubs}
-        mapped_count = sum(bool(v) for v in mapped_clubs.values())
+        # Distinct names get isolated league IDs; UEFA linkage uses exact same-source spelling only.
+        mapped_clubs = {name: approved.get(name) or sha_id("club", comp, name) for name in clubs}
+        mapped_count = sum(bool(approved.get(name)) for name in clubs)
         stats[comp] = {"status": "COMPLETE_SOURCE_UNVERIFIED_DATES", "count": EXPECTED,
-                       "matchedClubIds": mapped_count, "unmatchedClubNames":
+                       "reviewedCrossSourceClubIds": mapped_count, "sameSourceNameLinksOnly": True, "unmatchedClubNames":
                        sorted(name for name, key in mapped_clubs.items() if not key)}
         for r in rows:
             status = "FINISHED" if r["score"] is not None else (
