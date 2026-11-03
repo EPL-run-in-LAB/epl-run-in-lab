@@ -29,6 +29,46 @@
     brand.replaceWith(link);
   }
 
+  // Restore collapsible hamburger navigation without replacing page-specific click handlers.
+  const sidebarMenu = document.getElementById('sidebar');
+  const menuButton = header.querySelector('#menuBtn');
+  const backdrop = document.getElementById('overlay');
+  if (sidebarMenu && menuButton) {
+    const desktopMenu = () => window.innerWidth >= 1100;
+    if (desktopMenu()) sidebarMenu.classList.add('open');
+
+    function syncSidebarMenu() {
+      const opened = sidebarMenu.classList.contains('open');
+      if (backdrop) backdrop.classList.toggle('show', opened && !desktopMenu());
+      menuButton.setAttribute('aria-controls', 'sidebar');
+      menuButton.setAttribute('aria-expanded', String(opened));
+      menuButton.setAttribute('aria-label', english
+        ? (opened ? 'Close menu' : 'Open menu')
+        : (opened ? '메뉴 닫기' : '메뉴 열기'));
+      sidebarMenu.inert = !opened;
+    }
+
+    new MutationObserver(syncSidebarMenu).observe(sidebarMenu, {
+      attributes: true, attributeFilter: ['class']
+    });
+    let wasDesktop = desktopMenu();
+    window.addEventListener('resize', () => {
+      const nowDesktop = desktopMenu();
+      if (nowDesktop !== wasDesktop) {
+        sidebarMenu.classList.toggle('open', nowDesktop);
+        wasDesktop = nowDesktop;
+      }
+      syncSidebarMenu();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && sidebarMenu.classList.contains('open') && !desktopMenu()) {
+        sidebarMenu.classList.remove('open');
+        menuButton.focus();
+      }
+    });
+    syncSidebarMenu();
+  }
+
   // Keep the same sidebar sections even on older generated report pages.
   const sidebarNav = document.getElementById('sidebar');
   if (sidebarNav) {
