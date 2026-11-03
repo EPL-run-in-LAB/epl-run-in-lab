@@ -8,6 +8,10 @@ on:
       - 'tests/test_fixture_congestion.py'
       - 'scripts/build_fixture_congestion.py'
       - 'docs/congestion.html'
+      - 'docs/assets/site-shell.css'
+      - 'docs/assets/site-shell.js'
+      - 'scripts/build_i18n.py'
+      - 'docs/index.html'
       - 'docs/index.html'
       - 'scripts/build_i18n.py'
       - 'tests/test_ko_localization.py'
@@ -86,6 +90,36 @@ jobs:
           assert 'id="languageOptions"' in ko and 'id="languageOptions"' in en
           assert 'data-lang="ko"' in en and 'data-lang="en"' in en
           print('Deployment and both locale calendar routes verified')
+          PY
+      - name: Validate unified navigation and visible table columns
+        run: |
+          node --check docs/assets/site-shell.js
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('docs')
+          js=(root/'assets/site-shell.js').read_text()
+          assert 'aria-current' in js
+          assert 'locale === entry.code' in js
+          assert "base + 'en/' + relative" in js
+          for rel in ['index.html','en/index.html','congestion.html','en/congestion.html']:
+              s=(root/rel).read_text(encoding='utf-8')
+              assert 'assets/site-shell.js' in s, rel
+              assert 'assets/site-shell.css' in s, rel
+          ko=(root/'congestion.html').read_text()
+          en=(root/'en/congestion.html').read_text()
+          assert '자료 상태</th>' not in ko
+          assert 'Source status</th>' not in en
+          assert 'td.colSpan=6' in ko and 'td.colSpan=6' in en
+          assert 'selectedDate' in ko and 'selectedDate' in en
+          assert 'Monthly fixture calendar' in en or 'Monthly Fixture Calendar' in en
+          assert '2026년' not in en
+          for page in root.rglob('index.html'):
+              s=page.read_text(encoding='utf-8')
+              if 'class="topbar"' in s:
+                  assert 'assets/site-shell.js' in s, str(page)
+                  assert 'assets/site-shell.css' in s, str(page)
+          print('Shared UI, locale checkmarks, and six-column tables verified')
           PY
       - name: Inspect output counts and required identities
         run: |
