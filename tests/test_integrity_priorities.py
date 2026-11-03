@@ -65,8 +65,8 @@ class ExtendedLeagueTests(unittest.TestCase):
             def __init__(self, body): self.body = body
             def get(self, url, timeout=35):
                 if "/results_" in url:
-                    return Response("gw,date,time,home,away,ft_home,ft_away\n")
-                return Response(self.body)
+                    return Response("gw,date,time,home,away,ft_home,ft_away\n1,2026-10-01,20:00,Club-00,Club-01,1,0\n")
+                return Response(self.body.replace("1,2026-12-01,20:00,Club-00,Club-01\n", ""))
         fixtures, coverage = collect(Session(self.rows()), {"other": {}}, "2026-11-04")
         self.assertEqual(coverage["NL1"]["count"], 306)
         self.assertEqual(coverage["PT1"]["count"], 306)
@@ -82,7 +82,7 @@ class ExtendedLeagueTests(unittest.TestCase):
         class Session:
             def get(self, url, timeout=35):
                 if "/results_" in url:
-                    return Response("gw,date,time,home,away,ft_home,ft_away\n")
+                    return Response("gw,date,time,home,away,ft_home,ft_away\n1,2026-10-01,20:00,A,C,1,0\n")
                 return Response("gw,date,time,home,away\n1,2026-12-01,20:00,A,B\n")
         fixtures, coverage = collect(Session(), {"other": {}}, "2026-11-04")
         self.assertEqual(fixtures, [])
