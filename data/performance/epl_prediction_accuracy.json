@@ -1,0 +1,1084 @@
+{
+  "schemaVersion": 1,
+  "source": "docs/data/match_archive.json",
+  "method": "Frozen pre-kickoff probabilities only; three-class 90-minute results",
+  "sample": {
+    "archivedFixtures": 140,
+    "eligibleFinalizedFixtures": 40,
+    "excludedReasons": {
+      "not_finished": 100
+    },
+    "firstFixtureDate": "2026-10-10",
+    "lastFixtureDate": "2026-11-02",
+    "uniqueTeams": 20,
+    "teamAppearances": 80
+  },
+  "results": {
+    "top1Correct": 18,
+    "top1Accuracy": 0.45,
+    "multiclassBrierSum": 0.640802,
+    "logLoss": 1.063422,
+    "outcomeCounts": {
+      "home": 18,
+      "draw": 9,
+      "away": 13
+    },
+    "uniformOneThirdBrier": 0.666667,
+    "uniformOneThirdLogLoss": 1.098612,
+    "alwaysPredictHomeAccuracyOnSample": 0.45,
+    "sumExpectedPointsForBothTeams": 109.422,
+    "sumActualPointsForBothTeams": 111
+  },
+  "teamRecords": [
+    {
+      "team": "Arsenal",
+      "matches": 4,
+      "expectedPoints": 6.93,
+      "actualPoints": 12,
+      "pointsAboveExpected": 5.07,
+      "perMatchDifference": 1.268
+    },
+    {
+      "team": "Tottenham",
+      "matches": 4,
+      "expectedPoints": 5.037,
+      "actualPoints": 10,
+      "pointsAboveExpected": 4.963,
+      "perMatchDifference": 1.241
+    },
+    {
+      "team": "Brighton",
+      "matches": 4,
+      "expectedPoints": 5.369,
+      "actualPoints": 9,
+      "pointsAboveExpected": 3.631,
+      "perMatchDifference": 0.908
+    },
+    {
+      "team": "Chelsea",
+      "matches": 4,
+      "expectedPoints": 5.479,
+      "actualPoints": 9,
+      "pointsAboveExpected": 3.521,
+      "perMatchDifference": 0.88
+    },
+    {
+      "team": "Bournemouth",
+      "matches": 4,
+      "expectedPoints": 5.518,
+      "actualPoints": 9,
+      "pointsAboveExpected": 3.482,
+      "perMatchDifference": 0.87
+    },
+    {
+      "team": "Aston Villa",
+      "matches": 4,
+      "expectedPoints": 5.377,
+      "actualPoints": 8,
+      "pointsAboveExpected": 2.623,
+      "perMatchDifference": 0.656
+    },
+    {
+      "team": "Coventry",
+      "matches": 4,
+      "expectedPoints": 4.019,
+      "actualPoints": 6,
+      "pointsAboveExpected": 1.981,
+      "perMatchDifference": 0.495
+    },
+    {
+      "team": "Ipswich",
+      "matches": 4,
+      "expectedPoints": 3.544,
+      "actualPoints": 5,
+      "pointsAboveExpected": 1.456,
+      "perMatchDifference": 0.364
+    },
+    {
+      "team": "Fulham",
+      "matches": 4,
+      "expectedPoints": 6.215,
+      "actualPoints": 7,
+      "pointsAboveExpected": 0.785,
+      "perMatchDifference": 0.196
+    },
+    {
+      "team": "Liverpool",
+      "matches": 4,
+      "expectedPoints": 6.04,
+      "actualPoints": 6,
+      "pointsAboveExpected": -0.04,
+      "perMatchDifference": -0.01
+    },
+    {
+      "team": "Brentford",
+      "matches": 4,
+      "expectedPoints": 5.317,
+      "actualPoints": 5,
+      "pointsAboveExpected": -0.317,
+      "perMatchDifference": -0.079
+    },
+    {
+      "team": "Everton",
+      "matches": 4,
+      "expectedPoints": 4.747,
+      "actualPoints": 4,
+      "pointsAboveExpected": -0.747,
+      "perMatchDifference": -0.187
+    },
+    {
+      "team": "Crystal Palace",
+      "matches": 4,
+      "expectedPoints": 4.367,
+      "actualPoints": 3,
+      "pointsAboveExpected": -1.367,
+      "perMatchDifference": -0.342
+    },
+    {
+      "team": "Man City",
+      "matches": 4,
+      "expectedPoints": 7.691,
+      "actualPoints": 6,
+      "pointsAboveExpected": -1.691,
+      "perMatchDifference": -0.423
+    },
+    {
+      "team": "Hull",
+      "matches": 4,
+      "expectedPoints": 5.257,
+      "actualPoints": 3,
+      "pointsAboveExpected": -2.257,
+      "perMatchDifference": -0.564
+    },
+    {
+      "team": "Leeds",
+      "matches": 4,
+      "expectedPoints": 4.754,
+      "actualPoints": 2,
+      "pointsAboveExpected": -2.754,
+      "perMatchDifference": -0.689
+    },
+    {
+      "team": "Sunderland",
+      "matches": 4,
+      "expectedPoints": 4.671,
+      "actualPoints": 1,
+      "pointsAboveExpected": -3.671,
+      "perMatchDifference": -0.918
+    },
+    {
+      "team": "Newcastle",
+      "matches": 4,
+      "expectedPoints": 6.779,
+      "actualPoints": 3,
+      "pointsAboveExpected": -3.779,
+      "perMatchDifference": -0.945
+    },
+    {
+      "team": "Nottingham",
+      "matches": 4,
+      "expectedPoints": 5.21,
+      "actualPoints": 1,
+      "pointsAboveExpected": -4.21,
+      "perMatchDifference": -1.052
+    },
+    {
+      "team": "Man United",
+      "matches": 4,
+      "expectedPoints": 7.1,
+      "actualPoints": 2,
+      "pointsAboveExpected": -5.1,
+      "perMatchDifference": -1.275
+    }
+  ],
+  "fixtures": [
+    {
+      "utcDate": "2026-10-10T11:30:00Z",
+      "date": "2026-10-10",
+      "home": "Arsenal",
+      "away": "Leeds",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.5578146297108731,
+        "draw": 0.26077658976879786,
+        "away": 0.1814087805203291
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.296441,
+      "logLoss": 0.583729,
+      "homeExpectedPoints": 1.934,
+      "awayExpectedPoints": 0.805,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560593"
+    },
+    {
+      "utcDate": "2026-10-10T14:00:00Z",
+      "date": "2026-10-10",
+      "home": "Sunderland",
+      "away": "Brighton",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.27186530337012976,
+        "draw": 0.2758925974890305,
+        "away": 0.45224209914083974
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 1,
+      "brier": 0.450066,
+      "logLoss": 0.793538,
+      "homeExpectedPoints": 1.091,
+      "awayExpectedPoints": 1.633,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560592"
+    },
+    {
+      "utcDate": "2026-10-10T14:00:00Z",
+      "date": "2026-10-10",
+      "home": "Chelsea",
+      "away": "Bournemouth",
+      "homeGoals": 5,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.3975053517758623,
+        "draw": 0.29103956694398836,
+        "away": 0.3114550812801493
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.544708,
+      "logLoss": 0.922547,
+      "homeExpectedPoints": 1.484,
+      "awayExpectedPoints": 1.225,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560595"
+    },
+    {
+      "utcDate": "2026-10-10T14:00:00Z",
+      "date": "2026-10-10",
+      "home": "Ipswich",
+      "away": "Fulham",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.26810155464126834,
+        "draw": 0.28491060115885364,
+        "away": 0.44698784419987797
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.816648,
+      "logLoss": 1.316389,
+      "homeExpectedPoints": 1.089,
+      "awayExpectedPoints": 1.626,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560599"
+    },
+    {
+      "utcDate": "2026-10-10T14:00:00Z",
+      "date": "2026-10-10",
+      "home": "Aston Villa",
+      "away": "Brentford",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.46551104136719335,
+        "draw": 0.2876284714940138,
+        "away": 0.24686048713879277
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.785114,
+      "logLoss": 1.246086,
+      "homeExpectedPoints": 1.684,
+      "awayExpectedPoints": 1.028,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560601"
+    },
+    {
+      "utcDate": "2026-10-10T16:30:00Z",
+      "date": "2026-10-10",
+      "home": "Man United",
+      "away": "Tottenham",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.6157114135153051,
+        "draw": 0.2313708627025821,
+        "away": 0.15291772378211269
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.993275,
+      "logLoss": 1.463733,
+      "homeExpectedPoints": 2.079,
+      "awayExpectedPoints": 0.69,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560600"
+    },
+    {
+      "utcDate": "2026-10-11T13:00:00Z",
+      "date": "2026-10-11",
+      "home": "Hull",
+      "away": "Everton",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.33946722526965184,
+        "draw": 0.27301192581562533,
+        "away": 0.3875208489147229
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.793922,
+      "logLoss": 1.29824,
+      "homeExpectedPoints": 1.291,
+      "awayExpectedPoints": 1.436,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560594"
+    },
+    {
+      "utcDate": "2026-10-11T13:00:00Z",
+      "date": "2026-10-11",
+      "home": "Crystal Palace",
+      "away": "Nottingham",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.3406788885662587,
+        "draw": 0.30045808472154145,
+        "away": 0.3588630267121999
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.653762,
+      "logLoss": 1.076815,
+      "homeExpectedPoints": 1.322,
+      "awayExpectedPoints": 1.377,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560596"
+    },
+    {
+      "utcDate": "2026-10-11T15:30:00Z",
+      "date": "2026-10-11",
+      "home": "Liverpool",
+      "away": "Man City",
+      "homeGoals": 0,
+      "awayGoals": 3,
+      "probabilities": {
+        "home": 0.3548051910524995,
+        "draw": 0.26411150436159775,
+        "away": 0.38108330458590284
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 1,
+      "brier": 0.578699,
+      "logLoss": 0.964737,
+      "homeExpectedPoints": 1.329,
+      "awayExpectedPoints": 1.407,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560598"
+    },
+    {
+      "utcDate": "2026-10-12T19:00:00Z",
+      "date": "2026-10-12",
+      "home": "Coventry",
+      "away": "Newcastle",
+      "homeGoals": 4,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.20652835686483811,
+        "draw": 0.25913748882305804,
+        "away": 0.5343341543121038
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.982262,
+      "logLoss": 1.577318,
+      "homeExpectedPoints": 0.879,
+      "awayExpectedPoints": 1.862,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560597"
+    },
+    {
+      "utcDate": "2026-10-17T11:30:00Z",
+      "date": "2026-10-17",
+      "home": "Everton",
+      "away": "Chelsea",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.46014871799602086,
+        "draw": 0.24111518499728055,
+        "away": 0.29873609700669856
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.761644,
+      "logLoss": 1.208195,
+      "homeExpectedPoints": 1.622,
+      "awayExpectedPoints": 1.137,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560603"
+    },
+    {
+      "utcDate": "2026-10-17T14:00:00Z",
+      "date": "2026-10-17",
+      "home": "Fulham",
+      "away": "Hull",
+      "homeGoals": 1,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.5021831555645853,
+        "draw": 0.2781297177725814,
+        "away": 0.21968712666283327
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.37344,
+      "logLoss": 0.68879,
+      "homeExpectedPoints": 1.785,
+      "awayExpectedPoints": 0.937,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560602"
+    },
+    {
+      "utcDate": "2026-10-17T14:00:00Z",
+      "date": "2026-10-17",
+      "home": "Man City",
+      "away": "Ipswich",
+      "homeGoals": 3,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.7753996553155071,
+        "draw": 0.1627362650086338,
+        "away": 0.061864079675859045
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.080756,
+      "logLoss": 0.254377,
+      "homeExpectedPoints": 2.489,
+      "awayExpectedPoints": 0.348,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560610"
+    },
+    {
+      "utcDate": "2026-10-17T14:00:00Z",
+      "date": "2026-10-17",
+      "home": "Brentford",
+      "away": "Liverpool",
+      "homeGoals": 1,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.3519555507120397,
+        "draw": 0.25111087183170366,
+        "away": 0.3969335774562567
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 1,
+      "brier": 0.550618,
+      "logLoss": 0.923986,
+      "homeExpectedPoints": 1.307,
+      "awayExpectedPoints": 1.442,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560611"
+    },
+    {
+      "utcDate": "2026-10-17T16:30:00Z",
+      "date": "2026-10-17",
+      "home": "Newcastle",
+      "away": "Aston Villa",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.4836166702842611,
+        "draw": 0.2577160574527187,
+        "away": 0.2586672722630201
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.849877,
+      "logLoss": 1.352213,
+      "homeExpectedPoints": 1.709,
+      "awayExpectedPoints": 1.034,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560607"
+    },
+    {
+      "utcDate": "2026-10-18T13:00:00Z",
+      "date": "2026-10-18",
+      "home": "Bournemouth",
+      "away": "Sunderland",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.5373383942100785,
+        "draw": 0.25788440391906686,
+        "away": 0.20477720187085466
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.322494,
+      "logLoss": 0.621127,
+      "homeExpectedPoints": 1.87,
+      "awayExpectedPoints": 0.872,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560604"
+    },
+    {
+      "utcDate": "2026-10-18T13:00:00Z",
+      "date": "2026-10-18",
+      "home": "Leeds",
+      "away": "Man United",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.3215159438277201,
+        "draw": 0.24225920017190145,
+        "away": 0.4362248560003784
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.867836,
+      "logLoss": 1.417747,
+      "homeExpectedPoints": 1.207,
+      "awayExpectedPoints": 1.551,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560605"
+    },
+    {
+      "utcDate": "2026-10-18T13:00:00Z",
+      "date": "2026-10-18",
+      "home": "Brighton",
+      "away": "Crystal Palace",
+      "homeGoals": 5,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.6114357755096648,
+        "draw": 0.21778588775468538,
+        "away": 0.17077833673564988
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.227578,
+      "logLoss": 0.491945,
+      "homeExpectedPoints": 2.052,
+      "awayExpectedPoints": 0.73,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560609"
+    },
+    {
+      "utcDate": "2026-10-18T15:30:00Z",
+      "date": "2026-10-18",
+      "home": "Nottingham",
+      "away": "Arsenal",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.2644440691292691,
+        "draw": 0.2504268131564188,
+        "away": 0.48512911771431216
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 1,
+      "brier": 0.397736,
+      "logLoss": 0.72334,
+      "homeExpectedPoints": 1.044,
+      "awayExpectedPoints": 1.706,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560608"
+    },
+    {
+      "utcDate": "2026-10-19T19:00:00Z",
+      "date": "2026-10-19",
+      "home": "Tottenham",
+      "away": "Coventry",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.474922350774794,
+        "draw": 0.2724171715368456,
+        "away": 0.2526604776883604
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.413755,
+      "logLoss": 0.744604,
+      "homeExpectedPoints": 1.697,
+      "awayExpectedPoints": 1.03,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560606"
+    },
+    {
+      "utcDate": "2026-10-23T19:00:00Z",
+      "date": "2026-10-23",
+      "home": "Ipswich",
+      "away": "Nottingham",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.2588159337859617,
+        "draw": 0.28910887061938506,
+        "away": 0.45207519559465337
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.776724,
+      "logLoss": 1.240952,
+      "homeExpectedPoints": 1.066,
+      "awayExpectedPoints": 1.645,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560620"
+    },
+    {
+      "utcDate": "2026-10-24T11:30:00Z",
+      "date": "2026-10-24",
+      "home": "Aston Villa",
+      "away": "Man City",
+      "homeGoals": 2,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.24972641039088725,
+        "draw": 0.26683148923399663,
+        "away": 0.48344210037511604
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.867826,
+      "logLoss": 1.387389,
+      "homeExpectedPoints": 1.016,
+      "awayExpectedPoints": 1.717,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560614"
+    },
+    {
+      "utcDate": "2026-10-24T14:00:00Z",
+      "date": "2026-10-24",
+      "home": "Arsenal",
+      "away": "Everton",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.6180283037102657,
+        "draw": 0.23079957390579736,
+        "away": 0.15117212238393682
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.222024,
+      "logLoss": 0.481221,
+      "homeExpectedPoints": 2.085,
+      "awayExpectedPoints": 0.684,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560616"
+    },
+    {
+      "utcDate": "2026-10-24T14:00:00Z",
+      "date": "2026-10-24",
+      "home": "Coventry",
+      "away": "Fulham",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.22491407041266892,
+        "draw": 0.29318422425962054,
+        "away": 0.48190170532771043
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 1,
+      "brier": 0.404969,
+      "logLoss": 0.730015,
+      "homeExpectedPoints": 0.968,
+      "awayExpectedPoints": 1.739,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560618"
+    },
+    {
+      "utcDate": "2026-10-24T16:30:00Z",
+      "date": "2026-10-24",
+      "home": "Chelsea",
+      "away": "Tottenham",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.4925845589839954,
+        "draw": 0.27102250062612016,
+        "away": 0.2363929403898844
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.899188,
+      "logLoss": 1.44226,
+      "homeExpectedPoints": 1.749,
+      "awayExpectedPoints": 0.98,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560617"
+    },
+    {
+      "utcDate": "2026-10-25T14:00:00Z",
+      "date": "2026-10-25",
+      "home": "Liverpool",
+      "away": "Brighton",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.49834020949089247,
+        "draw": 0.25851331417769063,
+        "away": 0.2431464763314169
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.377612,
+      "logLoss": 0.696472,
+      "homeExpectedPoints": 1.754,
+      "awayExpectedPoints": 0.988,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560612"
+    },
+    {
+      "utcDate": "2026-10-25T14:00:00Z",
+      "date": "2026-10-25",
+      "home": "Crystal Palace",
+      "away": "Newcastle",
+      "homeGoals": 0,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.33097081401442524,
+        "draw": 0.26725433965261813,
+        "away": 0.40177484633295674
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 1,
+      "brier": 0.53884,
+      "logLoss": 0.911863,
+      "homeExpectedPoints": 1.26,
+      "awayExpectedPoints": 1.473,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560613"
+    },
+    {
+      "utcDate": "2026-10-25T14:00:00Z",
+      "date": "2026-10-25",
+      "home": "Man United",
+      "away": "Bournemouth",
+      "homeGoals": 0,
+      "awayGoals": 3,
+      "probabilities": {
+        "home": 0.5248160327168944,
+        "draw": 0.26240540194709805,
+        "away": 0.2127785653360076
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.964006,
+      "logLoss": 1.547503,
+      "homeExpectedPoints": 1.837,
+      "awayExpectedPoints": 0.901,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560615"
+    },
+    {
+      "utcDate": "2026-10-25T14:00:00Z",
+      "date": "2026-10-25",
+      "home": "Hull",
+      "away": "Brentford",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.3507771798447224,
+        "draw": 0.2830748447726033,
+        "away": 0.36614797538267435
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.771091,
+      "logLoss": 1.262044,
+      "homeExpectedPoints": 1.335,
+      "awayExpectedPoints": 1.382,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560619"
+    },
+    {
+      "utcDate": "2026-10-25T16:30:00Z",
+      "date": "2026-10-25",
+      "home": "Sunderland",
+      "away": "Leeds",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.28497081907632343,
+        "draw": 0.29936265255967454,
+        "away": 0.415666528364002
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.74488,
+      "logLoss": 1.2061,
+      "homeExpectedPoints": 1.154,
+      "awayExpectedPoints": 1.546,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560621"
+    },
+    {
+      "utcDate": "2026-10-31T12:30:00Z",
+      "date": "2026-10-31",
+      "home": "Chelsea",
+      "away": "Man United",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.28418741899933914,
+        "draw": 0.2568605647289583,
+        "away": 0.45895201627170257
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.789002,
+      "logLoss": 1.258121,
+      "homeExpectedPoints": 1.109,
+      "awayExpectedPoints": 1.634,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560626"
+    },
+    {
+      "utcDate": "2026-10-31T15:00:00Z",
+      "date": "2026-10-31",
+      "home": "Man City",
+      "away": "Brighton",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.6175307884535945,
+        "draw": 0.22535109460873964,
+        "away": 0.1571181169376658
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 1.142577,
+      "logLoss": 1.850757,
+      "homeExpectedPoints": 2.078,
+      "awayExpectedPoints": 0.697,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560623"
+    },
+    {
+      "utcDate": "2026-10-31T15:00:00Z",
+      "date": "2026-10-31",
+      "home": "Bournemouth",
+      "away": "Leeds",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.4135109790383557,
+        "draw": 0.28164908209613476,
+        "away": 0.3048399388655096
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.516223,
+      "logLoss": 0.883071,
+      "homeExpectedPoints": 1.522,
+      "awayExpectedPoints": 1.196,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560624"
+    },
+    {
+      "utcDate": "2026-10-31T15:00:00Z",
+      "date": "2026-10-31",
+      "home": "Coventry",
+      "away": "Sunderland",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.2789339926182089,
+        "draw": 0.3051289904753392,
+        "away": 0.4159370169064519
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.786043,
+      "logLoss": 1.27678,
+      "homeExpectedPoints": 1.142,
+      "awayExpectedPoints": 1.553,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560625"
+    },
+    {
+      "utcDate": "2026-10-31T15:00:00Z",
+      "date": "2026-10-31",
+      "home": "Hull",
+      "away": "Ipswich",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.47579108068218107,
+        "draw": 0.26604551854746844,
+        "away": 0.2581634007703503
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.831715,
+      "logLoss": 1.324088,
+      "homeExpectedPoints": 1.693,
+      "awayExpectedPoints": 1.041,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560629"
+    },
+    {
+      "utcDate": "2026-10-31T15:00:00Z",
+      "date": "2026-10-31",
+      "home": "Brentford",
+      "away": "Nottingham",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.44827163461532543,
+        "draw": 0.25580755048695475,
+        "away": 0.2959208148977199
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.457411,
+      "logLoss": 0.802356,
+      "homeExpectedPoints": 1.601,
+      "awayExpectedPoints": 1.144,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560630"
+    },
+    {
+      "utcDate": "2026-10-31T17:30:00Z",
+      "date": "2026-10-31",
+      "home": "Tottenham",
+      "away": "Crystal Palace",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.46446001970995265,
+        "draw": 0.27610892057278036,
+        "away": 0.25943105971726693
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.430344,
+      "logLoss": 0.76688,
+      "homeExpectedPoints": 1.669,
+      "awayExpectedPoints": 1.054,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560627"
+    },
+    {
+      "utcDate": "2026-10-31T20:00:00Z",
+      "date": "2026-10-31",
+      "home": "Aston Villa",
+      "away": "Fulham",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.4505271316293462,
+        "draw": 0.2915293749560667,
+        "away": 0.2579434934145871
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.77144,
+      "logLoss": 1.232615,
+      "homeExpectedPoints": 1.643,
+      "awayExpectedPoints": 1.065,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560628"
+    },
+    {
+      "utcDate": "2026-11-01T16:30:00Z",
+      "date": "2026-11-01",
+      "home": "Liverpool",
+      "away": "Arsenal",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.41216180744346426,
+        "draw": 0.279251221175678,
+        "away": 0.3085869713808578
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.725911,
+      "logLoss": 1.175752,
+      "homeExpectedPoints": 1.516,
+      "awayExpectedPoints": 1.205,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560631"
+    },
+    {
+      "utcDate": "2026-11-02T20:00:00Z",
+      "date": "2026-11-02",
+      "home": "Newcastle",
+      "away": "Everton",
+      "homeGoals": 0,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.49206147271147843,
+        "draw": 0.2591625910519342,
+        "away": 0.24877593623658742
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.873627,
+      "logLoss": 1.391203,
+      "homeExpectedPoints": 1.735,
+      "awayExpectedPoints": 1.005,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560622"
+    }
+  ],
+  "interpretationLimits": [
+    "Only archived 40 results available as of this run; a small sample is not proof of predictive superiority.",
+    "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
+    "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
+    "Team points-above-expected over four matches is not a reliable causal measure of strength or coaching.",
+    "Any future rescheduled fixtures are excluded if capture time is not before recorded kickoff.",
+    "GOAL API archived match results are not independently audited here; external data licensing remains separate."
+  ]
+}
