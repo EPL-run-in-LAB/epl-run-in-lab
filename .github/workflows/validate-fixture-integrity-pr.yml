@@ -1,15 +1,15 @@
 name: Validate fixture integrity PR (isolated)
 on:
-  push:
-    branches:
-      - fix/fixture-integrity-and-coverage-20261104
+  workflow_dispatch:
   pull_request:
     paths:
       - "scripts/update_match_archive.py"
       - "scripts/update_predictions.py"
       - "scripts/enrich_schedule_integrity.py"
+      - "scripts/audit_epl_kickoffs.py"
       - "scripts/build_cross_team_schedule_context.py"
       - "tests/test_integrity_priorities.py"
+      - "tests/test_epl_kickoff_audit.py"
       - ".github/workflows/validate-fixture-integrity-pr.yml"
 permissions:
   contents: read
@@ -30,7 +30,7 @@ jobs:
       - name: Unit tests for independent EPL date corroboration
         run: python -m unittest discover -s tests -p 'test_epl_kickoff_audit.py' -v
       - name: Audit EPL kickoff against available independent authenticated feed
-        if: github.event_name == 'push'
+        if: github.event_name == 'workflow_dispatch'
         continue-on-error: true
         env:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
