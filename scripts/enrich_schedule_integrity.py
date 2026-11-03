@@ -51,7 +51,7 @@ def collect(session, aliases, reference_date):
                         "homeClubId": mapped_clubs[r["home"]],
                         "awayClubId": mapped_clubs[r["away"]],
                         "status": status, "score": r["score"],
-                        "dateDisagreement": True, "dateAuditStatus": "SINGLE_SOURCE_UNVERIFIED",
+                        "dateDisagreement": False, "dateAuditStatus": "SINGLE_SOURCE_PROVISIONAL",
                         "timeUnverified": r["timeUnverified"], "kickoffUTC": None,
                         "source": "open-matchday", "sourceLicense": "noncommercial"})
     return out, stats
