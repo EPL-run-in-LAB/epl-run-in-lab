@@ -38,6 +38,10 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_multi_competition_schedule.py' -v
       - name: Build independent 2026-27 multi-league and UEFA staging
         run: python scripts/build_multi_competition_schedule.py
+      - name: Test both-side UEFA fixture context
+        run: python -m unittest discover -s tests -p 'test_cross_team_schedule_context.py' -v
+      - name: Build provisional rest calendar for both UEFA opponents
+        run: python scripts/build_cross_team_schedule_context.py
       - name: Audit staged match coverage and commercial isolation
         run: |
           python - <<'PY'
@@ -53,13 +57,17 @@ jobs:
           assert output["status"]=="STAGING_NOT_MODEL_INPUT"
           assert len(output["matches"])==d["matchTotal"]
           assert all(m["kickoffUTC"] is None for m in output["matches"])
+          both=json.loads(Path("data/live/uefa_rest_context_2627.json").read_text(encoding="utf-8"))
+          assert both["coverage"]["uefaFixtures"] == d["coverage"]["UCL"]["total"]+d["coverage"]["UEL"]["total"]+d["coverage"]["UECL"]["total"]
+          assert both["coverage"]["bothDomesticSchedules"] > 0
+          assert all("homeSchedule" in m and "awaySchedule" in m for m in both["fixtures"])
           print("Validated independent multi-competition match staging:",d["matchTotal"])
           PY
       - name: Persist cup datasets only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/competition_schedule.json docs/data/competition_results_archive.json docs/data/competition_validation_report.json docs/data/fixture_congestion.json data/live/current_schedule_2627.json data/live/quality_report_2627.json
+          git add docs/data/competition_schedule.json docs/data/competition_results_archive.json docs/data/competition_validation_report.json docs/data/fixture_congestion.json data/live/current_schedule_2627.json data/live/quality_report_2627.json data/live/uefa_rest_context_2627.json
           if git diff --cached --quiet; then
             echo "No new cup data"
           else
