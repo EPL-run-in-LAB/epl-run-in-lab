@@ -35,6 +35,8 @@ function summary(){
  put('accAccuracy',pct(r.top1Accuracy));
  put('accBrier',fmt(r.multiclassBrierSum,4));
  put('accLoss',fmt(r.logLoss,4));
+ put('accBrier2',fmt(r.multiclassBrierSum,4));
+ put('accLoss2',fmt(r.logLoss,4));
  put('accCountNote',r.top1Correct+' / '+s.eligibleFinalizedFixtures+(en?' correct':' 적중'));
  put('accDates',s.firstFixtureDate+' — '+s.lastFixtureDate);
  put('accLimit',labels.warn(s.eligibleFinalizedFixtures));

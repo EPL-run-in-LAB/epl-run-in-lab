@@ -42,6 +42,7 @@ jobs:
         run: |
           python scripts/update_predictions.py
           python scripts/update_match_archive.py
+          python scripts/evaluate_prediction_archive.py --out docs/data/forecast_accuracy.json
           python scripts/build_fixture_congestion.py
           python scripts/build_i18n.py
       - name: Validate Pages fixture congestion dataset
@@ -58,7 +59,17 @@ jobs:
           assert "fetch('../data/fixture_congestion.json'" in en, 'English page JSON path is broken'
           ko=Path('docs/congestion.html').read_text(encoding='utf-8')
           assert "fetch('./data/fixture_congestion.json'" in ko, 'Korean page JSON path is broken'
-          print('Fixture calendar and locale routes are ready for deployment.')
+          accuracy=json.loads(Path('docs/data/forecast_accuracy.json').read_text(encoding='utf-8'))
+          sample=accuracy['sample']
+          assert sample['eligibleFinalizedFixtures'] > 0, 'No eligible completed predictions'
+          assert len(accuracy['fixtures']) == sample['eligibleFinalizedFixtures']
+          assert sample['teamAppearances'] == 2*sample['eligibleFinalizedFixtures']
+          assert 0 <= accuracy['results']['top1Accuracy'] <= 1
+          assert Path('docs/accuracy.html').is_file()
+          assert Path('docs/en/accuracy.html').is_file()
+          sitemap=Path('docs/sitemap.xml').read_text(encoding='utf-8')
+          assert '/accuracy.html' in sitemap and '/en/accuracy.html' in sitemap
+          print('Fixture congestion and forecast-accuracy dashboard routes verified.')
           PY
       - name: Persist immutable pre-match snapshots
         run: |
