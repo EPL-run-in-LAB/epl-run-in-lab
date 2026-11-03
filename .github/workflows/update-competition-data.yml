@@ -31,6 +31,18 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_multi_competition_schedule.py' -v
       - name: Build independent 2026-27 multi-league and UEFA staging
         run: python scripts/build_multi_competition_schedule.py
+      - name: Extend NL/PT domestic coverage and create discrepancy audit
+        run: python scripts/enrich_schedule_integrity.py
+      - name: Validate date discrepancies remain quarantined
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path("data/live/date_conflict_audit_2627.json").read_text(encoding="utf-8"))
+          assert report["unresolvedCount"] == len(report["issues"])
+          assert all(not x["dateVerified"] and x["kickoffVerifiedUTC"] is None for x in report["issues"])
+          print("Unresolved date conflicts:", report["unresolvedCount"])
+          PY
       - name: Test both-side UEFA fixture context
         run: python -m unittest discover -s tests -p 'test_cross_team_schedule_context.py' -v
       - name: Build provisional rest calendar for both UEFA opponents
@@ -50,7 +62,7 @@ jobs:
           assert output["status"]=="STAGING_NOT_MODEL_INPUT"
           assert len(output["matches"])==d["matchTotal"]
           assert all(m["kickoffUTC"] is None for m in output["matches"])
-          both=json.loads(Path("data/live/uefa_rest_context_2627.json").read_text(encoding="utf-8"))
+          both=json.loads(Path("data/live/uefa_rest_context_2627.json data/live/extended_domestic_2627.json data/live/date_conflict_audit_2627.json").read_text(encoding="utf-8"))
           assert both["coverage"]["uefaFixtures"] == d["coverage"]["UCL"]["total"]+d["coverage"]["UEL"]["total"]+d["coverage"]["UECL"]["total"]
           assert both["coverage"]["bothDomesticSchedules"] > 0
           assert all("homeSchedule" in m and "awaySchedule" in m for m in both["fixtures"])
