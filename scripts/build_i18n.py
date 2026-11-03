@@ -400,6 +400,11 @@ def build_english_congestion():
     s=s.replace('href="https://epl-run-in-lab.github.io/epl-run-in-lab/congestion.html">','href="https://epl-run-in-lab.github.io/epl-run-in-lab/en/congestion.html">',1)
     s=s.replace('content="EPL 및 컵대회 통합 일정, 경기 간 휴식일, 7일·14일 경기 수를 팀별로 확인합니다."','content="Compare EPL and cup fixtures, rest days and 7/14-day fixture counts by team."')
     translations=[
+      ('휴식일은 직전 경기와의 날짜 간격에서 경기일을 제외한 수치입니다. 요약 지표는 선택한 경기 기준으로 계산하지만, 각 경기의 직전 일정과 누적 경기 수에는 필터에서 제외한 대회도 포함됩니다.',
+       'Rest days exclude match days. Figures are calculated for the selected matches, while previous-match intervals and rolling counts include all competitions, even those hidden by the filter.'),
+      ('이전 달','Previous month'),('다음 달','Next month'),
+      ('월간 경기 달력','Monthly fixture calendar'),
+      ('휴식 0~2일','0–2 rest days'),
       ('팀별 월간 일정 혼잡도','Monthly Fixture Congestion'),
       ('월간 경기 달력','Monthly Fixture Calendar'),
       ('달력에서 경기 날짜를 선택하면 상대·휴식일·대회 정보를 볼 수 있습니다.','Select a date with a match to see opponents, rest days and competition information.'),
@@ -484,6 +489,15 @@ def build_english_congestion():
     s=s.replace("+'경기. 상세 값은 아래 표 참조.'", "+' matches. See table below.'")
     s=s.replace("+'경기'", "+' matches'")
     s=s.replace("'경기'", "'matches'")
+    # The Korean calendar formats dates and weekdays with literal strings.
+    # Keep English dates and weekday names free of Korean remnants.
+    s=s.replace("calendarYear+'년 '+(calendarMonth+1)+'월'",
+                "new Date(Date.UTC(calendarYear,calendarMonth,1)).toLocaleDateString('en-GB',{year:'numeric',month:'long',timeZone:'UTC'})")
+    s=s.replace("['월','화','수','목','금','토','일']",
+                "['Mon','Tue','Wed','Thu','Fri','Sat','Sun']")
+    s=s.replace("return (d.getUTCMonth()+1)+'월 '+d.getUTCDate()+'일 ('+['일','월','화','수','목','금','토'][d.getUTCDay()]+')'",
+                "return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'long',timeZone:'UTC'})")
+    s=s.replace("+'주차'", "+'th week'")
     s=s.replace('href="../?page=prediction"','href="./?page=prediction"')
     (DOCS/'en').mkdir(exist_ok=True)
     (DOCS/'en'/'congestion.html').write_text(s,encoding='utf-8')
