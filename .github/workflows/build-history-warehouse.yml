@@ -47,10 +47,10 @@ jobs:
           import json, sqlite3
           from pathlib import Path
           report = json.loads(Path("data/history/validation_report.json").read_text(encoding="utf-8"))
-          assert report["totals"]["matches"] == 7008, report["totals"]
-          assert report["totals"]["eligible"] == 7007, report["totals"]
-          assert report["totals"]["cc0_json_array"] == 86, report["totals"]
-          assert report["totals"]["cc0_upstream_text"] == 20, report["totals"]
+          assert report["totals"]["matches"] == 8908, report["totals"]
+          assert report["totals"]["eligible"] == 8907, report["totals"]
+          assert report["totals"]["cc0_json_array"] == 113, report["totals"]
+          assert report["totals"]["cc0_upstream_text"] == 25, report["totals"]
           assert report["totals"]["official_decision"] == 1, report["totals"]
           with sqlite3.connect("data/history/history.sqlite") as db:
               assert db.execute("SELECT COUNT(*) FROM matches").fetchone()[0] == 7008
@@ -60,13 +60,13 @@ jobs:
           assert europe["totals"]["rows"] == 1941, europe["totals"]
           assert europe["totals"]["finished"] == 1939, europe["totals"]
           assert europe["totals"]["cancelled"] == 2, europe["totals"]
-          assert europe["allMatchRows"] == 8949
+          assert europe["allMatchRows"] == 10849
           assert europe["linkedDomesticClubs"] > 30
           assert len(europe["missingCompetitionSeasons"]) == 2
           with sqlite3.connect("data/history/history.sqlite") as db:
               assert db.execute("SELECT COUNT(*) FROM uefa_matches").fetchone()[0] == 1941
-              assert db.execute("SELECT COUNT(*) FROM v_all_matches").fetchone()[0] == 8949
-          print("Verified 7,008 league and 1,941 UEFA fixtures with shared club IDs.")
+              assert db.execute("SELECT COUNT(*) FROM v_all_matches").fetchone()[0] == 10849
+          print("Verified 8,908 league and 1,941 UEFA fixtures with shared club IDs.")
           PY
       - name: Persist validated database and quality report
         run: |

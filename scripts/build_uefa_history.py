@@ -198,7 +198,7 @@ def append_uefa(db_path=DB, manifest_path=MANIFEST, report_path=REPORT):
                         if cid in originally_domestic:
                             linked.add(cid)
                     for country,raw,cid in [(home_c,m["home"],home),(away_c,m["away"],away)]:
-                        if country in ("DE","ES","IT","FR") and cid not in originally_domestic:
+                        if country in ("EN","DE","ES","IT","FR") and cid not in originally_domestic:
                             unresolved_cross_league.add((country,raw,cid))
                     score90=m["regulation"]
                     extra=m["afterExtra"]
@@ -239,7 +239,7 @@ def append_uefa(db_path=DB, manifest_path=MANIFEST, report_path=REPORT):
             if not linked:
                 raise ValueError("No UEFA clubs were linked to domestic records")
             full_count=con.execute("SELECT COUNT(*) FROM v_all_matches").fetchone()[0]
-            if full_count != 8949: raise ValueError("Unexpected unified row count: "+str(full_count))
+            if full_count != 10849: raise ValueError("Unexpected unified row count: "+str(full_count))
             club_count=con.execute("SELECT COUNT(*) FROM clubs").fetchone()[0]
             report={
                 "schemaVersion":1,"sourceRepository":manifest["sourceRepository"],
