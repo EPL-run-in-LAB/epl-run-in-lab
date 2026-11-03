@@ -30,6 +30,10 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_evaluate_prediction_archive.py' -v
       - name: Evaluate immutable, pre-kickoff archive snapshots
         run: python scripts/evaluate_prediction_archive.py
+      - name: Evaluate failure patterns
+        run: |
+          python -m unittest discover -s tests -p 'test_diagnose_prediction_errors.py' -v
+          python scripts/diagnose_prediction_errors.py
       - name: Validate output
         run: |
           python - <<'PY'
@@ -43,13 +47,16 @@ jobs:
           assert r["results"]["multiclassBrierSum"] >= 0
           assert r["results"]["logLoss"] >= 0
           assert all(x["matches"] > 0 for x in r["teamRecords"])
+          diagnostic=json.loads(Path("data/performance/prediction_error_diagnostics.json").read_text(encoding="utf-8"))
+          assert diagnostic["sample"] == s["eligibleFinalizedFixtures"]
+          assert sum(v["matches"] for v in diagnostic["byActual"].values()) == diagnostic["sample"]
           print("Verified frozen pre-match accuracy audit:",s["eligibleFinalizedFixtures"],"fixtures")
           PY
       - name: Save independent audit results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/performance/epl_prediction_accuracy.json data/performance/EPL_PREDICTION_ACCURACY_KO.md
+          git add data/performance/epl_prediction_accuracy.json data/performance/EPL_PREDICTION_ACCURACY_KO.md data/performance/prediction_error_diagnostics.json data/performance/PREDICTION_ERROR_DIAGNOSTICS_KO.md
           if git diff --cached --quiet; then
             echo "No forecast audit changes."
           else
