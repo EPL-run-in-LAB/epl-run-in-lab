@@ -91,8 +91,8 @@
   menu.setAttribute('aria-label', english ? 'Display language' : '표시 언어');
   menu.hidden = true;
   const entries = [
-    { code:'ko', primary:'한국어', secondary:'Korean', url:koPath },
-    { code:'en', primary:'영어', secondary:'English', url:enPath }
+    { code:'ko', label: english ? 'Korean' : '한국어', url:koPath },
+    { code:'en', label: english ? 'English' : '영어', url:enPath }
   ];
   entries.forEach(entry => {
     const link = document.createElement('a');
@@ -101,14 +101,12 @@
     link.dataset.lang = entry.code;
     if (locale === entry.code) link.setAttribute('aria-current', 'page');
     const mainLabel = document.createElement('span');
-    mainLabel.textContent = entry.primary;
-    const subLabel = document.createElement('small');
-    subLabel.textContent = entry.secondary;
+    mainLabel.textContent = entry.label;
     const check = document.createElement('span');
     check.className = 'site-language-check';
     check.textContent = '✓';
     check.setAttribute('aria-hidden', 'true');
-    link.append(mainLabel, subLabel, check);
+    link.append(mainLabel, check);
     link.addEventListener('click', () => {
       try { localStorage.setItem('runin-lang', entry.code); } catch (e) {}
     });
