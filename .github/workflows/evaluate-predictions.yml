@@ -2,6 +2,10 @@ name: Audit frozen EPL forecast accuracy
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Update EPL predictions and deploy Pages"]
+    types: [completed]
+    branches: [main]
   push:
     branches: ["main"]
     paths:
@@ -18,6 +22,8 @@ concurrency:
 
 jobs:
   audit:
+    if: >-
+      ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
