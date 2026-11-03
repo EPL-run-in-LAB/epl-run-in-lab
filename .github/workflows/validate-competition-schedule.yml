@@ -121,6 +121,17 @@ jobs:
                   assert 'assets/site-shell.css' in s, str(page)
           print('Shared UI, locale checkmarks, and six-column tables verified')
           PY
+      - name: Audit remaining Korean strings in English calendar
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          s=Path('docs/en/congestion.html').read_text(encoding='utf-8')
+          for phrase in ('한국어','영어'):
+              s=s.replace(phrase,'')
+          leftovers=sorted(set(re.findall(r'[가-힣]{1,}[가-힣 A-Za-z0-9·/.,:()_-]*',s)))
+          print('English calendar untranslated fragments:', leftovers[:35])
+          PY
       - name: Inspect output counts and required identities
         run: |
           python - <<'PY'
