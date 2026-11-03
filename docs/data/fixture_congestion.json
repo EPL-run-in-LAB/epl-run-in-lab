@@ -1,12 +1,12 @@
 {
   "version": 1,
   "season": "2026/27",
-  "generatedAt": "2026-11-03T14:51:07.600455+00:00",
+  "generatedAt": "2026-11-03T14:54:59.273527+00:00",
   "asOfDate": "2026-11-03",
   "snapshotAgeDays": 53,
   "eplSnapshotStale": true,
   "sources": {
-    "cupUpdatedAt": "2026-11-03T14:51:07.511404+00:00",
+    "cupUpdatedAt": "2026-11-03T14:54:59.184666+00:00",
     "eplSnapshotAsOf": "2026-09-11 13:19 UTC"
   },
   "disclaimer": "Cup fixture truth not independently verified; EPL schedule derived from prediction snapshot. No fatigue effect is applied to predictions.",
