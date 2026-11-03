@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, os, re, html
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import requests
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -35,12 +35,56 @@ def timeline(goals,cards,subs):
         team=canon(x.get('team','')); side=x.get('side')
         out.append({'minute':x.get('time'),'minuteNum':x.get('timeNum') or int(str(x.get('time','0')).split('+')[0]),'type':'SUBSTITUTION','side':side,'team':team,'substitution':x.get('substitution')})
     return sorted(out,key=lambda z:(z.get('minuteNum',0),z.get('type','')))
-def find_result(snapshot, results):
-    for r in results:
-        if r.get('matchStatus')!='FINISHED': continue
-        if canon(r.get('homeTeamName'))==snapshot['home'] and canon(r.get('awayTeamName'))==snapshot['away']:
-            return r
+def match_date(record):
+    """Only accept a provider-supplied calendar date or an explicit timestamp."""
+    for field in ('matchDate', 'utcDate', 'kickoffUTC', 'date', 'startTime'):
+        value = record.get(field)
+        if not value:
+            continue
+        raw = str(value).strip()
+        if re.fullmatch(r'\\d{4}-\\d{2}-\\d{2}', raw):
+            return raw
+        try:
+            parsed = datetime.fromisoformat(raw.replace('Z', '+00:00'))
+            if parsed.tzinfo is not None:
+                # Source UTC kickoff and official English local match date may differ.
+                from zoneinfo import ZoneInfo
+                parsed = parsed.astimezone(ZoneInfo('Europe/London'))
+            return parsed.date().isoformat()
+        except ValueError:
+            continue
     return None
+
+def season_for_date(value):
+    d = datetime.strptime(value, '%Y-%m-%d').date()
+    start = d.year if d.month >= 7 else d.year - 1
+    return f'{start}/{str(start + 1)[-2:]}'
+
+def find_result(snapshot, results, known_goal_id=None):
+    """Fail closed: cross-provider IDs are not comparable; require unique team/date/season.
+
+    An already-confirmed Goal API ID is a further constraint, not a substitute for
+    the official fixture identity. Never choose the first same-team result.
+    """
+    expected = snapshot.get('date')
+    if not expected or not snapshot.get('home') or not snapshot.get('away'):
+        return None
+    season = snapshot.get('season') or season_for_date(expected)
+    candidates = []
+    for r in results:
+        if r.get('matchStatus') != 'FINISHED':
+            continue
+        if canon(r.get('homeTeamName')) != canon(snapshot['home']) or canon(r.get('awayTeamName')) != canon(snapshot['away']):
+            continue
+        observed = match_date(r)
+        if not observed or observed != expected or season_for_date(observed) != season:
+            continue
+        if known_goal_id is not None and str(r.get('id')) != str(known_goal_id):
+            continue
+        if r.get('id') is None:
+            continue
+        candidates.append(r)
+    return candidates[0] if len(candidates) == 1 else None
 def pct(x): return f'{float(x)*100:.1f}%'
 def esc(x): return html.escape(str(x),quote=True)
 def factor_lines(factors,lang='ko'):
@@ -92,7 +136,7 @@ def main():
     results=api(f'/leagues/{LEAGUE}/results')
     for k,m in list(archive['matches'].items()):
         if m.get('status')=='FINISHED': continue
-        r=find_result(m['snapshot'],results)
+        r=find_result(m['snapshot'],results,m.get('goalApiFixtureId'))
         if not r: continue
         fid=r['id']; goals=normalize_list(api(f'/fixtures/{fid}/events')); cards=normalize_list(api(f'/fixtures/{fid}/cards')); subs=normalize_list(api(f'/fixtures/{fid}/substitutions'))
         m.update({'status':'FINISHED','goalApiFixtureId':fid,'result':{'homeGoals':int(r['homeTeamScore']),'awayGoals':int(r['awayTeamScore']),'referee':r.get('matchReferee'),'stadium':r.get('matchStadium')},'goals':goals,'cards':cards,'substitutions':subs,'timeline':timeline(goals,cards,subs),'finalizedAt':now})
