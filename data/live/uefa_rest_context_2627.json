@@ -4462,7 +4462,7 @@
       "home": "Atleti",
       "away": "Bayern München",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "es-club-atletico-de-madrid",
         "domesticScheduleAvailable": true,
@@ -4501,7 +4501,7 @@
       "home": "Barcelona",
       "away": "Aston Villa",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "es-fc-barcelona",
         "domesticScheduleAvailable": true,
@@ -4540,7 +4540,7 @@
       "home": "Bodø/Glimt",
       "away": "Lille",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4570,7 +4570,7 @@
       "home": "Feyenoord",
       "away": "Inter",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4600,7 +4600,7 @@
       "home": "Galatasaray",
       "away": "Stuttgart",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4630,7 +4630,7 @@
       "home": "LASK",
       "away": "S. Bratislava",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4651,7 +4651,7 @@
       "home": "Man Utd",
       "away": "Roma",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "en-manchester-united-fc",
         "domesticScheduleAvailable": true,
@@ -4690,7 +4690,7 @@
       "home": "Shakhtar",
       "away": "Sporting CP",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4711,7 +4711,7 @@
       "home": "Villarreal",
       "away": "Paris",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "es-villarreal-cf",
         "domesticScheduleAvailable": true,

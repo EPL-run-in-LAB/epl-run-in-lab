@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": "2026-27",
-  "generatedAt": "2026-11-03T14:55:00.829585+00:00",
+  "generatedAt": "2026-11-04T01:36:23.457886+00:00",
   "coverage": {
     "EN1": {
       "total": 380,
@@ -46,16 +46,16 @@
     "EN2": {
       "total": 552,
       "finished": 156,
-      "future": 396,
-      "pastWithoutResult": 0,
+      "future": 387,
+      "pastWithoutResult": 9,
       "cc0Scored": 95,
       "dateDisagreements": 3
     },
     "UCL": {
       "total": 144,
       "finished": 54,
-      "future": 90,
-      "pastWithoutResult": 0,
+      "future": 81,
+      "pastWithoutResult": 9,
       "unknownClubFixtures": 96
     },
     "UEL": {

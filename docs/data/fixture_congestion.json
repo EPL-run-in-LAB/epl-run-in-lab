@@ -1,12 +1,12 @@
 {
   "version": 1,
   "season": "2026/27",
-  "generatedAt": "2026-11-03T14:54:59.273527+00:00",
-  "asOfDate": "2026-11-03",
-  "snapshotAgeDays": 53,
+  "generatedAt": "2026-11-04T01:36:20.470954+00:00",
+  "asOfDate": "2026-11-04",
+  "snapshotAgeDays": 54,
   "eplSnapshotStale": true,
   "sources": {
-    "cupUpdatedAt": "2026-11-03T14:54:59.184666+00:00",
+    "cupUpdatedAt": "2026-11-04T01:36:20.387774+00:00",
     "eplSnapshotAsOf": "2026-09-11 13:19 UTC"
   },
   "disclaimer": "Cup fixture truth not independently verified; EPL schedule derived from prediction snapshot. No fatigue effect is applied to predictions.",
@@ -632,7 +632,7 @@
           "awayStreak": 1,
           "shortTurnaround": true,
           "potentialDateConflict": false,
-          "isUpcoming": true
+          "isUpcoming": false
         },
         {
           "id": "EPL|2026-11-07|man-united|aston-villa",
@@ -788,9 +788,9 @@
         }
       ],
       "summary": {
-        "upcomingCount": 9,
-        "nextFixture": "2026-11-03",
-        "upcoming7DayPeak": 3,
+        "upcomingCount": 8,
+        "nextFixture": "2026-11-07",
+        "upcoming7DayPeak": 2,
         "potentialDateConflicts": 0
       }
     },
@@ -5004,7 +5004,7 @@
           "awayStreak": 0,
           "shortTurnaround": true,
           "potentialDateConflict": false,
-          "isUpcoming": true
+          "isUpcoming": false
         },
         {
           "id": "EPL|2026-11-07|man-united|aston-villa",
@@ -5160,8 +5160,8 @@
         }
       ],
       "summary": {
-        "upcomingCount": 9,
-        "nextFixture": "2026-11-03",
+        "upcomingCount": 8,
+        "nextFixture": "2026-11-07",
         "upcoming7DayPeak": 2,
         "potentialDateConflicts": 0
       }
