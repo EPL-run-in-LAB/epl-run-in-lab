@@ -1,16 +1,16 @@
 {
   "version": 1,
   "season": "2026/27",
-  "updatedAt": "2026-11-04T01:36:20.387774+00:00",
+  "updatedAt": "2026-11-05T01:43:50.895301+00:00",
   "source": "https://github.com/oladeeayo/open-matchday",
   "notice": "Unverified source kickoff times are not used for hour-level rest calculations.",
   "coverage": {
     "UCL_results": {
-      "count": 54,
+      "count": 63,
       "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv"
     },
     "UCL_fixtures": {
-      "count": 90,
+      "count": 81,
       "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/fixtures_2627.csv"
     },
     "UEL_results": {
@@ -1324,8 +1324,13 @@
       "awayRaw": "Aston Villa",
       "homeEpl": false,
       "awayEpl": true,
-      "status": "SCHEDULED",
-      "source": "open-matchday"
+      "status": "FINISHED",
+      "source": "open-matchday",
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "upstreamSource": "fixturedl"
     },
     {
       "id": "UCL|2026-11-03|Man Utd|Roma",
@@ -1341,8 +1346,13 @@
       "awayRaw": "Roma",
       "homeEpl": true,
       "awayEpl": false,
-      "status": "SCHEDULED",
-      "source": "open-matchday"
+      "status": "FINISHED",
+      "source": "open-matchday",
+      "score": {
+        "home": 3,
+        "away": 2
+      },
+      "upstreamSource": "fixturedl"
     },
     {
       "id": "UCL|2026-11-04|Fenerbahçe|Liverpool",

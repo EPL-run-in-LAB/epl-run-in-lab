@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "season": "2026-27",
-  "generatedAt": "2026-11-04T01:36:23.457886+00:00",
-  "asOfDate": "2026-11-04",
+  "generatedAt": "2026-11-05T01:43:52.552346+00:00",
+  "asOfDate": "2026-11-05",
   "status": "STAGING_NOT_MODEL_INPUT",
   "licenseNote": "Current fixture source is non-commercial; not cleared for ad monetization.",
   "timePolicy": "Unverified local time stays textual; UTC kickoff and travel/rest hours are never invented.",
@@ -24076,7 +24076,7 @@
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-02",
       "dateDisagreement": false,
-      "timeUnverified": "21:00",
+      "timeUnverified": "20:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
@@ -24101,7 +24101,7 @@
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-01",
       "dateDisagreement": true,
-      "timeUnverified": "21:00",
+      "timeUnverified": "20:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
@@ -24126,7 +24126,7 @@
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-10-31",
       "dateDisagreement": true,
-      "timeUnverified": "20:45",
+      "timeUnverified": "19:45",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
@@ -24151,7 +24151,7 @@
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-02",
       "dateDisagreement": false,
-      "timeUnverified": "20:45",
+      "timeUnverified": "19:45",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
@@ -24176,7 +24176,7 @@
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-02",
       "dateDisagreement": false,
-      "timeUnverified": "18:30",
+      "timeUnverified": "17:30",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
@@ -24193,8 +24193,11 @@
       "away": "Millwall",
       "homeClubId": "en-birmingham-city-fc",
       "awayClubId": "en-millwall-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        3,
+        0
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24202,7 +24205,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24215,8 +24218,11 @@
       "away": "Stoke City",
       "homeClubId": "en-blackburn-rovers-fc",
       "awayClubId": "en-stoke-city-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        1,
+        2
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24224,7 +24230,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24237,8 +24243,11 @@
       "away": "Bolton Wanderers",
       "homeClubId": "en-charlton-athletic-fc",
       "awayClubId": "en-bolton-wanderers-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        1
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24246,7 +24255,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24259,8 +24268,11 @@
       "away": "Norwich City",
       "homeClubId": "en-derby-county-fc",
       "awayClubId": "en-norwich-city-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        4
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24268,7 +24280,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24281,8 +24293,11 @@
       "away": "Swansea City",
       "homeClubId": "en-portsmouth-fc",
       "awayClubId": "en-swansea-city-afc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        3,
+        1
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24290,7 +24305,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24303,8 +24318,11 @@
       "away": "Sheffield United",
       "homeClubId": "en-preston-north-end-fc",
       "awayClubId": "en-sheffield-united-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        2,
+        3
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24312,7 +24330,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24325,8 +24343,11 @@
       "away": "Burnley",
       "homeClubId": "en-queens-park-rangers-fc",
       "awayClubId": "en-burnley-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        1,
+        1
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24334,7 +24355,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24347,8 +24368,11 @@
       "away": "Lincoln City",
       "homeClubId": "en-watford-fc",
       "awayClubId": "en-lincoln-city-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        1,
+        0
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24356,7 +24380,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24369,8 +24393,11 @@
       "away": "Southampton",
       "homeClubId": "en-west-bromwich-albion-fc",
       "awayClubId": "en-southampton-fc",
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        1,
+        1
+      ],
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-03",
       "dateDisagreement": false,
@@ -24378,7 +24405,7 @@
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null,
+      "sourceRowOrigin": "fixturedl",
       "cc0ReferenceURL": "https://raw.githubusercontent.com/openfootball/football.json/master/2026-27/en.2.json"
     },
     {
@@ -24392,13 +24419,16 @@
       "homeClubId": "es-club-atletico-de-madrid",
       "awayClubId": "de-fc-bayern-munchen",
       "identityResolved": true,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        2
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-d9fca67bcf15eb6fa8136637",
@@ -24411,13 +24441,16 @@
       "homeClubId": "es-fc-barcelona",
       "awayClubId": "en-aston-villa-fc",
       "identityResolved": true,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        3,
+        0
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-3b36817cd4c2564e9dae8ac9",
@@ -24430,13 +24463,16 @@
       "homeClubId": null,
       "awayClubId": "fr-lille-osc",
       "identityResolved": false,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        0
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-585cd80a19ec1ca92a7873ae",
@@ -24449,13 +24485,16 @@
       "homeClubId": null,
       "awayClubId": "it-fc-internazionale-milano",
       "identityResolved": false,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        3
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-7d98485d2513613f0815c5c7",
@@ -24468,13 +24507,16 @@
       "homeClubId": null,
       "awayClubId": "de-vfb-stuttgart",
       "identityResolved": false,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        2,
+        0
+      ],
       "timeUnverified": "18:45",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-06cce576d9882ee6b3a21c96",
@@ -24487,13 +24529,16 @@
       "homeClubId": null,
       "awayClubId": null,
       "identityResolved": false,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        4,
+        0
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-4fe8642dc407d42f26b1fe78",
@@ -24506,13 +24551,16 @@
       "homeClubId": "en-manchester-united-fc",
       "awayClubId": "it-as-roma",
       "identityResolved": true,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        3,
+        2
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-0bb326d0dc928b5939351583",
@@ -24525,13 +24573,16 @@
       "homeClubId": null,
       "awayClubId": null,
       "identityResolved": false,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        1
+      ],
       "timeUnverified": "18:45",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-23536da539cd17117c87102b",
@@ -24544,13 +24595,16 @@
       "homeClubId": "es-villarreal-cf",
       "awayClubId": "fr-paris-saint-germain",
       "identityResolved": true,
-      "status": "PAST_UNVERIFIED",
-      "score": null,
+      "status": "FINISHED",
+      "score": [
+        0,
+        6
+      ],
       "timeUnverified": "21:00",
       "kickoffUTC": null,
       "source": "open-matchday",
       "sourceLicense": "noncommercial",
-      "sourceRowOrigin": null
+      "sourceRowOrigin": "fixturedl"
     },
     {
       "id": "stage-00fdd9df7400971ec2abec8a",
@@ -24562,7 +24616,7 @@
       "away": "Wolverhampton Wanderers",
       "homeClubId": "en-bristol-city-fc",
       "awayClubId": "en-wolverhampton-wanderers-fc",
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-04",
@@ -24584,7 +24638,7 @@
       "away": "West Ham United",
       "homeClubId": "en-cardiff-city-fc",
       "awayClubId": "en-west-ham-united-fc",
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-04",
@@ -24606,7 +24660,7 @@
       "away": "Middlesbrough",
       "homeClubId": "en-wrexham-afc",
       "awayClubId": "en-middlesbrough-fc",
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "scoreCrossVerifiedCC0": false,
       "cc0Date": "2026-11-04",
@@ -24629,7 +24683,7 @@
       "homeClubId": null,
       "awayClubId": "es-real-madrid-cf",
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "18:45",
       "kickoffUTC": null,
@@ -24648,7 +24702,7 @@
       "homeClubId": "de-borussia-dortmund",
       "awayClubId": "es-real-betis-balompie",
       "identityResolved": true,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24667,7 +24721,7 @@
       "homeClubId": null,
       "awayClubId": "en-liverpool-fc",
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "18:45",
       "kickoffUTC": null,
@@ -24686,7 +24740,7 @@
       "homeClubId": "de-rb-leipzig",
       "awayClubId": "en-manchester-city-fc",
       "identityResolved": true,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24705,7 +24759,7 @@
       "homeClubId": "fr-rc-lens",
       "awayClubId": "it-como-1907",
       "identityResolved": true,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24724,7 +24778,7 @@
       "homeClubId": null,
       "awayClubId": null,
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24743,7 +24797,7 @@
       "homeClubId": null,
       "awayClubId": "it-ssc-napoli",
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24762,7 +24816,7 @@
       "homeClubId": null,
       "awayClubId": "en-arsenal-fc",
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24781,7 +24835,7 @@
       "homeClubId": null,
       "awayClubId": null,
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "21:00",
       "kickoffUTC": null,
@@ -24800,7 +24854,7 @@
       "homeClubId": "fr-stade-rennais",
       "awayClubId": null,
       "identityResolved": false,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "score": null,
       "timeUnverified": "16:30",
       "kickoffUTC": null,

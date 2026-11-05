@@ -1,12 +1,12 @@
 {
   "version": 1,
   "season": "2026/27",
-  "generatedAt": "2026-11-04T01:36:20.470954+00:00",
-  "asOfDate": "2026-11-04",
-  "snapshotAgeDays": 54,
+  "generatedAt": "2026-11-05T01:43:50.962059+00:00",
+  "asOfDate": "2026-11-05",
+  "snapshotAgeDays": 55,
   "eplSnapshotStale": true,
   "sources": {
-    "cupUpdatedAt": "2026-11-04T01:36:20.387774+00:00",
+    "cupUpdatedAt": "2026-11-05T01:43:50.895301+00:00",
     "eplSnapshotAsOf": "2026-09-11 13:19 UTC"
   },
   "disclaimer": "Cup fixture truth not independently verified; EPL schedule derived from prediction snapshot. No fatigue effect is applied to predictions.",
@@ -241,7 +241,7 @@
           "awayStreak": 3,
           "shortTurnaround": true,
           "potentialDateConflict": false,
-          "isUpcoming": true
+          "isUpcoming": false
         },
         {
           "id": "EPL|2026-11-07|arsenal|hull",
@@ -397,8 +397,8 @@
         }
       ],
       "summary": {
-        "upcomingCount": 9,
-        "nextFixture": "2026-11-04",
+        "upcomingCount": 8,
+        "nextFixture": "2026-11-07",
         "upcoming7DayPeak": 3,
         "potentialDateConflicts": 0
       }
@@ -621,7 +621,7 @@
           "competition": "UCL",
           "opponent": "Barcelona",
           "venue": "A",
-          "status": "SCHEDULED",
+          "status": "FINISHED",
           "quality": "unverified_upstream",
           "daysSincePrevious": 3,
           "calendarRestDays": 2,
@@ -4203,7 +4203,7 @@
           "awayStreak": 1,
           "shortTurnaround": true,
           "potentialDateConflict": false,
-          "isUpcoming": true
+          "isUpcoming": false
         },
         {
           "id": "EPL|2026-11-07|crystal-palace|liverpool",
@@ -4378,8 +4378,8 @@
         }
       ],
       "summary": {
-        "upcomingCount": 10,
-        "nextFixture": "2026-11-04",
+        "upcomingCount": 9,
+        "nextFixture": "2026-11-07",
         "upcoming7DayPeak": 3,
         "potentialDateConflicts": 0
       }
@@ -4613,7 +4613,7 @@
           "awayStreak": 1,
           "shortTurnaround": false,
           "potentialDateConflict": false,
-          "isUpcoming": true
+          "isUpcoming": false
         },
         {
           "id": "EPL|2026-11-07|nottingham|man-city",
@@ -4788,8 +4788,8 @@
         }
       ],
       "summary": {
-        "upcomingCount": 10,
-        "nextFixture": "2026-11-04",
+        "upcomingCount": 9,
+        "nextFixture": "2026-11-07",
         "upcoming7DayPeak": 2,
         "potentialDateConflicts": 0
       }
@@ -4993,7 +4993,7 @@
           "competition": "UCL",
           "opponent": "Roma",
           "venue": "H",
-          "status": "SCHEDULED",
+          "status": "FINISHED",
           "quality": "unverified_upstream",
           "daysSincePrevious": 3,
           "calendarRestDays": 2,

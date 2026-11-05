@@ -4461,8 +4461,11 @@
       "competition": "UCL",
       "home": "Atleti",
       "away": "Bayern München",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        0,
+        2
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": "es-club-atletico-de-madrid",
         "domesticScheduleAvailable": true,
@@ -4500,8 +4503,11 @@
       "competition": "UCL",
       "home": "Barcelona",
       "away": "Aston Villa",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        3,
+        0
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": "es-fc-barcelona",
         "domesticScheduleAvailable": true,
@@ -4539,8 +4545,11 @@
       "competition": "UCL",
       "home": "Bodø/Glimt",
       "away": "Lille",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        0,
+        0
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4569,8 +4578,11 @@
       "competition": "UCL",
       "home": "Feyenoord",
       "away": "Inter",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        0,
+        3
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4599,8 +4611,11 @@
       "competition": "UCL",
       "home": "Galatasaray",
       "away": "Stuttgart",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        2,
+        0
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4629,8 +4644,11 @@
       "competition": "UCL",
       "home": "LASK",
       "away": "S. Bratislava",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        4,
+        0
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4650,8 +4668,11 @@
       "competition": "UCL",
       "home": "Man Utd",
       "away": "Roma",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        3,
+        2
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": "en-manchester-united-fc",
         "domesticScheduleAvailable": true,
@@ -4689,8 +4710,11 @@
       "competition": "UCL",
       "home": "Shakhtar",
       "away": "Sporting CP",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        0,
+        1
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4710,8 +4734,11 @@
       "competition": "UCL",
       "home": "Villarreal",
       "away": "Paris",
-      "score": null,
-      "status": "PAST_UNVERIFIED",
+      "score": [
+        0,
+        6
+      ],
+      "status": "FINISHED",
       "homeSchedule": {
         "clubId": "es-villarreal-cf",
         "domesticScheduleAvailable": true,
@@ -4750,7 +4777,7 @@
       "home": "AEK Athens",
       "away": "Real Madrid",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4780,7 +4807,7 @@
       "home": "B. Dortmund",
       "away": "Real Betis",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "de-borussia-dortmund",
         "domesticScheduleAvailable": true,
@@ -4819,7 +4846,7 @@
       "home": "Fenerbahçe",
       "away": "Liverpool",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4849,7 +4876,7 @@
       "home": "Leipzig",
       "away": "Man City",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "de-rb-leipzig",
         "domesticScheduleAvailable": true,
@@ -4888,7 +4915,7 @@
       "home": "Lens",
       "away": "Como",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "fr-rc-lens",
         "domesticScheduleAvailable": true,
@@ -4927,7 +4954,7 @@
       "home": "PSV",
       "away": "Club Brugge",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4948,7 +4975,7 @@
       "home": "Porto",
       "away": "Napoli",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -4978,7 +5005,7 @@
       "home": "Slavia Praha",
       "away": "Arsenal",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -5008,7 +5035,7 @@
       "home": "Viking",
       "away": "Sabah",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": null,
         "domesticScheduleAvailable": false,
@@ -5029,7 +5056,7 @@
       "home": "Rennes",
       "away": "Olympiacos",
       "score": null,
-      "status": "SCHEDULED",
+      "status": "PAST_UNVERIFIED",
       "homeSchedule": {
         "clubId": "fr-stade-rennais",
         "domesticScheduleAvailable": true,

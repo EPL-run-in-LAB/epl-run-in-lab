@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-11-04T01:36:20.387774+00:00",
+  "updatedAt": "2026-11-05T01:43:50.895301+00:00",
   "knownEplClubs": 20,
   "membershipAudit": {
     "source": "open-matchday EPL",
@@ -35,11 +35,11 @@
   "archiveIdentityCorrections": [],
   "competitionCounts": {
     "UCL_results": {
-      "count": 54,
+      "count": 63,
       "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/results_2627.csv"
     },
     "UCL_fixtures": {
-      "count": 90,
+      "count": 81,
       "url": "https://raw.githubusercontent.com/oladeeayo/open-matchday/master/data/UEFA_1_champions-league/fixtures_2627.csv"
     },
     "UEL_results": {

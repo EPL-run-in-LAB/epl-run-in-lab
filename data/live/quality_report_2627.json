@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "season": "2026-27",
-  "generatedAt": "2026-11-04T01:36:23.457886+00:00",
+  "generatedAt": "2026-11-05T01:43:52.552346+00:00",
   "coverage": {
     "EN1": {
       "total": 380,
@@ -45,24 +45,24 @@
     },
     "EN2": {
       "total": 552,
-      "finished": 156,
-      "future": 387,
-      "pastWithoutResult": 9,
+      "finished": 165,
+      "future": 384,
+      "pastWithoutResult": 3,
       "cc0Scored": 95,
       "dateDisagreements": 3
     },
     "UCL": {
       "total": 144,
-      "finished": 54,
-      "future": 81,
+      "finished": 63,
+      "future": 72,
       "pastWithoutResult": 9,
       "unknownClubFixtures": 96
     },
     "UEL": {
       "total": 144,
       "finished": 54,
-      "future": 90,
-      "pastWithoutResult": 0,
+      "future": 89,
+      "pastWithoutResult": 1,
       "unknownClubFixtures": 129
     },
     "UECL": {
@@ -89,7 +89,7 @@
   },
   "matchTotal": 3008,
   "cc0ScoreAgreementCount": 345,
-  "supplementaryResultsMissingFromCC0": 263,
+  "supplementaryResultsMissingFromCC0": 272,
   "dateDisagreements": [
     {
       "competition": "EN1",
