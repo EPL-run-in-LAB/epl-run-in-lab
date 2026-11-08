@@ -3,31 +3,31 @@
   "source": "docs/data/match_archive.json",
   "method": "Frozen pre-kickoff probabilities only; three-class 90-minute results",
   "sample": {
-    "archivedFixtures": 140,
-    "eligibleFinalizedFixtures": 40,
+    "archivedFixtures": 143,
+    "eligibleFinalizedFixtures": 41,
     "excludedReasons": {
-      "not_finished": 100
+      "not_finished": 102
     },
     "firstFixtureDate": "2026-10-10",
-    "lastFixtureDate": "2026-11-02",
+    "lastFixtureDate": "2026-11-06",
     "uniqueTeams": 20,
-    "teamAppearances": 80
+    "teamAppearances": 82
   },
   "results": {
-    "top1Correct": 18,
-    "top1Accuracy": 0.45,
-    "multiclassBrierSum": 0.640802,
-    "logLoss": 1.063422,
+    "top1Correct": 19,
+    "top1Accuracy": 0.463415,
+    "multiclassBrierSum": 0.632907,
+    "logLoss": 1.052498,
     "outcomeCounts": {
-      "home": 18,
+      "home": 19,
       "draw": 9,
       "away": 13
     },
     "uniformOneThirdBrier": 0.666667,
     "uniformOneThirdLogLoss": 1.098612,
-    "alwaysPredictHomeAccuracyOnSample": 0.45,
-    "sumExpectedPointsForBothTeams": 109.422,
-    "sumActualPointsForBothTeams": 111
+    "alwaysPredictHomeAccuracyOnSample": 0.463415,
+    "sumExpectedPointsForBothTeams": 112.182,
+    "sumActualPointsForBothTeams": 114
   },
   "teamRecords": [
     {
@@ -79,14 +79,6 @@
       "perMatchDifference": 0.656
     },
     {
-      "team": "Coventry",
-      "matches": 4,
-      "expectedPoints": 4.019,
-      "actualPoints": 6,
-      "pointsAboveExpected": 1.981,
-      "perMatchDifference": 0.495
-    },
-    {
       "team": "Ipswich",
       "matches": 4,
       "expectedPoints": 3.544,
@@ -95,12 +87,28 @@
       "perMatchDifference": 0.364
     },
     {
+      "team": "Coventry",
+      "matches": 5,
+      "expectedPoints": 4.918,
+      "actualPoints": 6,
+      "pointsAboveExpected": 1.082,
+      "perMatchDifference": 0.216
+    },
+    {
       "team": "Fulham",
       "matches": 4,
       "expectedPoints": 6.215,
       "actualPoints": 7,
       "pointsAboveExpected": 0.785,
       "perMatchDifference": 0.196
+    },
+    {
+      "team": "Everton",
+      "matches": 5,
+      "expectedPoints": 6.608,
+      "actualPoints": 7,
+      "pointsAboveExpected": 0.392,
+      "perMatchDifference": 0.078
     },
     {
       "team": "Liverpool",
@@ -117,14 +125,6 @@
       "actualPoints": 5,
       "pointsAboveExpected": -0.317,
       "perMatchDifference": -0.079
-    },
-    {
-      "team": "Everton",
-      "matches": 4,
-      "expectedPoints": 4.747,
-      "actualPoints": 4,
-      "pointsAboveExpected": -0.747,
-      "perMatchDifference": -0.187
     },
     {
       "team": "Crystal Palace",
@@ -1071,10 +1071,32 @@
       "awayExpectedPoints": 1.005,
       "capturedAt": "2026-09-27T04:44:01.238359+00:00",
       "fixtureId": "560622"
+    },
+    {
+      "utcDate": "2026-11-06T20:00:00Z",
+      "date": "2026-11-06",
+      "home": "Everton",
+      "away": "Coventry",
+      "homeGoals": 3,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.5403501028099997,
+        "draw": 0.23985448751974991,
+        "away": 0.21979540967025038
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.317118,
+      "logLoss": 0.615538,
+      "homeExpectedPoints": 1.861,
+      "awayExpectedPoints": 0.899,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560634"
     }
   ],
   "interpretationLimits": [
-    "Only 40 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
+    "Only 41 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
     "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
     "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
     "Points-above-expected in small samples is not a reliable causal measure of strength or coaching.",
