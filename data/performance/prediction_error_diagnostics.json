@@ -1,18 +1,18 @@
 {
   "version": 1,
   "source": "validated frozen pre-kickoff prediction report",
-  "sample": 41,
+  "sample": 50,
   "overall": {
-    "matches": 41,
-    "correct": 19,
-    "accuracy": 0.4634,
-    "brier": 0.6329,
-    "logLoss": 1.0525
+    "matches": 50,
+    "correct": 25,
+    "accuracy": 0.5,
+    "brier": 0.6193,
+    "logLoss": 1.0328
   },
   "predictedByActual": {
     "home": {
-      "home": 13,
-      "draw": 4,
+      "home": 17,
+      "draw": 6,
       "away": 7
     },
     "draw": {
@@ -21,41 +21,41 @@
       "away": 0
     },
     "away": {
-      "home": 6,
+      "home": 7,
       "draw": 5,
-      "away": 6
+      "away": 8
     }
   },
   "byActual": {
     "home": {
-      "matches": 19,
-      "correct": 13,
-      "accuracy": 0.6842,
-      "brier": 0.4987,
-      "logLoss": 0.8656
+      "matches": 24,
+      "correct": 17,
+      "accuracy": 0.7083,
+      "brier": 0.4955,
+      "logLoss": 0.8606
     },
     "draw": {
-      "matches": 9,
+      "matches": 11,
       "correct": 0,
       "accuracy": 0.0,
-      "brier": 0.8151,
-      "logLoss": 1.2991
+      "brier": 0.8266,
+      "logLoss": 1.315
     },
     "away": {
-      "matches": 13,
-      "correct": 6,
-      "accuracy": 0.4615,
-      "brier": 0.7029,
-      "logLoss": 1.155
+      "matches": 15,
+      "correct": 8,
+      "accuracy": 0.5333,
+      "brier": 0.6653,
+      "logLoss": 1.1014
     }
   },
   "byTopPick": {
     "home": {
-      "matches": 24,
-      "correct": 13,
-      "accuracy": 0.5417,
-      "brier": 0.5908,
-      "logLoss": 0.9911
+      "matches": 30,
+      "correct": 17,
+      "accuracy": 0.5667,
+      "brier": 0.5789,
+      "logLoss": 0.9742
     },
     "draw": {
       "matches": 0,
@@ -65,70 +65,70 @@
       "logLoss": null
     },
     "away": {
-      "matches": 17,
-      "correct": 6,
-      "accuracy": 0.3529,
-      "brier": 0.6924,
-      "logLoss": 1.1391
+      "matches": 20,
+      "correct": 8,
+      "accuracy": 0.4,
+      "brier": 0.6798,
+      "logLoss": 1.1207
     }
   },
   "calibration": {
     "home": {
-      "meanProbability": 0.4223,
-      "actualFrequency": 0.4634,
-      "binaryBrier": 0.2454
+      "meanProbability": 0.4219,
+      "actualFrequency": 0.48,
+      "binaryBrier": 0.2448
     },
     "draw": {
-      "meanProbability": 0.2639,
-      "actualFrequency": 0.2195,
-      "binaryBrier": 0.1697
+      "meanProbability": 0.2619,
+      "actualFrequency": 0.22,
+      "binaryBrier": 0.1707
     },
     "away": {
-      "meanProbability": 0.3139,
-      "actualFrequency": 0.3171,
-      "binaryBrier": 0.2178
+      "meanProbability": 0.3162,
+      "actualFrequency": 0.3,
+      "binaryBrier": 0.2038
     }
   },
   "confidenceBins": [
     {
       "min": 0,
       "maxExclusive": 0.4,
-      "matches": 6,
-      "correct": 3,
-      "accuracy": 0.5,
-      "brier": 0.6488,
-      "logLoss": 1.0747,
-      "averageConfidence": 0.3813
+      "matches": 7,
+      "correct": 4,
+      "accuracy": 0.5714,
+      "brier": 0.6402,
+      "logLoss": 1.0614,
+      "averageConfidence": 0.3804
     },
     {
       "min": 0.4,
       "maxExclusive": 0.5,
-      "matches": 24,
-      "correct": 9,
-      "accuracy": 0.375,
-      "brier": 0.6723,
-      "logLoss": 1.1053,
-      "averageConfidence": 0.4568
+      "matches": 27,
+      "correct": 11,
+      "accuracy": 0.4074,
+      "brier": 0.6595,
+      "logLoss": 1.0885,
+      "averageConfidence": 0.4565
     },
     {
       "min": 0.5,
       "maxExclusive": 0.6,
-      "matches": 6,
-      "correct": 4,
-      "accuracy": 0.6667,
-      "brier": 0.5426,
-      "logLoss": 0.939,
-      "averageConfidence": 0.5328
+      "matches": 10,
+      "correct": 6,
+      "accuracy": 0.6,
+      "brier": 0.5831,
+      "logLoss": 0.9866,
+      "averageConfidence": 0.5375
     },
     {
       "min": 0.6,
       "maxExclusive": 1.01,
-      "matches": 5,
-      "correct": 3,
-      "accuracy": 0.6,
-      "brier": 0.5332,
-      "logLoss": 0.9084,
-      "averageConfidence": 0.6476
+      "matches": 6,
+      "correct": 4,
+      "accuracy": 0.6667,
+      "brier": 0.474,
+      "logLoss": 0.8256,
+      "averageConfidence": 0.6501
     }
   ],
   "byMonth": {
@@ -140,11 +140,11 @@
       "logLoss": 1.0518
     },
     "2026-11": {
-      "matches": 3,
-      "correct": 1,
-      "accuracy": 0.3333,
-      "brier": 0.6389,
-      "logLoss": 1.0608
+      "matches": 12,
+      "correct": 7,
+      "accuracy": 0.5833,
+      "brier": 0.5776,
+      "logLoss": 0.9726
     }
   },
   "highestLogLossGames": [
@@ -200,6 +200,23 @@
       "logLoss": 1.5475
     },
     {
+      "date": "2026-11-07",
+      "home": "Nottingham",
+      "away": "Man City",
+      "score": [
+        3,
+        1
+      ],
+      "expected": "away",
+      "actual": "home",
+      "probabilities": {
+        "home": 0.21404336529980322,
+        "draw": 0.22269017533578656,
+        "away": 0.5632664593644101
+      },
+      "logLoss": 1.5416
+    },
+    {
       "date": "2026-10-10",
       "home": "Man United",
       "away": "Tottenham",
@@ -251,6 +268,23 @@
       "logLoss": 1.4177
     },
     {
+      "date": "2026-11-08",
+      "home": "Man United",
+      "away": "Aston Villa",
+      "score": [
+        4,
+        4
+      ],
+      "expected": "home",
+      "actual": "draw",
+      "probabilities": {
+        "home": 0.5572565594143031,
+        "draw": 0.24243712106531143,
+        "away": 0.20030631952038555
+      },
+      "logLoss": 1.417
+    },
+    {
       "date": "2026-11-02",
       "home": "Newcastle",
       "away": "Everton",
@@ -283,46 +317,12 @@
         "away": 0.48344210037511604
       },
       "logLoss": 1.3874
-    },
-    {
-      "date": "2026-10-17",
-      "home": "Newcastle",
-      "away": "Aston Villa",
-      "score": [
-        0,
-        1
-      ],
-      "expected": "home",
-      "actual": "away",
-      "probabilities": {
-        "home": 0.4836166702842611,
-        "draw": 0.2577160574527187,
-        "away": 0.2586672722630201
-      },
-      "logLoss": 1.3522
-    },
-    {
-      "date": "2026-10-31",
-      "home": "Hull",
-      "away": "Ipswich",
-      "score": [
-        2,
-        2
-      ],
-      "expected": "home",
-      "actual": "draw",
-      "probabilities": {
-        "home": 0.47579108068218107,
-        "draw": 0.26604551854746844,
-        "away": 0.2581634007703503
-      },
-      "logLoss": 1.3241
     }
   ],
   "baseline": {
     "uniformBrier": 0.666667,
     "uniformLogLoss": 1.098612,
-    "alwaysHomeTop1": 0.463415
+    "alwaysHomeTop1": 0.48
   },
   "warnings": [
     "40 games are not enough to establish systematic bias or retrain weights.",
