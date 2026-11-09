@@ -577,6 +577,7 @@ def generate(payload):
     power_rankings = build_power_rankings(model, neutral, teams, hist, priors, finished_count, snapshot_date, standings)
     team_profiles = build_team_profiles(teams, matches, hist, priors, finished_count, snapshot_date, power_rankings)
     games = {t:[] for t in teams}
+    all_fixtures = []  # Full-season, one row per match; independent of 10-match UI horizon.
     classes = list(model.classes_)
     ci = {c:i for i,c in enumerate(classes)}
 
@@ -585,11 +586,19 @@ def generate(payload):
         v = fixture_vector(h,a,d,hist,neutral,priors,finished_count)
         probs = tempered_probs(model,v)[0]
         ph,pd_,pa = float(probs[ci["H"]]),float(probs[ci["D"]]),float(probs[ci["A"]])
+        all_fixtures.append({
+            "footballDataId": m.get("footballDataId"), "utcDate": m.get("utcDate"),
+            "date": m["date_str"], "home": h, "away": a,
+            "homeWin": ph, "draw": pd_, "awayWin": pa,
+            "homeXPts": 3*ph+pd_, "awayXPts": 3*pa+pd_,
+            "season": f"{d.year if d.month >= 7 else d.year-1}/{str((d.year if d.month >= 7 else d.year-1)+1)[-2:]}",
+        })
 
         for selected,opponent,venue,win,loss in [
             (h,a,"H",ph,pa),(a,h,"A",pa,ph)
         ]:
             _, details = explain(model,neutral,v,selected,opponent,venue)
+            all_fixtures[-1]["homeFactors" if venue == "H" else "awayFactors"] = details
             note = ""
             note_en = ""
             if selected in priors or opponent in priors:
@@ -624,25 +633,20 @@ def generate(payload):
         for i,x in enumerate(rr,1): x["rank"]=i
         rankings[str(horizon)] = rr
 
-    fixture_snapshots = []
-    for m in future:
-        h, a = m["home"], m["away"]
-        hg = next((g for g in games.get(h, []) if g["date"] == m["date_str"] and g["opponent"] == a and g["venue"] == "H"), None)
-        ag = next((g for g in games.get(a, []) if g["date"] == m["date_str"] and g["opponent"] == h and g["venue"] == "A"), None)
-        if not hg or not ag:
-            continue
-        fixture_snapshots.append({
-            "footballDataId": m.get("footballDataId"), "utcDate": m.get("utcDate"), "date": m["date_str"],
-            "home": h, "away": a,
-            "homeWin": hg["win"], "draw": hg["draw"], "awayWin": hg["loss"],
-            "homeXPts": hg["xpts"], "awayXPts": ag["xpts"],
-            "homeFactors": hg.get("details", []), "awayFactors": ag.get("details", [])
-        })
+    # Freeze *all* remaining league fixtures, including those beyond next ten.
+    # Use ID-based details lookup when possible; avoid ambiguous same-day pair matching.
+    fixture_snapshots = [dict(m) for m in all_fixtures]
+    expected_ids = [str(m["footballDataId"]) for m in all_fixtures if m.get("footballDataId") is not None]
+    if len(expected_ids) != len(set(expected_ids)):
+        raise ValueError("Duplicate football-data.org fixture IDs in full-season predictions")
+    if len(fixture_snapshots) != len(future):
+        raise ValueError("A remaining fixture was dropped from archive snapshots")
 
     return {
         "asOf": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "methodVersion":"v4-auto",
         "games":games,
+        "allRemainingFixtures": [{k:v for k,v in m.items() if k not in ("homeFactors","awayFactors")} for m in all_fixtures],
         "fixtureSnapshots": fixture_snapshots,
         "rankings":rankings,
         "standings":standings,

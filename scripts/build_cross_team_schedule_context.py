@@ -14,7 +14,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/"data/live/current_schedule_2627.json"
 OUTPUT=ROOT/"data/live/uefa_rest_context_2627.json"
-DOMESTIC={"EN1","EN2","DE1","ES1","IT1","FR1"}
+EXTENDED=ROOT/"data/live/extended_domestic_2627.json"
+DOMESTIC={"EN1","EN2","DE1","ES1","IT1","FR1","NL1","PT1"}
 UEFA={"UCL","UEL","UECL"}
 
 def context_for(match,club_id,index,domestic_clubs):
@@ -45,7 +46,31 @@ def context_for(match,club_id,index,domestic_clubs):
 def build(data):
     if data.get("status")!="STAGING_NOT_MODEL_INPUT" or data.get("season")!="2026-27":
         raise ValueError("Not the isolated 2026/27 staging feed")
-    matches=data["matches"]
+    matches=list(data["matches"])
+    # The optional NL/PT feed is included only after a whole-league completeness gate.
+    if EXTENDED.exists():
+        extra=json.loads(EXTENDED.read_text(encoding="utf-8"))
+        if extra.get("season")!="2026-27" or extra.get("status")!="STAGING_NOT_MODEL_INPUT":
+            raise ValueError("Invalid external league staging")
+        allowed={k for k,v in extra.get("coverage",{}).items()
+                 if v.get("status")=="COMPLETE_SOURCE_UNVERIFIED_DATES"}
+        extended=[m for m in extra.get("matches",[]) if m.get("competition") in allowed]
+        # Only exact, unambiguous same-provider club spellings may bridge UEFA and NL/PT.
+        # Never overwrite an independently reviewed ID or perform fuzzy matching.
+        from collections import defaultdict as _dd
+        ids_by_name=_dd(set)
+        for row in extended:
+            for side in ("home", "away"):
+                if row.get(side+"ClubId"):
+                    ids_by_name[row[side]].add(row[side+"ClubId"])
+        unique_ids={name:next(iter(ids)) for name,ids in ids_by_name.items() if len(ids)==1}
+        for row in matches:
+            if row.get("competition") not in UEFA:continue
+            for side in ("home", "away"):
+                if not row.get(side+"ClubId") and row.get(side) in unique_ids:
+                    row[side+"ClubId"]=unique_ids[row[side]]
+                    row[side+"IdentityBasis"]="EXACT_NAME_SAME_PROVIDER_PROVISIONAL"
+        matches.extend(extended)
     domestic={id for m in matches if m["competition"] in DOMESTIC
               for id in (m.get("homeClubId"),m.get("awayClubId")) if id}
     index=defaultdict(list)
