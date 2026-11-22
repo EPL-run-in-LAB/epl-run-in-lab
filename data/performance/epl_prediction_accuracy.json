@@ -3,40 +3,56 @@
   "source": "docs/data/match_archive.json",
   "method": "Frozen pre-kickoff probabilities only; three-class 90-minute results",
   "sample": {
-    "archivedFixtures": 150,
-    "eligibleFinalizedFixtures": 50,
+    "archivedFixtures": 155,
+    "eligibleFinalizedFixtures": 57,
     "excludedReasons": {
-      "not_finished": 100
+      "not_finished": 98
     },
     "firstFixtureDate": "2026-10-10",
-    "lastFixtureDate": "2026-11-08",
+    "lastFixtureDate": "2026-11-21",
     "uniqueTeams": 20,
-    "teamAppearances": 100
+    "teamAppearances": 114
   },
   "results": {
-    "top1Correct": 25,
-    "top1Accuracy": 0.5,
-    "multiclassBrierSum": 0.619272,
-    "logLoss": 1.032811,
+    "top1Correct": 27,
+    "top1Accuracy": 0.473684,
+    "multiclassBrierSum": 0.629204,
+    "logLoss": 1.043603,
     "outcomeCounts": {
-      "home": 24,
-      "draw": 11,
-      "away": 15
+      "home": 27,
+      "draw": 14,
+      "away": 16
     },
     "uniformOneThirdBrier": 0.666667,
     "uniformOneThirdLogLoss": 1.098612,
-    "alwaysPredictHomeAccuracyOnSample": 0.48,
-    "sumExpectedPointsForBothTeams": 136.905,
-    "sumActualPointsForBothTeams": 139
+    "alwaysPredictHomeAccuracyOnSample": 0.473684,
+    "sumExpectedPointsForBothTeams": 155.993,
+    "sumActualPointsForBothTeams": 157
   },
   "teamRecords": [
     {
-      "team": "Arsenal",
-      "matches": 5,
-      "expectedPoints": 9.144,
+      "team": "Bournemouth",
+      "matches": 6,
+      "expectedPoints": 8.897,
       "actualPoints": 15,
-      "pointsAboveExpected": 5.856,
-      "perMatchDifference": 1.171
+      "pointsAboveExpected": 6.103,
+      "perMatchDifference": 1.017
+    },
+    {
+      "team": "Arsenal",
+      "matches": 6,
+      "expectedPoints": 10.594,
+      "actualPoints": 16,
+      "pointsAboveExpected": 5.406,
+      "perMatchDifference": 0.901
+    },
+    {
+      "team": "Tottenham",
+      "matches": 6,
+      "expectedPoints": 7.69,
+      "actualPoints": 13,
+      "pointsAboveExpected": 5.31,
+      "perMatchDifference": 0.885
     },
     {
       "team": "Brighton",
@@ -47,36 +63,20 @@
       "perMatchDifference": 0.966
     },
     {
-      "team": "Bournemouth",
-      "matches": 5,
-      "expectedPoints": 7.241,
-      "actualPoints": 12,
-      "pointsAboveExpected": 4.759,
-      "perMatchDifference": 0.952
-    },
-    {
-      "team": "Tottenham",
-      "matches": 5,
-      "expectedPoints": 5.933,
-      "actualPoints": 10,
-      "pointsAboveExpected": 4.067,
-      "perMatchDifference": 0.813
+      "team": "Coventry",
+      "matches": 6,
+      "expectedPoints": 6.17,
+      "actualPoints": 9,
+      "pointsAboveExpected": 2.83,
+      "perMatchDifference": 0.472
     },
     {
       "team": "Aston Villa",
-      "matches": 5,
-      "expectedPoints": 6.22,
-      "actualPoints": 9,
-      "pointsAboveExpected": 2.78,
-      "perMatchDifference": 0.556
-    },
-    {
-      "team": "Chelsea",
-      "matches": 5,
-      "expectedPoints": 6.797,
-      "actualPoints": 9,
-      "pointsAboveExpected": 2.203,
-      "perMatchDifference": 0.441
+      "matches": 6,
+      "expectedPoints": 8.045,
+      "actualPoints": 10,
+      "pointsAboveExpected": 1.955,
+      "perMatchDifference": 0.326
     },
     {
       "team": "Liverpool",
@@ -87,20 +87,20 @@
       "perMatchDifference": 0.259
     },
     {
-      "team": "Coventry",
-      "matches": 5,
-      "expectedPoints": 4.918,
-      "actualPoints": 6,
-      "pointsAboveExpected": 1.082,
-      "perMatchDifference": 0.216
+      "team": "Chelsea",
+      "matches": 6,
+      "expectedPoints": 8.221,
+      "actualPoints": 9,
+      "pointsAboveExpected": 0.779,
+      "perMatchDifference": 0.13
     },
     {
-      "team": "Ipswich",
-      "matches": 5,
-      "expectedPoints": 4.54,
-      "actualPoints": 5,
-      "pointsAboveExpected": 0.46,
-      "perMatchDifference": 0.092
+      "team": "Fulham",
+      "matches": 6,
+      "expectedPoints": 8.286,
+      "actualPoints": 9,
+      "pointsAboveExpected": 0.714,
+      "perMatchDifference": 0.119
     },
     {
       "team": "Everton",
@@ -111,12 +111,20 @@
       "perMatchDifference": 0.078
     },
     {
-      "team": "Fulham",
-      "matches": 5,
-      "expectedPoints": 7.736,
+      "team": "Leeds",
+      "matches": 6,
+      "expectedPoints": 7.892,
       "actualPoints": 8,
-      "pointsAboveExpected": 0.264,
-      "perMatchDifference": 0.053
+      "pointsAboveExpected": 0.108,
+      "perMatchDifference": 0.018
+    },
+    {
+      "team": "Ipswich",
+      "matches": 6,
+      "expectedPoints": 5.52,
+      "actualPoints": 5,
+      "pointsAboveExpected": -0.52,
+      "perMatchDifference": -0.087
     },
     {
       "team": "Brentford",
@@ -127,36 +135,12 @@
       "perMatchDifference": -0.255
     },
     {
-      "team": "Leeds",
-      "matches": 5,
-      "expectedPoints": 6.612,
-      "actualPoints": 5,
-      "pointsAboveExpected": -1.612,
-      "perMatchDifference": -0.322
-    },
-    {
       "team": "Sunderland",
-      "matches": 5,
-      "expectedPoints": 6.074,
-      "actualPoints": 4,
-      "pointsAboveExpected": -2.074,
-      "perMatchDifference": -0.415
-    },
-    {
-      "team": "Nottingham",
-      "matches": 5,
-      "expectedPoints": 6.075,
-      "actualPoints": 4,
-      "pointsAboveExpected": -2.075,
-      "perMatchDifference": -0.415
-    },
-    {
-      "team": "Crystal Palace",
-      "matches": 5,
-      "expectedPoints": 5.419,
-      "actualPoints": 3,
-      "pointsAboveExpected": -2.419,
-      "perMatchDifference": -0.484
+      "matches": 6,
+      "expectedPoints": 6.969,
+      "actualPoints": 5,
+      "pointsAboveExpected": -1.969,
+      "perMatchDifference": -0.328
     },
     {
       "team": "Hull",
@@ -167,20 +151,36 @@
       "perMatchDifference": -0.563
     },
     {
-      "team": "Man City",
-      "matches": 5,
-      "expectedPoints": 9.604,
-      "actualPoints": 6,
-      "pointsAboveExpected": -3.604,
-      "perMatchDifference": -0.721
+      "team": "Nottingham",
+      "matches": 6,
+      "expectedPoints": 7.142,
+      "actualPoints": 4,
+      "pointsAboveExpected": -3.142,
+      "perMatchDifference": -0.524
+    },
+    {
+      "team": "Crystal Palace",
+      "matches": 6,
+      "expectedPoints": 6.862,
+      "actualPoints": 3,
+      "pointsAboveExpected": -3.862,
+      "perMatchDifference": -0.644
     },
     {
       "team": "Newcastle",
-      "matches": 5,
-      "expectedPoints": 7.999,
-      "actualPoints": 4,
-      "pointsAboveExpected": -3.999,
-      "perMatchDifference": -0.8
+      "matches": 6,
+      "expectedPoints": 9.273,
+      "actualPoints": 5,
+      "pointsAboveExpected": -4.273,
+      "perMatchDifference": -0.712
+    },
+    {
+      "team": "Man City",
+      "matches": 6,
+      "expectedPoints": 11.841,
+      "actualPoints": 7,
+      "pointsAboveExpected": -4.841,
+      "perMatchDifference": -0.807
     },
     {
       "team": "Man United",
@@ -1291,10 +1291,164 @@
       "awayExpectedPoints": 0.843,
       "capturedAt": "2026-09-27T04:44:01.238359+00:00",
       "fixtureId": "560639"
+    },
+    {
+      "utcDate": "2026-11-21T12:30:00Z",
+      "date": "2026-11-21",
+      "home": "Man City",
+      "away": "Fulham",
+      "homeGoals": 1,
+      "awayGoals": 1,
+      "probabilities": {
+        "home": 0.6743582737936695,
+        "draw": 0.2138981803045247,
+        "away": 0.1117435459018058
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 1.085202,
+      "logLoss": 1.542255,
+      "homeExpectedPoints": 2.237,
+      "awayExpectedPoints": 0.549,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560643"
+    },
+    {
+      "utcDate": "2026-11-21T15:00:00Z",
+      "date": "2026-11-21",
+      "home": "Chelsea",
+      "away": "Leeds",
+      "homeGoals": 1,
+      "awayGoals": 4,
+      "probabilities": {
+        "home": 0.3757970407751089,
+        "draw": 0.296162975267926,
+        "away": 0.3280399839569651
+      },
+      "actualOutcome": "away",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.680466,
+      "logLoss": 1.11462,
+      "homeExpectedPoints": 1.424,
+      "awayExpectedPoints": 1.28,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560642"
+    },
+    {
+      "utcDate": "2026-11-21T15:00:00Z",
+      "date": "2026-11-21",
+      "home": "Aston Villa",
+      "away": "Sunderland",
+      "homeGoals": 0,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.515069861032203,
+        "draw": 0.2796870481442959,
+        "away": 0.20524309082350115
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 0,
+      "brier": 0.826272,
+      "logLoss": 1.274084,
+      "homeExpectedPoints": 1.825,
+      "awayExpectedPoints": 0.895,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560644"
+    },
+    {
+      "utcDate": "2026-11-21T15:00:00Z",
+      "date": "2026-11-21",
+      "home": "Bournemouth",
+      "away": "Nottingham",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.45980007378639715,
+        "draw": 0.2764279624261928,
+        "away": 0.2637719637874101
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.437804,
+      "logLoss": 0.776964,
+      "homeExpectedPoints": 1.656,
+      "awayExpectedPoints": 1.068,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560647"
+    },
+    {
+      "utcDate": "2026-11-21T15:00:00Z",
+      "date": "2026-11-21",
+      "home": "Tottenham",
+      "away": "Ipswich",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.49750976407282227,
+        "draw": 0.26405696218609936,
+        "away": 0.2384332737410783
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.379073,
+      "logLoss": 0.69814,
+      "homeExpectedPoints": 1.757,
+      "awayExpectedPoints": 0.979,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560648"
+    },
+    {
+      "utcDate": "2026-11-21T15:00:00Z",
+      "date": "2026-11-21",
+      "home": "Coventry",
+      "away": "Crystal Palace",
+      "homeGoals": 3,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.3155949652298856,
+        "draw": 0.30491601153983555,
+        "away": 0.3794890232302789
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.705396,
+      "logLoss": 1.153296,
+      "homeExpectedPoints": 1.252,
+      "awayExpectedPoints": 1.443,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560650"
+    },
+    {
+      "utcDate": "2026-11-21T17:30:00Z",
+      "date": "2026-11-21",
+      "home": "Newcastle",
+      "away": "Arsenal",
+      "homeGoals": 2,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.3323852592338136,
+        "draw": 0.2765305768985365,
+        "away": 0.3910841638676499
+      },
+      "actualOutcome": "draw",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.786835,
+      "logLoss": 1.285434,
+      "homeExpectedPoints": 1.274,
+      "awayExpectedPoints": 1.45,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560651"
     }
   ],
   "interpretationLimits": [
-    "Only 50 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
+    "Only 57 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
     "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
     "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
     "Points-above-expected in small samples is not a reliable causal measure of strength or coaching.",
