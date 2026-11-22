@@ -23662,7 +23662,7 @@
       "finalizedAt": "2026-11-09T00:49:11.984332+00:00"
     },
     "560643": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560643,
         "utcDate": "2026-11-21T12:30:00Z",
@@ -23775,10 +23775,254 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igq1oqeaqu07samwmw7m",
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 1,
+        "referee": "Thomas Bramall, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwqlh8zt18skod08t6r7sht6",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "16",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "Rodrigo Muniz",
+          "awayScorerId": "3027795846",
+          "awayAssist": "O. Bobb",
+          "awayAssistId": "1229355542",
+          "score": "0 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T16:00:42.186Z",
+          "updatedAt": "2026-11-21T16:00:42.186Z",
+          "timeNum": 16
+        },
+        {
+          "id": "cmwqlh8zu18slod0896alo8wr",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "57",
+          "type": "GOAL",
+          "homeScorer": "E. Anderson",
+          "homeScorerId": "423986543",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T16:00:42.186Z",
+          "updatedAt": "2026-11-21T16:00:42.186Z",
+          "timeNum": 57
+        }
+      ],
+      "cards": [],
+      "substitutions": [
+        {
+          "id": "cmwqybxh8bki8od08cumzc38q",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "70",
+          "substitution": "A. Iwobi | A. Robinson",
+          "substitutionPlayerId": "3545014239 | 2401894866",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwqybxh8bki5od0863gcz5q2",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "70",
+          "substitution": "P. Foden | R. Cherki",
+          "substitutionPlayerId": "2538499189 | 2168685639",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwqybxh8bkibod08vu7ddg75",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "70",
+          "substitution": "J. King | H. Larsson",
+          "substitutionPlayerId": "2841429595 | 4257228523",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwqybxh8bkicod081rwdiefe",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "77",
+          "substitution": "O. Bobb | G. Garcia",
+          "substitutionPlayerId": "1229355542 | 2849666850",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 77
+        },
+        {
+          "id": "cmwqybxh8bki7od086il2e159",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "78",
+          "substitution": "I. Ndiaye | Allan Elias",
+          "substitutionPlayerId": "85525664 | 2253529655",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmwqybxh8bki4od08imaga443",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "78",
+          "substitution": "N. O'Reilly | J. Gvardiol",
+          "substitutionPlayerId": "500792728 | 496282918",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 78
+        },
+        {
+          "id": "cmwqybxh8bki9od08pv08k53b",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "83",
+          "substitution": "Rodrigo Muniz | T. Cairney",
+          "substitutionPlayerId": "3027795846 | 4189819658",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmwqybxh8bkiaod08nfntd76d",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "83",
+          "substitution": "R. Sessegnon | C. Palacios",
+          "substitutionPlayerId": "1732903130 | 164974423",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmwqybxh8bki6od08yq505szl",
+          "fixtureId": "cmu74igq1oqeaqu07samwmw7m",
+          "time": "85",
+          "substitution": "A. Bouaddi | E. Fernandez",
+          "substitutionPlayerId": "4013754297 | 2811909403",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:28.608Z",
+          "updatedAt": "2026-11-21T22:00:28.608Z",
+          "timeNum": 85
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "16",
+          "minuteNum": 16,
+          "type": "GOAL",
+          "side": "away",
+          "player": "Rodrigo Muniz",
+          "assist": "O. Bobb",
+          "score": "0 - 1"
+        },
+        {
+          "minute": "57",
+          "minuteNum": 57,
+          "type": "GOAL",
+          "side": "home",
+          "player": "E. Anderson",
+          "assist": null,
+          "score": "1 - 1"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "A. Iwobi | A. Robinson"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "P. Foden | R. Cherki"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. King | H. Larsson"
+        },
+        {
+          "minute": "77",
+          "minuteNum": 77,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "O. Bobb | G. Garcia"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "I. Ndiaye | Allan Elias"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "N. O'Reilly | J. Gvardiol"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Rodrigo Muniz | T. Cairney"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "R. Sessegnon | C. Palacios"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "A. Bouaddi | E. Fernandez"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560642": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560642,
         "utcDate": "2026-11-21T15:00:00Z",
@@ -23891,10 +24135,360 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igptoqe2qu07echyzs99",
+      "result": {
+        "homeGoals": 1,
+        "awayGoals": 4,
+        "referee": "Michael Oliver, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwqprofqvyeyod0809us2lcy",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "25",
+          "type": "GOAL",
+          "homeScorer": "E. Emegha",
+          "homeScorerId": "905742266",
+          "homeAssist": "M. Rogers",
+          "homeAssistId": "2797666696",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T18:00:47.222Z",
+          "updatedAt": "2026-11-21T18:00:47.222Z",
+          "timeNum": 25
+        },
+        {
+          "id": "cmwqprofqvyezod088hczjclf",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "28",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "N. Okafor",
+          "awayScorerId": "554337339",
+          "awayAssist": "D. Calvert-Lewin",
+          "awayAssistId": "3490293551",
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T18:00:47.222Z",
+          "updatedAt": "2026-11-21T18:00:47.222Z",
+          "timeNum": 28
+        },
+        {
+          "id": "cmwqprofqvyf0od08sjzd671s",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "53",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "D. Calvert-Lewin",
+          "awayScorerId": "3490293551",
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 2",
+          "info": "Penalty",
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T18:00:47.222Z",
+          "updatedAt": "2026-11-21T18:00:47.222Z",
+          "timeNum": 53
+        },
+        {
+          "id": "cmwqprofqvyf1od082tvxwngn",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "59",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "N. Okafor",
+          "awayScorerId": "554337339",
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 3",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T18:00:47.222Z",
+          "updatedAt": "2026-11-21T18:00:47.222Z",
+          "timeNum": 59
+        },
+        {
+          "id": "cmwqprofqvyf2od087hw28okj",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "90+1",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "B. Aaronson",
+          "awayScorerId": "4289853633",
+          "awayAssist": "H. Wilson",
+          "awayAssistId": "1384836880",
+          "score": "1 - 4",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T18:00:47.222Z",
+          "updatedAt": "2026-11-21T18:00:47.222Z",
+          "timeNum": 90
+        }
+      ],
+      "cards": [],
+      "substitutions": [
+        {
+          "id": "cmwqyc5ygbw2aod089yaiyd9u",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "22",
+          "substitution": "M. Caicedo | J. Henderson",
+          "substitutionPlayerId": "996824059 | 1676929947",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 22
+        },
+        {
+          "id": "cmwqyc5ygbw2cod08av0nb4hj",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "64",
+          "substitution": "Estêvão | P. Neto",
+          "substitutionPlayerId": "1720175401 | 2906426006",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmwqyc5ygbw2bod08tta5mm9s",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "64",
+          "substitution": "E. Emegha | D. Welbeck",
+          "substitutionPlayerId": "905742266 | 3206548206",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmwqyc5ygbw29od08g7z2d41s",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "73",
+          "substitution": "J. Acheampong | M. Gusto",
+          "substitutionPlayerId": "429522510 | 950153925",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwqyc5ygbw2dod08g2ernwut",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "73",
+          "substitution": "P. Chavarria | G. Quenda",
+          "substitutionPlayerId": "2348036217 | 3110951666",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwqyc5ygbw2iod08z9qitupo",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "73",
+          "substitution": "N. Okafor | B. Aaronson",
+          "substitutionPlayerId": "554337339 | 4289853633",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwqyc5ygbw2hod087v9vl8pc",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "86",
+          "substitution": "J. Bogle | A. Stach",
+          "substitutionPlayerId": "3495214345 | 2115678260",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 86
+        },
+        {
+          "id": "cmwqyc5ygbw2eod08imo8uxzc",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "86",
+          "substitution": "A. Tanaka | J. Rodon",
+          "substitutionPlayerId": "2502758894 | 734452078",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 86
+        },
+        {
+          "id": "cmwqyc5ygbw2fod08kd098njh",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "90+1",
+          "substitution": "G. Gudmundsson | M. Bard",
+          "substitutionPlayerId": "1826908292 | 3939268493",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmwqyc5ygbw2god08vkuhz6cl",
+          "fixtureId": "cmu74igptoqe2qu07echyzs99",
+          "time": "90+1",
+          "substitution": "S. Longstaff | H. Wilson",
+          "substitutionPlayerId": "4293692075 | 1384836880",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.763Z",
+          "updatedAt": "2026-11-21T22:00:38.763Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "22",
+          "minuteNum": 22,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "M. Caicedo | J. Henderson"
+        },
+        {
+          "minute": "25",
+          "minuteNum": 25,
+          "type": "GOAL",
+          "side": "home",
+          "player": "E. Emegha",
+          "assist": "M. Rogers",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "28",
+          "minuteNum": 28,
+          "type": "GOAL",
+          "side": "away",
+          "player": "N. Okafor",
+          "assist": "D. Calvert-Lewin",
+          "score": "1 - 1"
+        },
+        {
+          "minute": "53",
+          "minuteNum": 53,
+          "type": "GOAL",
+          "side": "away",
+          "player": "D. Calvert-Lewin",
+          "assist": null,
+          "score": "1 - 2"
+        },
+        {
+          "minute": "59",
+          "minuteNum": 59,
+          "type": "GOAL",
+          "side": "away",
+          "player": "N. Okafor",
+          "assist": null,
+          "score": "1 - 3"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Estêvão | P. Neto"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "E. Emegha | D. Welbeck"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Acheampong | M. Gusto"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "P. Chavarria | G. Quenda"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "N. Okafor | B. Aaronson"
+        },
+        {
+          "minute": "86",
+          "minuteNum": 86,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Bogle | A. Stach"
+        },
+        {
+          "minute": "86",
+          "minuteNum": 86,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "A. Tanaka | J. Rodon"
+        },
+        {
+          "minute": "90+1",
+          "minuteNum": 90,
+          "type": "GOAL",
+          "side": "away",
+          "player": "B. Aaronson",
+          "assist": "H. Wilson",
+          "score": "1 - 4"
+        },
+        {
+          "minute": "90+1",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "G. Gudmundsson | M. Bard"
+        },
+        {
+          "minute": "90+1",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "S. Longstaff | H. Wilson"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560644": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560644,
         "utcDate": "2026-11-21T15:00:00Z",
@@ -24007,10 +24601,212 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igpnoqdwqu07xflipxi1",
+      "result": {
+        "homeGoals": 0,
+        "awayGoals": 0,
+        "referee": "Andy Madley, England",
+        "stadium": null
+      },
+      "goals": [],
+      "cards": [
+        {
+          "id": "cmwqyc5tqbvt1od08qek590pv",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "38",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "T. Hume",
+          "awayPlayerId": "2684596227",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T22:00:38.654Z",
+          "updatedAt": "2026-11-21T22:00:38.654Z",
+          "timeNum": 38
+        },
+        {
+          "id": "cmwqyc5tqbvt2od08qbvpxrb4",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "54",
+          "card": "yellow card",
+          "homeFault": "L. Goretzka",
+          "homePlayerId": "3936327777",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T22:00:38.654Z",
+          "updatedAt": "2026-11-21T22:00:38.654Z",
+          "timeNum": 54
+        },
+        {
+          "id": "cmwqyc5tqbvt3od086n5fj7dj",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "66",
+          "card": "yellow card",
+          "homeFault": "I. Maatsen",
+          "homePlayerId": "4027697983",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T22:00:38.654Z",
+          "updatedAt": "2026-11-21T22:00:38.654Z",
+          "timeNum": 66
+        },
+        {
+          "id": "cmwqyc5tqbvt4od08a0yfgg9a",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "85",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "N. Angulo",
+          "awayPlayerId": "462933675",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T22:00:38.654Z",
+          "updatedAt": "2026-11-21T22:00:38.654Z",
+          "timeNum": 85
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmwqyc5uabvt6od080887p1id",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "60",
+          "substitution": "J. Manzambi | J. McGinn",
+          "substitutionPlayerId": "2171000892 | 215174918",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.662Z",
+          "updatedAt": "2026-11-21T22:00:38.662Z",
+          "timeNum": 60
+        },
+        {
+          "id": "cmwqyc5uabvt8od08j8tede2i",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "60",
+          "substitution": "E. Buendia | I. Mbaye",
+          "substitutionPlayerId": "10184531 | 3635297842",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.662Z",
+          "updatedAt": "2026-11-21T22:00:38.662Z",
+          "timeNum": 60
+        },
+        {
+          "id": "cmwqyc5uabvt5od08y98bca16",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "73",
+          "substitution": "L. Goretzka | R. Barkley",
+          "substitutionPlayerId": "3936327777 | 3977896400",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.662Z",
+          "updatedAt": "2026-11-21T22:00:38.662Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwqyc5uabvt7od08gjd1zvn6",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "73",
+          "substitution": "N. Jackson | B. Madjo",
+          "substitutionPlayerId": "2931500671 | 3578480077",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.662Z",
+          "updatedAt": "2026-11-21T22:00:38.662Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwqyc5uabvt9od08lu6hnzcp",
+          "fixtureId": "cmu74igpnoqdwqu07xflipxi1",
+          "time": "77",
+          "substitution": "W. Isidor | N. Angulo",
+          "substitutionPlayerId": "3580450151 | 462933675",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.662Z",
+          "updatedAt": "2026-11-21T22:00:38.662Z",
+          "timeNum": 77
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "38",
+          "minuteNum": 38,
+          "type": "CARD",
+          "side": "away",
+          "player": "T. Hume",
+          "card": "yellow card"
+        },
+        {
+          "minute": "54",
+          "minuteNum": 54,
+          "type": "CARD",
+          "side": "home",
+          "player": "L. Goretzka",
+          "card": "yellow card"
+        },
+        {
+          "minute": "60",
+          "minuteNum": 60,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Manzambi | J. McGinn"
+        },
+        {
+          "minute": "60",
+          "minuteNum": 60,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "E. Buendia | I. Mbaye"
+        },
+        {
+          "minute": "66",
+          "minuteNum": 66,
+          "type": "CARD",
+          "side": "home",
+          "player": "I. Maatsen",
+          "card": "yellow card"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "L. Goretzka | R. Barkley"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "N. Jackson | B. Madjo"
+        },
+        {
+          "minute": "77",
+          "minuteNum": 77,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "W. Isidor | N. Angulo"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "CARD",
+          "side": "away",
+          "player": "N. Angulo",
+          "card": "yellow card"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560647": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560647,
         "utcDate": "2026-11-21T15:00:00Z",
@@ -24123,10 +24919,366 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igppoqdyqu0783j0o52g",
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "referee": "Adam Herczeg, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwqw74yysk06od08rjwc63hr",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "19",
+          "type": "GOAL",
+          "homeScorer": "Evanilson",
+          "homeScorerId": "37033346",
+          "homeAssist": "J. Hill",
+          "homeAssistId": "2003348230",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:46.186Z",
+          "updatedAt": "2026-11-21T21:00:46.186Z",
+          "timeNum": 19
+        },
+        {
+          "id": "cmwqw74yysk07od08jtyg1gyr",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "45+3",
+          "type": "GOAL",
+          "homeScorer": "J. Kluivert",
+          "homeScorerId": "3123550034",
+          "homeAssist": "M. Tavernier",
+          "homeAssistId": "3819203541",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:46.186Z",
+          "updatedAt": "2026-11-21T21:00:46.186Z",
+          "timeNum": 45
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmwr2nzgoven7od08tgo9b7bc",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "45",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "L. Delap",
+          "awayPlayerId": "2867126813",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-22T00:01:49.529Z",
+          "updatedAt": "2026-11-22T00:01:49.529Z",
+          "timeNum": 45
+        },
+        {
+          "id": "cmwr2nzgoven8od08a5jjhju8",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "57",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "D. Munoz",
+          "awayPlayerId": "4282633333",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-22T00:01:49.529Z",
+          "updatedAt": "2026-11-22T00:01:49.529Z",
+          "timeNum": 57
+        },
+        {
+          "id": "cmwr2nzgoven9od085t7x9f4z",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "87",
+          "card": "yellow card",
+          "homeFault": "A. Scott",
+          "homePlayerId": "1272590441",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-22T00:01:49.529Z",
+          "updatedAt": "2026-11-22T00:01:49.529Z",
+          "timeNum": 87
+        },
+        {
+          "id": "cmwr2nzgovenaod08fzfdrce1",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "90+1",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "Murillo",
+          "awayPlayerId": "2017767083",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-22T00:01:49.529Z",
+          "updatedAt": "2026-11-22T00:01:49.529Z",
+          "timeNum": 90
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmwr2nzgpveniod08hvyb3976",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "46",
+          "substitution": "R. Yates | X. Schlager",
+          "substitutionPlayerId": "2191621878 | 2225489064",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwr2nzgpvenkod081ddj6fum",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "46",
+          "substitution": "D. Ndoye | Igor Jesus",
+          "substitutionPlayerId": "1596841920 | 306355406",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwr2nzgpvendod083im2zgao",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "69",
+          "substitution": "T. Adams | L. Cook",
+          "substitutionPlayerId": "3982362813 | 31119756",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 69
+        },
+        {
+          "id": "cmwr2nzgpveneod08ay7svvmg",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "69",
+          "substitution": "J. Kluivert | E. J. Kroupi",
+          "substitutionPlayerId": "3123550034 | 3325245293",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 69
+        },
+        {
+          "id": "cmwr2nzgpvencod08uwfs42s7",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "70",
+          "substitution": "R. Christie | A. Scott",
+          "substitutionPlayerId": "422722142 | 1272590441",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwr2nzgpvengod080m76obrp",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "72",
+          "substitution": "N. Williams | L. Netz",
+          "substitutionPlayerId": "1513664404 | 1826521265",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 72
+        },
+        {
+          "id": "cmwr2nzgpvenjod08novbpy2b",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "72",
+          "substitution": "J. McAtee | C. Wood",
+          "substitutionPlayerId": "835645988 | 3313915333",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 72
+        },
+        {
+          "id": "cmwr2nzgpvenhod08rt0po0zt",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "83",
+          "substitution": "D. Munoz | O. Aina",
+          "substitutionPlayerId": "4282633333 | 2476395092",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmwr2nzgpvenbod08p7spmwc0",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "87",
+          "substitution": "A. Smith | B. Diakite",
+          "substitutionPlayerId": "869613021 | 1138306037",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 87
+        },
+        {
+          "id": "cmwr2nzgpvenfod081bqqz04r",
+          "fixtureId": "cmu74igppoqdyqu0783j0o52g",
+          "time": "90",
+          "substitution": "Rayan | B. Gannon-Doak",
+          "substitutionPlayerId": "4078647747 | 2814832842",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.530Z",
+          "updatedAt": "2026-11-22T00:01:49.530Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "19",
+          "minuteNum": 19,
+          "type": "GOAL",
+          "side": "home",
+          "player": "Evanilson",
+          "assist": "J. Hill",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "45",
+          "minuteNum": 45,
+          "type": "CARD",
+          "side": "away",
+          "player": "L. Delap",
+          "card": "yellow card"
+        },
+        {
+          "minute": "45+3",
+          "minuteNum": 45,
+          "type": "GOAL",
+          "side": "home",
+          "player": "J. Kluivert",
+          "assist": "M. Tavernier",
+          "score": "2 - 0"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "R. Yates | X. Schlager"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. Ndoye | Igor Jesus"
+        },
+        {
+          "minute": "57",
+          "minuteNum": 57,
+          "type": "CARD",
+          "side": "away",
+          "player": "D. Munoz",
+          "card": "yellow card"
+        },
+        {
+          "minute": "69",
+          "minuteNum": 69,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "T. Adams | L. Cook"
+        },
+        {
+          "minute": "69",
+          "minuteNum": 69,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Kluivert | E. J. Kroupi"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "R. Christie | A. Scott"
+        },
+        {
+          "minute": "72",
+          "minuteNum": 72,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "N. Williams | L. Netz"
+        },
+        {
+          "minute": "72",
+          "minuteNum": 72,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. McAtee | C. Wood"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. Munoz | O. Aina"
+        },
+        {
+          "minute": "87",
+          "minuteNum": 87,
+          "type": "CARD",
+          "side": "home",
+          "player": "A. Scott",
+          "card": "yellow card"
+        },
+        {
+          "minute": "87",
+          "minuteNum": 87,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "A. Smith | B. Diakite"
+        },
+        {
+          "minute": "90+1",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "away",
+          "player": "Murillo",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Rayan | B. Gannon-Doak"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560648": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560648,
         "utcDate": "2026-11-21T15:00:00Z",
@@ -24239,10 +25391,254 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igq4oqeequ074odbq60k",
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 0,
+        "referee": "Robert Jones, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwqproi6vyfeod08x7xcopyp",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "15",
+          "type": "GOAL",
+          "homeScorer": "L. Williams-Barnett",
+          "homeScorerId": "480800322",
+          "homeAssist": "P. Porro",
+          "homeAssistId": "863223335",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T18:00:47.311Z",
+          "updatedAt": "2026-11-21T18:00:47.311Z",
+          "timeNum": 15
+        },
+        {
+          "id": "cmwqproi6vyffod08e0ghuqz8",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "51",
+          "type": "GOAL",
+          "homeScorer": "D. Solanke",
+          "homeScorerId": "2537958388",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 0",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T18:00:47.311Z",
+          "updatedAt": "2026-11-21T18:00:47.311Z",
+          "timeNum": 51
+        }
+      ],
+      "cards": [],
+      "substitutions": [
+        {
+          "id": "cmwqyc62ebw7zod08slifg9ep",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "56",
+          "substitution": "A. Ouattara | I. Fatawu",
+          "substitutionPlayerId": "243112749 | 4152984480",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 56
+        },
+        {
+          "id": "cmwqyc62ebw7yod089iak0ehi",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "56",
+          "substitution": "D. Maeda | J. Clarke",
+          "substitutionPlayerId": "1120024898 | 2040856991",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 56
+        },
+        {
+          "id": "cmwqyc62ebw7xod08ep4x9zpg",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "56",
+          "substitution": "E. Palacios | Florentino",
+          "substitutionPlayerId": "1856361757 | 2931374870",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 56
+        },
+        {
+          "id": "cmwqyc62ebw7vod08l574g2jv",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "64",
+          "substitution": "L. Williams-Barnett | Sávio",
+          "substitutionPlayerId": "480800322 | 687836303",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmwqyc62ebw7tod08fqtniagt",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "64",
+          "substitution": "J. Maddison | L. Bergvall",
+          "substitutionPlayerId": "141362872 | 3769366963",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmwqyc62ebw7uod08yxloqt8g",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "64",
+          "substitution": "D. Solanke | O. Marmoush",
+          "substitutionPlayerId": "2537958388 | 3693408449",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 64
+        },
+        {
+          "id": "cmwqyc62ebw80od082gb766oh",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "74",
+          "substitution": "Z. Flemming | Emersonn",
+          "substitutionPlayerId": "2640189962 | 1233413401",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 74
+        },
+        {
+          "id": "cmwqyc62ebw7sod08a0wni9jw",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "79",
+          "substitution": "D. Udogie | A. Robertson",
+          "substitutionPlayerId": "1858139605 | 2576713984",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 79
+        },
+        {
+          "id": "cmwqyc62ebw7wod08x2ll8lv3",
+          "fixtureId": "cmu74igq4oqeequ074odbq60k",
+          "time": "83",
+          "substitution": "L. Davis | J. Greaves",
+          "substitutionPlayerId": "2448067606 | 692464284",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:38.826Z",
+          "updatedAt": "2026-11-21T22:00:38.826Z",
+          "timeNum": 83
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "15",
+          "minuteNum": 15,
+          "type": "GOAL",
+          "side": "home",
+          "player": "L. Williams-Barnett",
+          "assist": "P. Porro",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "51",
+          "minuteNum": 51,
+          "type": "GOAL",
+          "side": "home",
+          "player": "D. Solanke",
+          "assist": null,
+          "score": "2 - 0"
+        },
+        {
+          "minute": "56",
+          "minuteNum": 56,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "A. Ouattara | I. Fatawu"
+        },
+        {
+          "minute": "56",
+          "minuteNum": 56,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. Maeda | J. Clarke"
+        },
+        {
+          "minute": "56",
+          "minuteNum": 56,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "E. Palacios | Florentino"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "L. Williams-Barnett | Sávio"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Maddison | L. Bergvall"
+        },
+        {
+          "minute": "64",
+          "minuteNum": 64,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "D. Solanke | O. Marmoush"
+        },
+        {
+          "minute": "74",
+          "minuteNum": 74,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Z. Flemming | Emersonn"
+        },
+        {
+          "minute": "79",
+          "minuteNum": 79,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "D. Udogie | A. Robertson"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "L. Davis | J. Greaves"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560650": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560650,
         "utcDate": "2026-11-21T15:00:00Z",
@@ -24355,10 +25751,434 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igpvoqe4qu07uuauype6",
+      "result": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "referee": "Darren England, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwqw74zask08od08h7cqzcvg",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "5",
+          "type": "GOAL",
+          "homeScorer": "T. Awoniyi",
+          "homeScorerId": "995838378",
+          "homeAssist": "J. Rudoni",
+          "homeAssistId": "4273481772",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:46.198Z",
+          "updatedAt": "2026-11-21T21:00:46.198Z",
+          "timeNum": 5
+        },
+        {
+          "id": "cmwqw74zask09od08ez1b6ruc",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "13",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "Y. Pino",
+          "awayScorerId": "3174729574",
+          "awayAssist": "J. Larsen",
+          "awayAssistId": "89919790",
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:46.198Z",
+          "updatedAt": "2026-11-21T21:00:46.198Z",
+          "timeNum": 13
+        },
+        {
+          "id": "cmwqw74zask0aod08l80vtn9k",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "30",
+          "type": "GOAL",
+          "homeScorer": "T. Sakamoto",
+          "homeScorerId": "257254747",
+          "homeAssist": "J. Rudoni",
+          "homeAssistId": "4273481772",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:46.198Z",
+          "updatedAt": "2026-11-21T21:00:46.198Z",
+          "timeNum": 30
+        },
+        {
+          "id": "cmwqw74zbsk0bod083s2zl2xe",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "45+1",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "J. Larsen",
+          "awayScorerId": "89919790",
+          "awayAssist": "Y. Pino",
+          "awayAssistId": "3174729574",
+          "score": "2 - 2",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:46.198Z",
+          "updatedAt": "2026-11-21T21:00:46.198Z",
+          "timeNum": 45
+        },
+        {
+          "id": "cmwqw74zbsk0cod08gj4q0d7o",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "85",
+          "type": "GOAL",
+          "homeScorer": "D. McNeil (o.g.)",
+          "homeScorerId": "4089292287",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "3 - 2",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T21:00:46.198Z",
+          "updatedAt": "2026-11-21T21:00:46.198Z",
+          "timeNum": 85
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmwr2nzc1veiiod08v7hf4r5x",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "36",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "A. Wharton",
+          "awayPlayerId": "2622094281",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-22T00:01:49.423Z",
+          "updatedAt": "2026-11-22T00:01:49.423Z",
+          "timeNum": 36
+        },
+        {
+          "id": "cmwr2nzc1veijod081tjqwls5",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "41",
+          "card": "yellow card",
+          "homeFault": "F. Lampard",
+          "homePlayerId": null,
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-22T00:01:49.423Z",
+          "updatedAt": "2026-11-22T00:01:49.423Z",
+          "timeNum": 41
+        },
+        {
+          "id": "cmwr2nzc1veikod08619podlo",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "61",
+          "card": "yellow card",
+          "homeFault": "M. Grimes",
+          "homePlayerId": "2694160098",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-22T00:01:49.423Z",
+          "updatedAt": "2026-11-22T00:01:49.423Z",
+          "timeNum": 61
+        },
+        {
+          "id": "cmwr2nzc1veilod08yp3tshr4",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "75",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "Y. Pino",
+          "awayPlayerId": "3174729574",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-22T00:01:49.423Z",
+          "updatedAt": "2026-11-22T00:01:49.423Z",
+          "timeNum": 75
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmwr2nzc6veipod08wtcs15k6",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "46",
+          "substitution": "T. Awoniyi | S. Cherif",
+          "substitutionPlayerId": "995838378 | 1780546906",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwr2nzc6veiood08ukomfp64",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "70",
+          "substitution": "Y. Gboho | B. Thomas-Asante",
+          "substitutionPlayerId": "3364345355 | 637934509",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwr2nzc6veimod08m7hwyb29",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "71",
+          "substitution": "M. Grimes | F. Onyeka",
+          "substitutionPlayerId": "2694160098 | 731960613",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 71
+        },
+        {
+          "id": "cmwr2nzc6veinod08fsbmajhz",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "71",
+          "substitution": "V. Torp | G. Hamer",
+          "substitutionPlayerId": "1784283968 | 2984176781",
+          "team": "home",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 71
+        },
+        {
+          "id": "cmwr2nzc6veiqod08czwwz1jh",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "73",
+          "substitution": "A. Khalaili | J. Canvot",
+          "substitutionPlayerId": "1840663975 | 423408039",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwr2nzc6veirod08qwiws2q2",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "73",
+          "substitution": "Q. Timber | J. Lerma",
+          "substitutionPlayerId": "3093150044 | 2759116216",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 73
+        },
+        {
+          "id": "cmwr2nzc6veisod08w7al4n7h",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "79",
+          "substitution": "J. Larsen | E. Nketiah",
+          "substitutionPlayerId": "89919790 | 1551793337",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 79
+        },
+        {
+          "id": "cmwr2nzc6veitod08jdxwhq0q",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "79",
+          "substitution": "Y. Pino | E. Guessand",
+          "substitutionPlayerId": "3174729574 | 792722188",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 79
+        },
+        {
+          "id": "cmwr2nzc6veiuod08r1hwel1p",
+          "fixtureId": "cmu74igpvoqe4qu07uuauype6",
+          "time": "89",
+          "substitution": "D. McNeil | D. Osorio",
+          "substitutionPlayerId": "4089292287 | 369601596",
+          "team": "away",
+          "createdAt": "2026-11-22T00:01:49.431Z",
+          "updatedAt": "2026-11-22T00:01:49.431Z",
+          "timeNum": 89
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "5",
+          "minuteNum": 5,
+          "type": "GOAL",
+          "side": "home",
+          "player": "T. Awoniyi",
+          "assist": "J. Rudoni",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "13",
+          "minuteNum": 13,
+          "type": "GOAL",
+          "side": "away",
+          "player": "Y. Pino",
+          "assist": "J. Larsen",
+          "score": "1 - 1"
+        },
+        {
+          "minute": "30",
+          "minuteNum": 30,
+          "type": "GOAL",
+          "side": "home",
+          "player": "T. Sakamoto",
+          "assist": "J. Rudoni",
+          "score": "2 - 1"
+        },
+        {
+          "minute": "36",
+          "minuteNum": 36,
+          "type": "CARD",
+          "side": "away",
+          "player": "A. Wharton",
+          "card": "yellow card"
+        },
+        {
+          "minute": "41",
+          "minuteNum": 41,
+          "type": "CARD",
+          "side": "home",
+          "player": "F. Lampard",
+          "card": "yellow card"
+        },
+        {
+          "minute": "45+1",
+          "minuteNum": 45,
+          "type": "GOAL",
+          "side": "away",
+          "player": "J. Larsen",
+          "assist": "Y. Pino",
+          "score": "2 - 2"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "T. Awoniyi | S. Cherif"
+        },
+        {
+          "minute": "61",
+          "minuteNum": 61,
+          "type": "CARD",
+          "side": "home",
+          "player": "M. Grimes",
+          "card": "yellow card"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Y. Gboho | B. Thomas-Asante"
+        },
+        {
+          "minute": "71",
+          "minuteNum": 71,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "M. Grimes | F. Onyeka"
+        },
+        {
+          "minute": "71",
+          "minuteNum": 71,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "V. Torp | G. Hamer"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "A. Khalaili | J. Canvot"
+        },
+        {
+          "minute": "73",
+          "minuteNum": 73,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Q. Timber | J. Lerma"
+        },
+        {
+          "minute": "75",
+          "minuteNum": 75,
+          "type": "CARD",
+          "side": "away",
+          "player": "Y. Pino",
+          "card": "yellow card"
+        },
+        {
+          "minute": "79",
+          "minuteNum": 79,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Larsen | E. Nketiah"
+        },
+        {
+          "minute": "79",
+          "minuteNum": 79,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Y. Pino | E. Guessand"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "GOAL",
+          "side": "home",
+          "player": "D. McNeil (o.g.)",
+          "assist": null,
+          "score": "3 - 2"
+        },
+        {
+          "minute": "89",
+          "minuteNum": 89,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. McNeil | D. Osorio"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560651": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560651,
         "utcDate": "2026-11-21T17:30:00Z",
@@ -24471,7 +26291,328 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74igq2oqecqu07z0woc52c",
+      "result": {
+        "homeGoals": 2,
+        "awayGoals": 2,
+        "referee": "Chris Kavanagh, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwqw7b02stb7od08xu4bxmnl",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "33",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "E. Eze",
+          "awayScorerId": "3237499772",
+          "awayAssist": "K. Havertz",
+          "awayAssistId": "141808407",
+          "score": "0 - 1",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-21T21:00:54.003Z",
+          "updatedAt": "2026-11-21T21:00:54.003Z",
+          "timeNum": 33
+        },
+        {
+          "id": "cmwqw7b02stb8od08ocw6ayx0",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "49",
+          "type": "GOAL",
+          "homeScorer": "H. Barnes",
+          "homeScorerId": "1067884178",
+          "homeAssist": "W. Osula",
+          "homeAssistId": "778280555",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T21:00:54.003Z",
+          "updatedAt": "2026-11-21T21:00:54.003Z",
+          "timeNum": 49
+        },
+        {
+          "id": "cmwqw7b02stb9od082j4ly72r",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "62",
+          "type": "GOAL",
+          "homeScorer": "M. Thiaw",
+          "homeScorerId": "3273755215",
+          "homeAssist": "J. Willock",
+          "homeAssistId": "2886133965",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T21:00:54.003Z",
+          "updatedAt": "2026-11-21T21:00:54.003Z",
+          "timeNum": 62
+        },
+        {
+          "id": "cmwqw7b02stbaod087gtae3dd",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "78",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "N. Madueke",
+          "awayScorerId": "1975805083",
+          "awayAssist": "M. Odegaard",
+          "awayAssistId": "1482579047",
+          "score": "2 - 2",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-21T21:00:54.003Z",
+          "updatedAt": "2026-11-21T21:00:54.003Z",
+          "timeNum": 78
+        }
+      ],
+      "cards": [],
+      "substitutions": [
+        {
+          "id": "cmwqycfagc4klod085k79hf84",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "46",
+          "substitution": "J. Murphy | A. Elanga",
+          "substitutionPlayerId": "2802751417 | 2287492793",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwqycfagc4kiod08cpqt4fs2",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "46",
+          "substitution": "A. Dedic | V. Livramento",
+          "substitutionPlayerId": "2792029663 | 3034772252",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwqycfagc4kjod08foydmeh9",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "46",
+          "substitution": "S. Steur | J. Ramsey",
+          "substitutionPlayerId": "653471197 | 1954339457",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwqycfagc4kqod08atljbz9x",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "70",
+          "substitution": "E. Eze | C. Tzolis",
+          "substitutionPlayerId": "3237499772 | 464419206",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwqycfagc4kmod08govropgb",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "70",
+          "substitution": "D. Raya | K. Arrizabalaga",
+          "substitutionPlayerId": "3446405013 | 28002023",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwqycfagc4knod08d3nvr7u5",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "70",
+          "substitution": "Bruno Guimaraes | M. Lewis-Skelly",
+          "substitutionPlayerId": "3432657688 | 2110302551",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwqycfagc4kkod088jh6jchn",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "83",
+          "substitution": "J. Willock | Y. Wissa",
+          "substitutionPlayerId": "2886133965 | 3997136875",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 83
+        },
+        {
+          "id": "cmwqycfagc4khod087e7kf78r",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "90+2",
+          "substitution": "L. Hall | S. Botman",
+          "substitutionPlayerId": "2321822486 | 559212774",
+          "team": "home",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmwqycfagc4kood080w2lsl1z",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "90+4",
+          "substitution": "M. Odegaard | M. Merino",
+          "substitutionPlayerId": "1482579047 | 2208713585",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 90
+        },
+        {
+          "id": "cmwqycfagc4kpod08q5h6fghm",
+          "fixtureId": "cmu74igq2oqecqu07z0woc52c",
+          "time": "90+4",
+          "substitution": "K. Havertz | V. Gyokeres",
+          "substitutionPlayerId": "141808407 | 1317952879",
+          "team": "away",
+          "createdAt": "2026-11-21T22:00:51.133Z",
+          "updatedAt": "2026-11-21T22:00:51.133Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "33",
+          "minuteNum": 33,
+          "type": "GOAL",
+          "side": "away",
+          "player": "E. Eze",
+          "assist": "K. Havertz",
+          "score": "0 - 1"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Murphy | A. Elanga"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "A. Dedic | V. Livramento"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "S. Steur | J. Ramsey"
+        },
+        {
+          "minute": "49",
+          "minuteNum": 49,
+          "type": "GOAL",
+          "side": "home",
+          "player": "H. Barnes",
+          "assist": "W. Osula",
+          "score": "1 - 1"
+        },
+        {
+          "minute": "62",
+          "minuteNum": 62,
+          "type": "GOAL",
+          "side": "home",
+          "player": "M. Thiaw",
+          "assist": "J. Willock",
+          "score": "2 - 1"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "E. Eze | C. Tzolis"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. Raya | K. Arrizabalaga"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "Bruno Guimaraes | M. Lewis-Skelly"
+        },
+        {
+          "minute": "78",
+          "minuteNum": 78,
+          "type": "GOAL",
+          "side": "away",
+          "player": "N. Madueke",
+          "assist": "M. Odegaard",
+          "score": "2 - 2"
+        },
+        {
+          "minute": "83",
+          "minuteNum": 83,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. Willock | Y. Wissa"
+        },
+        {
+          "minute": "90+2",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "L. Hall | S. Botman"
+        },
+        {
+          "minute": "90+4",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "M. Odegaard | M. Merino"
+        },
+        {
+          "minute": "90+4",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "K. Havertz | V. Gyokeres"
+        }
+      ],
+      "finalizedAt": "2026-11-22T01:13:48.216273+00:00"
     },
     "560646": {
       "status": "SNAPSHOT",
@@ -35259,6 +37400,586 @@
           }
         ],
         "capturedAt": "2026-11-09T00:49:11.984332+00:00"
+      }
+    },
+    "560743": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560743,
+        "utcDate": "2027-01-16T15:00:00Z",
+        "date": "2027-01-16",
+        "home": "Man City",
+        "away": "Nottingham",
+        "homeWin": 0.6432695705404532,
+        "draw": 0.23256604266393022,
+        "awayWin": 0.12416438679561663,
+        "homeXPts": 2.16237475428529,
+        "awayXPts": 0.6050592030507801,
+        "homeFactors": [
+          {
+            "title": "Man City의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Man City가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Man City's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Man City's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 10.1,
+            "favorable": true
+          },
+          {
+            "title": "Man City의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Man City의 최근 홈 경기 승점과 득실점을 반영합니다. Man City의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Man City's home form is a strength",
+            "bodyEn": "The model separately considers Man City's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 7.7,
+            "favorable": true
+          },
+          {
+            "title": "Man City은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Man City의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Man City's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Man City's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 5.6,
+            "favorable": true
+          },
+          {
+            "title": "Nottingham의 공격 기회 창출력이 Man City에게 불리하게 작용합니다",
+            "body": "Nottingham의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Man City의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Nottingham's chance creation works against Man City",
+            "bodyEn": "The model evaluates Nottingham's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Man City's win probability.",
+            "impact": -0.6,
+            "favorable": false
+          },
+          {
+            "title": "Nottingham의 최근 경기 흐름이 Man City에게 도움이 됩니다",
+            "body": "Nottingham 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Man City의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Nottingham's recent form is helpful for Man City",
+            "bodyEn": "Nottingham's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Man City's win probability.",
+            "impact": 0.5,
+            "favorable": true
+          },
+          {
+            "title": "Nottingham의 원정 경기력이 Man City에게 부담입니다",
+            "body": "Nottingham의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Man City 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Nottingham's away form is a concern for Man City",
+            "bodyEn": "The model separately considers Nottingham's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Man City.",
+            "impact": -0.1,
+            "favorable": false
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Man City의 공격 기회 창출력이 Nottingham에게 불리하게 작용합니다",
+            "body": "Man City의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Nottingham의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Man City's chance creation works against Nottingham",
+            "bodyEn": "The model evaluates Man City's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Nottingham's win probability.",
+            "impact": -10.9,
+            "favorable": false
+          },
+          {
+            "title": "Man City의 홈 경기력이 Nottingham에게 부담입니다",
+            "body": "Man City의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Nottingham 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Man City's home form is a concern for Nottingham",
+            "bodyEn": "The model separately considers Man City's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Nottingham.",
+            "impact": -7.0,
+            "favorable": false
+          },
+          {
+            "title": "Man City의 최근 경기 흐름이 Nottingham에게 부담입니다",
+            "body": "Man City 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 좋게 평가되어 Nottingham의 승리 가능성에 부정적 영향을 줍니다.",
+            "titleEn": "Man City's recent form is a concern for Nottingham",
+            "bodyEn": "Man City's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated above the league-neutral level, which hurts Nottingham's win probability.",
+            "impact": -3.3,
+            "favorable": false
+          },
+          {
+            "title": "Nottingham은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Nottingham의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Nottingham's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Nottingham's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -1.2,
+            "favorable": false
+          },
+          {
+            "title": "Nottingham의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Nottingham가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Nottingham's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Nottingham's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 0.6,
+            "favorable": true
+          },
+          {
+            "title": "Nottingham의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Nottingham의 최근 원정 경기 승점과 득실점을 반영합니다. Nottingham의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Nottingham's away form is a strength",
+            "bodyEn": "The model separately considers Nottingham's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 0.2,
+            "favorable": true
+          }
+        ],
+        "capturedAt": "2026-11-22T01:13:48.216273+00:00"
+      }
+    },
+    "560744": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560744,
+        "utcDate": "2027-01-16T15:00:00Z",
+        "date": "2027-01-16",
+        "home": "Chelsea",
+        "away": "Sunderland",
+        "homeWin": 0.49550416592909435,
+        "draw": 0.27200943103114733,
+        "awayWin": 0.2324864030397582,
+        "homeXPts": 1.7585219288184304,
+        "awayXPts": 0.969468640150422,
+        "homeFactors": [
+          {
+            "title": "Sunderland의 최근 경기 흐름이 Chelsea에게 도움이 됩니다",
+            "body": "Sunderland 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Chelsea의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Sunderland's recent form is helpful for Chelsea",
+            "bodyEn": "Sunderland's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Chelsea's win probability.",
+            "impact": 4.1,
+            "favorable": true
+          },
+          {
+            "title": "Sunderland의 공격 기회 창출력이 Chelsea에게 유리하게 작용합니다",
+            "body": "Sunderland의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Chelsea의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Sunderland's chance creation works in favour of Chelsea",
+            "bodyEn": "The model evaluates Sunderland's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Chelsea's win probability.",
+            "impact": 2.9,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Chelsea가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Chelsea's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Chelsea's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 1.4,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Chelsea의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Chelsea's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Chelsea's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -1.0,
+            "favorable": false
+          },
+          {
+            "title": "Sunderland의 원정 경기력이 Chelsea에게 부담입니다",
+            "body": "Sunderland의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Chelsea 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Sunderland's away form is a concern for Chelsea",
+            "bodyEn": "The model separately considers Sunderland's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Chelsea.",
+            "impact": -0.7,
+            "favorable": false
+          },
+          {
+            "title": "Chelsea의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Chelsea의 최근 홈 경기 승점과 득실점을 반영합니다. Chelsea의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Chelsea's home form is a strength",
+            "bodyEn": "The model separately considers Chelsea's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 0.5,
+            "favorable": true
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Sunderland은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Sunderland의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Sunderland's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Sunderland's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -3.9,
+            "favorable": false
+          },
+          {
+            "title": "Sunderland의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Sunderland가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Sunderland's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Sunderland's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -3.0,
+            "favorable": false
+          },
+          {
+            "title": "Chelsea의 공격 기회 창출력이 Sunderland에게 불리하게 작용합니다",
+            "body": "Chelsea의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Sunderland의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Chelsea's chance creation works against Sunderland",
+            "bodyEn": "The model evaluates Chelsea's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Sunderland's win probability.",
+            "impact": -1.7,
+            "favorable": false
+          },
+          {
+            "title": "Chelsea의 최근 경기 흐름이 Sunderland에게 도움이 됩니다",
+            "body": "Chelsea 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Sunderland의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Chelsea's recent form is helpful for Sunderland",
+            "bodyEn": "Chelsea's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Sunderland's win probability.",
+            "impact": 0.4,
+            "favorable": true
+          },
+          {
+            "title": "Sunderland의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Sunderland의 최근 원정 경기 승점과 득실점을 반영합니다. Sunderland의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Sunderland's away form is a strength",
+            "bodyEn": "The model separately considers Sunderland's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 0.4,
+            "favorable": true
+          },
+          {
+            "title": "Chelsea의 홈 경기력이 Sunderland에게 부담입니다",
+            "body": "Chelsea의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Sunderland 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Chelsea's home form is a concern for Sunderland",
+            "bodyEn": "The model separately considers Chelsea's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Sunderland.",
+            "impact": -0.0,
+            "favorable": false
+          }
+        ],
+        "capturedAt": "2026-11-22T01:13:48.216273+00:00"
+      }
+    },
+    "560751": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560751,
+        "utcDate": "2027-01-16T15:00:00Z",
+        "date": "2027-01-16",
+        "home": "Newcastle",
+        "away": "Fulham",
+        "homeWin": 0.4390324590859454,
+        "draw": 0.2857722335523719,
+        "awayWin": 0.27519530736168263,
+        "homeXPts": 1.6028696108102083,
+        "awayXPts": 1.11135815563742,
+        "homeFactors": [
+          {
+            "title": "Newcastle의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Newcastle의 최근 홈 경기 승점과 득실점을 반영합니다. Newcastle의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Newcastle's home form is a strength",
+            "bodyEn": "The model separately considers Newcastle's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 3.5,
+            "favorable": true
+          },
+          {
+            "title": "Newcastle의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Newcastle가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Newcastle's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Newcastle's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 1.6,
+            "favorable": true
+          },
+          {
+            "title": "Newcastle은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Newcastle의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Newcastle's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Newcastle's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -1.5,
+            "favorable": false
+          },
+          {
+            "title": "Fulham의 공격 기회 창출력이 Newcastle에게 불리하게 작용합니다",
+            "body": "Fulham의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Newcastle의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Fulham's chance creation works against Newcastle",
+            "bodyEn": "The model evaluates Fulham's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Newcastle's win probability.",
+            "impact": -1.2,
+            "favorable": false
+          },
+          {
+            "title": "Fulham의 원정 경기력이 Newcastle에게 부담입니다",
+            "body": "Fulham의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Newcastle 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Fulham's away form is a concern for Newcastle",
+            "bodyEn": "The model separately considers Fulham's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Newcastle.",
+            "impact": -1.1,
+            "favorable": false
+          },
+          {
+            "title": "Fulham의 최근 경기 흐름이 Newcastle에게 도움이 됩니다",
+            "body": "Fulham 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Newcastle의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Fulham's recent form is helpful for Newcastle",
+            "bodyEn": "Fulham's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Newcastle's win probability.",
+            "impact": 0.2,
+            "favorable": true
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Newcastle의 홈 경기력이 Fulham에게 부담입니다",
+            "body": "Newcastle의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Fulham 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Newcastle's home form is a concern for Fulham",
+            "bodyEn": "The model separately considers Newcastle's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Fulham.",
+            "impact": -2.7,
+            "favorable": false
+          },
+          {
+            "title": "Newcastle의 공격 기회 창출력이 Fulham에게 불리하게 작용합니다",
+            "body": "Newcastle의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Fulham의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Newcastle's chance creation works against Fulham",
+            "bodyEn": "The model evaluates Newcastle's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Fulham's win probability.",
+            "impact": -1.8,
+            "favorable": false
+          },
+          {
+            "title": "Fulham의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Fulham의 최근 원정 경기 승점과 득실점을 반영합니다. Fulham의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Fulham's away form is a strength",
+            "bodyEn": "The model separately considers Fulham's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 1.7,
+            "favorable": true
+          },
+          {
+            "title": "Fulham은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Fulham의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Fulham's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Fulham's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -1.5,
+            "favorable": false
+          },
+          {
+            "title": "Newcastle의 최근 경기 흐름이 Fulham에게 도움이 됩니다",
+            "body": "Newcastle 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Fulham의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Newcastle's recent form is helpful for Fulham",
+            "bodyEn": "Newcastle's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Fulham's win probability.",
+            "impact": 0.9,
+            "favorable": true
+          },
+          {
+            "title": "Fulham의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Fulham가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Fulham's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Fulham's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 0.3,
+            "favorable": true
+          }
+        ],
+        "capturedAt": "2026-11-22T01:13:48.216273+00:00"
+      }
+    },
+    "560742": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560742,
+        "utcDate": "2027-01-17T14:00:00Z",
+        "date": "2027-01-17",
+        "home": "Bournemouth",
+        "away": "Ipswich",
+        "homeWin": 0.6681060102198688,
+        "draw": 0.2081335311081127,
+        "awayWin": 0.12376045867201858,
+        "homeXPts": 2.212451561767719,
+        "awayXPts": 0.5794149071241684,
+        "homeFactors": [
+          {
+            "title": "Ipswich의 최근 경기 흐름이 Bournemouth에게 도움이 됩니다",
+            "body": "Ipswich 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Bournemouth의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Ipswich's recent form is helpful for Bournemouth",
+            "bodyEn": "Ipswich's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Bournemouth's win probability.",
+            "impact": 12.0,
+            "favorable": true
+          },
+          {
+            "title": "Ipswich의 공격 기회 창출력이 Bournemouth에게 유리하게 작용합니다",
+            "body": "Ipswich의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Bournemouth의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Ipswich's chance creation works in favour of Bournemouth",
+            "bodyEn": "The model evaluates Ipswich's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Bournemouth's win probability.",
+            "impact": 5.3,
+            "favorable": true
+          },
+          {
+            "title": "Bournemouth은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Bournemouth의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Bournemouth's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Bournemouth's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 3.9,
+            "favorable": true
+          },
+          {
+            "title": "Bournemouth의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Bournemouth가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Bournemouth's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Bournemouth's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 3.5,
+            "favorable": true
+          },
+          {
+            "title": "Bournemouth의 홈 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Bournemouth의 최근 홈 경기 승점과 득실점을 반영합니다. Bournemouth의 홈 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Bournemouth's home form is a strength",
+            "bodyEn": "The model separately considers Bournemouth's recent home points and goal difference. That home performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 2.1,
+            "favorable": true
+          },
+          {
+            "title": "Ipswich의 원정 경기력이 Bournemouth에게 부담입니다",
+            "body": "Ipswich의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Bournemouth 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Ipswich's away form is a concern for Bournemouth",
+            "bodyEn": "The model separately considers Ipswich's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Bournemouth.",
+            "impact": -0.9,
+            "favorable": false
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Ipswich은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Ipswich의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Ipswich's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Ipswich's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -8.1,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Ipswich가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Ipswich's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Ipswich's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -5.0,
+            "favorable": false
+          },
+          {
+            "title": "Bournemouth의 공격 기회 창출력이 Ipswich에게 불리하게 작용합니다",
+            "body": "Bournemouth의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Ipswich의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Bournemouth's chance creation works against Ipswich",
+            "bodyEn": "The model evaluates Bournemouth's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Ipswich's win probability.",
+            "impact": -4.0,
+            "favorable": false
+          },
+          {
+            "title": "Bournemouth의 최근 경기 흐름이 Ipswich에게 부담입니다",
+            "body": "Bournemouth 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 좋게 평가되어 Ipswich의 승리 가능성에 부정적 영향을 줍니다.",
+            "titleEn": "Bournemouth's recent form is a concern for Ipswich",
+            "bodyEn": "Bournemouth's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated above the league-neutral level, which hurts Ipswich's win probability.",
+            "impact": -2.5,
+            "favorable": false
+          },
+          {
+            "title": "Bournemouth의 홈 경기력이 Ipswich에게 부담입니다",
+            "body": "Bournemouth의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 좋게 평가되어 Ipswich 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Bournemouth's home form is a concern for Ipswich",
+            "bodyEn": "The model separately considers Bournemouth's recent home points and goal difference. The opponent's home performance is rated above the neutral level, which makes the match tougher for Ipswich.",
+            "impact": -2.4,
+            "favorable": false
+          },
+          {
+            "title": "Ipswich의 원정 경기력이 부담 요소입니다",
+            "body": "전체 경기력과 별도로 Ipswich의 최근 원정 경기 승점과 득실점을 반영합니다. Ipswich의 원정 경기력이 중립 수준보다 낮아 이번 경기 승리 가능성을 낮춥니다.",
+            "titleEn": "Ipswich's away form is a concern",
+            "bodyEn": "The model separately considers Ipswich's recent away points and goal difference. That away performance is rated below the neutral level, which reduces the chance of winning this match.",
+            "impact": -0.4,
+            "favorable": false
+          }
+        ],
+        "capturedAt": "2026-11-22T01:13:48.216273+00:00"
+      }
+    },
+    "560747": {
+      "status": "SNAPSHOT",
+      "snapshot": {
+        "footballDataId": 560747,
+        "utcDate": "2027-01-17T16:30:00Z",
+        "date": "2027-01-17",
+        "home": "Tottenham",
+        "away": "Leeds",
+        "homeWin": 0.3719843886820166,
+        "draw": 0.28851018982052246,
+        "awayWin": 0.339505421497461,
+        "homeXPts": 1.4044633558665722,
+        "awayXPts": 1.3070264543129055,
+        "homeFactors": [
+          {
+            "title": "Leeds의 최근 경기 흐름이 Tottenham에게 부담입니다",
+            "body": "Leeds 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 좋게 평가되어 Tottenham의 승리 가능성에 부정적 영향을 줍니다.",
+            "titleEn": "Leeds's recent form is a concern for Tottenham",
+            "bodyEn": "Leeds's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated above the league-neutral level, which hurts Tottenham's win probability.",
+            "impact": -3.7,
+            "favorable": false
+          },
+          {
+            "title": "Tottenham의 공격 기회 창출력이 좋습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Tottenham가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 좋게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Tottenham's chance creation is strong",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Tottenham's ability to create threatening chances is rated above the league-neutral level and is reflected in the win probability.",
+            "impact": 2.0,
+            "favorable": true
+          },
+          {
+            "title": "Tottenham은(는) 최근까지 경기 흐름이 다소 좋지 않습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Tottenham의 경기 흐름이 리그 평균과 비교해 낮게 평가되어 승리 가능성을 낮췄습니다.",
+            "titleEn": "Tottenham's recent form is a concern",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Tottenham's recent form is rated below the league-neutral level, which reduces the win probability.",
+            "impact": -1.8,
+            "favorable": false
+          },
+          {
+            "title": "Tottenham의 홈 경기력이 부담 요소입니다",
+            "body": "전체 경기력과 별도로 Tottenham의 최근 홈 경기 승점과 득실점을 반영합니다. Tottenham의 홈 경기력이 중립 수준보다 낮아 이번 경기 승리 가능성을 낮춥니다.",
+            "titleEn": "Tottenham's home form is a concern",
+            "bodyEn": "The model separately considers Tottenham's recent home points and goal difference. That home performance is rated below the neutral level, which reduces the chance of winning this match.",
+            "impact": -1.2,
+            "favorable": false
+          },
+          {
+            "title": "Leeds의 원정 경기력이 Tottenham에게 부담입니다",
+            "body": "Leeds의 최근 원정 경기 승점과 득실점을 따로 반영했습니다. 상대의 원정 경기력이 중립 수준보다 좋게 평가되어 Tottenham 입장에서는 경기 난이도가 높아집니다.",
+            "titleEn": "Leeds's away form is a concern for Tottenham",
+            "bodyEn": "The model separately considers Leeds's recent away points and goal difference. The opponent's away performance is rated above the neutral level, which makes the match tougher for Tottenham.",
+            "impact": -1.0,
+            "favorable": false
+          },
+          {
+            "title": "Leeds의 공격 기회 창출력이 Tottenham에게 유리하게 작용합니다",
+            "body": "Leeds의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 약하게 평가되어 Tottenham의 승리 가능성이 높아지는 방향으로 작용했습니다.",
+            "titleEn": "Leeds's chance creation works in favour of Tottenham",
+            "bodyEn": "The model evaluates Leeds's recent shots and shots on target. Their chance creation is rated weaker than the league-neutral level, which raises Tottenham's win probability.",
+            "impact": 0.3,
+            "favorable": true
+          }
+        ],
+        "awayFactors": [
+          {
+            "title": "Tottenham의 공격 기회 창출력이 Leeds에게 불리하게 작용합니다",
+            "body": "Tottenham의 최근 슈팅과 유효슈팅 생산력을 평가했습니다. 상대가 득점 기회를 만들어내는 능력이 리그 중립 수준보다 강하게 평가되어 Leeds의 승리 가능성이 낮아지는 방향으로 작용했습니다.",
+            "titleEn": "Tottenham's chance creation works against Leeds",
+            "bodyEn": "The model evaluates Tottenham's recent shots and shots on target. Their chance creation is rated stronger than the league-neutral level, which reduces Leeds's win probability.",
+            "impact": -2.3,
+            "favorable": false
+          },
+          {
+            "title": "Leeds은(는) 최근까지 꾸준히 좋은 경기력을 보여왔습니다",
+            "body": "최근 몇 경기만 보는 것이 아니라 이전 경기까지 함께 살펴보되, 최근 경기에 더 큰 비중을 둡니다. 이 기간의 승점, 득점, 실점을 종합했을 때 Leeds의 경기 흐름이 리그 평균과 비교해 좋게 평가되어 승리 가능성을 높였습니다.",
+            "titleEn": "Leeds's recent form is a strength",
+            "bodyEn": "The model looks beyond only the last few matches, while giving more weight to recent games. Combining points, goals scored and goals conceded, Leeds's recent form is rated above the league-neutral level, which raises the win probability.",
+            "impact": 2.1,
+            "favorable": true
+          },
+          {
+            "title": "Tottenham의 홈 경기력이 Leeds에게 크게 위협적이지 않습니다",
+            "body": "Tottenham의 최근 홈 경기 승점과 득실점을 따로 반영했습니다. 상대의 홈 경기력이 중립 수준보다 약하게 평가되어 Leeds 입장에서는 부담이 줄어듭니다.",
+            "titleEn": "Tottenham's home form is less threatening for Leeds",
+            "bodyEn": "The model separately considers Tottenham's recent home points and goal difference. The opponent's home performance is rated below the neutral level, which reduces the difficulty for Leeds.",
+            "impact": 1.5,
+            "favorable": true
+          },
+          {
+            "title": "Tottenham의 최근 경기 흐름이 Leeds에게 도움이 됩니다",
+            "body": "Tottenham 역시 최근 경기에 더 큰 비중을 두고 이전 경기까지 함께 평가합니다. 최근 승점, 득점, 실점을 종합했을 때 상대의 경기 흐름이 리그 평균보다 낮게 평가되어 Leeds의 승리 가능성에 긍정적 영향을 줍니다.",
+            "titleEn": "Tottenham's recent form is helpful for Leeds",
+            "bodyEn": "Tottenham's recent results are also weighted more heavily than older matches. Based on points, goals scored and goals conceded, the opponent is rated below the league-neutral level, which helps Leeds's win probability.",
+            "impact": 1.4,
+            "favorable": true
+          },
+          {
+            "title": "Leeds의 원정 경기력이 강점입니다",
+            "body": "전체 경기력과 별도로 Leeds의 최근 원정 경기 승점과 득실점을 반영합니다. Leeds의 원정 경기력이 중립 수준보다 좋아 이번 경기 승리 가능성을 끌어올립니다.",
+            "titleEn": "Leeds's away form is a strength",
+            "bodyEn": "The model separately considers Leeds's recent away points and goal difference. That away performance is rated above the neutral level, which raises the chance of winning this match.",
+            "impact": 1.3,
+            "favorable": true
+          },
+          {
+            "title": "Leeds의 공격 기회 창출력이 아쉽습니다",
+            "body": "단순 득점 결과뿐 아니라 최근 경기의 슈팅과 유효슈팅을 함께 봅니다. Leeds가 상대 골문을 위협하는 기회를 만들어내는 빈도가 리그 중립 수준과 비교해 낮게 평가되어 승리 확률에 반영됐습니다.",
+            "titleEn": "Leeds's chance creation is below average",
+            "bodyEn": "The model uses recent shots and shots on target as well as goals. Leeds's ability to create threatening chances is rated below the league-neutral level and is reflected in the win probability.",
+            "impact": -0.6,
+            "favorable": false
+          }
+        ],
+        "capturedAt": "2026-11-22T01:13:48.216273+00:00"
       }
     }
   }
