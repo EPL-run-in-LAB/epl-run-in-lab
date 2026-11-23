@@ -3,31 +3,31 @@
   "source": "docs/data/match_archive.json",
   "method": "Frozen pre-kickoff probabilities only; three-class 90-minute results",
   "sample": {
-    "archivedFixtures": 155,
-    "eligibleFinalizedFixtures": 57,
+    "archivedFixtures": 158,
+    "eligibleFinalizedFixtures": 59,
     "excludedReasons": {
-      "not_finished": 98
+      "not_finished": 99
     },
     "firstFixtureDate": "2026-10-10",
-    "lastFixtureDate": "2026-11-21",
+    "lastFixtureDate": "2026-11-22",
     "uniqueTeams": 20,
-    "teamAppearances": 114
+    "teamAppearances": 118
   },
   "results": {
-    "top1Correct": 27,
-    "top1Accuracy": 0.473684,
-    "multiclassBrierSum": 0.629204,
-    "logLoss": 1.043603,
+    "top1Correct": 28,
+    "top1Accuracy": 0.474576,
+    "multiclassBrierSum": 0.630511,
+    "logLoss": 1.045306,
     "outcomeCounts": {
-      "home": 27,
+      "home": 29,
       "draw": 14,
       "away": 16
     },
     "uniformOneThirdBrier": 0.666667,
     "uniformOneThirdLogLoss": 1.098612,
-    "alwaysPredictHomeAccuracyOnSample": 0.473684,
-    "sumExpectedPointsForBothTeams": 155.993,
-    "sumActualPointsForBothTeams": 157
+    "alwaysPredictHomeAccuracyOnSample": 0.491525,
+    "sumExpectedPointsForBothTeams": 161.475,
+    "sumActualPointsForBothTeams": 163
   },
   "teamRecords": [
     {
@@ -56,11 +56,11 @@
     },
     {
       "team": "Brighton",
-      "matches": 5,
-      "expectedPoints": 7.171,
+      "matches": 6,
+      "expectedPoints": 8.836,
       "actualPoints": 12,
-      "pointsAboveExpected": 4.829,
-      "perMatchDifference": 0.966
+      "pointsAboveExpected": 3.164,
+      "perMatchDifference": 0.527
     },
     {
       "team": "Coventry",
@@ -71,20 +71,20 @@
       "perMatchDifference": 0.472
     },
     {
+      "team": "Liverpool",
+      "matches": 6,
+      "expectedPoints": 9.208,
+      "actualPoints": 12,
+      "pointsAboveExpected": 2.792,
+      "perMatchDifference": 0.465
+    },
+    {
       "team": "Aston Villa",
       "matches": 6,
       "expectedPoints": 8.045,
       "actualPoints": 10,
       "pointsAboveExpected": 1.955,
       "perMatchDifference": 0.326
-    },
-    {
-      "team": "Liverpool",
-      "matches": 5,
-      "expectedPoints": 7.706,
-      "actualPoints": 9,
-      "pointsAboveExpected": 1.294,
-      "perMatchDifference": 0.259
     },
     {
       "team": "Chelsea",
@@ -127,6 +127,14 @@
       "perMatchDifference": -0.087
     },
     {
+      "team": "Hull",
+      "matches": 6,
+      "expectedPoints": 6.89,
+      "actualPoints": 6,
+      "pointsAboveExpected": -0.89,
+      "perMatchDifference": -0.148
+    },
+    {
       "team": "Brentford",
       "matches": 5,
       "expectedPoints": 6.277,
@@ -141,14 +149,6 @@
       "actualPoints": 5,
       "pointsAboveExpected": -1.969,
       "perMatchDifference": -0.328
-    },
-    {
-      "team": "Hull",
-      "matches": 5,
-      "expectedPoints": 5.817,
-      "actualPoints": 3,
-      "pointsAboveExpected": -2.817,
-      "perMatchDifference": -0.563
     },
     {
       "team": "Nottingham",
@@ -184,11 +184,11 @@
     },
     {
       "team": "Man United",
-      "matches": 5,
-      "expectedPoints": 9.014,
+      "matches": 6,
+      "expectedPoints": 10.256,
       "actualPoints": 3,
-      "pointsAboveExpected": -6.014,
-      "perMatchDifference": -1.203
+      "pointsAboveExpected": -7.256,
+      "perMatchDifference": -1.209
     }
   ],
   "fixtures": [
@@ -1445,10 +1445,54 @@
       "awayExpectedPoints": 1.45,
       "capturedAt": "2026-09-27T04:44:01.238359+00:00",
       "fixtureId": "560651"
+    },
+    {
+      "utcDate": "2026-11-22T14:00:00Z",
+      "date": "2026-11-22",
+      "home": "Hull",
+      "away": "Brighton",
+      "homeGoals": 2,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.27005117327089423,
+        "draw": 0.2625920014865982,
+        "away": 0.4673568252425076
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "away",
+      "correctTop1": 0,
+      "brier": 0.820202,
+      "logLoss": 1.309144,
+      "homeExpectedPoints": 1.073,
+      "awayExpectedPoints": 1.665,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560646"
+    },
+    {
+      "utcDate": "2026-11-22T16:30:00Z",
+      "date": "2026-11-22",
+      "home": "Liverpool",
+      "away": "Man United",
+      "homeGoals": 4,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.41538686613036546,
+        "draw": 0.25582953465664515,
+        "away": 0.3287835992129895
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.51532,
+      "logLoss": 0.878545,
+      "homeExpectedPoints": 1.502,
+      "awayExpectedPoints": 1.242,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560645"
     }
   ],
   "interpretationLimits": [
-    "Only 57 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
+    "Only 59 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
     "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
     "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
     "Points-above-expected in small samples is not a reliable causal measure of strength or coaching.",
