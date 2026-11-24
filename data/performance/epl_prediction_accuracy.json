@@ -3,31 +3,31 @@
   "source": "docs/data/match_archive.json",
   "method": "Frozen pre-kickoff probabilities only; three-class 90-minute results",
   "sample": {
-    "archivedFixtures": 158,
-    "eligibleFinalizedFixtures": 59,
+    "archivedFixtures": 160,
+    "eligibleFinalizedFixtures": 60,
     "excludedReasons": {
-      "not_finished": 99
+      "not_finished": 100
     },
     "firstFixtureDate": "2026-10-10",
-    "lastFixtureDate": "2026-11-22",
+    "lastFixtureDate": "2026-11-23",
     "uniqueTeams": 20,
-    "teamAppearances": 118
+    "teamAppearances": 120
   },
   "results": {
-    "top1Correct": 28,
-    "top1Accuracy": 0.474576,
-    "multiclassBrierSum": 0.630511,
-    "logLoss": 1.045306,
+    "top1Correct": 29,
+    "top1Accuracy": 0.483333,
+    "multiclassBrierSum": 0.62721,
+    "logLoss": 1.040679,
     "outcomeCounts": {
-      "home": 29,
+      "home": 30,
       "draw": 14,
       "away": 16
     },
     "uniformOneThirdBrier": 0.666667,
     "uniformOneThirdLogLoss": 1.098612,
-    "alwaysPredictHomeAccuracyOnSample": 0.491525,
-    "sumExpectedPointsForBothTeams": 161.475,
-    "sumActualPointsForBothTeams": 163
+    "alwaysPredictHomeAccuracyOnSample": 0.5,
+    "sumExpectedPointsForBothTeams": 164.235,
+    "sumActualPointsForBothTeams": 166
   },
   "teamRecords": [
     {
@@ -103,20 +103,20 @@
       "perMatchDifference": 0.119
     },
     {
-      "team": "Everton",
-      "matches": 5,
-      "expectedPoints": 6.608,
-      "actualPoints": 7,
-      "pointsAboveExpected": 0.392,
-      "perMatchDifference": 0.078
-    },
-    {
       "team": "Leeds",
       "matches": 6,
       "expectedPoints": 7.892,
       "actualPoints": 8,
       "pointsAboveExpected": 0.108,
       "perMatchDifference": 0.018
+    },
+    {
+      "team": "Brentford",
+      "matches": 6,
+      "expectedPoints": 7.909,
+      "actualPoints": 8,
+      "pointsAboveExpected": 0.091,
+      "perMatchDifference": 0.015
     },
     {
       "team": "Ipswich",
@@ -127,20 +127,20 @@
       "perMatchDifference": -0.087
     },
     {
+      "team": "Everton",
+      "matches": 6,
+      "expectedPoints": 7.736,
+      "actualPoints": 7,
+      "pointsAboveExpected": -0.736,
+      "perMatchDifference": -0.123
+    },
+    {
       "team": "Hull",
       "matches": 6,
       "expectedPoints": 6.89,
       "actualPoints": 6,
       "pointsAboveExpected": -0.89,
       "perMatchDifference": -0.148
-    },
-    {
-      "team": "Brentford",
-      "matches": 5,
-      "expectedPoints": 6.277,
-      "actualPoints": 5,
-      "pointsAboveExpected": -1.277,
-      "perMatchDifference": -0.255
     },
     {
       "team": "Sunderland",
@@ -1489,10 +1489,32 @@
       "awayExpectedPoints": 1.242,
       "capturedAt": "2026-09-27T04:44:01.238359+00:00",
       "fixtureId": "560645"
+    },
+    {
+      "utcDate": "2026-11-23T20:00:00Z",
+      "date": "2026-11-23",
+      "home": "Brentford",
+      "away": "Everton",
+      "homeGoals": 4,
+      "awayGoals": 0,
+      "probabilities": {
+        "home": 0.4640687949051134,
+        "draw": 0.2397419077144568,
+        "away": 0.29618929738042976
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.432427,
+      "logLoss": 0.767722,
+      "homeExpectedPoints": 1.632,
+      "awayExpectedPoints": 1.128,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560649"
     }
   ],
   "interpretationLimits": [
-    "Only 59 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
+    "Only 60 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
     "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
     "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
     "Points-above-expected in small samples is not a reliable causal measure of strength or coaching.",

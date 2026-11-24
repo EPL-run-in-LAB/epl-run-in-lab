@@ -1,17 +1,17 @@
 {
   "version": 1,
   "source": "validated frozen pre-kickoff prediction report",
-  "sample": 59,
+  "sample": 60,
   "overall": {
-    "matches": 59,
-    "correct": 28,
-    "accuracy": 0.4746,
-    "brier": 0.6305,
-    "logLoss": 1.0453
+    "matches": 60,
+    "correct": 29,
+    "accuracy": 0.4833,
+    "brier": 0.6272,
+    "logLoss": 1.0407
   },
   "predictedByActual": {
     "home": {
-      "home": 20,
+      "home": 21,
       "draw": 8,
       "away": 8
     },
@@ -28,11 +28,11 @@
   },
   "byActual": {
     "home": {
-      "matches": 29,
-      "correct": 20,
-      "accuracy": 0.6897,
-      "brier": 0.5086,
-      "logLoss": 0.8783
+      "matches": 30,
+      "correct": 21,
+      "accuracy": 0.7,
+      "brier": 0.5061,
+      "logLoss": 0.8746
     },
     "draw": {
       "matches": 14,
@@ -51,11 +51,11 @@
   },
   "byTopPick": {
     "home": {
-      "matches": 36,
-      "correct": 20,
-      "accuracy": 0.5556,
-      "brier": 0.5914,
-      "logLoss": 0.9864
+      "matches": 37,
+      "correct": 21,
+      "accuracy": 0.5676,
+      "brier": 0.5871,
+      "logLoss": 0.9805
     },
     "draw": {
       "matches": 0,
@@ -74,19 +74,19 @@
   },
   "calibration": {
     "home": {
-      "meanProbability": 0.4229,
-      "actualFrequency": 0.4915,
-      "binaryBrier": 0.2559
+      "meanProbability": 0.4236,
+      "actualFrequency": 0.5,
+      "binaryBrier": 0.2564
     },
     "draw": {
-      "meanProbability": 0.2631,
-      "actualFrequency": 0.2373,
-      "binaryBrier": 0.1806
+      "meanProbability": 0.2628,
+      "actualFrequency": 0.2333,
+      "binaryBrier": 0.1786
     },
     "away": {
-      "meanProbability": 0.314,
-      "actualFrequency": 0.2712,
-      "binaryBrier": 0.194
+      "meanProbability": 0.3137,
+      "actualFrequency": 0.2667,
+      "binaryBrier": 0.1922
     }
   },
   "confidenceBins": [
@@ -103,12 +103,12 @@
     {
       "min": 0.4,
       "maxExclusive": 0.5,
-      "matches": 31,
-      "correct": 14,
-      "accuracy": 0.4516,
-      "brier": 0.6439,
-      "logLoss": 1.0662,
-      "averageConfidence": 0.457
+      "matches": 32,
+      "correct": 15,
+      "accuracy": 0.4688,
+      "brier": 0.6372,
+      "logLoss": 1.0569,
+      "averageConfidence": 0.4572
     },
     {
       "min": 0.5,
@@ -140,11 +140,11 @@
       "logLoss": 1.0518
     },
     "2026-11": {
-      "matches": 21,
-      "correct": 10,
-      "accuracy": 0.4762,
-      "brier": 0.627,
-      "logLoss": 1.0335
+      "matches": 22,
+      "correct": 11,
+      "accuracy": 0.5,
+      "brier": 0.6182,
+      "logLoss": 1.0214
     }
   },
   "highestLogLossGames": [
@@ -322,7 +322,7 @@
   "baseline": {
     "uniformBrier": 0.666667,
     "uniformLogLoss": 1.098612,
-    "alwaysHomeTop1": 0.491525
+    "alwaysHomeTop1": 0.5
   },
   "warnings": [
     "40 games are not enough to establish systematic bias or retrain weights.",
