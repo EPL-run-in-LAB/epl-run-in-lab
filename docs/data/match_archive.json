@@ -28124,7 +28124,7 @@
       "finalizedAt": "2026-11-24T05:18:01.156222+00:00"
     },
     "560658": {
-      "status": "SNAPSHOT",
+      "status": "FINISHED",
       "snapshot": {
         "footballDataId": 560658,
         "utcDate": "2026-11-27T20:00:00Z",
@@ -28237,7 +28237,458 @@
           }
         ],
         "capturedAt": "2026-09-27T04:44:01.238359+00:00"
-      }
+      },
+      "goalApiFixtureId": "cmu74j1u9oxepqu07d6puge36",
+      "result": {
+        "homeGoals": 3,
+        "awayGoals": 2,
+        "referee": "Andy Madley, England",
+        "stadium": null
+      },
+      "goals": [
+        {
+          "id": "cmwzl4bk787j1p808h003uxt3",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "5",
+          "type": "GOAL",
+          "homeScorer": "Igor Jesus",
+          "homeScorerId": "306355406",
+          "homeAssist": "D. Munoz",
+          "homeAssistId": "4282633333",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "1 - 0",
+          "info": null,
+          "scoreInfoTime": "1st Half",
+          "createdAt": "2026-11-27T23:00:34.567Z",
+          "updatedAt": "2026-11-27T23:00:34.567Z",
+          "timeNum": 5
+        },
+        {
+          "id": "cmwzl4bk787j2p808qx2318xd",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "51",
+          "type": "GOAL",
+          "homeScorer": "M. Gibbs-White",
+          "homeScorerId": "21993197",
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 0",
+          "info": "Penalty",
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T23:00:34.567Z",
+          "updatedAt": "2026-11-27T23:00:34.567Z",
+          "timeNum": 51
+        },
+        {
+          "id": "cmwzl4bk787j3p808rmkwow8n",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "54",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "E. Emegha",
+          "awayScorerId": "905742266",
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "2 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T23:00:34.567Z",
+          "updatedAt": "2026-11-27T23:00:34.567Z",
+          "timeNum": 54
+        },
+        {
+          "id": "cmwzl4bk787j4p808e6ix2ipr",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "72",
+          "type": "GOAL",
+          "homeScorer": "M. Gibbs-White",
+          "homeScorerId": "21993197",
+          "homeAssist": "X. Schlager",
+          "homeAssistId": "2225489064",
+          "awayScorer": null,
+          "awayScorerId": null,
+          "awayAssist": null,
+          "awayAssistId": null,
+          "score": "3 - 1",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T23:00:34.567Z",
+          "updatedAt": "2026-11-27T23:00:34.567Z",
+          "timeNum": 72
+        },
+        {
+          "id": "cmwzl4bk787j5p808twnch315",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "89",
+          "type": "GOAL",
+          "homeScorer": null,
+          "homeScorerId": null,
+          "homeAssist": null,
+          "homeAssistId": null,
+          "awayScorer": "E. Emegha",
+          "awayScorerId": "905742266",
+          "awayAssist": "P. Neto",
+          "awayAssistId": "2906426006",
+          "score": "3 - 2",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T23:00:34.567Z",
+          "updatedAt": "2026-11-27T23:00:34.567Z",
+          "timeNum": 89
+        }
+      ],
+      "cards": [
+        {
+          "id": "cmwzjgfzc1x0bp8089bee0d9u",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "49",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "W. Fofana",
+          "awayPlayerId": "283750341",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 49
+        },
+        {
+          "id": "cmwzjgfzc1x0cp808m2hx8ia1",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "61",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "J. Henderson",
+          "awayPlayerId": "1676929947",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 61
+        },
+        {
+          "id": "cmwzjgfzc1x0dp808mm3n1a2w",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "70",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "X. Alonso",
+          "awayPlayerId": "3855660651",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 70
+        },
+        {
+          "id": "cmwzjgfzc1x0ep80830nkouw7",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "71",
+          "card": "yellow card",
+          "homeFault": null,
+          "homePlayerId": null,
+          "awayFault": "P. Neto",
+          "awayPlayerId": "2906426006",
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 71
+        },
+        {
+          "id": "cmwzjgfzc1x0fp8089cr9c7lo",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "80",
+          "card": "yellow card",
+          "homeFault": "L. Delap",
+          "homePlayerId": "2867126813",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 80
+        },
+        {
+          "id": "cmwzjgfzc1x0gp808n2gfpukw",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "90+3",
+          "card": "yellow card",
+          "homeFault": "I. Sangare",
+          "homePlayerId": "2907640211",
+          "awayFault": null,
+          "awayPlayerId": null,
+          "info": null,
+          "scoreInfoTime": "2nd Half",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 90
+        }
+      ],
+      "substitutions": [
+        {
+          "id": "cmwzjgfze1x0lp8082iorr9qq",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "46",
+          "substitution": "D. Welbeck | E. Emegha",
+          "substitutionPlayerId": "3206548206 | 905742266",
+          "team": "away",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 46
+        },
+        {
+          "id": "cmwzjgfze1x0mp8087pkj722v",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "56",
+          "substitution": "W. Fofana | L. Colwill",
+          "substitutionPlayerId": "283750341 | 2707048828",
+          "team": "away",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 56
+        },
+        {
+          "id": "cmwzjgfze1x0hp8084xkeqpr6",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "72",
+          "substitution": "Igor Jesus | D. Ndoye",
+          "substitutionPlayerId": "306355406 | 1596841920",
+          "team": "home",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 72
+        },
+        {
+          "id": "cmwzjgfze1x0ip8087k4qzlo9",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "84",
+          "substitution": "L. Delap | C. Wood",
+          "substitutionPlayerId": "2867126813 | 3313915333",
+          "team": "home",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 84
+        },
+        {
+          "id": "cmwzjgfze1x0jp808ivdiwbit",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "85",
+          "substitution": "X. Schlager | I. Sangare",
+          "substitutionPlayerId": "2225489064 | 2907640211",
+          "team": "home",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 85
+        },
+        {
+          "id": "cmwzjgfze1x0np808uhdn429q",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "85",
+          "substitution": "J. Acheampong | M. Palestra",
+          "substitutionPlayerId": "429522510 | 1122458746",
+          "team": "away",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 85
+        },
+        {
+          "id": "cmwzjgfze1x0op808fdiyrbra",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "85",
+          "substitution": "J. Henderson | G. Quenda",
+          "substitutionPlayerId": "1676929947 | 3110951666",
+          "team": "away",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 85
+        },
+        {
+          "id": "cmwzjgfze1x0kp808wvpe68jo",
+          "fixtureId": "cmu74j1u9oxepqu07d6puge36",
+          "time": "90+3",
+          "substitution": "J. McAtee | R. Yates",
+          "substitutionPlayerId": "835645988 | 2191621878",
+          "team": "home",
+          "createdAt": "2026-11-27T22:14:00.874Z",
+          "updatedAt": "2026-11-27T22:14:00.874Z",
+          "timeNum": 90
+        }
+      ],
+      "timeline": [
+        {
+          "minute": "5",
+          "minuteNum": 5,
+          "type": "GOAL",
+          "side": "home",
+          "player": "Igor Jesus",
+          "assist": "D. Munoz",
+          "score": "1 - 0"
+        },
+        {
+          "minute": "46",
+          "minuteNum": 46,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "D. Welbeck | E. Emegha"
+        },
+        {
+          "minute": "49",
+          "minuteNum": 49,
+          "type": "CARD",
+          "side": "away",
+          "player": "W. Fofana",
+          "card": "yellow card"
+        },
+        {
+          "minute": "51",
+          "minuteNum": 51,
+          "type": "GOAL",
+          "side": "home",
+          "player": "M. Gibbs-White",
+          "assist": null,
+          "score": "2 - 0"
+        },
+        {
+          "minute": "54",
+          "minuteNum": 54,
+          "type": "GOAL",
+          "side": "away",
+          "player": "E. Emegha",
+          "assist": null,
+          "score": "2 - 1"
+        },
+        {
+          "minute": "56",
+          "minuteNum": 56,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "W. Fofana | L. Colwill"
+        },
+        {
+          "minute": "61",
+          "minuteNum": 61,
+          "type": "CARD",
+          "side": "away",
+          "player": "J. Henderson",
+          "card": "yellow card"
+        },
+        {
+          "minute": "70",
+          "minuteNum": 70,
+          "type": "CARD",
+          "side": "away",
+          "player": "X. Alonso",
+          "card": "yellow card"
+        },
+        {
+          "minute": "71",
+          "minuteNum": 71,
+          "type": "CARD",
+          "side": "away",
+          "player": "P. Neto",
+          "card": "yellow card"
+        },
+        {
+          "minute": "72",
+          "minuteNum": 72,
+          "type": "GOAL",
+          "side": "home",
+          "player": "M. Gibbs-White",
+          "assist": "X. Schlager",
+          "score": "3 - 1"
+        },
+        {
+          "minute": "72",
+          "minuteNum": 72,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "Igor Jesus | D. Ndoye"
+        },
+        {
+          "minute": "80",
+          "minuteNum": 80,
+          "type": "CARD",
+          "side": "home",
+          "player": "L. Delap",
+          "card": "yellow card"
+        },
+        {
+          "minute": "84",
+          "minuteNum": 84,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "L. Delap | C. Wood"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "X. Schlager | I. Sangare"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Acheampong | M. Palestra"
+        },
+        {
+          "minute": "85",
+          "minuteNum": 85,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "away",
+          "substitution": "J. Henderson | G. Quenda"
+        },
+        {
+          "minute": "89",
+          "minuteNum": 89,
+          "type": "GOAL",
+          "side": "away",
+          "player": "E. Emegha",
+          "assist": "P. Neto",
+          "score": "3 - 2"
+        },
+        {
+          "minute": "90+3",
+          "minuteNum": 90,
+          "type": "CARD",
+          "side": "home",
+          "player": "I. Sangare",
+          "card": "yellow card"
+        },
+        {
+          "minute": "90+3",
+          "minuteNum": 90,
+          "type": "SUBSTITUTION",
+          "side": null,
+          "team": "home",
+          "substitution": "J. McAtee | R. Yates"
+        }
+      ],
+      "finalizedAt": "2026-11-28T03:16:48.934973+00:00"
     },
     "560652": {
       "status": "SNAPSHOT",
