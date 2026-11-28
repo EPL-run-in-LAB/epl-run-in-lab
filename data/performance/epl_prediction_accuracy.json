@@ -4,30 +4,30 @@
   "method": "Frozen pre-kickoff probabilities only; three-class 90-minute results",
   "sample": {
     "archivedFixtures": 160,
-    "eligibleFinalizedFixtures": 60,
+    "eligibleFinalizedFixtures": 61,
     "excludedReasons": {
-      "not_finished": 100
+      "not_finished": 99
     },
     "firstFixtureDate": "2026-10-10",
-    "lastFixtureDate": "2026-11-23",
+    "lastFixtureDate": "2026-11-27",
     "uniqueTeams": 20,
-    "teamAppearances": 120
+    "teamAppearances": 122
   },
   "results": {
-    "top1Correct": 29,
-    "top1Accuracy": 0.483333,
-    "multiclassBrierSum": 0.62721,
-    "logLoss": 1.040679,
+    "top1Correct": 30,
+    "top1Accuracy": 0.491803,
+    "multiclassBrierSum": 0.624252,
+    "logLoss": 1.036516,
     "outcomeCounts": {
-      "home": 30,
+      "home": 31,
       "draw": 14,
       "away": 16
     },
     "uniformOneThirdBrier": 0.666667,
     "uniformOneThirdLogLoss": 1.098612,
-    "alwaysPredictHomeAccuracyOnSample": 0.5,
-    "sumExpectedPointsForBothTeams": 164.235,
-    "sumActualPointsForBothTeams": 166
+    "alwaysPredictHomeAccuracyOnSample": 0.508197,
+    "sumExpectedPointsForBothTeams": 166.993,
+    "sumActualPointsForBothTeams": 169
   },
   "teamRecords": [
     {
@@ -87,14 +87,6 @@
       "perMatchDifference": 0.326
     },
     {
-      "team": "Chelsea",
-      "matches": 6,
-      "expectedPoints": 8.221,
-      "actualPoints": 9,
-      "pointsAboveExpected": 0.779,
-      "perMatchDifference": 0.13
-    },
-    {
       "team": "Fulham",
       "matches": 6,
       "expectedPoints": 8.286,
@@ -117,6 +109,14 @@
       "actualPoints": 8,
       "pointsAboveExpected": 0.091,
       "perMatchDifference": 0.015
+    },
+    {
+      "team": "Chelsea",
+      "matches": 7,
+      "expectedPoints": 9.37,
+      "actualPoints": 9,
+      "pointsAboveExpected": -0.37,
+      "perMatchDifference": -0.053
     },
     {
       "team": "Ipswich",
@@ -143,20 +143,20 @@
       "perMatchDifference": -0.148
     },
     {
+      "team": "Nottingham",
+      "matches": 7,
+      "expectedPoints": 8.75,
+      "actualPoints": 7,
+      "pointsAboveExpected": -1.75,
+      "perMatchDifference": -0.25
+    },
+    {
       "team": "Sunderland",
       "matches": 6,
       "expectedPoints": 6.969,
       "actualPoints": 5,
       "pointsAboveExpected": -1.969,
       "perMatchDifference": -0.328
-    },
-    {
-      "team": "Nottingham",
-      "matches": 6,
-      "expectedPoints": 7.142,
-      "actualPoints": 4,
-      "pointsAboveExpected": -3.142,
-      "perMatchDifference": -0.524
     },
     {
       "team": "Crystal Palace",
@@ -1511,10 +1511,32 @@
       "awayExpectedPoints": 1.128,
       "capturedAt": "2026-09-27T04:44:01.238359+00:00",
       "fixtureId": "560649"
+    },
+    {
+      "utcDate": "2026-11-27T20:00:00Z",
+      "date": "2026-11-27",
+      "home": "Nottingham",
+      "away": "Chelsea",
+      "homeGoals": 3,
+      "awayGoals": 2,
+      "probabilities": {
+        "home": 0.4553250312601282,
+        "draw": 0.24224528350383434,
+        "away": 0.3024296852360374
+      },
+      "actualOutcome": "home",
+      "mostLikelyOutcome": "home",
+      "correctTop1": 1,
+      "brier": 0.446817,
+      "logLoss": 0.786744,
+      "homeExpectedPoints": 1.608,
+      "awayExpectedPoints": 1.15,
+      "capturedAt": "2026-09-27T04:44:01.238359+00:00",
+      "fixtureId": "560658"
     }
   ],
   "interpretationLimits": [
-    "Only 60 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
+    "Only 61 eligible archived results exist at evaluation time; small samples are not proof of predictive superiority.",
     "Top-1 accuracy ignores probability calibration and should be shown with Brier and Log Loss.",
     "All three probabilities are evaluated, with Brier defined as the sum of 3 squared class errors (not divided by 3).",
     "Points-above-expected in small samples is not a reliable causal measure of strength or coaching.",
